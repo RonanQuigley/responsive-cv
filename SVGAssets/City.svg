@@ -1,0 +1,15 @@
+<svg id="City" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 60">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#231f20;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M67.5.5h8v44h-8z"/>
+    <path id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" d="M79.5 59V8.5h21V59"/>
+    <path id="_Path_3" data-name="&lt;Path&gt;" class="cls-1" d="M97.5 59V26.5h25V59"/>
+    <path id="_Path_4" data-name="&lt;Path&gt;" class="cls-1" d="M89.5 60V43.5h39V60"/>
+    <path id="_Path_5" data-name="&lt;Path&gt;" class="cls-1" d="M13.5 60V8.5h32V60"/>
+    <path id="_Path_6" data-name="&lt;Path&gt;" class="cls-1" d="M32.5 60V39.5h25V50"/>
+    <path id="_Path_7" data-name="&lt;Path&gt;" class="cls-1" d="M40.5 60V22.5h44V60"/>
+    <path id="_Path_8" data-name="&lt;Path&gt;" class="cls-1" d="M.5 60V35.5h20V60"/>
+</svg>
