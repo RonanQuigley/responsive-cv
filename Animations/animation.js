@@ -65,12 +65,12 @@ function Init()
 {
   // animate the first elements on load
   Animate('planet', 'Animations/planet.json', 0, 300, 1920, 500, true);
-  Animate('anim-skill-web-dev', 'Animations/skills-web-development.json');
-  Animate('anim-skill-html', 'Animations/skills-html.json');
-  Animate('anim-skill-css', 'Animations/skills-css.json');
-  Animate('anim-skill-jquery', 'Animations/skills-jquery.json');
-  Animate('anim-skill-js', 'Animations/skills-javascript.json');
-  Animate('anim-skill-animation', 'Animations/skills-animation.json');
+  Animate('skill-anim-web-dev', 'Animations/skills-web-development.json');
+  Animate('skill-anim-html', 'Animations/skills-html.json');
+  Animate('skill-anim-css', 'Animations/skills-css.json');
+  Animate('skill-anim-jquery', 'Animations/skills-jquery.json');
+  Animate('skill-anim-js', 'Animations/skills-javascript.json');
+  Animate('skill-anim-animation', 'Animations/skills-animation.json');
   Animate('anim-rain', 'Animations/rain.json');
   Animate('anim-city-flyover-one', 'Animations/city-flyover-one.json');
   Animate('anim-city-flyover-three', 'Animations/city-flyover-three.json');
