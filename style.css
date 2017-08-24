@@ -7,6 +7,541 @@
     box-sizing:border-box;
 }
 
+#skills-js
+{
+    top: -4rem;
+    left: -47rem;
+    z-index: -1;
+}
+
+#skills-animation
+{
+    width: 100%;
+    top: 4rem;
+    right: -50rem;
+}
+
+#skills-jquery
+{
+          top: 25rem;
+          z-index: -1;
+          left: -17rem;
+}
+
+#skills-group-01
+{
+
+height: 85rem;
+}
+
+#skills-group-02
+{
+  height: 75rem;
+}
+
+.skill
+{
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+#skills-html
+{top: 21rem;z-index: -1;left: -29rem;}
+
+#skills-css
+{top: 36rem;left: 31rem;z-index: -2;}
+
+#skill-anim-jquery
+{
+  top: 3rem;
+}
+
+#skill-anim-animation
+{
+  top: 6rem;
+  height: 20rem;
+  transform: translate(-0.05px, 0.5px);
+}
+
+#skill-anim-js
+{
+  
+top: 4rem;
+}
+
+#skill-anim-css
+{
+  
+top: 4rem;
+}
+
+#skill-anim-html
+{
+
+top: 4rem;
+}
+
+#skill-anim-web-dev svg
+{
+}
+
+#laptop-container
+{
+  width: 100%;
+  position: absolute;
+  height: 100%;
+}
+
+#intro-container
+{
+  height: 90rem;
+}
+
+
+#name-header
+{
+  
+font-size: 4.1rem;
+  
+font-family: 'Nunito Sans', sans-serif;
+  
+text-align: center;
+  
+font-weight: 300;
+}
+
+.intro-header-font
+{
+    font-size: 3.1rem;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    z-index: 2;
+    font-weight: 300;
+}
+
+#intro-header-01
+{
+
+font-size: 4.1rem;
+
+font-family: 'Quicksand', sans-serif;
+
+text-align: center;
+
+font-weight: 200;
+}
+
+#intro-header-02
+{
+
+}
+
+#intro-header-03
+{
+    top: 4.1rem;
+}
+
+#planet-text
+{height: 100%;width: 100%;z-index: 2;left: 1rem;top: 22.2rem;}
+
+.bodymovin-planet-font
+{
+
+font-size: 2px;
+
+height: 100%;
+
+font-family: 'Quicksand', sans-serif;
+}
+
+#planet-outer-ring
+{
+  stroke-width: 0.1rem;
+  stroke: black;
+  stroke-dasharray: 79px;
+  stroke-dashoffset: 0%;
+}
+
+#planet-outer-ring-container
+{
+  width: 40rem;
+  height: 40rem;
+}
+
+.bowler-hats path, ellipse
+{
+  fill: white;
+  stroke-width: 0.2rem;
+}
+
+.clouds-contact
+{
+    height: 17rem;
+    width: 100%;
+}
+
+.clouds-contact path
+{
+  stroke-width: 0.7rem;
+  fill: white;
+}
+
+#paper-plane-04
+{
+  
+z-index: -1;
+  
+left: -12rem;
+  
+top: -1rem;
+}
+
+#cloud-contact
+{
+  position: absolute;
+  z-index: -1;
+  left: -5rem;
+  top: 3rem;
+}
+
+@font-face
+{
+  font-family: 'Daniel';
+  src:
+    url('WebFonts/Daniel.eot'),
+    url('WebFonts/Daniel.eot?#iefix') format('embedded-opentype'),
+    url('WebFonts/Daniel.woff') format('woff'),
+    url('WebFonts/Daniel.ttf') format('truetype'),
+    url('WebFonts/Daniel.svg#Daniel') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#contact-container
+{
+  height: 108rem;
+}
+
+#email-section
+{top: 51rem;left: -99rem;right: 0;bottom: 0;position: absolute;}
+
+#phone-section
+{
+
+top: 78rem;
+
+left: 69rem;
+
+right: 0;
+
+bottom: 0;
+
+position: absolute;
+}
+
+#cv-section
+{top: 78rem;left: -69rem;right: 0;bottom: 0;position: absolute;}
+
+.clouds-background svg path
+{
+  fill: white;
+}
+
+.paper-plane-line
+{
+  border-top: black 0.2rem dashed;
+  transform: translate(-27.5rem, -4.3rem)rotate(-46deg);
+  transform-origin: right;
+}
+
+#cloud-grouping-section
+{
+    top: 41rem;
+    left: 100rem;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+
+#contact-description-section
+{top: 35rem;left: 0;right: 0;bottom: 0;position: absolute;}
+
+.contact-section
+{
+  
+width: 40rem;
+}
+
+#paper-plane-01
+{
+    top: -7rem;
+    left: 6rem;
+    transform: rotate(252deg);
+}
+
+#paper-plane-02
+{z-index: -1;left: -12rem;top: -1rem;}
+
+#paper-plane-03
+{z-index: -1;left: 5rem;top: -1rem;transform: scaleX(-1);}
+
+#cv path
+{
+  stroke-width: 0.8px;
+}
+
+.foliage path
+{
+  stroke-width: 0.18rem;
+}
+
+#email path
+{
+  stroke-width: 0.07rem;
+}
+
+#phone path
+{
+  stroke-width: 0.06rem;
+}
+
+.paper-plane path
+{
+  stroke-width: 0.08rem;
+}
+
+.copyright-font
+{
+  font-family: 'Daniel', sans-serif;
+  font-size: 2.5rem;
+}
+
+#copyright-container
+{height: 3rem;}
+
+#copyright-text
+{
+    width: 25%;
+    transform: translateX(50%) rotate(-11deg);
+    float: left;
+}
+
+#thanks
+{width: 25%;transform: translateX(-40%) rotate(11deg);float: right;transform-origin: top left;}
+
+#hot-air-balloon-plain svg
+{
+  height: 52rem;
+}
+
+
+#skills-text-box-animation
+{
+
+width: 14rem;
+
+left: -3.5rem;
+}
+
+#skills-text-box-jquery
+{
+
+width: 10rem;
+
+left: 1.5rem;
+
+margin-top: -4.2rem;
+}
+
+#skills-text-box-js
+{
+
+width: 14rem;
+
+left: 2.4rem;
+}
+
+#skills-text-box-css
+{
+
+width: 7rem;
+
+left: -2.4rem;
+}
+
+#skills-text-box-web-dev
+{
+
+}
+
+#skills-text-box-html
+{
+
+width: 9rem;
+
+left: 2rem;
+}
+
+#skills-text-box-container
+{
+
+height: 7rem;
+
+z-index: -1;
+}
+
+#blimp-html path, ellipse
+{
+  
+stroke-width: 0.1rem;
+}
+
+.skills-text-box
+{border: black 0.15rem solid;height: 100%;width: 23rem;vertical-align: bottom;display: flex;align-items: flex-end;justify-content: center;margin-top: -3rem;left: -2rem;background: white;}
+
+#skill-anim-web-dev path
+{
+   stroke-width: 0.6rem;
+}
+
+#laptop-container path
+{
+  stroke-width: 0.4rem;
+}
+
+#skill-anim-js path
+{
+  stroke-width: 0.7rem;
+}
+
+#skill-anim-jquery path
+{
+}
+
+#skill-anim-animation path
+{
+  stroke-width: 0.7rem;
+}
+
+#skill-anim-html path
+{
+  stroke-width: 0.6rem;
+}
+
+#skill-anim-css path
+{
+  stroke-width: 0.8rem;
+}
+
+.skill-anims path
+{stroke-width: 0.3rem;}
+
+#trophy svg g *
+{
+  stroke-width: 0.15rem;
+}
+
+#game-controller svg g *
+{
+  stroke-width: 0.07rem;
+}
+
+.about-icons
+{
+
+height: 24rem;
+}
+
+.clouds-header > svg > path
+{
+  stroke-width: 0.7rem;
+}
+
+.clouds-content > svg > path
+{
+  stroke-width: 0.7rem;
+  fill: white;
+}
+
+#road
+{position: relative;height: initial;}
+
+
+#solid-line-01
+{
+
+transform-origin: top left;
+
+width: 100%;
+
+height: initial;
+
+stroke-width: 1rem;
+}
+
+#solid-line-02
+{
+
+}
+
+#dotted-line-01
+{
+
+}
+
+.dashed-road-line
+{
+
+stroke: black;
+
+stroke-dasharray: 1rem;
+
+stroke-width: 1rem;
+}
+
+.solid-road-line
+{
+  stroke: black;
+}
+
+#road-container
+{
+
+width: 100%;
+
+height: 20rem;
+}
+
+#road-05
+{
+
+}
+
+#road-04
+{
+
+}
+
+#road-03
+{
+
+}
+
+#road-02
+{
+
+}
+
+#road-01
+{
+
+}
+
 #bush
 {
 
@@ -32,43 +567,39 @@ height: 3rem;
 
 #email
 {
-  height: 9rem;
+  height: 8rem;
+  top: 10rem;
+  left: -4rem;
 }
 
 #phone
-{
-  height: 10rem;
-}
+{height: 8rem;top: 10rem;left: -4rem;}
 
 #cv
-{
-  height: 20rem;
-}
+{height: 8rem;top: 10rem;left: -4rem;}
 
 .paper-plane
 {
-  height: 42rem;
+  height: 20rem;
+  position: absolute;
 }
 
 #contact-text
 {
-  position: absolute;
-  top: 10rem;
-  width: 21rem;
-  left: 0;
-  right: 0;
+  width: 50%;
+  top: -55%;
 }
 
 #hot-air-balloon-plain
 {
-  height: 52rem;
+  height: 54rem;
 }
 
 .skill-anims
 {
   height: 25rem;
+  top: 10rem;
   position: absolute;
-  top: 0;
 }
 
 .blimps
@@ -79,10 +610,10 @@ height: 32rem;
 
 .font-skills
 {
-  text-align:center;
+  text-align: center;
   font-size: 2.5rem;
-  position: absolute;
-  top: 28rem;
+  font-family: 'Quicksand', sans-serif;
+  bottom: 0.4rem;
 }
 
 #skills-container
@@ -90,15 +621,8 @@ height: 32rem;
 
 }
 
-
-#about-content-04
-{
-}
 #skills-header-text
-{
-
-margin-top: -7rem;
-}
+{text-align: center;margin-top: -12.1rem;margin-bottom: 4rem;position: relative;height: initial;}
 
 #blimp-web
 {
@@ -107,7 +631,11 @@ margin-top: -7rem;
 #skills-web-development
 {
 
-width: 30%;
+width: 100%;
+
+top: 4rem;
+
+right: -50rem;
 }
 
 
@@ -116,18 +644,13 @@ width: 30%;
 
 height: 17rem;
 
-position: absolute;
-
 top: 10rem;
 }
 
 
 #about-content-02-text
 {
-
-width: 43rem;
-
-margin-top: -4rem;
+    width: 36rem;
 }
 
 #about-content-cloud-03
@@ -135,32 +658,22 @@ margin-top: -4rem;
 
 position: relative;
 
-margin-top: -7rem;
+margin-top: -16rem;
 
-z-index: -1;
+z-index: -7;
 }
 
 #about-content-03-text
 {
 
-width: 37rem;
-
-margin-top: -4rem;
+width: 40rem;
 }
 
 #about-content-04-text
 {
 
 width: 35rem;
-
-margin-top: -4rem;
 }
-
-#about-content-03
-{
-
-}
-
 
 html
 {
@@ -186,32 +699,34 @@ svg
 {
   width: 100%;
   height: 100%;
+  display: block;
+  fill: white;
 }
 
 .font-header
 {
-  font-size: 5rem;
-  text-align: center;
+  font-size: 6rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 200;
 }
 
 .font-div
 {
-  font-size: 2.5rem;
+  width: 36rem;
+  font-size: 1.9rem;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
+  transform: translateY(-9rem);
+  font-weight: normal;
 }
 
 #wrapper-background
-{
-  max-width: 100%;
-  height: initial;
-  margin: 0 auto;
-}
+{width: 100%;height: initial;position: absolute;}
 
 #wrapper-foreground
 {
   /* max-width: 1440px; */
   margin: 0 auto;
-  height: initial;
 }
 
 #city-container
@@ -237,7 +752,7 @@ svg
 
 #city-buildings
 {
-  height: 60%;
+  height: 8.8rem;
 }
 
 #city-flatline
@@ -256,18 +771,35 @@ svg
 {
   position: absolute;
   width: 100%;
-  height: 50rem;
+  height: 41.5rem;
   left: 0;
   right: 0;
   z-index: 2;
   transform: translate(60rem, 30rem) scale(1);
 }
 
-.clouds
+.clouds-content, .clouds-header, .clouds-background
 {
-  height: 12rem;
+  height: 26.5rem;
   width: 100%;
-  position: relative;
+}
+
+.clouds-content
+{
+}
+
+.clouds-background
+{
+
+height: 12rem;
+
+position: absolute;
+}
+
+.clouds-header
+{
+
+position: relative;
 }
 
 #cloud-container
@@ -286,31 +818,37 @@ svg
   width: 100%;
 }
 
-#cloud-group-three
+#cloud-group-three-01
 {
-  position: absolute;
-  transform: translate(0, 0) scale(1);
+  position: relative;
+  margin-left: -64rem;
+  top: 19rem;
+}
+
+#cloud-group-three-02
+{
 }
 
 #cloud-01
 {
-  top: 0rem;
-  left: 0rem;
   z-index: 0;
+  margin-top: -2rem;
+  margin-left: 1rem;
 }
 
 #cloud-02
 {
-  top: 2rem;
-  left: 4rem;
+  z-index: 1;
+  margin-top: 2rem;
+  margin-left: -5rem;
   z-index: 1;
 }
 
 #cloud-03
 {
-  top: 4rem;
-  left: 0rem;
   z-index: 2;
+  margin-top: 3rem;
+  margin-left: 7rem;
 }
 
 #cloud
@@ -320,9 +858,10 @@ svg
 
 #cloud-rain
 {
-  position: absolute;
-  transform: translate(0, 0) scale(1);
-  height: 20rem;
+  position: relative;
+  height: 24rem;
+  margin-left: -78rem;
+  top: 53rem;
 }
 
 #cloud-rain svg
@@ -330,11 +869,10 @@ svg
   height: 50% !important;
 }
 
-#anim-rain
+.anim-rain
 {
   width: 100%;
-  height: 50%;
-  position: absolute;
+  height: 100%;
 }
 
 #anim-rain svg
@@ -348,84 +886,77 @@ svg
 /* BEGIN ABOUT */
 
 #about-container
-{
-
-height: initial;
-}
+{height: 143rem;}
 
 #about-header
-{width: 100%;transform: scale(1);}
+{width: 100%;top: 0;}
 
 #about-header-text
 {
     text-align: center;
-    margin-top: -7rem;
+    margin-top: -12.1rem;
+    margin-bottom: 4rem;
     position: relative;
     height: initial;
 }
 
 #about-header-cloud-container
+{}
+
+#header-cloud-01
+{margin-left: -6rem;}
+
+#header-cloud-02
 {
-  position: relative;
-  width: 20rem;
+    margin-top: -25rem;
+    margin-left: 9.3rem;
 }
 
-#about-cloud-01
-{
-
-position: relative;
-
-margin-left: -3rem;
-}
-
-#about-cloud-02
-{
-
-position: relative;
-
-margin-top: -11rem;
-
-margin-left: 2rem;
-
-z-index: -1;
-}
-
-#about-cloud-03
-{
-
-position: relative;
-
-margin-top: -10rem;
-
-margin-left: 0rem;
-
-z-index: 1;
-}
+#header-cloud-03
+{margin-top: -24rem;}
 
 #about-content-cloud-01
 {
 
 position: relative;
 
-margin-top: -9rem;
+margin-top: -15rem;
 
 z-index: -1;
 }
 
-#about-content-01-text
+.about-content
 {
-
-text-align: center;
-
-margin-top: -3rem;
-
-width: 40rem;
-
-position: relative;
-
-height: initial;
+  
+position: absolute;
+  
+top: 0;
+  
+bottom: 0;
+  
+left: 0;
+  
+right: 0;
 }
 
+#about-content-01
+{top: 30rem;left: -60rem;}
+
+#about-content-02
+{top: 50rem;right: -60rem;}
+
+#about-content-03
+{top: 90rem;left: -60rem;}
+
+#about-content-04
+{top: 110rem;right: -60rem;}
+
+
+.bowler-hats svg
+{
+  height: fit-content;
+  fill: white;
+}
 
 .bowler-hats
 {
@@ -443,6 +974,8 @@ position: relative;
 position: relative;
 
 width: 100%;
+
+top: -1rem;
 }
 
 #bowler-hat-01
@@ -468,15 +1001,13 @@ margin-left: 7rem;
 position: relative;
 
 width: 100%;
-
-height: 18rem;
 }
 
 #game-controller
 {
-  width: 25%;
-  height: 12rem;
-  margin-top: -12rem;
+  margin-top: -22rem;
+  width: 100%;
+  margin-left: 6rem;
 }
 
 #about-content-02-icons
@@ -488,25 +1019,17 @@ position: relative;
 }
 
 #trophy
-{
-
-width: 25%;
-
-height: 12rem;
-}
+{width: 100%;margin-left: -13rem;z-index: 1;transform: rotate(-8deg);}
 
 #about-content-cloud-02
 {
 
 position: relative;
 
-margin-top: -7rem;
+margin-top: -18rem;
 
 z-index: -1;
 }
-
-#about-content-02
-{}
 
 /* ------- MEDIA QUIERIES ------- */
 
@@ -542,7 +1065,7 @@ z-index: -1;
 
   #planet-container
   {
-    width: 100%;
+    width: 33%;
     height: 62rem;
   }
 

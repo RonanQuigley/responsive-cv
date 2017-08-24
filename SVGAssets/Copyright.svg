@@ -1,0 +1,12 @@
+<svg id="Copyright" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.9 26.2">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 10px;
+        font-family: Daniel;
+      }
+    </style>
+  </defs>
+  <title>Copyright</title>
+  <text class="cls-1" transform="translate(0 8.9)">© Ronan Quigley 2017 <tspan x="0.9" y="12">Some Rights Reserved</tspan></text>
+</svg>

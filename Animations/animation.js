@@ -71,7 +71,10 @@ function Init()
   Animate('skill-anim-jquery', 'Animations/skills-jquery.json');
   Animate('skill-anim-js', 'Animations/skills-javascript.json');
   Animate('skill-anim-animation', 'Animations/skills-animation.json');
-  Animate('anim-rain', 'Animations/rain.json');
+  Animate('anim-rain-01', 'Animations/rain.json');
+  Animate('anim-rain-02', 'Animations/rain.json');
+  Animate('anim-rain-03', 'Animations/rain.json');
+  Animate('anim-rain-04', 'Animations/rain.json');
   Animate('anim-city-flyover-one', 'Animations/city-flyover-one.json');
   Animate('anim-city-flyover-three', 'Animations/city-flyover-three.json');
   Animate('anim-city-flyover-five', 'Animations/city-flyover-five.json');

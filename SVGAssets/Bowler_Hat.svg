@@ -1,9 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 213 130.25">
-    <g fill="#fff" stroke="#231f20" stroke-miterlimit="10">
-        <ellipse cx="106.5" cy="96.5" rx="106" ry="33.25"/>
-        <ellipse cx="106.5" cy="81.07" rx="52.5" ry="12.093"/>
-        <path d="M54 96.5v-87h105v87"/>
-        <path d="M159 96.07c0 6.679-23.505 12.093-52.5 12.093S54 102.749 54 96.07M159 81.07c0 6.679-23.505 12.093-52.5 12.093S54 87.749 54 81.07"/>
-        <ellipse cx="106.5" cy="9.5" rx="52.5" ry="9"/>
-    </g>
+<svg id="Bowler_Hat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 213 130.3">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:#fff;stroke:#231f20}.cls-1{stroke-miterlimit:10}.cls-2{stroke-linecap:square;stroke-linejoin:bevel}
+        </style>
+    </defs>
+    <title>
+        Bowler_Hat
+    </title>
+    <ellipse id="_Path_" data-name="&lt;Path&gt;" class="cls-1" cx="106.5" cy="96.5" rx="106" ry="33.3"/>
+    <path id="_Path_2" data-name="&lt;Path&gt;" class="cls-2" d="M54.4 96.2V9.3h105v86.9"/>
+    <path id="_Path_3" data-name="&lt;Path&gt;" class="cls-1" d="M159.4 81.1c0 6.7-24 12.1-52.9 12.1s-52.1-5.5-52.1-12.1"/>
+    <path id="_Path_4" data-name="&lt;Path&gt;" class="cls-1" d="M159.4 96.1c0 6.7-24 12.1-52.9 12.1s-52.1-5.3-52.1-12"/>
+    <path id="_Path_5" data-name="&lt;Path&gt;" class="cls-1" d="M106.5.5c29 0 52.9 3.9 52.9 8.8s-24 9.2-52.9 9.2S54.4 14 54.4 9.1 77.5.5 106.5.5z"/>
 </svg>

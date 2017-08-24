@@ -1,6 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.689 21.526">
-    <g fill="none" stroke="#231f20" stroke-miterlimit="10">
-        <path d="M.5.5h32.689v20.526H.5z"/>
-        <path d="M.5.5l16.344 11.406L33.189.5M.5 21.026L13.545 9.604M33.189 21.026L20.144 9.604"/>
-    </g>
+<svg id="Email" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.03099 32.06564">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:#fff;stroke:#231f20;stroke-miterlimit:10;stroke-width:1.40599px}.cls-2{fill:none}
+        </style>
+    </defs>
+    <title>
+        Email
+    </title>
+    <path class="cls-1" d="M.703.703h49.625v30.66H.703z"/>
+    <path class="cls-2" d="M.703.703l24.812 15.33L50.328.703"/>
+    <path class="cls-1" d="M50.328 31.363L29.53 13.553M.703 31.363l20.798-17.81"/>
 </svg>
