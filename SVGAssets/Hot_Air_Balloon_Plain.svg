@@ -1,6 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.528 256.411">
-    <g fill="none" stroke="#231f20" stroke-miterlimit="10">
-        <circle cx="87.764" cy="88.109" r="87.264"/>
-        <path d="M70.5 226.154h33v30h-33zM57.327 169.918L71 226.257M117.352 170.229l-13.186 55.528M87.5 175.654v51"/>
-    </g>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 175.528 256.411" style="enable-background:new 0 0 175.528 256.411;" xml:space="preserve">
+<g id="Hot_x5F_Air_x5F_Balloon_x5F_Plain">
+	<circle id="XMLID_231_" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" cx="87.764" cy="87.764" r="87.264"/>
+	<path id="XMLID_229_" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" d="M137.71,159.296"/>
+	<path id="XMLID_227_" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" d="M48.479,166.062"/>
+	<rect id="XMLID_220_" x="71" y="225.911" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" width="33" height="30"/>
+	<path id="XMLID_219_" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" d="M57.5,170.261"/>
+	<line id="XMLID_216_" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" x1="57.327" y1="169.573" x2="71" y2="225.911"/>
+	<line id="XMLID_222_" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" x1="117.352" y1="169.884" x2="104" y2="225.911"/>
+	<path id="XMLID_32_" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" d="M87,175.411"/>
+	<path id="XMLID_1_" style="fill:none;stroke:#231F20;stroke-miterlimit:10;" d="M87.764,225.411"/>
+	<line style="fill:none;stroke:#231F20;stroke-miterlimit:10;" x1="88" y1="175.411" x2="88" y2="225.911"/>
+</g>
+<g id="Layer_1">
+</g>
 </svg>

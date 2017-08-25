@@ -2,9 +2,44 @@
     margin: 0 auto;
     padding:0;
     z-index:0;
-    width: 100%;
     position: relative;
     box-sizing:border-box;
+}
+
+#bowler-hats-container *
+{
+  stroke-width 1rem;
+  stroke-width: 0.20rem;
+}
+
+#blimp-anim
+{
+  height: 30rem;
+}
+
+#blimp-js
+{
+  height: 28rem;
+}
+
+#blimp-jquery
+{
+  height: 28rem;
+}
+
+#blimp-css
+{
+  height: 25rem;
+}
+
+#blimp-html
+{height: 27rem;}
+
+.city-building {
+  fill: #fff;
+  stroke: #231f20;
+  stroke-miterlimit: 10;
+  stroke-width: 0.05rem;
 }
 
 #skills-js
@@ -23,7 +58,7 @@
 
 #skills-jquery
 {
-          top: 25rem;
+          top: 22rem;
           z-index: -1;
           left: -17rem;
 }
@@ -31,12 +66,13 @@
 #skills-group-01
 {
 
-height: 85rem;
+height: 86rem;
 }
 
 #skills-group-02
 {
-  height: 75rem;
+  
+height: 75rem;
 }
 
 .skill
@@ -45,26 +81,28 @@ height: 85rem;
   top: 0px;
   bottom: 0;
   left: 0;
+  height: 10rem;
   right: 0;
 }
 
 
 #skills-html
-{top: 21rem;z-index: -1;left: -29rem;}
+{top: 21rem;z-index: -1;left: -41rem;}
 
 #skills-css
-{top: 36rem;left: 31rem;z-index: -2;}
+{top: 35rem;left: 31rem;z-index: -2;}
 
 #skill-anim-jquery
 {
-  top: 3rem;
+  top: 7rem;
+  height: 15rem;
 }
 
 #skill-anim-animation
 {
   top: 6rem;
-  height: 20rem;
-  transform: translate(-0.05px, 0.5px);
+  height: 18.4rem;
+  left: -2rem;
 }
 
 #skill-anim-js
@@ -76,7 +114,9 @@ top: 4rem;
 #skill-anim-css
 {
   
-top: 4rem;
+top: 3rem;
+  
+height: 24rem;
 }
 
 #skill-anim-html
@@ -98,7 +138,7 @@ top: 4rem;
 
 #intro-container
 {
-  height: 90rem;
+  height: 900px;
 }
 
 
@@ -175,7 +215,6 @@ font-family: 'Quicksand', sans-serif;
 .bowler-hats path, ellipse
 {
   fill: white;
-  stroke-width: 0.2rem;
 }
 
 .clouds-contact
@@ -254,7 +293,7 @@ position: absolute;
 .paper-plane-line
 {
   border-top: black 0.2rem dashed;
-  transform: translate(-27.5rem, -4.3rem)rotate(-46deg);
+  transform: translate(-22.7rem, -4.3rem)rotate(-46deg);
   transform-origin: right;
 }
 
@@ -430,7 +469,7 @@ stroke-width: 0.1rem;
 
 #skill-anim-html path
 {
-  stroke-width: 0.6rem;
+  stroke-width: 0.8rem;
 }
 
 #skill-anim-css path
@@ -575,6 +614,13 @@ height: 3rem;
 #phone
 {height: 8rem;top: 10rem;left: -4rem;}
 
+#city-buildings rect
+{
+  stroke-width: 0.025rem;
+  stroke: black;
+  fill: white;
+}
+
 #cv
 {height: 8rem;top: 10rem;left: -4rem;}
 
@@ -597,7 +643,8 @@ height: 3rem;
 
 .skill-anims
 {
-  height: 25rem;
+  height: 70%;
+  width: 100%;
   top: 10rem;
   position: absolute;
 }
@@ -631,11 +678,9 @@ height: 32rem;
 #skills-web-development
 {
 
-width: 100%;
-
 top: 4rem;
 
-right: -50rem;
+right: -36rem;
 }
 
 
@@ -732,15 +777,14 @@ svg
 #city-container
 {
   width: 100%;
-  height: 20rem;
 }
 
 #anim-city-flyover-container
 {
   width: 100%;
-  height: 40%;
   margin: auto;
-  position: relative;
+  height: 10rem;
+  margin-bottom: -10rem;
 }
 
 #anim-city-flyover-container > *
@@ -751,9 +795,7 @@ svg
 }
 
 #city-buildings
-{
-  height: 8.8rem;
-}
+{height: 15rem;}
 
 #city-flatline
 {
@@ -763,6 +805,7 @@ svg
   width: 100%;
   left: 0;
   right: 0;
+  top: 15rem;
   position: absolute;
   height: initial;
 }
