@@ -1,4 +1,4 @@
-function Animate(element, data, xOffset, yOffset, width, height, bool)
+function Animate(element, data, xOffset, yOffset, width, height, bool, svgAspectRatio)
 {
 
   if(width === undefined)
@@ -18,6 +18,11 @@ function Animate(element, data, xOffset, yOffset, width, height, bool)
     yOffset = 0;
   }
 
+  if(svgAspectRatio === undefined)
+  {
+    svgAspectRatio = "xMidYMid meet";
+  }
+
   var elem = document.getElementById(element);
   if(elem == null)
   {
@@ -32,7 +37,7 @@ function Animate(element, data, xOffset, yOffset, width, height, bool)
 			autoplay: true,
 			rendererSettings: {
 			progressiveLoad:false,
-      preserveAspectRatio:"xMidYMid meet"
+      preserveAspectRatio:svgAspectRatio
 			},
 			path: data
 	};
@@ -64,7 +69,7 @@ function CheckScrollPosition(element, data)
 function Init()
 {
   // animate the first elements on load
-  Animate('planet', 'Animations/planet.json', 0, 300, 1920, 500, true);
+  Animate('planet', 'Animations/planet.json', 0, 300, 1920, 500, true, "xMidYMin meet");
   Animate('skill-anim-web-dev', 'Animations/skills-web-development.json');
   Animate('skill-anim-html', 'Animations/skills-html.json');
   Animate('skill-anim-css', 'Animations/skills-css.json');
@@ -75,9 +80,9 @@ function Init()
   Animate('anim-rain-02', 'Animations/rain.json');
   Animate('anim-rain-03', 'Animations/rain.json');
   Animate('anim-rain-04', 'Animations/rain.json');
-  Animate('anim-city-flyover-one', 'Animations/city-flyover-one.json');
-  Animate('anim-city-flyover-three', 'Animations/city-flyover-three.json');
-  Animate('anim-city-flyover-five', 'Animations/city-flyover-five.json');
+  Animate('anim-city-flyover-one', 'Animations/city-flyover-one.json', 0, 0, 700, 300, true, "xMidYMax meet");
+  Animate('anim-city-flyover-three', 'Animations/city-flyover-three.json', 0, 0, 700, 300, true, "xMidYMax meet");
+  Animate('anim-city-flyover-five', 'Animations/city-flyover-five.json', 0, 0, 700, 300, true, "xMidYMax meet");
 
 
   // check the rest of the elements are on screen
