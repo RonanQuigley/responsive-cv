@@ -1,0 +1,24 @@
+<svg id="Blimp_Web" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 368.2 230.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        font-size: 13.58px;
+        font-family: Quicksand;
+      }
+    </style>
+  </defs>
+  <title>Blimp_Web</title>
+  <line id="_Path_" data-name="&lt;Path&gt;" class="cls-1" x1="121.2" y1="96" x2="223.4" y2="13.5"/>
+  <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="109.7" y="194.6" width="123" height="35"/>
+  <text class="cls-2" transform="translate(113.4 225.5)">W<tspan x="12.9" y="0">eb </tspan><tspan x="32.3" y="0">D</tspan><tspan x="42.2" y="0">ev</tspan><tspan x="56.8" y="0">e</tspan><tspan x="64.4" y="0">l</tspan><tspan x="67.4" y="0">opment</tspan></text>
+  <circle id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" cx="223.4" cy="13.5" r="13"/>
+  <path id="_Path_3" data-name="&lt;Path&gt;" class="cls-1" d="M351.8,30.4s-37.6,50.2-37.6,90.8,29.8,38.7,37.6,83.7c3.7-45,23-49.4,13.2-73.4C340.7,81.8,351.8,30.4,351.8,30.4Z"/>
+  <path id="_Path_4" data-name="&lt;Path&gt;" class="cls-1" d="M171.5,33.6c94.4,0,171,39.2,171,87.5s-76.6,87.5-171,87.5S18.5,180.1.5,121.1C18.5,55.6,77.1,33.6,171.5,33.6Z"/>
+  <circle id="_Path_5" data-name="&lt;Path&gt;" class="cls-1" cx="342.9" cy="120.3" r="5.8"/>
+</svg>

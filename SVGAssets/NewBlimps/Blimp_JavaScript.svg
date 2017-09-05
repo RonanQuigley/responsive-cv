@@ -1,0 +1,22 @@
+<svg id="Blimp_JS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362.9 185.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        font-size: 13.58px;
+        font-family: Quicksand;
+      }
+    </style>
+  </defs>
+  <title>Blimp_JavaScript</title>
+  <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M1.4,8.2L292.6,82,1.4,155.2s27.5-32.9,27.5-73.5S1.4,8.2,1.4,8.2Z"/>
+  <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="154.6" y="150.3" width="72" height="35"/>
+  <text class="cls-2" transform="translate(157.3 181.2)">J<tspan x="7.8" y="0">a</tspan><tspan x="15.8" y="0">v</tspan><tspan x="22.9" y="0">aScript</tspan></text>
+  <ellipse class="cls-1" cx="190.7" cy="82" rx="171.7" ry="81.5"/>
+  <circle id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" cx="19.2" cy="81.5" r="5.8"/>
+</svg>

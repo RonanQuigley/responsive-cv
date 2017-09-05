@@ -1,0 +1,22 @@
+<svg id="Blimp_JS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357.8 198.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        font-size: 13.58px;
+        font-family: Quicksand;
+      }
+    </style>
+  </defs>
+  <title>Blimp_jQuery</title>
+  <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="161.2" y="163.3" width="50" height="35"/>
+  <text class="cls-2" transform="translate(164 194.1)">Jquery</text>
+  <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M38.1,2.1S0.5,52.3.5,92.9s29.8,38.7,37.6,83.7c3.7-45,23-49.4,13.2-73.4C27,53.6,38.1,2.1,38.1,2.1Z"/>
+  <path id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" d="M186.3,2.2c-94.4,0-171,39.2-171,87.5s76.6,87.5,171,87.5,153-28.5,171-87.5C339.3,24.2,280.8,2.2,186.3,2.2Z"/>
+  <circle id="_Path_3" data-name="&lt;Path&gt;" class="cls-1" cx="14.8" cy="89.4" r="5.8"/>
+</svg>
