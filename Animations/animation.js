@@ -111,6 +111,10 @@ function Init()
     Animate('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMid meet");
     Animate('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMid meet");
     Animate('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMid meet");
+    Animate('anim-rain-01', 'Animations/rain.json', true, "xMidYMid meet");
+    Animate('anim-rain-02', 'Animations/rain.json', true, "xMidYMid meet");
+    Animate('anim-rain-03', 'Animations/rain.json', true, "xMidYMid meet");
+    Animate('anim-rain-04', 'Animations/rain.json', true, "xMidYMid meet");
 
   $(document).ready(function()
   {

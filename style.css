@@ -7,10 +7,18 @@
     display: block;
 }
 
+.clouds-contact > svg
+{
+  
+position: absolute;
+}
+
 #planet-city-container
 {
-  max-height: 83rem;
-  border: solid 1px #F44336;
+  
+max-height: 83rem;
+  
+border: solid 1px #F44336;
 }
 
 #about-content-container
@@ -20,9 +28,9 @@ display: block;
 
 outline: 1px solid #8BC34A;
 
-max-width: 91%;
+max-width: 167rem;
 
-width: auto;
+width: 90%;
 
 max-height: 107rem;
 
@@ -80,12 +88,10 @@ right: 0;
 
 #contact-header-cloud-container
 {
-  height: 100%;
 }
 
 #anim-rain-01
 {
-  height: 50% !important;
 }
 
 #skills-text-box-container
@@ -103,118 +109,129 @@ right: 0;
 #cloud-background-01
 {
 
-z-index: 2;
+z-index: -1;
 
-left: 10rem;
-
-top: 1rem;
+left: 47px;
 }
 
 #cloud-background-02
-{
-
-top: -4rem;
-
-left: 5rem;
-}
+{right: 30%;top: 2rem;}
 
 #cloud-background-03
 {
 
 z-index: 1;
 
-left: -1rem;
+right: -10%;
+
+top: 5rem;
 }
 
 #paper-plane-container-01
 {
-
-transform: rotate(-72deg);
-
-top: -20%;
-
-z-index: 2;
-
-left: 20%;
+z-index: 2;
+left: 10%;
 }
 
 #paper-plane-container-02
 {
 
-right: 35%;
+z-index: -1;
 
-transform: rotate(29deg);
+right: 15%;
+
+transform: rotate(14deg);
 }
 
 #paper-plane-container-03
-{
-
-right: 33%;
-
-transform: rotate(29deg);
-}
+{z-index: -1;right: 11%;transform: rotate(14deg);}
 
 #paper-plane-container-04
 {
-
-transform: rotate(-38deg);
-
-left: 26%;
-
-bottom: 25%;
+    z-index: -1;
+    left: 25%;
+    transform: rotate(4deg);
+    top: -8%;
 }
 
-
-
+.paper-plane-line-container
+{
+  
+width: 210%;
+  
+max-width: 100%;
+  
+height: auto;
+  
+margin-left: auto;
+  
+margin-right: auto;
+  
+left: 0;
+  
+right: 0;
+  
+position: absolute;
+  
+/* outline: solid 2px brown; */
+  
+z-index: -1;
+}
 #paper-plane-line-01
 {
-    transform-origin: left;
-    width: 200%;
-    transform: translate(26%, 63%) rotate(48deg);
+    transform-origin: right;
+    transform: translate(13rem, -2.4rem) rotate(-23deg);
+    z-index: -1;
 }
 
 #paper-plane-line-02
-{transform-origin: right;width: 200%;translate(-89.3%, 16.1rem) rotate(-47deg): translate(-76%, 63%) rotate(-47deg);transform: translate(-76.2%, 64%) rotate(-47deg);}
+{translate(-89.3%, 16.1rem) rotate(-47deg): translate(-76%, 63%) rotate(-47deg);transform-origin: left;transform: translate(-19.3rem, 31.4rem) rotate(-30.3deg);z-index: -1;left: -30.1rem;top: 8.8rem;}
 
 #paper-plane-line-03
+{transform-origin: left;transform: translate(-19.3rem, 31.4rem) rotate(-30.3deg);z-index: -1;left: -57.2rem;top: 16.8rem;}
+
+#paper-plane-line-03 svg
 {
-
-transform-origin: left;
-
-width: 200%;
-
-transform: translate(26%, 63%) rotate(48deg);
+  
+left: -18rem;
+  
+width: 348%;
 }
 
 #paper-plane-line-04
-{
-
-transform-origin: right;
-
-width: 200%;
-
-transform: translate(-76.2%, 64%) rotate(-47deg);
-}
+{transform-origin: right;transform: translate(18rem, 19.9rem) rotate(15.3deg);z-index: -1;}
 
 #contact-header
 {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
-  height: 26.5rem;
+  height: auto;
+  display: block;
+  outline: 1px solid blue;
+  max-width: 100%;
+  width: 100%;
+  max-height: 26rem;
+  height: auto;
 }
 
 .contact-icons
 {
 
-height: 39%;
+height: auto;
 
-top: 33%;
+top: 40%;
+
+max-width: 12rem;
 }
 
 .paper-plane-container
 {
-    width: 100%;
-    height: 100%;
+    max-width: 24rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     position: absolute;
 }
 
@@ -237,11 +254,6 @@ div.road-container svg:nth-child(2n)
   fill: white;
 }
 
-#bowler-hats-container *
-{
-  stroke-width 1rem;
-  stroke-width: 0.20rem;
-}
 
 #blimp-anim
 {
@@ -271,34 +283,33 @@ div.road-container svg:nth-child(2n)
 }
 
 #skills-js
-{bottom: 18rem;z-index: 0;right: 12rem;}
+{z-index: 0;right: 23rem;}
 
 #skills-animation
-{top: 10rem;left: 21rem;right: 0;bottom: 0;z-index: 1;}
+{z-index: 1;left: 21rem;margin-top: -20rem;z-index: 1;max-width: 57rem;}
 
 #skills-jquery
-{bottom: 24rem;right: 0rem;z-index: -1;}
+{z-index: -1;margin-top: -15rem;right: 10rem;}
 
 #skills-group-01
 {
 }
 
 #skills-group-02
-{
-}
+{}
 
 .skill
-{max-width: 50rem;width: auto;height: auto;}
+{max-width: 50rem;width: auto;margin-left: auto;height: auto;margin-right: auto;}
 
 
 #skills-html
-{bottom: 6rem;right: 12rem;}
+{/* bottom: 6rem; *//* right: 12rem; */right: 14rem;}
 
 #skills-css
 {
-    bottom: 20rem;
-    left: 20rem;
     z-index: -1;
+    margin-top: -14rem;
+    left: 20rem;
 }
 
 #skill-anim-jquery
@@ -342,7 +353,7 @@ left: -1.6rem;
 
 #intro-container
 {
-    height: 77rem;
+    height: auto;
     border: solid 1px green;
 }
 
@@ -426,16 +437,13 @@ font-weight: 200;
   height: 40rem;
 }
 
-.bowler-hats path, ellipse
-{
-  fill: white;
-}
-
 .clouds-contact
 {
     height: 17rem;
     position: absolute;
-    width: 100%;
+    width: auto;
+    left: 0;
+    right: 0;
 }
 
 .clouds-contact path
@@ -449,8 +457,7 @@ font-weight: 200;
 }
 
 #cloud-contact
-{
-}
+{}
 
 @font-face
 {
@@ -470,21 +477,22 @@ font-weight: 200;
   height: 120rem;
   overflow: hidden;
   outline: 1px solid pink;
+  max-width: 277rem;
 }
 
 #email-section
 {
-    right: 55%;
+    margin-right: 55%;
     top: 50%;
 }
 
 #phone-section
-{top: 76%;left: 40%;}
+{top: 76%;margin-left: 40%;}
 
 #cv-section
 {
     top: 76%;
-    right: 30%;
+    margin-right: 30%;
 }
 
 .clouds-background svg path
@@ -494,16 +502,17 @@ font-weight: 200;
 
 .paper-plane-line
 {
-  border-top: black 0.2rem dashed;
-  width: 100%;
-  height: 100%;
-  position: relative;
+  stroke-dasharray: 11;
+  width: 210%;
+  stroke: black;
+  stroke-width: 0.3rem;
 }
 
 #cloud-grouping-section
 {
-    left: 55%;
-    top: 33%;
+    margin-left: 55%;
+    height: auto;
+    z-index: -1;
 }
 
 
@@ -512,8 +521,6 @@ font-weight: 200;
 
 .contact-section
 {
-
-width: 28rem;
 
 position: absolute;
 
@@ -526,13 +533,42 @@ left: 0;
 right: 0;
 
 height: 20.2rem;
+
+width: auto;
 }
 
 #paper-plane-01
-{transform: scaleX(-1);}
+{}
 
 #paper-plane-02
 {
+}
+
+.paper-plane-envelope
+{
+  transform: scaleX(-1) rotate(72deg);
+  max-width: 24rem;
+  position: absolute;
+}
+
+#paper-plane-envelope-02
+{
+  
+transform: scaleX(-1) rotate(-100deg);
+}
+
+#paper-plane-envelope-03
+{
+
+transform: scaleX(-1) rotate(-100deg);
+}
+
+#paper-plane-envelope-04
+{
+  
+z-index: -1;
+  
+transform: rotate(-116deg);
 }
 
 #paper-plane-03
@@ -562,7 +598,7 @@ height: 20.2rem;
   stroke-width: 0.06rem;
 }
 
-.paper-plane path
+.paper-plane-container path
 {
   stroke-width: 0.08rem;
 }
@@ -575,21 +611,19 @@ height: 20.2rem;
 
 #copyright-container
 {
-    height: 15.4rem;
-    width: 100%;
+    height: auto;
+    max-width: 167rem;
+    outline: solid 1px black;
 }
 
 #copyright-text
 {
-    top: 56%;
-    left: 10%;
-    float: left;
-    transform-origin: left;
+    display: inline-block;
     transform: rotate(-11deg);
 }
 
 #thanks
-{float: right;top: 50%;right: 3%;transform: rotate(11deg);}
+{float: right;display: inline-block;position: absolute;right: 0;bottom: 0;transform-origin: right;transform: rotate(9deg);}
 
 #hot-air-balloon-plain svg
 {}
@@ -657,7 +691,7 @@ height: 7.4rem;
 top: 90%;
 }
 
-#blimp-html path, ellipse
+#blimp-html path, #blimp-html ellipse
 {
 
 stroke-width: 0.1rem;
@@ -687,7 +721,6 @@ stroke-width: 0.1rem;
     outline: 1px solid #795548;
     width: 100%;
     height: auto;
-    max-width: 118rem;
 }
 
 #skill-anim-jquery path
@@ -726,6 +759,16 @@ stroke-width: 0.1rem;
 {
 
 height: auto;
+
+max-width: 70%;
+
+position: absolute;
+
+left: 0;
+
+right: 0;
+
+top: -29%;
 }
 
 .clouds-header > svg > path
@@ -841,10 +884,14 @@ height: 3rem;
 }
 
 #email
-{height: 34%;top: 38%;}
+{
+}
 
 #phone
-{}
+{
+    top: 33%;
+    max-width: 9rem;
+}
 
 #city-buildings rect
 {
@@ -854,16 +901,12 @@ height: 3rem;
 }
 
 #cv
-{}
+{
+    max-width: 9rem;
+}
 
 .paper-plane
 {
-  height: 20rem;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  position: absolute;
 }
 
 #contact-text
@@ -905,9 +948,13 @@ height: 100%;
 #skills-container
 {
 
-max-height: 183rem;
+height: auto;
+
+max-width: 167rem;
 
 border: solid 1px green;
+
+overflow: hidden;
 }
 
 #skills-header-text
@@ -926,11 +973,11 @@ border: solid 1px green;
 
 #skills-web-development
 {
-    top: 10rem;
-    left: 20%;
-    right: 0;
-    bottom: 0;
+    left: 22rem;
+    margin-bottom: -15rem;
     z-index: 1;
+    padding-top: 6rem;
+    max-width: 57rem;
 }
 
 
@@ -945,19 +992,11 @@ border: solid 1px green;
 
 #about-content-cloud-03
 {
-
-position: relative;
-
-margin-top: -16rem;
-
-z-index: -7;
 }
 
 #about-content-cloud-04
 {
     z-index: -1;
-  margin-top: -16rem;
-  margin-left: 1rem;
 }
 
 #about-content-03-text
@@ -1008,13 +1047,13 @@ svg
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 9%;
+  bottom: 10%;
   font-size: 6rem;
 }
 
 .font-div
 {
-  width: 36rem;
+  width: auto;
   font-size: 1.9rem;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
@@ -1087,18 +1126,10 @@ svg
 }
 
 .clouds-content
-{
-}
+{z-index: -1;width: auto;min-width: 80%;}
 
 .clouds-background
-{
-
-position: absolute;
-
-height: 100%;
-
-width: 100%;
-}
+{max-width: 19rem;position: absolute;height: auto;}
 
 .clouds-header
 {
@@ -1113,31 +1144,30 @@ width: 100%;
 {
   left: 0;
   right: 0;
-  overflow-y: visible;
   width: 100%;
   position: absolute;
   z-index: 1;
   height: 100%;
+  overflow: hidden;
 }
 
 
 #cloud-group-three-01
-{top: 50%;left: -35%;width: 30%;height: 12rem;}
+{top: 10%;max-width: 19rem;height: auto;left: 30%;}
 
 #cloud-group-three-02
-{width: 100%;height: 12rem;}
+{max-width: 19rem;height: auto;}
 
 #cloud-01
 {
-    left: 32%;
-    top: 27%;
+    left: 30%;
 }
 
 #cloud-02
-{right: 20%;top: 15%;}
+{right: 29%;}
 
 #cloud-03
-{z-index: -1;top: -38%;}
+{z-index: 3;top: 5rem;}
 
 #cloud
 {
@@ -1145,7 +1175,7 @@ width: 100%;
 }
 
 #cloud-rain
-{height: 24rem;top: 10%;width: 30%;}
+{/* height: auto; */left: 10%;max-width: 19rem;}
 
 #cloud-rain svg
 {height: 50%;}
@@ -1153,7 +1183,7 @@ width: 100%;
 .anim-rain
 {
   width: 100%;
-  height: 100%;
+  height: 12rem;
 }
 
 #anim-rain svg
@@ -1167,7 +1197,7 @@ width: 100%;
 /* BEGIN ABOUT */
 
 #about-container
-{margin-top: 7rem;}
+{height: auto;}
 
 #about-header
 {display: block;outline: 1px solid blue;max-width: 100%;width: 100%;max-height: 26rem;height: auto;}
@@ -1193,93 +1223,74 @@ width: 100%;
 #about-content-cloud-01
 {
 
-margin-top: -15rem;
-
 z-index: -1;
+
+width: auto;
+
+min-width: 80%;
 }
 
 .about-content
-{max-width: 40rem;width: auto;height: auto;/* min-width: 50rem; */}
+{max-width: 40rem;width: auto;/* height: auto; */}
 
 #about-content-01
 {
-    right: 29rem;
+    margin-left: 15%;
+    transform: translateY(50%);
 }
 
 #about-content-02
 {
-    left: 29rem;
-    bottom: 21rem;
+    transform: translateY(9%);
+    margin-right: 20%;
 }
 
 #about-content-03
-{
-    right: 29rem;
-    bottom: 31rem;
-}
+{margin-left: 15%;transform: translateY(-20%);}
 
 #about-content-04
+{transform: translateY(-41%);margin-right: 20%;}
+
+
+.bowler-hats *
 {
-    left: 29rem;
-    bottom: 41rem;
-}
-
-
-.bowler-hats svg
-{
-  height: fit-content;
-  fill: white;
-}
-
-.bowler-hats
-{
-
-width: 100%;
-
-height: 12rem;
-
-position: relative;
+  stroke-width: 0.15rem;
 }
 
 #bowler-hats-container
 {
 
-position: relative;
+width: 80%;
 
-width: 100%;
+/* position: relative; */
 
-top: -3rem;
+height: 100%;
+
+transform: translateY(12%);
 }
 
 #bowler-hat-01
-{margin-left: -7rem;}
+{
+    transform: translate(30%, 8%);
+    width: 62%;
+}
 
 #bowler-hat-02
-{
-
-margin-top: -11rem;
-
-margin-left: 7rem;
-}
+{transform: translate(-30%, 8%);width: 62%;}
 
 #bowler-hat-03
 {
-  margin-top: -8rem;
   z-index: 1;
+  transform: translateY(38%);
+  width: 62%;
 }
 
 #tools
 {
-
-width: 82%;
 }
 
 #game-controller
-{
-  margin-top: -22rem;
-  width: 100%;
-  margin-left: 6rem;
-}
+{left: 30%;top: -13%;}
 
 #about-content-02-icons
 {
@@ -1290,17 +1301,10 @@ position: relative;
 }
 
 #trophy
-{width: 38%;margin-left: -4rem;z-index: 1;transform: rotate(-8deg);}
+{transform: rotate(-8deg);max-width: 32%;top: -18%;right: 50%;}
 
 #about-content-cloud-02
-{
-
-position: relative;
-
-margin-top: -18rem;
-
-z-index: -1;
-}
+{}
 
 #planet-container
 {display: block;outline: 1px solid #5a25fe;width: 100%;height: auto;max-width: 61.5rem;}
@@ -1341,4 +1345,8 @@ body{
   background: yellow;
 }
 
+}
+
+#paper-plane-envelope-01
+{
 }
