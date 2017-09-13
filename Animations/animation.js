@@ -75,6 +75,80 @@ function setSvgAspectRatio(id, aspectRatio)
   }
 }
 
+
+function generateRoad(numOfRoads, svgElement, initialYOneValue, initialYTwoValue)
+{
+  var $roadArray = [];
+  var x1 = "x1";
+  var x2 = "x2";
+  var y1 = "y1";
+  var y2 = "y2";
+  var numOfLines = numOfRoads * 3;
+  var evenShift = 27;
+  var oddShift = 3;
+
+  for(var i = 0; i < numOfLines; i+=3)
+  {
+    var topLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+    var middleLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+    var bottomLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+
+    var x1Value;
+    var x2Value;
+
+    var y1Value;
+    var y2Value;
+
+    if(i & 1) // check if the current i bit results in an odd number
+    {
+
+      // flip the values
+      x1Value="100%";
+      x2Value="0%";
+      y1Value = initialYTwoValue;
+      y2Value = initialYOneValue;
+    }
+    else
+    {
+      x1Value ="0%";
+      x2Value = "100%";
+      y1Value = initialYOneValue;
+      y2Value = initialYTwoValue;
+    }
+
+    topLine.setAttribute('class', 'road-top');
+    topLine.setAttribute(x1, x1Value);
+    topLine.setAttribute(y1, "" + i + "%");
+    topLine.setAttribute(x2, x2Value);
+    topLine.setAttribute(y2, "" + i + "%");
+
+    middleLine.setAttribute('class', 'road-middle');
+    middleLine.setAttribute(x1, x1Value);
+    middleLine.setAttribute(y1, "" + i + "%");
+    middleLine.setAttribute(x2, x2Value);
+    middleLine.setAttribute(y2, "" + i + "%");
+
+    bottomLine.setAttribute('class', 'road-bottom');
+    bottomLine.setAttribute(x1, x1Value);
+    bottomLine.setAttribute(y1, "" + i + "%");
+    bottomLine.setAttribute(x2, x2Value);
+    bottomLine.setAttribute(y2, "" + i + "%");
+
+    console.log(i);
+    console.log(j);
+
+    $roadArray[i] = topLine;
+    $roadArray[i+1] = middleLine;
+    $roadArray[i+2] = bottomLine;
+    $(svgElement).append($roadArray);
+  }
+
+
+  // y1 and y2 incrementers switch on every new road
+}
+
+
+
 function Init()
 {
   // animate the first elements on load
@@ -132,6 +206,10 @@ function Init()
     setSvgAspectRatio('blimp-anim', "xMidYMid meet");
     setSvgAspectRatio('blimp-jquery', "xMidYMid meet");
     setSvgAspectRatio('blimp-js', "xMidYMid meet");
+
+
+    // generateRoad(6, ".road", 13, 24);
+
   })
 
   // check the rest of the elements are on screen
