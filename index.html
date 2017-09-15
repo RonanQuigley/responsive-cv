@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="Animations/jquery.fittext.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.min.js"></script>
   </head>
   <body onload="Init()">
@@ -436,7 +437,6 @@
               <title>Blimp_Web</title>
               <line id="_Path_" data-name="&lt;Path&gt;" class="cls-1" x1="121.3" y1="96" x2="223.5" y2="13.5"/>
               <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="108.8" y="188.6" width="126" height="35"/>
-              <text class="font-skills" transform="translate(114 219.5)">W<tspan x="12.9" y="0">eb </tspan><tspan x="32.3" y="0">D</tspan><tspan x="42.2" y="0">ev</tspan><tspan x="56.8" y="0">e</tspan><tspan x="64.4" y="0">l</tspan><tspan x="67.4" y="0">opment</tspan></text>
               <circle id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" cx="223.5" cy="13.5" r="13"/>
               <path id="_Path_3" data-name="&lt;Path&gt;" class="cls-1" d="M351.9,30.4s-37.6,50.2-37.6,90.8,29.8,38.7,37.6,83.7c3.7-45,23-49.4,13.2-73.4C340.8,81.8,351.9,30.4,351.9,30.4Z"/>
               <ellipse class="cls-1" cx="172.2" cy="120.3" rx="171.7" ry="81.5"/>
@@ -444,6 +444,11 @@
               <svg id="skill-anim-web-dev"  class="skill-anims">
               </svg>
             </svg>
+            <div id="font-container-web" class="font-skills-new">
+              <div id="blimp-web-font">
+                Web Development
+              </div>
+            </div>
           </div>
           <div id="skills-html" class="skill">
             <svg id="blimp-html" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 365.9 185.3">
@@ -459,11 +464,16 @@
               <title>Blimp_HTML</title>
               <ellipse id="_Path_" data-name="&lt;Path&gt;" class="cls-1" cx="28" cy="82.1" rx="27.5" ry="73.5"/>
               <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="171.4" y="149.8" width="45" height="35"/>
-              <text class="font-skills" transform="translate(175.5 180.6)">HTML</text>
+
               <ellipse class="cls-1" cx="193.7" cy="82" rx="171.7" ry="81.5"/>
               <svg id="skill-anim-html" class="skill-anims">
               </svg>
             </svg>
+            <div id="font-container-html" class="font-skills-new">
+              <div id="blimp-html-font">
+                HTML
+              </div>
+            </div>
           </div>
           <div id="skills-css" class="skill">
             <svg id="blimp-css" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.8 185.8">
@@ -478,7 +488,6 @@
               </defs>
               <title>Blimp_CSS</title>
               <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="155.4" y="150.3" width="34" height="35"/>
-              <text class="font-skills" transform="translate(160.2 181.2)">CSS</text>
               <ellipse class="cls-1" cx="172.2" cy="82" rx="171.7" ry="81.5"/>
               <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M357.9,6.2a206.1,206.1,0,0,0-14.3,73.6,204.3,204.3,0,0,0,14.3,73.4s-27.5-32.9-27.5-73.5S357.9,6.2,357.9,6.2Z"/>
               <circle id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" cx="344.2" cy="79.3" r="5.8"/>
@@ -486,30 +495,40 @@
               <svg id="skill-anim-css" class="skill-anims">
               </svg>
             </svg>
+            <div id="font-container-css" class="font-skills-new">
+              <div id="blimp-css-font">
+                CSS
+              </div>
+            </div>
           </div>
         </div>
         <div id="skills-group-02" class="skills-group">
-                              <div id="skills-js" class="skill">
-                                <svg id="blimp-js" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362.9 185.8">
-                                  <defs>
-                                    <style>
-                                      .cls-1 {
-                                        fill: #fff;
-                                        stroke: #231f20;
-                                        stroke-miterlimit: 10;
-                                      }
-                                    </style>
-                                  </defs>
-                                  <title>Blimp_JavaScript</title>
-                                  <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M1.4,8.2L292.6,82,1.4,155.2s27.5-32.9,27.5-73.5S1.4,8.2,1.4,8.2Z"/>
-                                  <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="154.6" y="150.3" width="72" height="35"/>
-                                  <text class="font-skills" transform="translate(157.3 181.2)">J<tspan x="7.8" y="0">a</tspan><tspan x="15.8" y="0">v</tspan><tspan x="22.9" y="0">aScript</tspan></text>
-                                  <ellipse class="cls-1" cx="190.7" cy="82" rx="171.7" ry="81.5"/>
-                                  <circle id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" cx="19.2" cy="81.5" r="5.8"/>
-                                  <svg id="skill-anim-js" class="skill-anims">
-                                  </svg>
-                                </svg>
-                              </div>
+        <div id="skills-js" class="skill">
+          <svg id="blimp-js" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362.9 185.8">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                  stroke: #231f20;
+                  stroke-miterlimit: 10;
+                }
+              </style>
+            </defs>
+            <title>Blimp_JavaScript</title>
+            <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M1.4,8.2L292.6,82,1.4,155.2s27.5-32.9,27.5-73.5S1.4,8.2,1.4,8.2Z"/>
+            <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="154.6" y="150.3" width="72" height="35"/>
+
+            <ellipse class="cls-1" cx="190.7" cy="82" rx="171.7" ry="81.5"/>
+            <circle id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" cx="19.2" cy="81.5" r="5.8"/>
+            <svg id="skill-anim-js" class="skill-anims">
+            </svg>
+          </svg>
+          <div id="font-container-js" class="font-skills-new">
+            <div id="blimp-js-font">
+              JavaScript
+            </div>
+          </div>
+        </div>
           <div id="skills-animation" class="skill">
             <svg id="blimp-anim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372.6 185.3">
               <defs>
@@ -524,11 +543,16 @@
               <title>Blimp_Animation</title>
               <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M344.4,8.3c9.1,0,0,22,5.1,40.2,3.4,12.2,22.4,33.3,22.4,33.3s-18.4,21.5-22,34c-5,17.2,3.3,39.5-5.5,39.5-15.2,0-27.5-32.9-27.5-73.5S329.3,8.3,344.4,8.3Z"/>
               <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="136.3" y="149.8" width="72" height="35"/>
-              <text class="font-skills" transform="translate(140.5 180.6)">Animation</text>
+
               <ellipse class="cls-1" cx="172.2" cy="82" rx="171.7" ry="81.5"/>
               <svg id="skill-anim-animation" class="skill-anims">
               </svg>
             </svg>
+            <div id="font-container-animation" class="font-skills-new">
+              <div id="blimp-animation-font">
+                Animation
+              </div>
+            </div>
           </div>
 
           <div id="skills-jquery" class="skill">
@@ -546,13 +570,16 @@
               <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M38.1,2.1S0.5,52.3.5,92.9s29.8,38.7,37.6,83.7c3.7-45,23-49.4,13.2-73.4C27,53.6,38.1,2.1,38.1,2.1Z"/>
               <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="cls-1" x="165.2" y="157.1" width="54" height="35"/>
               <ellipse class="cls-1" cx="192.3" cy="89.4" rx="171.7" ry="81.5"/>
-              <text class="font-skills" transform="translate(170.2 188)">Jquery</text>
               <circle id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" cx="20.8" cy="89.1" r="5.8"/>
               <svg id="skill-anim-jquery" class="skill-anims">
               </svg>
             </svg>
+            <div id="font-container-jquery" class="font-skills-new">
+              <div id="blimp-jquery-font">
+                Jquery
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
 

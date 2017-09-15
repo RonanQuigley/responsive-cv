@@ -208,6 +208,13 @@ function Init()
     setSvgAspectRatio('blimp-js', "xMidYMid meet");
 
 
+    // dynamic font sizing for blimps
+    $("#blimp-web-font").fitText();
+    $("#blimp-html-font").fitText();
+    $("#blimp-css-font").fitText();
+    $("#blimp-animation-font").fitText();
+    $("#blimp-js-font").fitText();
+    $("#blimp-jquery-font").fitText();
     // generateRoad(6, ".road", 13, 24);
 
   })
