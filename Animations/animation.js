@@ -147,7 +147,48 @@ function generateRoad(numOfRoads, svgElement, initialYOneValue, initialYTwoValue
   // y1 and y2 incrementers switch on every new road
 }
 
+function convertPXtoRem(px) {
+    return px / parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
 
+var sizeReset = false;
+
+function counter(number)
+{
+  var myVar = number;
+  console.log(myVar);
+  return function()
+  {
+    var newValue = myVar += 1;
+    console.log(newValue);
+    return newValue;
+  }
+};
+
+var foo = counter;
+
+var resizeBlimpRect = (function(element, scaledSize, fullSize)
+{
+  return function()
+  {
+    if($('body').css("min-width") <= "320px" && $('body').css("min-width") > "0px" && !sizeReset)
+    {
+      _elem.setAttribute('width', _scaledSize, _fullSize);
+      console.log("hello");
+      sizeReset = true;
+    }
+    else if($('body').css("min-width") == "0px" && sizeReset)
+    {
+      elem.setAttribute('width', '200');
+      console.log("bye");
+      sizeReset = false;
+    }
+
+    setInterval(function(){
+        resizeBlimpRect('.blimp-web-svg', _scaledSize, _fullSize);
+    }, 10)
+  }
+}());
 
 function Init()
 {
@@ -216,6 +257,11 @@ function Init()
     $("#blimp-js-font").fitText();
     $("#blimp-jquery-font").fitText();
     // generateRoad(6, ".road", 13, 24);
+
+    foo(1);
+
+
+    //resizeBlimpRect('blimp-web-svg', 1, 10);
 
   })
 

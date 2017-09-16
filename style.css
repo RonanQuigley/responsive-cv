@@ -334,6 +334,7 @@ div.road-container div:nth-child(2n)
 
 #skill-anim-jquery
 {
+    transform: translateY(30);
 }
 
 #skill-anim-animation
@@ -1531,9 +1532,15 @@ margin-bottom: 11rem;
     background: orange;
   }
 
+  #font-container-animation
+  {
+  margin-bottom: 0%;
+  }
+
   .font-skills-new
   {
     padding-left: 0.5%;
+    margin-bottom: 2%;
   }
 
   #contact-header
@@ -1783,9 +1790,9 @@ right: 0;
 @media only screen and (max-width: 30em)
 {
   body{
-    background: yellow;
     max-width: 100%;
     min-width: 320px;
+    background: yellow;
   }
 
   .font-skills-new
