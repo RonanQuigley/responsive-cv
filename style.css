@@ -19,6 +19,8 @@
 .road-middle
 {
   stroke-dasharray: 6rem;
+  stroke-width: 0.15rem;
+  stroke: black;
 }
 .clouds-contact > svg
 {
@@ -60,6 +62,10 @@ height: auto;
   position:absolute;
 }
 
+#first-road
+{
+  margin-top: -31.2rem;
+}
 
 .blimp-container
 {
@@ -144,6 +150,14 @@ top: 5rem;
 left: 8rem;
 }
 
+#foliage-container
+{
+z-index: -9998;
+width: 100%;
+position: absolute;
+height: 620rem;
+}
+
 #paper-plane-container-01
 {
 
@@ -163,7 +177,7 @@ transform: rotate(14deg);
 }
 
 #paper-plane-container-03
-{z-index: -1;right: 0;transform: rotate(14deg);}
+{z-index: -1;right: 0;transform: rotate(16deg);}
 
 #paper-plane-container-04
 {
@@ -257,17 +271,6 @@ div.road-container div:nth-child(2n)
   transform: scaleX(-1);
 }
 
-
-.road svg
-{
-}
-
-.road *
-{
-  stroke-width: 0.2rem;
-  stroke: black;
-}
-
 #hot-air-balloon-plain *
 {
   stroke-width: 0.1rem;
@@ -275,26 +278,503 @@ div.road-container div:nth-child(2n)
   fill: white;
 }
 
+#fire-01
+{
+  max-width: 6.1rem;
+  height: auto;
+  top: 1.3%;
+  right: 41.8%;
+}
+
+#fire-02
+{
+width: 6.1rem;
+height: auto;
+top: 54.6%;
+right: 37.9%;
+}
+
+.road-sign
+{
+  width: 1rem;
+  position: absolute;
+  height: auto;
+  /* overflow: visible; */
+}
+
+.road-sign > svg *
+{
+    stroke#-width: 571px;
+    fill: white;
+    stroke: black;
+    stroke-width: 1.8px;
+}
+
+#road-sign-01
+{
+top: 1.9%;
+width: 4rem;
+left: 15%;
+}
+
+
+#vegetation-group-01
+{width: 10rem;height: 12rem;left: 78.4%;top: 2.7%;position: absolute;}
+
+#vegetation-group-02
+{width: 10rem;height: 12rem;left: 78.4%;top: 64.7%;position: absolute;}
+
+#tree-group-01
+{
+  max-width: 13rem;
+  height: 18rem;
+  top: 6.5%;
+  left: 33%;
+}
+
+#tree-01
+{left: 57%;max-width: 100%;width: 100%;height: 100%;}
+
+#tree-02
+{z-index: 0;top: 26%;left: 16%;height: 100%;}
+
+#tree-03
+{
+z-index: -2;
+left: -20%;
+top: -7%;
+height: 100%;
+width: 9rem;
+}
+
+#tree-04
+{
+top: -0.9%;
+left: 3.5%;
+width: 11rem;
+z-index: -1;
+}
+
+#tree-05
+{
+top: 0.7%;
+left: 76%;
+}
+
+#tree-06
+{
+top: 9%;
+left: 4%;
+transform: scaleX(-1);
+width: 11.3rem;
+}
+
+#tree-07
+{
+top: 19.9%;
+left: 21.7%;
+width: 10.5rem;
+z-index: -2;
+}
+
+#tree-08
+{
+
+}
+
+#tree-09
+{
+top: 14.5%;
+left: 10.5%;
+width: 10rem;
+}
+
+#tree-10
+{
+top: 14%;
+width: 7.5rem;
+left: 14.5%;
+z-index: -1;
+}
+
+#tree-11
+{
+top: 40%;
+left: 3%;
+width: 9rem;
+}
+
+#tree-12
+{left: 4%;max-width: 100%;width: 100%;height: 100%;}
+
+#tree-13
+{
+top: -19%;
+left: 33%;
+max-width: 100%;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+
+#tree-14
+{top: 37%;left: 81%;width: 10rem;}
+
+#tree-15
+{
+top: 29.2%;
+left: 86%;
+width: 9.5rem;
+}
+
+#tree-16
+{
+top: 44%;
+left: 90%;
+}
+
+#tree-17
+{
+top: 0%;
+left: 0;
+}
+
+#tree-18
+{width: 13rem;left: 49.4%;top: 6.4%;}
+
+#tree-19
+{
+left: 100%;
+width: 100%;
+height: 100%;
+}
+
+#tree-20
+{
+width: 100%;
+height: 100%;
+left: 60%;
+top: 19%;
+}
+
+#tree-21
+{
+width: 100%;
+height: 100%;
+left: 12%;
+top: -14%;
+z-index: -3;
+}
+
+#tree-22
+{
+
+}
+
+#tree-23
+{
+top: 22%;
+left: 70%;
+}
+
+#tree-24
+{
+top: 20.5%;
+width: 8rem;
+left: 18.5%;
+z-index: -5;
+}
+
+#tree-25
+{
+top: 25%;
+left: 52%;
+}
+
+#tree-26
+{
+top: 25.9%;
+left: 59.3%;
+}
+
+#tree-27
+{
+  top: 44.9%;
+  left: 86.3%;
+  width: 12.5rem;
+}
+
+#tree-28
+{
+  top: 52%;
+  left: 65%;
+}
+
+#tree-29
+{
+  top: 50.4%;
+  left: 63.8%;
+  width: 10rem;
+  z-index: -2;
+}
+
+#tree-30
+{
+  top: 52.4%;
+  left: 20.8%;
+  width: 9.5rem;
+  z-index: -2;
+}
+
+#tree-31
+{
+  top: 58.4%;
+  left: 69.3%;
+  width: 8.1rem;
+  z-index: -2;
+}
+
+#tree-32
+{
+  top: 59.1%;
+  left: 71.8%;
+  width: 13rem;
+  z-index: -2;
+}
+
+#tree-group-03
+{
+  width: 18rem;
+  height: 16rem;
+  top: 20.8%;
+  left: -36.1%;
+}
+
+#tree-group-04
+{
+  width: 15rem;
+  height: 12rem;
+  top: 32%;
+  left: 11%;
+  position: absolute;
+}
+
+#tree-group-05
+{
+  width: 18rem;
+  height: 12rem;
+  left: 7.5%;
+  top: 61%;
+  position: absolute;
+}
+
+#tree-group-06
+{width: 17rem;height: 17rem;top: 47.4%;/* transform: scaleX(-1); */left: 12.4%;position: absolute;}
+
+#tree-group-02
+{
+  width: 12rem;
+  height: 14rem;
+  top: 8.4%;
+  left: 29.8%;
+}
+
+#bush-01
+{
+width: 65%;
+height: 100%;
+top: -6%;
+left: -51%;
+z-index: -1;
+}
+
+
+
+#flower-01
+{
+z-index: 1;
+width: 25%;
+height: 100%;
+left: -24%;
+top: 9%;
+}
+
+#bush-02
+{
+top: 24.3%;
+left: 26%;
+z-index: -1;
+width: 7rem;
+}
+
+#bush-03
+{
+top: 8.4%;
+left: 48%;
+z-index: -1;
+width: 7rem;
+transform: scaleX(-1);
+}
+
+#bush-04
+{
+  top: 47.4%;
+  left: 90%;
+  z-index: 2;
+  width: 6rem;
+}
+
+#bush-05
+{
+  top: 60.4%;
+  left: 67%;
+  z-index: 2;
+  width: 6rem;
+  z-index: -3;
+}
+
+#grass-01
+{
+
+z-index: -1;
+
+width: 100%;
+
+left: 2%;
+
+height: 100%;
+
+top: 7%;
+}
+
+#grass-02
+{
+z-index: 1;
+top: 16.3%;
+left: 13%;
+width: 10rem;
+}
+
+#grass-03
+{
+z-index: 1;
+top: 32%;
+left: 84.5%;
+width: 7.9rem;
+}
+
+#grass-04
+{
+top: 24.35%;
+left: 72.9%;
+width: 7.1rem;
+transform: scaleX(-1);
+z-index: -1;
+}
+
+#grass-05
+{
+top: 145%;
+left: -20%;
+max-width: 7.1rem;
+z-index: 2;
+}
+
+#grass-06
+{
+  top: 120%;
+  transform: scaleX(-1);
+  left: 49%;
+  max-width: 7.1rem;
+  z-index: -2;
+}
+
+#grass-07
+{
+  top: 120%;
+  transform: scaleX(-1);
+  left: 49%;
+  max-width: 7.1rem;
+  z-index: -2;
+}
+
+#grass-08
+{
+  top: 137%;
+  transform: scaleX(-1);
+  left: -20%;
+  max-width: 7.1rem;
+  z-index: 2;
+}
+
+#grass-09
+{
+  top: 54%;
+  left: 62%;
+  z-index: -1;
+  width: 9rem;
+}
+
+#flower-02
+{
+z-index: -2;
+left: 71%;
+top: -17%;
+}
+
+
+#flower-03
+{
+  z-index: -2;
+  left: 94%;
+  top: 47%;
+  width: 2.3rem;
+}
+
+#flower-04
+{
+  z-index: -2;
+  left: 24.4%;
+  top: 22.2%;
+  width: 3rem;
+}
+
+#flower-05
+{
+  z-index: 2;
+  left: 5.9%;
+  top: 42.2%;
+  width: 2.5rem;
+}
+
+
+#flower-06
+{
+  z-index: 2;
+  left: 71.9%;
+  top: 61.2%;
+  max-width: 2.5rem;
+}
+
+
+
+
+
 
 #blimp-anim
-{
-}
+{overflow: visible;}
 
 #blimp-js
-{
-}
+{overflow: visible;}
 
 #blimp-jquery
-{
-}
+{overflow: visible;}
 
 #blimp-css
-{
-}
+{overflow: visible;}
 
 #blimp-html
-{
-}
+{overflow: visible;}
 
 .city-building {
   fill: #fff;
@@ -372,11 +852,24 @@ left: -1.6rem;
   right: 0;
 }
 
+.road-top
+{
+  stroke-width: 0.15rem;
+  stroke: black;
+}
+
+.road-bottom
+{
+  stroke-width: 0.15rem;
+  stroke: black;
+}
+
+
 #intro-container
 {
     height: auto;
     border: solid 1px green;
-    margin-bottom: 6rem;
+    z-index: -9999;
 }
 
 
@@ -503,7 +996,7 @@ font-weight: 200;
 #email-section
 {
     margin-right: 55%;
-    top: 50%;
+    top: 44%;
 }
 
 #phone-section
@@ -530,7 +1023,7 @@ font-weight: 200;
 
 #cloud-grouping-section
 {
-    margin-left: 55%;
+    margin-left: 64%;
     height: auto;
     z-index: -1;
 }
@@ -611,7 +1104,7 @@ transform: rotate(-116deg);
 
 #font-container-html
 {
-left: 2.8%;
+left: 3%;
 }
 
 #font-container-css
@@ -673,17 +1166,19 @@ transform: rotate(-116deg);
     height: auto;
     max-width: 167rem;
     outline: solid 1px black;
-    fill: white
+    fill: white;
+    margin-bottom: 2rem;
 }
 
 #copyright-text
 {
     display: inline-block;
     transform: rotate(-11deg);
+    padding-left: 1rem;
 }
 
 #thanks
-{float: right;display: inline-block;position: absolute;right: 0;bottom: 0;transform-origin: right;transform: rotate(9deg);}
+{float: right;display: inline-block;position: absolute;right: 0;bottom: 0;transform-origin: right;transform: rotate(9deg);padding-right: 1rem;}
 
 #hot-air-balloon-plain svg
 {}
@@ -843,7 +1338,15 @@ top: -30%;
 }
 
 .road
-{top: 0;left: 0;overflow: inherit;height: calc(20vw + 25rem);max-width: 230rem;outline: solid 2px red;margin-bottom: 6rem;}
+{
+  top: 0;
+  left: 0;
+  overflow: inherit;
+  height: 10.05%;
+  max-width: 230rem;
+  outline: solid 2px red;
+  margin-bottom: 6rem;
+}
 
 
 #solid-line-01
@@ -885,20 +1388,15 @@ stroke-width: 1rem;
 
 .road-container
 {
-
-position: absolute;
-
-max-width: 270rem;
-
-left: 0;
-
-right: 0;
-
-outline: solid cornflowerblue 10px;
-
-height: auto;
-
-overflow: hidden;
+position: absolute;
+max-width: 270rem;
+left: 0;
+right: 0;
+outline: solid cornflowerblue 10px;
+height: 620rem;
+overflow: hidden;
+z-index: -99999;
+transform: scaleX(-1);
 }
 
 #road-05
@@ -926,27 +1424,16 @@ overflow: hidden;
 
 }
 
-#bush
-{
-
-height: 3rem;
-}
-
-#grass
-{
-
-height: 3rem;
-}
-
-#flower
-{
-
-height: 3rem;
-}
-
 .foliage
 {
-  height: 10rem;
+  max-width: 13rem;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  position: absolute;
 }
 
 #email
@@ -1030,8 +1517,7 @@ height: 100%;
 
 
 #blimp-web
-{
-}
+{overflow: visible;}
 
 #skills-web-development
 {
@@ -1097,7 +1583,6 @@ body
   margin:0 auto;
   position: relative;
   overflow-x:hidden;
-
 }
 
 svg
@@ -1105,7 +1590,7 @@ svg
   width: 100%;
   height: 100%;
   display: block;
-  fill: white;
+  /* fill: white; */
 }
 
 .font-header
@@ -1132,12 +1617,13 @@ svg
 }
 
 #wrapper-background
-{width: 100%;position: absolute;top: 77rem;}
+{width: 100%;position: absolute;/* top: 77rem; */}
 
 #wrapper-foreground
 {
   margin: 0 auto;
   width: 100%;
+  overflow-y: hidden;
 }
 
 #city-container
@@ -1266,7 +1752,7 @@ svg
 /* BEGIN ABOUT */
 
 #about-container
-{height: auto;}
+{height: auto;margin-top: 6rem;}
 
 #about-header
 {display: block;outline: 1px solid blue;max-width: 100%;width: 100%;height: auto;}
@@ -1411,6 +1897,18 @@ position: relative;
     background: red;
   }
 
+  .road
+  {
+    height: 7.8%;
+  }
+
+
+  #first-road
+  {
+    margin-top: -23.5rem;
+  }
+
+
   .font-skills-new
   {
   }
@@ -1530,6 +2028,22 @@ margin-bottom: 11rem;
   body
   {
     background: orange;
+  }
+
+  .road
+  {
+    height: 7.35%;
+  }
+
+  #first-road
+  {
+    margin-top: -23rem;
+  }
+
+  #copyright-container
+  {
+    background: white;
+    margin-bottom: 0;
   }
 
   #font-container-animation
@@ -1695,7 +2209,7 @@ margin-bottom: 2%;
 
 
 .clouds-header
-{max-width: 80%;width: 40rem;}
+{max-width: 80%;width: 36rem;}
 
 
   .about-content
@@ -1795,8 +2309,51 @@ right: 0;
     background: yellow;
   }
 
+  #foliage-container
+  {
+    display: none;
+  }
+
+  .copyright-font
+  {
+    font-size: 2.2rem;
+  }
+
+  #wrapper-background
+  {
+    display: none;
+  }
+
+  .road-middle
+  {
+    stroke-dasharray: 3rem;
+    stroke-width: 0.1rem;
+  }
+
+  .road-top
+  {
+    stroke-width: 0.1rem;
+  }
+
+  .road-bottom
+  {
+    stroke-width: 0.1rem;
+  }
+
+  .road
+  {
+    height: 3.2%;
+    vector-effect:;
+  }
+
+  #first-road
+  {
+    margin-top: -9.8rem;
+  }
+
   .font-skills-new
   {
+  width: 50%;
   }
 
   #contact-description-section

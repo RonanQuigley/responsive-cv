@@ -1,0 +1,48 @@
+<svg id="Sign" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 71.756 85.712">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path-2);
+      }
+    </style>
+    <clipPath id="clip-path" transform="translate(-1470.124 -544.868)">
+      <polygon class="cls-1" points="1501.231 630.581 1502.111 577.636 1510.771 576.419 1509.892 629.363 1501.231 630.581"/>
+    </clipPath>
+    <clipPath id="clip-path-2" transform="translate(-1470.124 -544.868)">
+      <polygon class="cls-1" points="1470.124 599.131 1470.859 554.85 1541.879 544.868 1541.144 589.149 1470.124 599.131"/>
+    </clipPath>
+  </defs>
+  <title>Road_Sign_V2</title>
+  <g class="cls-2">
+    <g class="cls-3">
+      <g>
+        <polyline class="cls-4" points="39.767 32.633 32.837 33.607 31.989 84.629 38.919 83.655 39.767 32.633"/>
+        <path d="M1502.113,629.5l0.848-51.021,6.93-.974-0.848,51.021-6.93.974m8.659-53.079-8.66,1.217-0.88,52.945,8.66-1.217,0.88-52.945" transform="translate(-1470.124 -544.868)"/>
+      </g>
+    </g>
+  </g>
+  <g class="cls-2">
+    <g class="cls-5">
+      <g>
+        <polyline class="cls-4" points="70.875 1.083 1.585 10.821 0.881 53.179 70.171 43.441 70.875 1.083"/>
+        <path d="M1471,598.047l0.7-42.358L1541,545.952l-0.7,42.358L1471,598.047m70.875-53.179-71.02,9.981-0.736,44.281,71.02-9.981,0.736-44.281" transform="translate(-1470.124 -544.868)"/>
+      </g>
+    </g>
+  </g>
+</svg>

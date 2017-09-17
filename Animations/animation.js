@@ -1,6 +1,5 @@
 function Animate(element, data, bool, svgAspectRatio)
 {
-
   if(svgAspectRatio === undefined)
   {
     svgAspectRatio = "xMidYMid meet";
@@ -29,19 +28,6 @@ function Animate(element, data, bool, svgAspectRatio)
   var anim;
 	anim = bodymovin.loadAnimation(animData);
 }
-
-function CheckScrollPosition(element, data)
-{
-  var waypoint = new Waypoint({
-    element: document.getElementById(element),
-    handler: function() {
-      Animate(element, data)
-      this.destroy(); // destroy the instance to prevent stacking
-    },
-    offset: "100%" // makes the element appear at the bottom of the page
-  })
-}
-
 
 function setSvgViewBox(svgID, xOffset, yOffset, width, height)
 {
@@ -151,89 +137,79 @@ function convertPXtoRem(px) {
     return px / parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
-var sizeReset = false;
-
-function counter(number)
+function resizeBlimpSVGRect(element, scaledWidth, fullWidth, scaledHeight, fullHeight, scaledX, fullX, scaledY, fullY)
 {
-  var myVar = number;
-  console.log(myVar);
-  return function()
+  // assign all parameters to closure var's
+  var _element = $('.' + element);
+  var _scaledWidth = scaledWidth;
+  var _fullWidth = fullWidth;
+  var _scaledHeight = scaledHeight;
+  var _fullHeight = fullHeight;
+  var _scaledX = scaledX;
+  var _scaledY = scaledY;
+  var _fullX = fullX;
+  var _fullY = fullY;
+  var _sizeReset = false; // when the size has been reset to full size; prevents unnecessary repeat function calls
+  return function resizer() // performs the resizing for the given element
   {
-    var newValue = myVar += 1;
-    console.log(newValue);
-    return newValue;
+    var _bodyMinWidth = $('body').css('min-width');
+    if(_bodyMinWidth <= "320px" && _bodyMinWidth > "0px" && !_sizeReset)
+    {
+      _element.attr('width', _scaledWidth);
+      _element.attr('height', _scaledHeight);
+      _element.attr('x', '' + _scaledX);
+      _element.attr('y', '' + _scaledY);
+      _sizeReset = true;
+    }
+    else if(_bodyMinWidth == "0px" && _sizeReset)
+    {
+      _element.attr('width', _fullWidth);
+      _element.attr('height', _fullHeight);
+      _element.attr('x', '' + _fullX);
+      _element.attr('y', '' + _fullY);
+      _sizeReset = false;
+    }
+
   }
 };
 
-var foo = counter;
 
-var resizeBlimpRect = (function(element, scaledSize, fullSize)
+function doSomething()
 {
-  return function()
-  {
-    if($('body').css("min-width") <= "320px" && $('body').css("min-width") > "0px" && !sizeReset)
-    {
-      _elem.setAttribute('width', _scaledSize, _fullSize);
-      console.log("hello");
-      sizeReset = true;
-    }
-    else if($('body').css("min-width") == "0px" && sizeReset)
-    {
-      elem.setAttribute('width', '200');
-      console.log("bye");
-      sizeReset = false;
-    }
+  $('#road-sign-01').each(function(){
+      var img         = $(this);
+      var image_uri   = img.attr('src');
 
-    setInterval(function(){
-        resizeBlimpRect('.blimp-web-svg', _scaledSize, _fullSize);
-    }, 10)
-  }
-}());
+      $.get(image_uri, function(data) {
+          var svg = $(data).find('svg');
+          svg.removeAttr('xmlns:a');
+          img.replaceWith(svg);
+      }, 'xml');
+  });
+}
+
 
 function Init()
 {
-  // animate the first elements on load
-  /*Animate('planet', 'Animations/planet.json', 0, 300, 1920, 500, true, "xMidYMin meet");
-  Animate('skill-anim-web-dev', 'Animations/skills-web-development.json', 0, 0, 1146, 670, true, "xMidYMid meet");
-  Animate('skill-anim-html', 'Animations/skills-html.json');
-  Animate('skill-anim-css', 'Animations/skills-css.json');
-  Animate('skill-anim-jquery', 'Animations/skills-jquery.json');
-  Animate('skill-anim-js', 'Animations/skills-javascript.json');
-  Animate('skill-anim-animation', 'Animations/skills-animation.json');
-  Animate('anim-rain-01', 'Animations/rain.json');
-  Animate('anim-rain-02', 'Animations/rain.json');
-  Animate('anim-rain-03', 'Animations/rain.json');
-  Animate('anim-rain-04', 'Animations/rain.json');
-  Animate('anim-city-flyover-one', 'Animations/city-flyover-one.json', 0, 0, 700, 300, true, "xMidYMax meet");
-  Animate('anim-city-flyover-three', 'Animations/city-flyover-three.json', 0, 0, 700, 300, true, "xMidYMax meet");
-  Animate('anim-city-flyover-five', 'Animations/city-flyover-five.json', 0, 0, 700, 300, true, "xMidYMax meet");
-  */
 
-/*
-  Animate('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMax meet");
-  Animate('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMax meet");
-  Animate('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMax meet");
-  Animate('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMax meet");
-  Animate('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMax meet");
-  Animate('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMax meet");
-*/
+  Animate('planet', 'Animations/planet.json', true, "xMidYMin meet");
+  Animate('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMid meet");
+  Animate('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMid meet");
+  Animate('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMid meet");
+  Animate('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMid meet");
+  Animate('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMid meet");
+  Animate('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMid meet");
+  Animate('anim-rain-01', 'Animations/rain.json', true, "xMidYMid meet");
+  Animate('anim-rain-02', 'Animations/rain.json', true, "xMidYMid meet");
+  Animate('anim-rain-03', 'Animations/rain.json', true, "xMidYMid meet");
+  Animate('anim-rain-04', 'Animations/rain.json', true, "xMidYMid meet");
+  Animate('fire-01', 'Animations/fire.json', true, "xMidYMid meet");
+  Animate('fire-02', 'Animations/fire.json', true, "xMidYMid meet");
 
-
-    Animate('planet', 'Animations/planet.json', true, "xMidYMin meet");
-    Animate('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMid meet");
-    Animate('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMid meet");
-    Animate('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMid meet");
-    Animate('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMid meet");
-    Animate('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMid meet");
-    Animate('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMid meet");
-    Animate('anim-rain-01', 'Animations/rain.json', true, "xMidYMid meet");
-    Animate('anim-rain-02', 'Animations/rain.json', true, "xMidYMid meet");
-    Animate('anim-rain-03', 'Animations/rain.json', true, "xMidYMid meet");
-    Animate('anim-rain-04', 'Animations/rain.json', true, "xMidYMid meet");
 
   $(document).ready(function()
   {
-
+    console.log("hello");
     setSvgViewBox('skill-anim-web-dev', -500, -385, 2292, 1340);
     setSvgViewBox('skill-anim-html', -840, -220, 2292, 1340);
     setSvgViewBox('skill-anim-css', -450, -130, 2322, 1600);
@@ -248,7 +224,6 @@ function Init()
     setSvgAspectRatio('blimp-jquery', "xMidYMid meet");
     setSvgAspectRatio('blimp-js', "xMidYMid meet");
 
-
     // dynamic font sizing for blimps
     $("#blimp-web-font").fitText();
     $("#blimp-html-font").fitText();
@@ -256,16 +231,25 @@ function Init()
     $("#blimp-animation-font").fitText();
     $("#blimp-js-font").fitText();
     $("#blimp-jquery-font").fitText();
-    // generateRoad(6, ".road", 13, 24);
-
-    foo(1);
 
 
-    //resizeBlimpRect('blimp-web-svg', 1, 10);
+
+    var refreshRate = 30;
+    var resizeWebBlimp = resizeBlimpSVGRect("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
+    setInterval(resizeWebBlimp, refreshRate);
+    var resizeHTMLBlimp = resizeBlimpSVGRect("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
+    setInterval(resizeHTMLBlimp, refreshRate);
+    var resizeCSSBlimp = resizeBlimpSVGRect("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
+    setInterval(resizeCSSBlimp, refreshRate);
+    var resizeAnimationBlimp = resizeBlimpSVGRect("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
+    setInterval(resizeAnimationBlimp, refreshRate);
+    var resizeJqueryBlimp = resizeBlimpSVGRect("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
+    setInterval(resizeJqueryBlimp, refreshRate);
+    var resizeJSBlimp = resizeBlimpSVGRect("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
+
+
+    // doSomething();
 
   })
 
-  // check the rest of the elements are on screen
-  // CheckScrollPosition('skills-bm-animation', 'Animations/skills.json');
-  // CheckScrollPosition('contact-bm-animation','Animations/contact.json');
 }
