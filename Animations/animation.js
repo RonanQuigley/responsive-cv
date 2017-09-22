@@ -173,19 +173,51 @@ function resizeBlimpSVGRect(element, scaledWidth, fullWidth, scaledHeight, fullH
   }
 };
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
-function doSomething()
+function animateSVGElementSideWays(element, easing, minSpeed, maxSpeed, minHeight, maxHeight)
 {
-  $('#road-sign-01').each(function(){
-      var img         = $(this);
-      var image_uri   = img.attr('src');
+  var _elem = $(element);
+  // set the initial position offscreen left
+  var animate_loop = function() {
+    var _speed = getRandomArbitrary(minSpeed * 1000, maxSpeed * 1000);
+    var _height = getRandomArbitrary(minHeight, maxHeight);
+    _elem.css('left', -12 + '%');
+    _elem.css('top', _height + '%');
+    _elem.animate({left: "100%"}, _speed, easing, function() {animate_loop();})
+  }
+  animate_loop();
+}
 
-      $.get(image_uri, function(data) {
-          var svg = $(data).find('svg');
-          svg.removeAttr('xmlns:a');
-          img.replaceWith(svg);
-      }, 'xml');
-  });
+function animateSVGElementUpwards(element, easing, minSpeed, maxSpeed)
+{
+  var _elem = $(element);
+  // set the initial position offscreen left
+  var animateLoop = function() {
+    var _speed = getRandomArbitrary(minSpeed * 1000, maxSpeed * 1000);
+    _elem.animate({top: "100%"}, _speed, easing, function() {animateLoop();})
+  }
+  animateLoop();
+}
+
+function AnimateClipPath(element, endX, endY, angle)
+{
+  var startingValues = d3.select(element).attr('transform'); // get our initial inline values
+  d3.select(element).attr('transform', startingValues.toString()).
+  transition().duration(2000).attr('transform', "rotate(16.50) translate(950, 0)");
+}
+
+
+function dist(x1, x2, y1, y2)
+{
+  return Math.sqrt(Math.pow(x2 - x1) + Math.pow(y2 - y1));
+}
+
+function AnimateStroke()
+{
+  new Vivus('my-svg', {duration: 200});
 }
 
 
@@ -209,12 +241,12 @@ function Init()
 
   $(document).ready(function()
   {
-    console.log("hello");
+
     setSvgViewBox('skill-anim-web-dev', -500, -385, 2292, 1340);
     setSvgViewBox('skill-anim-html', -840, -220, 2292, 1340);
     setSvgViewBox('skill-anim-css', -450, -130, 2322, 1600);
     setSvgViewBox('skill-anim-jquery', -850, -320, 2292, 1340);
-    setSvgViewBox('skill-anim-js', -860, -120, 2292, 1340);
+    setSvgViewBox('skill-anim-js', -865, -140, 2292, 1340);
     setSvgViewBox('skill-anim-animation', -510, -250, 2292, 1340);
 
     setSvgAspectRatio('blimp-web', "xMidYMid meet");
@@ -234,22 +266,27 @@ function Init()
 
 
 
-    var refreshRate = 30;
+    var intervalRate = 240;
     var resizeWebBlimp = resizeBlimpSVGRect("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
-    setInterval(resizeWebBlimp, refreshRate);
+    setInterval(resizeWebBlimp, intervalRate);
     var resizeHTMLBlimp = resizeBlimpSVGRect("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
-    setInterval(resizeHTMLBlimp, refreshRate);
+    setInterval(resizeHTMLBlimp, intervalRate);
     var resizeCSSBlimp = resizeBlimpSVGRect("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
-    setInterval(resizeCSSBlimp, refreshRate);
+    setInterval(resizeCSSBlimp, intervalRate);
     var resizeAnimationBlimp = resizeBlimpSVGRect("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
-    setInterval(resizeAnimationBlimp, refreshRate);
+    setInterval(resizeAnimationBlimp, intervalRate);
     var resizeJqueryBlimp = resizeBlimpSVGRect("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
-    setInterval(resizeJqueryBlimp, refreshRate);
+    setInterval(resizeJqueryBlimp, intervalRate);
     var resizeJSBlimp = resizeBlimpSVGRect("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
+    setInterval(resizeJSBlimp, intervalRate);
 
 
-    // doSomething();
-
+    // AnimateStroke('mysvg', 80, undefined);
+    // AnimateClipPath('#animateMe', 950, 0, 16.50);
+    AnimateStroke();
+    //AnimateStroke('#cloud-rain', 80, undefined);
+    // AnimateStroke('#city-buildings', 80, undefined);
+    // animateSVGElementSideWays('#cloud-rain', 'linear', 1, 10, 70, 65);
+    // animateSVGElementUpwards('#hot-air-balloon-web', 'linear', 1, 10);
   })
-
 }

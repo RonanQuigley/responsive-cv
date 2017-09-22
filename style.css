@@ -7,6 +7,19 @@
     display: block;
 }
 
+.mask
+{
+    position: absolute;
+    left: 30rem;
+    top: 24rem;
+    width: 100%;
+    height: 10rem;
+    z-index: 10;
+    background-color: white;
+    background-repeat: no-repeat;
+    /* outline: 1px solid black; */
+}
+
 .font-skills-new
 {
     text-align: center;
@@ -18,8 +31,8 @@
 
 .road-middle
 {
-  stroke-dasharray: 6rem;
-  stroke-width: 0.15rem;
+  stroke-dasharray: 5.5rem;
+  stroke-width: 0.2rem;
   stroke: black;
 }
 .clouds-contact > svg
@@ -30,10 +43,8 @@ position: absolute;
 
 #planet-city-container
 {
-
-max-height: 83rem;
-
-border: solid 1px #F44336;
+max-height: 83rem;
+border: solid 1px #F44336;
 }
 
 #about-content-container
@@ -64,7 +75,7 @@ height: auto;
 
 #first-road
 {
-  margin-top: -31.2rem;
+  margin-top: -30.2rem;
 }
 
 .blimp-container
@@ -102,11 +113,14 @@ right: 0;
 /* transform: scale(0.5); */
 }
 
+
+
 #contact-header-cloud-container
 {height: auto;}
 
 #anim-rain-01
 {
+  height: 11rem;
 }
 
 #skills-text-box-container
@@ -273,7 +287,7 @@ div.road-container div:nth-child(2n)
 
 #hot-air-balloon-plain *
 {
-  stroke-width: 0.1rem;
+  stroke-width: 0.075rem;
   stroke: black;
   fill: white;
 }
@@ -290,8 +304,8 @@ div.road-container div:nth-child(2n)
 {
 width: 6.1rem;
 height: auto;
-top: 54.6%;
-right: 37.9%;
+top: 54.7%;
+right: 35.9%;
 }
 
 .road-sign
@@ -431,6 +445,7 @@ div.road-container div:nth-child(2n)
 {
 top: 44%;
 left: 90%;
+width: 9rem;
 }
 
 #tree-17
@@ -540,6 +555,33 @@ div.road-container div:nth-child(2n)
   left: 71.8%;
   width: 13rem;
   z-index: -2;
+}
+
+#tree-33
+{
+  top: 57.8%;
+  left: 41.8%;
+  width: 9rem;
+  z-index: -2;
+  transform: scaleX(-1);
+}
+
+#tree-34
+{
+  top: 31.5%;
+  left: 6.8%;
+  width: 10rem;
+  z-index: -2;
+  transform: scaleX(-1);
+}
+
+#tree-35
+{
+  top: 40.9%;
+  left: 6.9%;
+  width: 13rem;
+  z-index: 2;
+  transform: scaleX(-1);
 }
 
 #tree-group-03
@@ -658,7 +700,7 @@ top: 7%;
 #grass-03
 {
 z-index: 1;
-top: 32%;
+top: 34%;
 left: 84.5%;
 width: 7.9rem;
 }
@@ -715,6 +757,25 @@ top: 7%;
   width: 9rem;
 }
 
+#grass-10
+{
+  top: 29%;
+  left: 73%;
+  z-index: -1;
+  width: 9rem;
+}
+
+
+#grass-11
+{
+  top: 55%;
+  left: 12%;
+  z-index: -1;
+  width: 9rem;
+  transform: scaleX(-1);
+}
+
+
 #flower-02
 {
 z-index: -2;
@@ -741,7 +802,7 @@ top: 7%;
 
 #flower-05
 {
-  z-index: 2;
+  z-index: 1;
   left: 5.9%;
   top: 42.2%;
   width: 2.5rem;
@@ -854,13 +915,13 @@ left: -1.6rem;
 
 .road-top
 {
-  stroke-width: 0.15rem;
+  stroke-width: 0.02rem;
   stroke: black;
 }
 
 .road-bottom
 {
-  stroke-width: 0.15rem;
+  stroke-width: 0.02rem;
   stroke: black;
 }
 
@@ -1165,7 +1226,7 @@ transform: rotate(-116deg);
 {
     height: auto;
     max-width: 167rem;
-    outline: solid 1px black;
+    border-top: dashed 0.1rem black;
     fill: white;
     margin-bottom: 2rem;
 }
@@ -1246,10 +1307,14 @@ height: 7.4rem;
 top: 90%;
 }
 
-#blimp-html path, #blimp-html ellipse
+#cv-box:hover + #cv-outlines
 {
+  fill: black;
+}
 
-stroke-width: 0.1rem;
+#cv-outlines:hover
+{
+  fill:black;
 }
 
 .skills-text-box
@@ -1390,6 +1455,7 @@ stroke-width: 1rem;
 {
 position: absolute;
 max-width: 270rem;
+width: 100%;
 left: 0;
 right: 0;
 outline: solid cornflowerblue 10px;
@@ -1450,7 +1516,7 @@ stroke-width: 1rem;
 {
   stroke-width: 0.025rem;
   stroke: black;
-  fill: white;
+  fill: none;
 }
 
 #cv
@@ -1485,10 +1551,10 @@ stroke-width: 1rem;
 
 .blimps
 {
-
-width: 100%;
-
-height: 100%;
+  fill: #fff;
+  stroke: #231f20;
+  stroke-miterlimit: 10;
+  stroke-width: 0.1rem;
 }
 
 .font-skills
@@ -1590,7 +1656,7 @@ svg
   width: 100%;
   height: 100%;
   display: block;
-  /* fill: white; */
+  fill: white;
 }
 
 .font-header
@@ -1652,15 +1718,22 @@ svg
 
 #city-flatline
 {
-  border: solid 0.1rem black;
+  /* border: solid 0.1rem black; */
   /* go across the entire screen */
-  max-width: none !important;
+  /* max-width: none !important; */
   width: 100%;
   left: 0;
   right: 0;
   /* top: 15rem; */
   position: absolute;
-  height: initial;
+  max-height: 0.5rem;
+}
+
+#city-flatline > svg
+{
+  stroke: black;
+  stroke-width: 20.12rem;
+  fill: none;
 }
 
 #hot-air-balloon-web
@@ -1858,7 +1931,7 @@ position: relative;
 {}
 
 #planet-container
-{display: block;outline: 1px solid #5a25fe;width: 100%;height: auto;max-width: 61.5rem;}
+{display: block;outline: 1px solid #5a25fe;width: 100%;height: 61.5rem;max-width: 61.5rem;}
 
 #planet
 {
@@ -1896,6 +1969,85 @@ position: relative;
   body{
     background: red;
   }
+
+  #email-section
+  {
+    top: 55%;
+  }
+
+  #bush-02
+  {
+    top: 19.7%;
+    left: 84%;
+  }
+
+  #bush-03
+  {
+    display: none;
+  }
+
+  #bush-04
+  {
+    top: 43.9%;
+    left: 81.4%;
+    z-index: -3;
+  }
+
+  #grass-03
+  {
+
+  }
+
+  #flower-03
+  {
+    top: 43.2%;
+    left: 87%;
+  }
+
+  #tree-15
+  {
+    top: 31.1%;
+  }
+
+  #tree-16
+  {
+  top: 42.2%;
+  }
+  #tree-18
+  {
+    display: none;
+  }
+
+
+
+  #tree-02
+  {
+    top:-30%;
+    z-index: -1;
+  }
+  #tree-23
+  {
+    left: 80%;
+  }
+
+  #tree-27
+  {
+    top: 43.6%;
+    width: 11rem;
+    left: 86%;
+  }
+
+  #tree-group-05
+  {
+    top: 63%;
+  }
+
+  #fire-02
+  {
+    top: 57%;
+  }
+
+
 
   .road
   {
@@ -2029,6 +2181,165 @@ margin-bottom: 11rem;
   {
     background: orange;
   }
+
+  #fire-01
+  {
+    left: 38%;
+    right: 0;
+    top: 5%;
+  }
+
+  #tree-group-01
+  {
+    top: 6%;
+  }
+
+  #tree-group-02
+  {
+    top: 11%;
+  }
+
+  #tree-group-04
+  {
+    top: 31%;
+    left: 6%;
+  }
+
+  #tree-group-05
+  {
+    top: 73.4%;
+  }
+
+
+  #tree-04
+  {
+    left:1%;
+  }
+
+  #tree-07
+  {
+    top: 77%;
+    left: 83%;
+    width: 8rem;
+  }
+
+  #tree-10
+  {
+    top: 64%;
+    z-index: -3;
+    left: 14.7%;
+  }
+
+  #tree-14
+  {
+    top: 37.8%;
+  }
+
+  #tree-15
+  {
+    top:32%;
+  }
+
+  #tree-16
+  {
+    top: 67%;
+    left: 81%;
+  }
+
+  #tree-18
+  {
+    display: initial;
+
+  }
+
+  #tree-24
+  {
+    top:19.5%;
+    left: 9%;
+  }
+
+  #tree-28
+  {
+    top: 55%;
+    left: 75%;
+    width: 12rem;
+  }
+
+  #tree-29
+  {
+    left: 84%;
+    top: 50%;
+  }
+
+  #tree-26
+  {
+    top: 69.3%;
+    width: 11rem;
+  }
+
+  #tree-35
+  {
+    width: 9rem;
+    top: 41%;
+    left: 9%;
+  }
+
+  #grass-09
+  {
+    top: 52.5%;
+    left: 82.1%;
+  }
+
+  #grass-11
+  {
+    top: 58%;
+  }
+
+  #tree-34
+  {
+    top: 64.8%;
+    width: 9rem;
+  }
+
+  #bush-02
+  {
+top: 75%;
+transform: scaleX(-1);
+}
+
+#bush-03
+{
+  display: initial;
+  top: 66.2%;
+  left: 13%;
+  width: 4.9rem;
+  transform: scaleX(-1);
+  z-index: -2;
+}
+
+  #grass-03
+  {
+    top: 34%;
+    left: 72%;
+  }
+
+  #flower-03
+  {
+    top: 69%;
+    z-index: 1;
+  }
+
+  #flower-04
+  {
+    top: 21.2%;
+    left: 17%;
+  }
+
+  #fire-02
+  {
+top: 68.7%;
+right: 22.9%;
+}
 
   .road
   {
@@ -2308,7 +2619,6 @@ right: 0;
     min-width: 320px;
     background: yellow;
   }
-
   #foliage-container
   {
     display: none;
@@ -2326,18 +2636,14 @@ right: 0;
 
   .road-middle
   {
-    stroke-dasharray: 3rem;
-    stroke-width: 0.1rem;
   }
 
   .road-top
   {
-    stroke-width: 0.1rem;
   }
 
   .road-bottom
   {
-    stroke-width: 0.1rem;
   }
 
   .road
