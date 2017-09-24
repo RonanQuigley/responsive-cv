@@ -1,7 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.528 267.203">
-    <g fill="none" stroke="#231f20" stroke-miterlimit="10">
-        <circle cx="87.764" cy="87.764" r="87.264"/>
-        <path d="M88 .411v226M59.749 5.266s-55.454 91.367-.483 165.082M117.262 5.266s55.138 90.92.167 164.635L104 225.911M.5 89.911h175M70.5 225.703h33v30h-33zM59.227 170.297L71 225.911"/>
-        <path stroke-linecap="round" d="M21.906 30.911h131.853M22.014 144.911H153.5"/>
-    </g>
+<svg id="Hot_Air_Balloon_Web" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.5 257.9">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <title>Hot_Air_Balloon_Web</title>
+  <path id="_Path_" d="M57.5,170.3"/>
+  <circle id="_Ellipse_" data-name="&lt;Ellipse&gt;" cx="87.8" cy="87.8" r="87.3"/>
+  <polyline id="_Path_2" points="88 0.4 88 175 88 226.4"/>
+  <path id="_Path_3" d="M137.7,159.3"/>
+  <path id="_Path_4" d="M48.5,166.1"/>
+  <path id="_Path_5" d="M59.7,5.3S4.3,96.6,59.3,170.3"/>
+  <path d="M117.4,169.9l-13.7,56"/>
+  <path d="M117.3,5.3s55.1,90.9.2,164.6"/>
+  <path id="_Path_6" d="M161.5,39.9"/>
+  <path id="_Path_7" d="M15.5,39.9"/>
+  <line id="_Path_8" x1="0.5" y1="89.9" x2="175.5" y2="89.9"/>
+  <line id="_Path_9" x1="59.2" y1="170.3" x2="71" y2="225.9"/>
+  <line class="cls-2" x1="21.5" y1="30.9" x2="153.5" y2="30.9"/>
+  <line class="cls-2" x1="22.5" y1="144.9" x2="153.5" y2="144.9"/>
+  <polygon points="103.5 257.4 71 257.4 71 225.9 103.8 225.9 103.5 257.4"/>
 </svg>

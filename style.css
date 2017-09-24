@@ -7,6 +7,11 @@
     display: block;
 }
 
+#road-01
+{
+  margin-top: -30.5rem;
+}
+
 .mask
 {
     position: absolute;
@@ -29,12 +34,29 @@
     margin-top: -5%;
 }
 
+
+
+.road-container > div
+{
+  visibility: hidden;
+}
+
+.road-middle, .road-middle-solid
+{
+  stroke-width: 0.02rem;
+}
+
 .road-middle
 {
-  stroke-dasharray: 5.5rem;
-  stroke-width: 0.2rem;
+  stroke-dasharray: 0.5rem;
+  stroke: white;
+}
+
+.road-middle-solid
+{
   stroke: black;
 }
+
 .clouds-contact > svg
 {
 
@@ -203,27 +225,18 @@ transform: rotate(14deg);
 
 .paper-plane-line-container
 {
-
-width: 210%;
-
-max-width: 100%;
-
-height: auto;
-
-margin-left: auto;
-
-margin-right: auto;
-
-left: 0;
-
-right: 0;
-
-position: absolute;
-
-/* outline: solid 2px brown; */
-
-z-index: -1;
+width: 210%;
+max-width: 100%;
+height: auto;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+position: absolute;
+z-index: -1;
 }
+
+
 #paper-plane-line-01
 {
     transform-origin: right;
@@ -232,7 +245,7 @@ z-index: -1;
 }
 
 #paper-plane-line-02
-{translate(-89.3%, 16.1rem) rotate(-47deg): translate(-76%, 63%) rotate(-47deg);transform-origin: left;transform: translate(-19.3rem, 31.4rem) rotate(-30.3deg);z-index: -1;left: -30.1rem;top: 8.8rem;}
+{translate(-89.3%, 16.1rem) rotate(-47deg): translate(-76%, 63%) rotate(-47deg);transform-origin: left;transform: translate(-19.3rem, 31.4rem) rotate(-30.3deg);z-index: -1;left: -13.1rem;top: 6.8rem;}
 
 #paper-plane-line-03
 {transform-origin: left;transform: translate(-19.3rem, 31.4rem) rotate(-30.3deg);z-index: -1;left: -57.2rem;top: 16.8rem;}
@@ -289,7 +302,6 @@ div.road-container div:nth-child(2n)
 {
   stroke-width: 0.075rem;
   stroke: black;
-  fill: white;
 }
 
 #fire-01
@@ -584,6 +596,17 @@ div.road-container div:nth-child(2n)
   transform: scaleX(-1);
 }
 
+#tree-36
+{
+  left: 57%;max-width: 100%;width: 100%;height: 100%;
+}
+
+#tree-37
+{
+  top:-30%;
+  z-index: -1;
+}
+
 #tree-group-03
 {
   width: 18rem;
@@ -675,6 +698,19 @@ div.road-container div:nth-child(2n)
   z-index: -3;
 }
 
+#bush-06
+{
+  width: 65%;
+
+height: 100%;
+
+top: -6%;
+
+left: -51%;
+
+z-index: -1;
+}
+
 #grass-01
 {
 
@@ -749,6 +785,16 @@ top: 7%;
   z-index: 2;
 }
 
+
+#mySVG * {
+}
+
+#mySVG.finished * {
+  fill-opacity: 1;
+    fill:red;
+}
+
+
 #grass-09
 {
   top: 54%;
@@ -775,12 +821,26 @@ top: 7%;
   transform: scaleX(-1);
 }
 
+#grass-12
+{
+
+z-index: -1;
+
+width: 100%;
+
+left: 2%;
+
+height: 100%;
+
+top: 7%;
+}
+
 
 #flower-02
 {
 z-index: -2;
-left: 71%;
-top: -17%;
+left: 0;
+top: 0;
 }
 
 
@@ -1071,15 +1131,21 @@ font-weight: 200;
 
 .clouds-background svg path
 {
-  fill: white;
+  /* fill: white; */
 }
 
 .paper-plane-line
 {
-  stroke-dasharray: 11;
+  stroke-dasharray: 2;
   width: 210%;
+  stroke: white;
+  stroke-width: 0.05rem;
+}
+
+.paper-plane-line-solid
+{
   stroke: black;
-  stroke-width: 0.3rem;
+  stroke-dasharray: 0;
 }
 
 #cloud-grouping-section
@@ -1377,18 +1443,12 @@ top: 90%;
 
 .about-icons
 {
-
-height: auto;
-
-max-width: 70%;
-
-position: absolute;
-
-left: 0;
-
-right: 0;
-
-top: -30%;
+height: auto;
+max-width: 70%;
+position: absolute;
+left: 0;
+right: 0;
+top: -30%;
 }
 
 .clouds-header > svg > path
@@ -1465,32 +1525,7 @@ stroke-width: 1rem;
 transform: scaleX(-1);
 }
 
-#road-05
-{
-
-}
-
-#road-04
-{
-
-}
-
-#road-03
-{
-
-}
-
-#road-02
-{
-
-}
-
-#road-01
-{
-
-}
-
-.foliage
+.foliage-hide
 {
   max-width: 13rem;
   height: auto;
@@ -1500,6 +1535,20 @@ stroke-width: 1rem;
   margin-left: 0;
   margin-right: 0;
   position: absolute;
+  visibility: hidden;
+}
+
+.foliage-show
+{
+  max-width: 13rem;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  position: absolute;
+  visibility: visible;
 }
 
 #email
@@ -1512,11 +1561,16 @@ stroke-width: 1rem;
     max-width: 9rem;
 }
 
-#city-buildings rect
+#city-buildings svg
+{
+  stroke-width: 0.025rem;
+}
+
+
+#city-buildings path
 {
   stroke-width: 0.025rem;
   stroke: black;
-  fill: none;
 }
 
 #cv
@@ -1718,21 +1772,20 @@ svg
 
 #city-flatline
 {
-  /* border: solid 0.1rem black; */
+
   /* go across the entire screen */
-  /* max-width: none !important; */
-  width: 100%;
-  left: 0;
-  right: 0;
-  /* top: 15rem; */
-  position: absolute;
-  max-height: 0.5rem;
+  max-width: none !important;
+  width: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 2.5rem;
 }
 
 #city-flatline > svg
 {
   stroke: black;
-  stroke-width: 20.12rem;
+  stroke-width: 1rem;
   fill: none;
 }
 
@@ -1803,7 +1856,29 @@ svg
 }
 
 #cloud-rain
-{left: 10%;right: auto;}
+{
+  left: 0;
+  right: 0;
+  /*animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-name: example;
+  animation-timing-function: linear;*/
+}
+
+
+/*
+@keyframes example
+{
+  from
+  {
+    transform: translate(0px);
+  }
+  to
+  {
+    transform: translate(100px);
+  }
+}
+*/
 
 #cloud-rain svg
 {height: 50%;}
@@ -1812,6 +1887,7 @@ svg
 {
   max-width: 100%;
   height: 12rem;
+  visibility: hidden;
 }
 
 #anim-rain svg
@@ -1849,10 +1925,8 @@ svg
 
 #about-content-cloud-01
 {
-
-z-index: -1;
-
-font-size: 20px;
+/* z-index: -1; */
+font-size: 20px;
 }
 
 .about-content
@@ -2054,11 +2128,6 @@ position: relative;
     height: 7.8%;
   }
 
-
-  #first-road
-  {
-    margin-top: -23.5rem;
-  }
 
 
   .font-skills-new
@@ -2970,4 +3039,5 @@ position: relative;
 
 #paper-plane-envelope-01
 {
+
 }
