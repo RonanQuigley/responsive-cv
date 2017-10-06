@@ -72,21 +72,17 @@ function ResizeBlimpRect(element, scaledWidth, fullWidth, scaledHeight, fullHeig
     }
   }
 };
-
 function AnimateBodymovin(element, data, bool, svgAspectRatio)
 {
   if(svgAspectRatio === undefined)
   {
     svgAspectRatio = "xMidYMid meet";
   }
-
   var elem = document.getElementById(element);
-
   if(elem == null)
   {
     throw Error("Cannot find element to animate: " + element.toString());
   }
-
 	var animData = {
 			container: elem,
 			renderer: 'svg',
@@ -99,17 +95,24 @@ function AnimateBodymovin(element, data, bool, svgAspectRatio)
 			},
 			path: data
 	};
-
   var anim;
 	anim = bodymovin.loadAnimation(animData);
   bodymovin.setQuality('low');
 }
 
-function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easing, force3dTranslate, yRandomMax, rotation)
+function TranslateElement(element, minDuration, maxDuration,
+  repeatEnabled, easing, force3dTranslate, yRandomMax, rotation)
 {
+  var _currentElement = $(element);
+  var _parentElement = _currentElement.parent();
+  var _flipStart = false;
+  var _randomX = 0;
+  var _startX = WidthPercentageToPixel(_parentElement, '-13%');
+  var _endX = _parentElement.outerWidth();
+  var _randomY = Math.random() * yRandomMax;
+  var _yValue = HeightPercentageToPixel(element, '' + _randomY + '%');
+  var _firstCall = true;
   var _duration = RandomDurationGenerator(minDuration, maxDuration);
-  var _element = $(element);
-  var _elementParent = _element.parent();
   if(rotation == undefined)
   {
     rotation = 0;
@@ -122,33 +125,81 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
   {
     force3dTranslate = false;
   }
-  if(_elementParent.css('visibility') == 'hidden')
+  if(_currentElement.css('visibility') == 'hidden')
   {
-    _elementParent.css('visibility', 'visible');
+    _currentElement.css('visibility', 'visible');
   }
-  var _endX = _elementParent.outerWidth();
-  var _firstCall = true;
-  /// USE PERCENTAGES
-  TweenLite.to(element, 10, {x: '100%', y: '100%',ease: easing, force3D: force3dTranslate, rotation: rotation});
-  //TweenMax.to(element, _duration, {x: _endX, ease:easing,
-    //onComplete: AnimateLoop, force3D:force3D});
+  TweenMax.fromTo(element, _duration, {x: _startX, y: _yValue}, {x: _endX, y: _yValue,
+     ease:easing,force3D:force3dTranslate, rotation: rotation, onComplete: AnimateLoop});
+
   function AnimateLoop()
   {
-    _endX = _elementParent.outerWidth();
+    _endX = _parentElement.outerWidth();
     _duration = RandomDurationGenerator(minDuration, maxDuration);
     if(_firstCall) // prevent FOUC
     {
       // _element.css({'left' : '0%', 'top' : '0%'});
       _firstCall = false;
     }
-    var _randomBool = GenerateRandomBool();
-    var _startX = parentPercentageWidthToPixel(element, '-13%');
-    var _randomY = Math.random() * yRandomMax;
-    var _yValue = parentPercentageHeightToPixel(element, '' + _randomY + '%');
-    TweenMax.fromTo(element, _duration, {x: (_randomBool == false ? _startX : _endX),
-          y: _yValue}, {x: (_randomBool == false ? _endX : _startX), y: _yValue,
+    _flipStart = GenerateRandomBool();
+    _startX = WidthPercentageToPixel(_parentElement, '-13%');
+    _randomY = Math.random() * yRandomMax;
+    // base the yValue on our body as it is covers the entire visible screen
+    _yValue = HeightPercentageToPixel(element, '' + _randomY + '%');
+    TweenMax.fromTo(element, _duration, {x: (_flipStart == false ? _startX : _endX),
+          y: _yValue}, {x: (_flipStart == false ? _endX : _startX), y: _yValue,
             ease:easing, onComplete:AnimateLoop, force3D:force3dTranslate});
   }
+}
+
+function MoveElement(element, sectionContainer, duration)
+{
+  function SetMoveDirection(container, endingValue)
+  {
+    console.log("endingValue: " + endingValue);
+    console.log("container outer width / 2: " + container.outerWidth() / 2);
+    if(parseFloat(endingValue) >= (container.innerWidth() / 2) - 150)
+    {
+      return WidthPercentageToPixel(container, '100%');
+    }
+    else
+    {
+      return WidthPercentageToPixel(container, '-30%');
+    }
+  }
+  var _element = $(element); // convert to jquery object
+  _element.css('visibility', 'hidden'); // hide the element initially
+  var _endX = _element.css('left'); // take the current css position to use as our ending position
+  var _yValue = _element.css('top'); // take the current css position to use as our ending position
+  var _tween = null;
+  var _startX = 0;
+  var _sectionContainer = sectionContainer;
+  console.log(_sectionContainer);
+  // We use a waypoint to trigger it when it appears on screen
+  var waypoint = new Waypoint({
+    element: element,
+    handler: function(direction) {
+      _element.css('visibility', 'initial');
+      function Move()
+      {
+        _startX = SetMoveDirection($(_sectionContainer), _endX);
+        _element.css({"left": "inherit", "top" : "inherit"});
+        _tween = TweenMax.fromTo(element, duration, {x: _startX, y:_yValue},
+          {x: _endX, y: _yValue, force3D: false, rotation: 0.0000001});
+      }
+      $(window).resize(function()
+      {
+        _tween.kill();
+        _startX = SetMoveDirection($(_sectionContainer), _endX);
+        $(element).attr('style', '').css({"left": "inherit", "top" : "inherit"});
+        TweenLite.to(element, 0, {x:_startX});
+        waypoint.enable();
+      })
+      Move();
+      waypoint.disable();
+    },
+    offset: '550'
+  });
 }
 
 function GenerateRandomBool()
@@ -156,31 +207,39 @@ function GenerateRandomBool()
   return Math.random() >= 0.5;
 }
 
-function parentPercentageWidthToPixel(_elem, _perc){
-  return ($(_elem).parent().outerWidth()/100)* parseFloat(_perc);
+function WidthPercentageToPixel(_elem, _perc){
+  return ($(_elem).outerWidth()/100)* parseFloat(_perc);
 }
 
-function parentPercentageHeightToPixel(_elem, _perc){
-  return ($(_elem).parent().outerHeight()/100)* parseFloat(_perc);
+function HeightPercentageToPixel(_elem, _perc){
+  var _parentElementHeight = $(_elem).parent().outerHeight();
+  if(_parentElementHeight != 0)
+  {
+    return (_parentElementHeight / 100) * parseFloat(_perc);
+  }
+  else
+  {
+    return ($("body").outerHeight() / 100) * parseFloat(_perc);
+  }
 }
 function AnimateStroke(element, length, easing, optionals)
 {
-  var _svgElements = $(element).children(); // get all child elements from the div container
-  console.log(_svgElements);
+  var _element = $(element);
+  var _svgElements = _element.children(); // get all child elements from the div container
   var _scenarioType = 'delayed';
   var _startStype = 'inViewport';
+  var animElements = []; // each of our svgs will be stored in an array for f() returning
   if(optionals !== undefined)
   {
     _scenarioType =  (typeof optionals.scenarioType === 'undefined') ? 'delayed' : optionals.scenarioType;
     _startStype = (typeof optionals.startType === 'undefined') ? 'inViewport' : optionals.startType;
   }
-  var animElements = [];
   for(var i = 0; i < _svgElements.length; i++)
   {
     var _currentSVGElement = $(_svgElements[i]); // get current svg element from array
       var _isRoad = false;
       var _isPaper = false;
-      var _id = $(element).attr('id');
+      var _id = _element.attr('id');
       if(_id.substring(0, 4) == 'road')
       {
         _isRoad = true;
@@ -193,11 +252,18 @@ function AnimateStroke(element, length, easing, optionals)
         easing, type: _scenarioType, start: _startStype, onReady: function(){
           if(_isRoad || _isPaper)
           {
-            $(element).css('visibility', 'visible');
+            _element.css('visibility', 'visible');
             return;
           }
           SetFillToNone(_currentSVGElement);
-          this.play(); // we can just play the element automatically if it's not a road
+          if(_id == 'city-buildings')
+          {
+            this.play(1, function(){GenerateClouds(6, 12, 20)});
+          }
+          else
+          {
+            this.play(); // we can just play the element automatically
+          }
         }}));
       if(!_isRoad && !_isPaper)
       {
@@ -217,7 +283,7 @@ function AnimateFoliageStroke(foliageElement, length, easing, optionals)
   foliageElement.children("svg").each(function()
   {
     var _svgElement = $(this); // svg element we are working with
-    new Vivus(_svgElement[0], {duration: length, animTimingFunction: Vivus.LINEAR, type: _scenarioType,
+    new Vivus(_svgElement[0], {duration: length, animTimingFunction: Vivus.LINEAR, scenarioType: _scenarioType,
     onReady: function()
     {
       SetFillToNone(_svgElement);
@@ -283,22 +349,31 @@ function SetFillToWhite(svgElement, duration)
   strokeDashOffsetCheck();
 }
 
+function PopInFoliage(foliage)
+{
+  var _foliage = $(foliage);
+  for(var i = 0; i < _foliage.length; i++)
+  {
+    var _currentFoliage = _foliage[i];
+    GenerateFoliageWaypoint(_currentFoliage);
+  }
+}
+
 function FadeInAnimation(element)
 {
   $(element).css('visibility', 'visible');
   TweenLite.fromTo(element, 2, {opacity: 0},{opacity: 1})
-  /*d3.select(element).style('opacity', 0).transition().
-  duration(3500).style('opacity', 1);*/
 }
 
-function AnimateBalloon(element)
+function AnimateBalloon(element, duration, minHeight, maxHeight)
 {
-  TweenMax.fromTo(element, 1, {y: '0%'}, {y: '1%', ease: Sine.easeInOut ,repeat: -1, yoyo: true});
+  TweenMax.fromTo(element, duration, {y: minHeight, force3D: true, rotation: 0.01}, {y: maxHeight,
+  ease: Sine.easeInOut , repeat: -1, yoyo: true, rotation: 0.01, force3D: true});
 }
 
 function GeneratePaperPlaneLines(element)
 {
-  var _vivus = AnimateStroke(element, 80, Vivus.LINEAR, {startType: 'manual'});
+  var _vivus = AnimateStroke(element, 80, Vivus.LINEAR, {startType: 'inViewport'});
   for(var i = 0; i < _vivus.length; i++)
   {
     _vivus[i].play();
@@ -318,70 +393,103 @@ function SetRoadIDs(roadContainerElement)
 function GenerateRoad(roadContainer)
 {
   var _children = $(roadContainer).children().slice(1);
-  _children.each(function()
+  for(var i = 0; i < _children.length; i++)
   {
-    var _roadElement = $(this);
-    var waypoint = new Waypoint({
-      element: this,
-      handler: function(direction) {
-        var vivus = AnimateStroke(_roadElement, 80, Vivus.LINEAR, {startType: 'manual'});
-        for(var i = 0; i < vivus.length; i++)
-        {
-          vivus[i].play();
-        }
-        waypoint.disable();
-      },
-      triggerOnce: true,
-      offset: '550'
-    })
+    GenerateRoadWaypoint(_children[i]);
+  }
+}
 
+function GenerateRoadWaypoint(roadElement)
+{
+  var waypoint = new Waypoint({
+    element: roadElement,
+    handler: function(direction) {
+      var vivus = AnimateStroke(roadElement, 60, Vivus.LINEAR,
+        {startType: 'manual', scenarioType: 'delayed'});
+      for(var i = 0; i < vivus.length; i++)
+      {
+        vivus[i].play();
+      }
+      waypoint.destroy();
+    },
+    offset: '550'
   });
 }
 
+function GenerateFoliageWaypoint(foliageElement)
+{
+  var waypoint = new Waypoint({
+    element: foliageElement,
+    handler: function(direction) {
+        RevealElementByClass('foliage-show', $(foliageElement)); // set to visible by switching class
+      var timeline = new TimelineMax();
+      timeline.append(TweenMax.fromTo(foliageElement, 0.2,
+        {scaleY: 0.0}, {scaleY: 1.10, force3D: true})).to(foliageElement, 0.3, {scaleY: 1, force3D: true});
+
+      waypoint.destroy();
+    },
+    offset: '550'
+  });
+}
+
+
+
 function GenerateClouds(numberOfClouds, minDuration, maxDuration)
 {
-  if(numberOfClouds > 9)
+  if(numberOfClouds % 2 != 0)
   {
-    numberOfClouds = 9;
-    alert("you sure about generating 9 clouds? performance hog!")
+    numberOfClouds -= 1; // we need to work with even numbers for this
+    console.log("Number Of Clouds must be a multiple of 2; reducing requested amount by 1");
   }
+  var _numOfCloudsHalved = numberOfClouds / 2;
   var i = 0;
   for(i = 0; i < numberOfClouds; i++)
   {
-    if(i < 3)
+    if(i < _numOfCloudsHalved)
     {
-      GenerateCloud('#cloud-01', i)
+      GenerateCloud('#cloud-01', i, minDuration, maxDuration)
     }
     else
     {
-      GenerateCloud('#cloud-group-three-01', i)
+      GenerateCloud('#cloud-group-three-01', i, minDuration, maxDuration)
     }
   }
+  // remove the unnecessary cloud group
+  $('#cloud-group-three-01').parent().remove();
 
-  function GenerateCloud(element, currentIndex)
+  function GenerateCloud(element, currentIndex, minDuration, maxDuration)
   {
-    /*
-    // create cloud container
-    var cloudContainer = $('<div/>',{
-         id: 'cloud-generated-container-0' + (currentIndex + 1),
-         class: 'cloud-generated-container'
-     });
-    // add the cloud container to the overall container
-    cloudContainer.appendTo('#generated-clouds-container');*/
-    // copy existing cloud
-    var cloud = $(element).clone().attr('id', 'cloud-generated-sub-container-0' + (currentIndex + 1));
-    cloud.attr('class','cloud-generated-sub-container');
-    cloud.children().attr('id', 'cloud-background-generated-0' + (currentIndex + 1));
+    var _repeateEnabled = true;
+    var _force3DTranslate = true;
+    var _rotation = 0.01;
+    var _yRandomMax = 95;
+    // copy the cloud we want then change its ID
+    var _cloudToCopy = $(element);
+    var _cloud = _cloudToCopy.clone().
+      attr('id', 'cloud-generated-sub-container-0' + (currentIndex + 1));
+    // apply a unique class depending on the type of cloud we copied
+    if(_cloudToCopy.attr('id') === "cloud-01")
+    {
+      _cloud.attr('class','cloud-one-generated-sub-container');
+    }
+    else if(_cloudToCopy.attr('id') === "cloud-group-three-01")
+    {
+      _cloud.attr('class','cloud-three-generated-sub-container');
+      _cloud.children().attr('class', 'clouds-generated-background');
+    }
+    // all clouds just have an incremented id
+    _cloud.children().attr('id', 'cloud-background-generated-0' + (currentIndex + 1));
     // make them invisible before adding to the document
     // cloudContainer.css('visibility', 'hidden');
     // add to container we previously created
-    cloud.appendTo('#generated-clouds-container');
+    _cloud.appendTo('#generated-clouds-container');
     var _left = (Math.random() * 10 + '%');
     var _top = (Math.random() * 75 + '%');
     //cloud.css({'transform' : 'translate(' + _x + ', ' + _y + ')'});
     // cloud.css({'left' : _left, 'top' : _top})
-    cloud.find('path').css('fill', 'red');
-    // TranslateElement(cloud, minDuration, maxDuration , true, Linear.easeNone, false, 90, 0);
+    _cloud.find('path').css('fill', 'magenta');
+    TranslateElement(_cloud, minDuration, maxDuration ,
+      _repeateEnabled, Linear.easeNone, _force3DTranslate, _yRandomMax, _rotation);
   }
 }
 
@@ -390,37 +498,47 @@ function RandomDurationGenerator(min, max)
   return Math.max(min, Math.random() * max);
 }
 
+function OnHoverOverEmail()
+{
+  var timeline = new TimelineMax();
+  var email = $('#email');
+  $(email.hover(function()
+  {
+    timeline.to(email, 0.2,{rotation: 10 });
+    timeline.append(TweenMax.fromTo(email, 0.3, {rotation: 10}, {rotation: -10, repeat: -1}));
+
+  }, function()
+  {
+    timeline.kill();
+    TweenLite.to($(this)[0], 0.2, {rotation: 0});
+  }));
+}
+
 function Init()
 {
-  var duration = 180;
-  var easing = Vivus.LINEAR;
-  var minDuration = 9;
-  var maxDuration = 16;
-  // DO NOT CALL THIS BEFORE ANIMATESTROKE!!!!!!!!
-  // GenerateClouds(6, 12, 20);
 
-  //AnimateBodymovin('planet', 'Animations/planet.json', true, "xMidYMin meet");
-  // AnimateBodymovin('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMid meet");
-  //AnimateBodymovin('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMid meet");
-  //AnimateBodymovin('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMid meet");
-  //AnimateBodymovin('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMid meet");
-  //AnimateBodymovin('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMid meet");
-  //AnimateBodymovin('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMid meet");
+
+
+  AnimateBodymovin('planet', 'Animations/planet.json', true, "xMidYMin meet");
+  AnimateBodymovin('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMid meet");
+  AnimateBodymovin('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMid meet");
+  AnimateBodymovin('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMid meet");
+  AnimateBodymovin('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMid meet");
+  AnimateBodymovin('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMid meet");
+  AnimateBodymovin('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMid meet");
   //AnimateBodymovin('anim-rain-01', 'Animations/rain.json', true, "xMidYMid meet");
   //AnimateBodymovin('anim-rain-02', 'Animations/rain.json', true, "xMidYMid meet");
   //AnimateBodymovin('anim-rain-03', 'Animations/rain.json', true, "xMidYMid meet");
   //AnimateBodymovin('anim-rain-04', 'Animations/rain.json', true, "xMidYMid meet");
   //AnimateBodymovin('fire-01', 'Animations/fire.json', true, "xMidYMid meet");
   //AnimateBodymovin('fire-02', 'Animations/fire.json', true, "xMidYMid meet");
-
-  /*SetRoadIDs('.road-container');
+  SetRoadIDs('.road-container');
   SetSVGViewBox('#skill-anim-web-dev', -500, -385, 2292, 1340);
   SetSVGViewBox('#skill-anim-html', -840, -220, 2292, 1340);
   SetSVGViewBox('#skill-anim-css', -450, -130, 2322, 1600);
   SetSVGViewBox('#skill-anim-jquery', -850, -320, 2292, 1340);
   SetSVGViewBox('#skill-anim-js', -865, -140, 2292, 1340);
   SetSVGViewBox('#skill-anim-animation', -510, -250, 2292, 1340);
-
   SetSVGAspectRatio('blimp-web', "xMidYMid meet");
   SetSVGAspectRatio('blimp-html', "xMidYMid meet");
   SetSVGAspectRatio('blimp-css', "xMidYMid meet");
@@ -428,71 +546,91 @@ function Init()
   SetSVGAspectRatio('blimp-jquery', "xMidYMid meet");
   SetSVGAspectRatio('blimp-js', "xMidYMid meet");
 
-  // dynamic font sizing for blimps
-  $("#blimp-web-font").fitText();
-  $("#blimp-html-font").fitText();
-  $("#blimp-css-font").fitText();
-  $("#blimp-animation-font").fitText();
-  $("#blimp-js-font").fitText();
-  $("#blimp-jquery-font").fitText();
-
-  var intervalRate = 240;
-  var resizeWebBlimp = ResizeBlimpRect("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
-  //setInterval(resizeWebBlimp, intervalRate);
-  var resizeHTMLBlimp = ResizeBlimpRect("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
-  //setInterval(resizeHTMLBlimp, intervalRate);
-  var resizeCSSBlimp = ResizeBlimpRect("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
-  //setInterval(resizeCSSBlimp, intervalRate);
-  var resizeAnimationBlimp = ResizeBlimpRect("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
-  //setInterval(resizeAnimationBlimp, intervalRate);
-  var resizeJqueryBlimp = ResizeBlimpRect("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
-  //setInterval(resizeJqueryBlimp, intervalRate);
-  var resizeJSBlimp = ResizeBlimpRect("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
-  //setInterval(resizeJSBlimp, intervalRate);
-  */
 
   $(document).ready(function()
   {
+    OnHoverOverEmail()
+    var duration = 180;
+    var easing = Vivus.LINEAR;
+    var minDuration = 12;
+    var maxDuration = 18;
+    // DO NOT CALL THIS BEFORE ANIMATESTROKE!!!!!!!!
+    // GenerateClouds(6, 12, 20);
 
-    //TranslateElement('#cloud-rain-container', minDuration, maxDuration, true, Linear.easeNone, true);
-    setTimeout(function()
-    {
-      // TranslateElement('#cloud-group-three-01-container', minDuration, maxDuration, true, Linear.easeNone, true, 60, 0.01);
-    }, 250);
-    //TranslateElement('#hot-air-balloon-web-container', minDuration, maxDuration, true, Linear.easeNone, true, 40);
+    //TranslateElement('#cloud-rain-container',
+    //minDuration, maxDuration, true, Linear.easeNone, true, 80, 0);
+    AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%');
+    //TranslateElement('#hot-air-balloon-web-container',
+    //minDuration, maxDuration, true, Linear.easeNone, false, 30, 0);
 
     // put the first road separately for an automatic start without using waypoints
-    //AnimateStroke('#road-01', duration - 120, Vivus.LINEAR, {startType: 'autostart'});
-    // GenerateRoad('.road-container');
-
-    setTimeout(function()
-    {
-      // AnimateStroke('#city-flatline', duration - 80, Vivus.LINEAR, {scenarioType: 'scenario-sync'});
-    }, 250);
-
-    //GeneratePaperPlaneLines('#paper-plane-line-01');
-    //GeneratePaperPlaneLines('#paper-plane-line-02');
-    //GeneratePaperPlaneLines('#paper-plane-line-03');
-    //GeneratePaperPlaneLines('#paper-plane-line-04');
-    //AnimateStroke('#cloud-01', duration - 100, Vivus.LINEAR);
-    //AnimateStroke('#cloud-02', duration - 125, Vivus.LINEAR);
-    //AnimateStroke('#cloud-03', duration - 150, Vivus.LINEAR);
-    //AnimateStroke('#city-buildings', duration - 50, Vivus.LINEAR);
+    AnimateStroke('#road-01', duration - 120, Vivus.LINEAR, {startType: 'autostart'});
+    GenerateRoad('.road-container');
+    AnimateStroke('#city-flatline', duration - 80, Vivus.LINEAR, {scenarioType: 'scenario-sync'});
+    GeneratePaperPlaneLines('#paper-plane-line-01');
+    GeneratePaperPlaneLines('#paper-plane-line-02');
+    GeneratePaperPlaneLines('#paper-plane-line-03');
+    ('#paper-plane-line-04');
+    AnimateStroke('#cloud-01', duration - 100, Vivus.LINEAR);
+    AnimateStroke('#cloud-02', duration - 125, Vivus.LINEAR);
+    AnimateStroke('#cloud-03', duration - 150, Vivus.LINEAR);
+    AnimateStroke('#city-buildings', duration - 50, Vivus.LINEAR);
     //AnimateStroke('#cloud-background-01', duration, easing);
     //AnimateStroke('#cloud-background-02', duration - 100, easing);
     //AnimateStroke('#cloud-background-03', duration - 80, easing);
-    //AnimateStroke('#hot-air-balloon-web', duration - 20, Vivus.LINEAR, {scenarioType: 'async'});
-    //AnimateStroke('#hot-air-balloon-plain', duration - 125, Vivus.LINEAR, {scenarioType: 'oneByOne'});
-    // AnimateFoliageStroke($('[class^=foliage]'), duration - 140, easing);
-    //FadeInAnimation('#planet');
-    //FadeInAnimation('#anim-rain-01');
+    AnimateStroke('#hot-air-balloon-web', duration - 70, Vivus.LINEAR, {scenarioType: 'sync'});
+
+    // AnimateFoliageStroke($('[class^=foliage]'), duration - 100, easing, {scenarioType: 'oneByOne'});
+    PopInFoliage($('[class^=foliage]'));
+
+
+    FadeInAnimation('#planet');
+    // FadeInAnimation('#anim-rain-01');
     //setTimeout(function(){ FadeInAnimation('#anim-rain-02'); }, 3000);
     //setTimeout(function(){ FadeInAnimation('#anim-rain-03'); }, 3000);
     //setTimeout(function(){ FadeInAnimation('#anim-rain-04'); }, 3000);
     //setTimeout(function(){ FadeInAnimation('#anim-rain-05'); }, 3000);
-    // setTimeout(function(){ AnimateBalloon('#hot-air-balloon-plain') }, 1000);
+    setTimeout(function(){
+      AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%')
+    }, 1000);
 
 
+    var _movementDuration = 0.75;
+
+    MoveElement('#about-content-01', '#about-container', _movementDuration);
+    MoveElement('#about-content-02', '#about-container', _movementDuration);
+    MoveElement('#about-content-03', '#about-container', _movementDuration);
+    MoveElement('#about-content-04', '#about-container', _movementDuration);
+    MoveElement('#skills-web-development', '#skills-container', _movementDuration);
+    MoveElement('#skills-html', '#skills-container', _movementDuration);
+    MoveElement('#skills-css', '#skills-container', _movementDuration);
+    MoveElement('#skills-js', '#skills-container', _movementDuration);
+    MoveElement('#skills-animation', '#skills-container', _movementDuration);
+    MoveElement('#skills-jquery', '#skills-container', _movementDuration);
+
+
+
+      // dynamic font sizing for blimps
+      $("#blimp-web-font").fitText();
+      $("#blimp-html-font").fitText();
+      $("#blimp-css-font").fitText();
+      $("#blimp-animation-font").fitText();
+      $("#blimp-js-font").fitText();
+      $("#blimp-jquery-font").fitText();
+
+      var intervalRate = 30;
+      var resizeWebBlimp = ResizeBlimpRect("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
+      setInterval(resizeWebBlimp, intervalRate);
+      var resizeHTMLBlimp = ResizeBlimpRect("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
+      setInterval(resizeHTMLBlimp, intervalRate);
+      var resizeCSSBlimp = ResizeBlimpRect("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
+      setInterval(resizeCSSBlimp, intervalRate);
+      var resizeAnimationBlimp = ResizeBlimpRect("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
+      setInterval(resizeAnimationBlimp, intervalRate);
+      var resizeJqueryBlimp = ResizeBlimpRect("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
+      setInterval(resizeJqueryBlimp, intervalRate);
+      var resizeJSBlimp = ResizeBlimpRect("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
+      setInterval(resizeJSBlimp, intervalRate);
 
 
   })
