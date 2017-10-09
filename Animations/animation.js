@@ -445,12 +445,12 @@ function GenerateFoliageWaypoint(foliageElement)
     handler: function(direction) {
       RevealElementByClass('foliage-show', $(foliageElement)); // set to visible by switching class
       var timeline = new TimelineMax();
-      timeline.append(TweenMax.fromTo(foliageElement, 0.3,
+      timeline.append(TweenMax.fromTo(foliageElement, 3,
         {scaleY: 0.0, force3D: force3D, rotation: 0.00001}, {scaleY: 1.10, force3D: force3D, rotation: 0.00001})).
         to(foliageElement, 0.4, {scaleY: 1, force3D: force3D, rotation: 0.00001});
       waypoint.destroy();
     },
-    offset: '800'
+    offset: '700'
   });
 }
 
