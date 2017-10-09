@@ -11,6 +11,85 @@
   display: none;
 }
 
+.cloud-contact-box
+{
+  height: auto;
+  width: 69%;
+  left: 0;
+  /* top: 13rem; */
+  right: 0;
+  position: absolute;
+  overflow: visible;
+  transform: translateY(100px);
+}
+
+#cloud-contact-03:hover #phone-path
+{
+  fill: black;
+}
+
+#email-box
+{
+  height: auto;
+  width: 69%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  overflow: visible;
+  transform: translateY(100px);
+}
+
+#email-box rect
+{
+  fill: white;
+  stroke: black;
+  stroke-width: 0.1rem;
+}
+
+#email-box svg
+{
+  overflow: visible;
+  height: auto;
+}
+
+#email-text
+{
+  top: 3.7rem;
+  font-size: 1.7rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+#phone-text
+{
+  top: 3.8rem;
+  font-size: 1.7rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+#phone-box
+{
+
+}
+
+#phone-box rect
+{
+  fill: white;
+  stroke: black;
+  stroke-width: 0.1rem;
+}
+
+#phone-box svg
+{
+  overflow: visible;
+  height: auto;
+}
+
+
+
 #road-01
 {
   margin-top: -30.5rem;
@@ -104,34 +183,28 @@
 
 .clouds-contact > svg
 {
-
-position: absolute;
+position: absolute;
+height: 17rem;
 }
 
 #planet-city-container
 {
-max-height: 83rem;
-border: solid 1px #F44336;
+max-height: 76.8rem;
 }
 
 #about-content-container
 {
 display: block;
-outline: 1px solid #8BC34A;
 /* max-width: 167rem; */
 width: 100%;
 height: auto;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
 }
 
 #header-cloud-02 > svg
 {
 }
 #skills-header-container
-{height: auto;max-width: 100%;}
+{height: 100%;width: 100%;left: 37%;right: 0;margin: 0;position: absolute;}
 
 
 #blimp-css > svg
@@ -182,7 +255,7 @@ right: 0;
 
 
 #contact-header-cloud-container
-{height: auto;}
+{height: 100%;width: 100%;left: 39%;right: 0;margin: 0;position: absolute;}
 
 #anim-rain-01
 {
@@ -234,28 +307,27 @@ left: 8rem;
 #paper-plane-container-01
 {
 z-index: 2;
-left: 10%;
+left: 38%;
+top: 0rem;
 }
 
 #paper-plane-container-02
 {
-
-z-index: -1;
-
-right: 15%;
-
-transform: rotate(14deg);
+z-index: -1;
+transform: rotate(14deg);
+top: -3rem;
+left: -6rem;
 }
 
 #paper-plane-container-03
-{z-index: -1;right: 0;transform: rotate(16deg);}
+{z-index: -1;right: 0;top: -4rem;left: -9rem;transform: rotate(16deg);}
 
 #paper-plane-container-04
 {
     z-index: -1;
-    left: 25%;
+    left: 41%;
     transform: rotate(4deg);
-    top: -8%;
+    top: -2rem;
 }
 
 .paper-plane-line-container
@@ -270,9 +342,6 @@ transform: rotate(14deg);
 position: absolute;
 z-index: -1;
 }
-
-
-
 
 #paper-plane-line-01
 {
@@ -297,35 +366,22 @@ transform: rotate(14deg);
 {transform-origin: right;transform: translate(18rem, 19.9rem) rotate(15.3deg);z-index: -1;}
 
 #contact-header
-{
-  /* position: absolute; */
-  width: 100%;
-  height: auto;
-  display: block;
-  outline: 1px solid blue;
-  max-width: 100%;
-  width: 100%;
-}
+{display: block;max-width: 100%;width: 100%;height: 25rem;}
 
 .contact-icons
 {
-
-height: auto;
-
-top: 40%;
-
-max-width: 12rem;
+height: auto;
+top: 30%;
+max-width: 12rem;
 }
 
 .paper-plane-container
 {
     max-width: 24rem;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     left: 0;
     right: 0;
-    position: absolute;
 }
 
 div.road-container div:nth-child(2n)
@@ -389,7 +445,7 @@ div.road-container div:nth-child(2n)
 {
   max-width: 13rem;
   height: 18rem;
-  top: 6.5%;
+  top: 5.5%;
   left: 33%;
 }
 
@@ -397,7 +453,7 @@ div.road-container div:nth-child(2n)
 {left: 57%;max-width: 100%;width: 100%;height: 100%;}
 
 #tree-02
-{z-index: 0;top: 26%;left: 16%;height: 100%;}
+{z-index: 0;top: -92%;left: 16%;height: 100%;}
 
 #tree-03
 {
@@ -475,6 +531,7 @@ div.road-container div:nth-child(2n)
 width: 100%;
 height: 100%;
 z-index: -1;
+position: absolute;
 }
 
 #tree-14
@@ -642,8 +699,8 @@ div.road-container div:nth-child(2n)
 {
   width: 18rem;
   height: 16rem;
-  top: 22.8%;
-  left: -36.1%;
+  top: 21.8%;
+  left: 3.9%;
 }
 
 #tree-group-04
@@ -693,6 +750,7 @@ div.road-container div:nth-child(2n)
 height: 100%;
 left: -24%;
 top: 9%;
+position: absolute;
 }
 
 #bush-02
@@ -743,16 +801,12 @@ z-index: -1;
 
 #grass-01
 {
-
-z-index: -1;
-
-width: 100%;
-
-left: 2%;
-
-height: 100%;
-
-top: 7%;
+z-index: -1;
+width: 100%;
+left: 2%;
+height: 100%;
+top: 7%;
+position: absolute;
 }
 
 #grass-02
@@ -801,6 +855,7 @@ top: 7%;
   left: 49%;
   max-width: 7.1rem;
   z-index: -2;
+  position: absolute;
 }
 
 #grass-08
@@ -809,6 +864,7 @@ top: 7%;
   left: -20%;
   max-width: 7.1rem;
   z-index: 2;
+  position: absolute;
 }
 
 
@@ -848,16 +904,12 @@ top: 7%;
 
 #grass-12
 {
-
-z-index: -1;
-
-width: 100%;
-
-left: 2%;
-
-height: 100%;
-
-top: 7%;
+z-index: -1;
+width: 100%;
+left: 2%;
+height: 100%;
+top: 7%;
+position: absolute;
 }
 
 
@@ -1015,7 +1067,6 @@ left: -1.6rem;
 #intro-container
 {
     height: auto;
-    border: solid 1px green;
     z-index: -9999;
     overflow: hidden;
 }
@@ -1102,7 +1153,7 @@ font-weight: 200;
 
 .clouds-contact
 {
-    height: 17rem;
+    height: 23rem;
     position: absolute;
     width: auto;
     left: 0;
@@ -1136,25 +1187,29 @@ font-weight: 200;
 #contact-container
 {
   height: 120rem;
+  width: 100%;
   overflow: hidden;
-  outline: 1px solid pink;
-  max-width: 277rem;
+  /* max-width: 277rem; */
   margin-top: 3rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 #email-section
 {
-    margin-right: 55%;
     top: 44%;
+    left: 14%;
 }
 
 #phone-section
-{top: 76%;margin-left: 40%;}
+{top: 76%;left: 60%;}
 
 #cv-section
 {
     top: 76%;
-    margin-right: 30%;
+    left: 20%;
 }
 
 .paper-plane-line
@@ -1173,31 +1228,22 @@ font-weight: 200;
 
 #cloud-grouping-section
 {
-    margin-left: 64%;
-    height: auto;
+    left: 70%;
     z-index: -1;
 }
 
 
 #contact-description-section
-{top: 30%;left: 0;right: 0;bottom: 0;height: 53rem;width: 40rem;position: absolute;}
+{top: 30%;left: 0;right: 0;bottom: 0;height: 53rem;width: 40rem;position: absolute;margin-left: auto;margin-right: auto;}
 
 .contact-section
 {
-
-position: absolute;
-
-margin-left: auto;
-
-margin-right: auto;
-
-left: 0;
-
-right: 0;
-
-height: 20.2rem;
-
-width: auto;
+position: absolute;
+left: 0;
+right: 0;
+height: auto;
+width: 29rem;
+margin: 0;
 }
 
 #paper-plane-01
@@ -1209,18 +1255,18 @@ width: auto;
 
 .paper-plane-envelope
 {
+transform: scaleX(-1) rotate(72deg);
+position: absolute;
+}
 
-transform: scaleX(-1) rotate(72deg);
-
-/* max-width: 24rem; */
-
-position: absolute;
+.paper-plane-envelope path
+{
+  stroke-width: 0.07rem;
 }
 
 #paper-plane-envelope-02
 {
-
-transform: scaleX(-1) rotate(-100deg);
+transform: scaleX(-1) rotate(-100deg);
 }
 
 #paper-plane-envelope-03
@@ -1315,10 +1361,9 @@ transform: rotate(-116deg);
 {
     height: auto;
     max-width: 167rem;
-    border-top: dashed 0.1rem black;
+    /* border-top: dashed 0.1rem black; */
     fill: white;
-    margin-top: -4rem;
-    margin-bottom: 2rem;
+    transform: translateY(-4rem);
 }
 
 #copyright-text
@@ -1424,7 +1469,6 @@ top: 90%;
 .skills-group
 {
     display: block;
-    outline: 1px solid #795548;
     width: 100%;
     height: auto;
 }
@@ -1484,12 +1528,9 @@ top: 90%;
 
 .road
 {
-  top: 0;
-  left: 0;
   overflow: inherit;
   height: 10.05%;
   max-width: 230rem;
-  outline: solid 2px red;
   margin-bottom: 6rem;
 }
 
@@ -1538,7 +1579,6 @@ stroke-width: 1rem;
 width: 100%;
 left: 0;
 right: 0;
-outline: solid cornflowerblue 10px;
 height: 620rem;
 overflow: hidden;
 z-index: -99999;
@@ -1573,35 +1613,29 @@ stroke-width: 1rem;
 }
 
 #email
-{
-}
+{}
 
 #phone
 {
-    top: 33%;
+    top: 27%;
     max-width: 9rem;
-}
-
-#phone path:hover
-{
-  fill: black;
 }
 
 #city-buildings svg
 {
-  stroke-width: 0.025rem;
 }
 
 
 #city-buildings path
 {
-  stroke-width: 0.025rem;
+  stroke-width: 0.03rem;
   stroke: black;
 }
 
 #cv
 {
     max-width: 9rem;
+    top: 25%;
 }
 
 .paper-plane
@@ -1648,14 +1682,18 @@ stroke-width: 1rem;
 {
 height: auto;
 /* max-width: 167rem; */
-border: solid 1px green;
 }
 
 #skills-header-text
 {}
 
 #skills-header
-{display: block;outline: 1px solid blue;max-width: 100%;width: 100%;}
+{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 25rem;
+}
 
 #skills-header-cloud-container
 {left: 0;right: 0;}
@@ -1774,7 +1812,7 @@ svg
 }
 
 #city-container
-{display: block;outline: 1px solid #795548;width: 100%;height: auto;max-width: 75rem;}
+{display: block;width: 100%;height: auto;max-width: 75rem;}
 
 #anim-city-flyover-container
 {
@@ -1801,12 +1839,11 @@ svg
 {
 
   /* go across the entire screen */
-  max-width: none !important;
-  width: 100%;
-  left: 0;
-  right: 0;
-  position: absolute;
-  height: 2.5rem;
+max-width: none !important;
+width: 100%;
+left: 0;
+right: 0;
+height: 0.8rem;
 }
 
 #city-flatline > svg
@@ -1837,10 +1874,11 @@ svg
 .clouds-header
 {
     max-width: 40rem;
-    height: auto;
     left: 0;
     right: 0;
-    width: auto;
+    margin: 0;
+    width: 40rem;
+    position: absolute;
 }
 
 #cloud-container
@@ -1848,7 +1886,7 @@ svg
   width: 100%;
   position: absolute;
   z-index: 1;
-  height: 100%;
+  height: auto;
 }
 
 #cloud-group-three-01-container
@@ -1989,7 +2027,7 @@ svg
 {height: auto;margin-top: 6rem;width: 100%;height: 100%;}
 
 #about-header
-{display: block;outline: 1px solid blue;max-width: 100%;width: 100%;height: auto;}
+{display: block;max-width: 100%;width: 100%;height: 25rem;}
 
 #about-header-text
 {}
@@ -1997,16 +2035,24 @@ svg
 #about-header-cloud-container
 {
     height: 100%;
+    width: 100%;
+    left: 38%;
+    right: 0;
+    margin: 0;
+    position: absolute;
 }
 
 #header-cloud-01
-{left: -5rem;right: 0;top: 0;z-index: -1;}
+{z-index: -1;left: -6rem;}
 
 #header-cloud-02
-{position: absolute;top: 8%;left: 10rem;z-index: -2;}
+{z-index: -2;left: 6rem;top: 1rem;}
 
 #header-cloud-03
-{margin-top: -20rem;}
+{
+    left: 0;
+    top: 2rem;
+}
 
 #about-content-cloud-01
 {
@@ -2088,7 +2134,7 @@ position: relative;
 {}
 
 #planet-container
-{display: block;outline: 1px solid #5a25fe;width: 100%;height: 61.5rem;max-width: 61.5rem;}
+{display: block;width: 100%;height: 61.5rem;max-width: 61.5rem;}
 
 #planet
 {
@@ -2102,7 +2148,6 @@ position: relative;
                max-width: 50rem;
                width: auto;
                height: auto;
-               outline: 1px solid #795548;
                width: 100%;
                height: auto;
                max-width: 118rem;
@@ -2859,10 +2904,7 @@ font-size: 1.7rem;
   {
   }
 
-  #cloud-contact-03
-  {
 
-  }
 
   #header-cloud-01
   {
@@ -3087,6 +3129,7 @@ position: relative;
 #contact-container
 {
 }
+
 
 .paper-plane-line-container
 {
