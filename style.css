@@ -722,7 +722,7 @@ div.road-container div:nth-child(2n)
 }
 
 #tree-group-06
-{width: 17rem;height: 17rem;top: 47.4%;/* transform: scaleX(-1); */left: 12.4%;position: absolute;}
+{width: 17rem;height: 17rem;top: 46.9%;/* transform: scaleX(-1); */left: 12.4%;position: absolute;}
 
 #tree-group-02
 {
@@ -820,7 +820,7 @@ z-index: -1;
 #grass-03
 {
 z-index: 1;
-top: 34%;
+top: 32%;
 left: 84.5%;
 width: 7.9rem;
 }
@@ -839,6 +839,7 @@ z-index: -1;
 left: -20%;
 max-width: 7.1rem;
 z-index: 2;
+position: absolute;
 }
 
 #grass-06
@@ -847,6 +848,7 @@ z-index: -1;
   left: 49%;
   max-width: 7.1rem;
   z-index: -2;
+  position: absolute;
 }
 
 #grass-07
