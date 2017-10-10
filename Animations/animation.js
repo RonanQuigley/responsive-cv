@@ -268,7 +268,9 @@ function AnimateStroke(element, length, easing, optionals)
           SetFillToNone(_currentSVGElement);
           if(_id == 'city-buildings')
           {
-            this.play(1, function(){GenerateClouds(6, 12, 20)});
+            this.play(1, function(){
+              // GenerateClouds(6, 12, 20)
+            });
           }
           else
           {
@@ -439,18 +441,20 @@ function GenerateRoadWaypoint(roadElement)
 
 function GenerateFoliageWaypoint(foliageElement)
 {
-  var force3D = "auto";
+  var _force3D = "auto";
+  var _foliageElement= $(foliageElement); // create a jquery object
+  var _offset = _foliageElement.attr('id') == 'vegetation-group-02' ? '900' : '650';
   var waypoint = new Waypoint({
     element: foliageElement,
     handler: function(direction) {
-      RevealElementByClass('foliage-show', $(foliageElement)); // set to visible by switching class
+      RevealElementByClass('foliage-show', _foliageElement); // set to visible by switching class
       var timeline = new TimelineMax();
-      timeline.append(TweenMax.fromTo(foliageElement, 3,
-        {scaleY: 0.0, force3D: force3D, rotation: 0.00001}, {scaleY: 1.10, force3D: force3D, rotation: 0.00001})).
-        to(foliageElement, 0.4, {scaleY: 1, force3D: force3D, rotation: 0.00001});
+      timeline.append(TweenMax.fromTo(foliageElement, 0.3,
+        {scaleY: 0.0, force3D: _force3D, rotation: 0.00001}, {scaleY: 1.05, force3D: _force3D, rotation: 0.00001})).
+        to(foliageElement, 0.3, {scaleY: 1, force3D: _force3D, rotation: 0.00001});
       waypoint.destroy();
     },
-    offset: '700'
+    offset: _offset
   });
 }
 
@@ -462,56 +466,51 @@ function GenerateClouds(numberOfClouds, minDuration, maxDuration)
     // console.log("Number Of Clouds must be a multiple of 2; reducing requested amount by 1");
   }
   var _numOfCloudsHalved = numberOfClouds / 2;
-  var _bodyContainer = $('#wrapper-foreground');
-  var _containerToUse = null;
-  for(var i = 0; i < _bodyContainer.children().length; i++)
+  var _generatedCloudsContainer = $('#generated-clouds-container');
+  for(var i = 0; i < numberOfClouds; i++)
   {
-    // console.log(_bodyContainer);
-     _containerToUse = _bodyContainer.children().eq(i);
-    // console.log("container to use: " + _containerToUse.attr('id'));
-  }
-  for(var j = 0; i < numberOfClouds; j++)
-  {
-    if(j < _numOfCloudsHalved)
+    if(i < _numOfCloudsHalved)
     {
-      GenerateCloud('#cloud-01', j, minDuration, maxDuration, _containerToUse)
+      GenerateCloud('#cloud-01', i, minDuration, maxDuration, _generatedCloudsContainer)
     }
     else
     {
-      GenerateCloud('#cloud-group-three-01', j, minDuration, maxDuration, _containerToUse)
+      GenerateCloud('#cloud-group-three-01', i, minDuration, maxDuration, _generatedCloudsContainer)
     }
   }
+
   // remove the unnecessary cloud group
-  $('#cloud-group-three-01').parent().remove();
+  // $('#cloud-group-three-01').parent().remove();
 
   function GenerateCloud(element, currentIndex, minDuration, maxDuration, container)
   {
     var _repeateEnabled = true;
     var _force3DTranslate = true;
-    var _rotation = 0.01;
+    var _rotation = 0.00001;
     var _yRandomMax = 95;
     // copy the cloud we want then change its ID
     var _cloudToCopy = $(element);
-    var _cloud = _cloudToCopy.clone().
-      attr('id', 'cloud-generated-sub-container-0' + (currentIndex + 1));
+    var _copiedCloud = _cloudToCopy.clone();
     // apply a unique class depending on the type of cloud we copied
     if(_cloudToCopy.attr('id') === "cloud-01")
     {
-      _cloud.attr('class','cloud-one-generated-sub-container');
+      _copiedCloud.attr({'class' : 'cloud-one-generated-sub-container', id : 'cloud-generated-sub-container-0' + (currentIndex + 1)});
     }
     else if(_cloudToCopy.attr('id') === "cloud-group-three-01")
     {
-      _cloud.attr('class','cloud-three-generated-sub-container');
-      _cloud.children().attr('class', 'clouds-generated-background');
+      _copiedCloud.attr({'class' : 'cloud-three-generated-sub-container', id : 'cloud-generated-sub-container-0' + (currentIndex + 1)});
+      _copiedCloud.children().attr('class', 'clouds-generated-background');
     }
     // all clouds just have an incremented id
-    _cloud.children().attr('id', 'cloud-background-generated-0' + (currentIndex + 1));
-    // add to iterated container
-    _cloud.appendTo(container);
+    // _copiedCloud.children().attr('id', 'cloud-background-generated-0' + (currentIndex + 1));
+    // add to iterated container;
+    var cloudContainer = $("<div>", {id: "cloud-generated-0" + (currentIndex + 1), "class" : "cloud-generated"});
+    container.append(cloudContainer);
+    _copiedCloud.appendTo(cloudContainer);
     var _left = (Math.random() * 10 + '%');
     var _top = (Math.random() * 75 + '%');
-    _cloud.find('path').css('fill', 'magenta');
-    TranslateElement(_cloud, minDuration, maxDuration ,
+    _copiedCloud.find('path').css('fill', 'magenta');
+    TranslateElement(_copiedCloud, minDuration, maxDuration ,
       _repeateEnabled, Linear.easeNone, _force3DTranslate, _yRandomMax, _rotation);
   }
 }
@@ -640,10 +639,8 @@ function Init()
     // DO NOT CALL THIS BEFORE ANIMATESTROKE!!!!!!!!
     // GenerateClouds(6, 12, 20);
 
-    //TranslateElement('#cloud-rain-container',
     //minDuration, maxDuration, true, Linear.easeNone, true, 80, 0);
     AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%');
-    //TranslateElement('#hot-air-balloon-web-container',
     //minDuration, maxDuration, true, Linear.easeNone, false, 30, 0);
 
     // put the first road separately for an automatic start without using waypoints
