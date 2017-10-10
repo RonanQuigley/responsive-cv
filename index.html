@@ -15,6 +15,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
     <script type="text/javascript">
     $('html').addClass('hidden');
@@ -40,22 +41,30 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 0 1500.954 900.131">
                     <path d="M915.535 5.393S783.111-4.128 677.774 90.675c-48.523 43.67-84.914 123.365-84.914 123.365s-76.826-37.067-174.682 4.852c-40.604 17.394-131.183 84.299-141.929 163.764-92.184 4.937-184.822 58.461-212.286 93.405C25.716 530.795 2.908 584.912 5.736 669.477 15.26 866.94 233.792 879.874 233.792 879.874h958.322s233.918 4.539 235.334-224.954c.253-40.907-8.166-90.732-29.782-134.778-27.209-55.445-75.331-103.557-153.391-117.639-7.921-122.726-39.461-290.348-151.633-353.221-33.67-29.959-126.307-44.588-177.107-43.889z" fill="none" stroke="#231f20" stroke-width="11" stroke-miterlimit="10"/>
                 </svg>
-
               </div>
               <div id="cloud-background-03" class="clouds-background">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 0 1500.954 900.131">
                     <path data-delay="100" d="M915.535 5.393S783.111-4.128 677.774 90.675c-48.523 43.67-84.914 123.365-84.914 123.365s-76.826-37.067-174.682 4.852c-40.604 17.394-131.183 84.299-141.929 163.764-92.184 4.937-184.822 58.461-212.286 93.405C25.716 530.795 2.908 584.912 5.736 669.477 15.26 866.94 233.792 879.874 233.792 879.874h958.322s233.918 4.539 235.334-224.954c.253-40.907-8.166-90.732-29.782-134.778-27.209-55.445-75.331-103.557-153.391-117.639-7.921-122.726-39.461-290.348-151.633-353.221-33.67-29.959-126.307-44.588-177.107-43.889z" fill="none" stroke="#231f20" stroke-width="11" stroke-miterlimit="10"/>
                 </svg>
-
               </div>
             </div>
           </div>
-          <div id="cloud-rain-container">
-            <div id="cloud-rain" class="clouds-background">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.68 79.845">
-                  <path d="M82.854.524S70.87-.338 61.338 8.242c-4.391 3.952-7.684 11.164-7.684 11.164s-6.952-3.354-15.808.439c-3.674 1.574-11.871 7.629-12.844 14.82-8.342.447-16.725 5.29-19.211 8.453C2.33 48.071.266 52.81.522 60.463 1.384 78.332 21.16 79.345 21.16 79.345h86.724s21.168.569 21.297-20.199c.023-3.702-.739-8.132-2.695-12.118-2.462-5.017-6.817-9.332-13.881-10.606-.717-11.106-3.571-26.255-13.722-31.945C95.834 1.765 87.451.461 82.854.524z" fill="#ffffff" stroke="#231f20" stroke-miterlimit="10"/>
-              </svg>
-              <div id="anim-rain-01" class="anim-rain">
+          <div id="cloud-group-three-stroked-02-container">
+            <div id="cloud-group-three-stroked-02">
+              <div id="cloud-background-stroked-01" class="clouds-background">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 0 1500.954 900.131">
+                    <path d="M915.535 5.393S783.111-4.128 677.774 90.675c-48.523 43.67-84.914 123.365-84.914 123.365s-76.826-37.067-174.682 4.852c-40.604 17.394-131.183 84.299-141.929 163.764-92.184 4.937-184.822 58.461-212.286 93.405C25.716 530.795 2.908 584.912 5.736 669.477 15.26 866.94 233.792 879.874 233.792 879.874h958.322s233.918 4.539 235.334-224.954c.253-40.907-8.166-90.732-29.782-134.778-27.209-55.445-75.331-103.557-153.391-117.639-7.921-122.726-39.461-290.348-151.633-353.221-33.67-29.959-126.307-44.588-177.107-43.889z" fill="none" stroke="#231f20" stroke-width="11" stroke-miterlimit="10"/>
+                </svg>
+              </div>
+              <div id="cloud-background-stroked-02" class="clouds-background">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 0 1500.954 900.131">
+                    <path d="M915.535 5.393S783.111-4.128 677.774 90.675c-48.523 43.67-84.914 123.365-84.914 123.365s-76.826-37.067-174.682 4.852c-40.604 17.394-131.183 84.299-141.929 163.764-92.184 4.937-184.822 58.461-212.286 93.405C25.716 530.795 2.908 584.912 5.736 669.477 15.26 866.94 233.792 879.874 233.792 879.874h958.322s233.918 4.539 235.334-224.954c.253-40.907-8.166-90.732-29.782-134.778-27.209-55.445-75.331-103.557-153.391-117.639-7.921-122.726-39.461-290.348-151.633-353.221-33.67-29.959-126.307-44.588-177.107-43.889z" fill="none" stroke="#231f20" stroke-width="11" stroke-miterlimit="10"/>
+                </svg>
+              </div>
+              <div id="cloud-background-stroked-03" class="clouds-background">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 0 1500.954 900.131">
+                    <path data-delay="100" d="M915.535 5.393S783.111-4.128 677.774 90.675c-48.523 43.67-84.914 123.365-84.914 123.365s-76.826-37.067-174.682 4.852c-40.604 17.394-131.183 84.299-141.929 163.764-92.184 4.937-184.822 58.461-212.286 93.405C25.716 530.795 2.908 584.912 5.736 669.477 15.26 866.94 233.792 879.874 233.792 879.874h958.322s233.918 4.539 235.334-224.954c.253-40.907-8.166-90.732-29.782-134.778-27.209-55.445-75.331-103.557-153.391-117.639-7.921-122.726-39.461-290.348-151.633-353.221-33.67-29.959-126.307-44.588-177.107-43.889z" fill="none" stroke="#231f20" stroke-width="11" stroke-miterlimit="10"/>
+                </svg>
               </div>
             </div>
           </div>
@@ -88,14 +97,6 @@
             <header id="planet">
             </header>
           </div>
-          <div id="anim-city-flyover-container">
-            <div id="anim-city-flyover-one">
-            </div>
-            <div id="anim-city-flyover-three">
-            </div>
-            <div id="anim-city-flyover-five">
-            </div>
-          </div>
           <div id="city-container">
             <div id="city-buildings">
               <svg preserveAspectRatio="xMidYMax meet" viewBox="-4 0 70 30">
@@ -110,7 +111,6 @@
               </svg>
             </div>
           </div>
-
           <div id="city-flatline">
               <svg preserveAspectRatio="none" viewBox="0 0 100 100">
                 <line data-fill="none" stroke="black" x1="0" y1="0" x2="100" y2="0"></line>
@@ -119,11 +119,6 @@
         </div>
       </div>
       <div id="foliage-container">
-        <div id="bush-01">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.763 31.78">
-              <path d="M8.824 31.376s-9.99-7.294-8.081-11.604c1.997-4.508 7.252-10.568 14.505-2.901.622.414 1.658-16.577 13.469-16.37s18.856 11.397 19.478 15.333-3.108 13.883-3.108 13.883" fill="white" stroke="#000" stroke-miterlimit="10"/>
-          </svg>
-        </div>
         <div id="tree-group-01" class="foliage-hide">
           <div id="tree-36" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.169 166.441">
@@ -257,6 +252,8 @@
                 </g>
             </svg>
           </div>
+          <div id="fire-02">
+          </div>
         </div>
         <div id="tree-group-06" class="foliage-hide">
           <div id="tree-01" class="foliage">
@@ -327,6 +324,9 @@
           </div>
         </div>
         <div id="tree-group-10" class="foliage-hide">
+          <div id="fire-01">
+
+          </div>
           <div id="tree-04" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.475 140.024">
                 <g fill="white" stroke="#000" stroke-miterlimit="10">
@@ -358,8 +358,6 @@
             </svg>
           </div>
         </div>
-
-
         <div id="vegetation-group-01" class="foliage-hide">
           <div id="tree-05" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.9 131.643">
@@ -614,10 +612,8 @@
                 </g>
             </svg>
           </div>
+        </div>
       </div>
-
-    </div>
-
       <div class="road-container">
         <div id="road-01" class="road">
           <svg style="position: absolute" viewBox="0 0 100 100" preserveAspectRatio="none" >
@@ -1116,7 +1112,6 @@
             <title>Blimp_JavaScript</title>
             <path id="_Path_" data-name="&lt;Path&gt;" class="blimps" d="M1.4,8.2L292.6,82,1.4,155.2s27.5-32.9,27.5-73.5S1.4,8.2,1.4,8.2Z"/>
             <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" class="blimp-js-svg" x="154.6" y="150.3" width="72" height="35"/>
-
             <ellipse class="blimps" cx="190.7" cy="82" rx="171.7" ry="81.5"/>
             <circle id="_Path_2" data-name="&lt;Path&gt;" class="blimps" cx="19.2" cy="81.5" r="5.8"/>
             <svg id="skill-anim-js" class="skill-anims">
@@ -1158,7 +1153,6 @@
               </div>
             </div>
           </div>
-
           <div id="skills-jquery" class="skill">
             <svg id="blimp-jquery" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364.5 192.6">
               <defs>
@@ -1254,7 +1248,7 @@
               </svg>
             </div>-->
           </div>
-          <div id="cloud-group-three-02">
+          <div id="cloud-group-three-03">
             <div id="cloud-rain-container-01" >
               <div id="cloud-01" class="clouds-background">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 885.131">
