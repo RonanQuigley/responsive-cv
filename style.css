@@ -202,14 +202,12 @@
 }
 
 #planet-city-container
-{
-max-height: 76.8rem;
-}
+{height: auto;}
 
 #about-content-container
 {
 display: block;
-/* max-width: 167rem; */
+max-width: 167rem;
 width: 100%;
 height: auto;
 }
@@ -218,7 +216,10 @@
 {
 }
 #skills-header-container
-{height: 100%;width: 100%;left: 37%;right: 0;margin: 0;position: absolute;}
+{
+    height: 100%;
+    width: 100%;
+}
 
 
 #blimp-css > svg
@@ -269,11 +270,15 @@ right: 0;
 
 
 #contact-header-cloud-container
-{height: 100%;width: 100%;left: 39%;right: 0;margin: 0;position: absolute;}
+{
+    width: 100%;
+    height: 100%;
+}
 
 #anim-rain-01
 {
   height: 11rem;
+  position: absolute;
 }
 
 #skills-text-box-container
@@ -291,23 +296,18 @@ right: 0;
 #cloud-background-01
 {
 z-index: -1;
-left: 8rem;
-right: 0px;
+transform: translate(47%, 8%);
 }
 
 #cloud-background-02
-{right: 3rem;top: 3rem;}
+{
+    transform: translate(0);
+}
 
 #cloud-background-03
 {
-
-z-index: 1;
-
-right: 0rem;
-
-top: 5rem;
-
-left: 8rem;
+z-index: 1;
+transform: translate(25%, 21%);
 }
 
 #foliage-container
@@ -380,7 +380,15 @@ left: 8rem;
 {transform-origin: right;transform: translate(18rem, 19.9rem) rotate(15.3deg);z-index: -1;}
 
 #contact-header
-{display: block;max-width: 100%;width: 100%;height: 25rem;}
+{
+    max-width: 40rem;
+    display: block;
+    width: auto;
+    height: 26.7rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
 
 .contact-icons
 {
@@ -413,7 +421,7 @@ div.road-container div:nth-child(2n)
 {
   max-width: 6.1rem;
   height: auto;
-  top: 1.3%;
+  top: 16rem;
   right: 41.8%;
 }
 
@@ -421,8 +429,8 @@ div.road-container div:nth-child(2n)
 {
 width: 6.1rem;
 height: auto;
-top: 54.7%;
-right: 35.9%;
+top: 18rem;
+right: -13.1%;
 }
 
 .road-sign
@@ -453,7 +461,7 @@ div.road-container div:nth-child(2n)
 {left: 78.4%;top: 0.7%;width: 15rem;height: 20.6rem;}
 
 #vegetation-group-02
-{width: 10rem;height: 7.5rem;left: 74.4%;top: 65.5%;position: absolute;}
+{width: 10rem;height: 7.5rem;left: 67.5%;top: 66.7%;position: absolute;}
 
 #vegetation-group-03
 {width: 10rem;height: 18rem;left: 16.4%;top: 20.7%;position: absolute;}
@@ -518,7 +526,7 @@ div.road-container div:nth-child(2n)
 
 #tree-04
 {
-top: 9.1%;
+top: 2rem;
 left: 3.5%;
 width: 11rem;
 z-index: -1;
@@ -695,7 +703,6 @@ div.road-container div:nth-child(2n)
 
 #tree-37
 {
-  top:-30%;
   z-index: -1;
 }
 
@@ -719,7 +726,7 @@ div.road-container div:nth-child(2n)
 #tree-group-05
 {
   width: 12rem;
-  height: 20.8rem;
+  height: 24.8rem;
   left: 7.5%;
   top: 61%;
   position: absolute;
@@ -738,13 +745,13 @@ div.road-container div:nth-child(2n)
 {width: 10rem;height: 17rem;top: 52%;left: 22.4%;position: absolute;}
 
 #tree-group-10
-{width: 10rem;height: 17rem;top: -1.5%;left: 9.4%;position: absolute;}
+{width: 10rem;height: 23rem;top: -1.5%;left: 9.4%;position: absolute;}
 
 #tree-group-11
 {width: 11rem;height: 17rem;top: 9.5%;left: 6.4%;position: absolute;}
 
 #tree-group-12
-{width: 9.5rem;height: 17rem;top: 38%;left: 83.4%;position: absolute;}
+{width: 9.5rem;height: 15.1rem;top: 36.7%;left: 83.4%;position: absolute;}
 
 
 #tree-group-02
@@ -759,8 +766,8 @@ div.road-container div:nth-child(2n)
 {
 z-index: 1;
 width: 7rem;
-right: 0;
 top: 24.1%;
+margin: 0;
 left: 28%;
 }
 
@@ -982,33 +989,37 @@ div.road-container div:nth-child(2n)
 }
 
 #skills-js
-{z-index: 0;left: 43rem;}
+{z-index: 0;left: -18rem;}
 
 #skills-animation
-{z-index: 1;left: 84rem;margin-top: -20rem;z-index: 1;max-width: 57rem;}
+{z-index: 1;margin-top: -20rem;z-index: 1;max-width: 57rem;left: 22rem;}
 
 #skills-jquery
-{z-index: -1;margin-top: -15rem;left: 57rem;}
+{z-index: -1;margin-top: -14rem;left: -8rem;}
 
 #skills-group-01
-{}
+{margin-top: 3rem;}
 
 #skills-group-02
 {
+    margin-top: 3rem;
+    right: 7.3%;
 }
 
 .skill
-{max-width: 50rem;/* width: auto; */margin: 0;height: auto;}
+{max-width: 50rem;width: auto;margin: auto;height: auto;}
 
 
 #skills-html
-{left: 61rem;}
+{
+    left: -14rem;
+}
 
 #skills-css
 {
     z-index: -1;
     margin-top: -14rem;
-    left: 95rem;
+    left: 19rem;
 }
 
 #skill-anim-jquery
@@ -1189,7 +1200,6 @@ font-weight: 200;
   height: 120rem;
   width: 100%;
   overflow: hidden;
-  /* max-width: 277rem; */
   margin-top: 3rem;
   top: 0;
   bottom: 0;
@@ -1228,7 +1238,8 @@ font-weight: 200;
 
 #cloud-grouping-section
 {
-    left: 70%;
+    left: 67%;
+    top: 33%;
     z-index: -1;
 }
 
@@ -1354,10 +1365,10 @@ transform: rotate(-116deg);
 #copyright-container
 {
     height: auto;
-    max-width: 167rem;
     /* border-top: dashed 0.1rem black; */
     fill: white;
     transform: translateY(-4rem);
+    max-width: 167rem;
 }
 
 #copyright-text
@@ -1524,7 +1535,6 @@ top: 90%;
 {
   overflow: inherit;
   height: 10.05%;
-  max-width: 230rem;
   margin-bottom: 6rem;
 }
 
@@ -1569,7 +1579,6 @@ stroke-width: 1rem;
 .road-container
 {
 position: absolute;
-max-width: 270rem;
 width: 100%;
 left: 0;
 right: 0;
@@ -1590,6 +1599,7 @@ stroke-width: 1rem;
   margin-right: 0;
   position: absolute;
   visibility: hidden;
+  transform-origin: bottom;
 }
 
 .foliage-show
@@ -1679,19 +1689,13 @@ stroke-width: 1rem;
 #skills-container
 {
 height: auto;
-/* max-width: 167rem; */
 }
 
 #skills-header-text
 {}
 
 #skills-header
-{
-    display: block;
-    max-width: 100%;
-    width: 100%;
-    height: 25rem;
-}
+{max-width: 40rem;display: block;width: auto;height: 26.7rem;left: 0;right: 0;margin: auto;}
 
 #skills-header-cloud-container
 {left: 0;right: 0;}
@@ -1702,11 +1706,10 @@ stroke-width: 1rem;
 
 #skills-web-development
 {
-    left: 92rem;
     margin-bottom: -15rem;
     z-index: 1;
-    padding-top: 6rem;
     max-width: 57rem;
+    left: 22rem;
 }
 
 
@@ -1764,6 +1767,7 @@ body
   margin:0 auto;
   position: relative;
   overflow-x: hidden;
+  max-width: 192rem;
 }
 
 svg
@@ -1807,6 +1811,7 @@ svg
   z-index: 1;
   height: auto;
   overflow: hidden;
+  max-width: 270rem;
 }
 
 #city-container
@@ -1825,9 +1830,11 @@ svg
 
 #anim-city-flyover-container > *
 {
-  height: 100%;
-  width: 100%;
   position: absolute;
+  left: 0;
+  right: 0;
+  width: 23rem;
+  height: auto;
 }
 
 #city-buildings
@@ -1841,7 +1848,8 @@ svg
 width: 100%;
 left: 0;
 right: 0;
-height: 0.8rem;
+height: 0.7rem;
+margin-bottom: -0.5rem;
 }
 
 #city-flatline > svg
@@ -1852,7 +1860,7 @@ svg
 }
 
 #hot-air-balloon-web
-{display: block;/* outline: 1px solid #5a25fe; */width: 100%;height: 500px;max-width: 61.5rem;}
+{display: block;/* outline: 1px solid #5a25fe; */width: 100%;height: 500px;px; */max-width: 61.5rem;}
 
 .clouds-content, .clouds-header, .clouds-background
 {
@@ -1864,7 +1872,7 @@ svg
 {z-index: -1;width: auto;min-width: 80%;top: -1rem;}
 
 .clouds-background
-{max-width: 19rem;width: 19rem;position: absolute;height: auto;}
+{max-width: 19rem;width: 100%;position: absolute;height: auto;}
 
 .clouds-generated-background
 {width: 19rem;position: absolute;height: auto;}
@@ -1872,10 +1880,11 @@ svg
 .clouds-header
 {
     max-width: 40rem;
+    width: 100%;
+    height: auto;
     left: 0;
     right: 0;
     margin: 0;
-    width: 40rem;
     position: absolute;
 }
 
@@ -1883,25 +1892,88 @@ svg
 {
   width: 100%;
   position: absolute;
-  z-index: 1;
-  height: auto;
+  z-index: 2;
+  height: 100%;
 }
 
 #cloud-group-three-01-container
 {
-  /* visibility: hidden; */
-  left: 30rem;
-  top: 40rem;
+  height: 100%;
+  position: absolute;
+  visibility: hidden;
+  /* transform-origin: left; */
+  width: 100%;
 }
 
 #cloud-group-three-01
 {
-  width: 100%;
-  max-width: 19rem;
-  position: absolute;
+  min-width: 12rem;
+  width: 25%;
   height: auto;
+  max-width: 19rem;
+  margin: 0;
   fill: white;
+  transform: translate3d(0,0,0);
+}
 
+#cloud-group-three-stroked-02-container
+{
+  height: auto;
+  position: absolute;
+  top: 70%;
+  left: 67%;
+  width: 25%;
+  min-width: 12rem;
+}
+
+#cloud-group-three-stroked-02
+{
+  fill: white;
+  transform: translate3d(0,0,0);
+  width: 100%;
+}
+
+#cloud-group-three-stroked-02 path
+{
+  fill: white;
+}
+
+#cloud-background-stroked-01
+{
+  z-index: -1;
+  transform: translate(27%, 8%);
+}
+
+#cloud-background-stroked-02
+{
+  transform: translate(-20%);
+}
+
+#cloud-background-stroked-03
+{
+  z-index: 1;
+  transform: translateY(25%);
+}
+
+#cloud-group-three-03-container
+{
+  height: auto;
+  position: absolute;
+  left: 66%;
+  top: 68%;
+}
+
+#cloud-group-three-03
+{
+  width: 19rem;
+  height: auto;
+  max-width: 19rem;
+  fill: white;
+}
+
+#cloud-group-three-03 path
+{
+  fill: white;
 }
 
 #cloud-group-three-01 path
@@ -1913,13 +1985,6 @@ svg
 @keyframes example {
     from {transform: translate3d(0, 0, 0) rotate(0.001deg);}
     to {transform: translate3d(calc(100vw), 0, 0) rotate(0.001deg);}
-}
-
-#cloud-group-three-02
-{max-width: 19rem;height: auto;}
-
-#cloud-01
-{
 }
 
 #generated-clouds-container
@@ -1956,18 +2021,16 @@ svg
 
 #cloud-rain-container
 {
-  visibility: hidden;
-  width: auto;
-  height: auto;
+  width: 19rem;
+  height: 13rem;
+  position: absolute;
 }
 
 #cloud-rain
 {
-  /*animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-name: example;
-  animation-timing-function: linear;*/
-  /* transform: translate(140%, 200%); */
+  width: 100%;
+  height: auto;
+  position: absolute;
 }
 
 #cloud-rain-container-01
@@ -2015,7 +2078,7 @@ svg
 {
   max-width: 100%;
   height: 12rem;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 #anim-rain svg
@@ -2032,20 +2095,13 @@ svg
 {height: auto;margin-top: 6rem;width: 100%;height: 100%;}
 
 #about-header
-{display: block;max-width: 100%;width: 100%;height: 25rem;}
+{display: block;width: 100%;height: 26.7rem;left: 0;right: 0;margin: auto;}
 
 #about-header-text
 {}
 
 #about-header-cloud-container
-{
-    height: 100%;
-    width: 100%;
-    left: 38%;
-    right: 0;
-    margin: 0;
-    position: absolute;
-}
+{width: 100%;height: 100%;}
 
 #header-cloud-01
 {z-index: -1;left: -6rem;}
@@ -2064,25 +2120,27 @@ svg
 }
 
 .about-content
-{max-width: 40rem;width: auto;height: auto;margin: 0;}
+{max-width: 40rem;width: auto;height: auto;margin: auto;}
 
 #about-content-01
 {
-    left: 22%;
     top: 12rem;
+    left: -20%;
 }
 
 #about-content-02
 {
-    left: 54%;
+    left: 20%;
     top: 7rem;
 }
 
 #about-content-03
-{left: 22%;top: 3rem;}
+{top: 3rem;left: -20%;}
+
+div#about-content-03 {}
 
 #about-content-04
-{left: 52%;top: -9rem;}
+{left: 20%;top: -2rem;}
 
 
 .bowler-hats *
@@ -2139,7 +2197,7 @@ position: relative;
 {}
 
 #planet-container
-{display: block;width: 100%;height: 61.5rem;max-width: 61.5rem;}
+{display: block;width: 100%;height: auto;max-width: 61.5rem;}
 
 #planet
 {
@@ -2173,208 +2231,26 @@ position: relative;
 
 @media screen and (max-width: 63.750em)
 {
-  body{
+  body
+  {
     background: red;
   }
 
-  #email-section
+  #tree-group-01
   {
-    top: 55%;
+    left: 62%;
   }
 
-  #bush-02
+  #tree-group-02
   {
-    top: 19.7%;
-    left: 84%;
+    top: 14.9%;
+    left: 73%;
   }
 
-  #bush-03
+  #vegetation-group-03
   {
-    display: none;
+    left: 8%;
   }
-
-  #bush-04
-  {
-    top: 43.9%;
-    left: 81.4%;
-    z-index: -3;
-  }
-
-  #grass-03
-  {
-
-  }
-
-  #flower-03
-  {
-    top: 43.2%;
-    left: 87%;
-  }
-
-  #tree-15
-  {
-    top: 31.1%;
-  }
-
-  #tree-16
-  {
-  top: 42.2%;
-  }
-  #tree-18
-  {
-    display: none;
-  }
-
-
-
-  #tree-02
-  {
-    top:-30%;
-    z-index: -1;
-  }
-  #tree-23
-  {
-    left: 80%;
-  }
-
-  #tree-27
-  {
-    top: 43.6%;
-    width: 11rem;
-    left: 86%;
-  }
-
-  #tree-group-05
-  {
-    top: 63%;
-  }
-
-  #fire-02
-  {
-    top: 57%;
-  }
-
-
-
-  .road
-  {
-    height: 7.8%;
-  }
-
-
-
-  .font-skills-new
-  {
-  }
-
-  #skills-web-development
-  {
-    width: 52rem;
-    left: 16%;
-  }
-
-  #skills-html
-  {
-    width: 47rem;
-    margin-top: 5rem;
-    left: -14.7rem;
-  }
-
-  #skills-css
-  {
-    width: 45rem;
-    left: 21%;
-    margin-top: -16.2rem;
-  }
-
-  #skills-jquery
-  {
-
-z-index: -2;
-
-margin-top: -12%;
-
-width: 47rem;
-
-}
-
-  #skills-animation
-  {
-
-width: 51rem;
-
-left: 16%;
-
-margin-top: -9rem;
-
-z-index: -1;
-
-}
-
-  #skills-js
-  {
-
-margin-right: 37%;
-
-top: 1rem;
-
-width: 48rem;
-
-right: 0;
-
-}
-
-  .skill
-  {
-
-  }
-
-  .about-content
-  {
-
-}
-
-  #about-content-container
-  {
-    max-height:none;
-  }
-
-  #about-content-01
-  {
-
-transform: translateY(50%);
-
-margin-top: 0;
-
-}
-
-  #about-content-02
-  {
-
-transform: translateY(45%);
-
-margin-top: 0;
-
-}
-
-  #about-content-03
-  {
-
-transform: translateY(45%);
-
-margin-top: 0;
-
-}
-
-  #about-content-04
-  {
-
-transform: translateY(45%);
-
-margin-bottom: 11rem;
-
-}
-
 }
 
 @media screen and (max-width: 48rem)
@@ -2384,781 +2260,65 @@ margin-bottom: 11rem;
     background: orange;
   }
 
-  #fire-01
+  #about-header-cloud-container
   {
-    left: 38%;
-    right: 0;
-    top: 5%;
-  }
-
-  #tree-group-01
-  {
-    top: 6%;
-  }
-
-  #tree-group-02
-  {
-    top: 11%;
-  }
-
-  #tree-group-04
-  {
-    top: 31%;
-    left: 6%;
-  }
-
-  #tree-group-05
-  {
-    top: 73.4%;
-  }
-
-
-  #tree-04
-  {
-    left:1%;
-  }
-
-  #tree-07
-  {
-    top: 77%;
-    left: 83%;
-    width: 8rem;
-  }
-
-  #tree-10
-  {
-    top: 64%;
-    z-index: -3;
-    left: 14.7%;
-  }
-
-  #tree-14
-  {
-    top: 37.8%;
-  }
-
-  #tree-15
-  {
-    top:32%;
-  }
-
-  #tree-16
-  {
-    top: 67%;
-    left: 81%;
-  }
-
-  #tree-18
-  {
-    display: initial;
-
-  }
-
-  #tree-24
-  {
-    top:19.5%;
-    left: 9%;
-  }
-
-  #tree-28
-  {
-    top: 55%;
-    left: 75%;
-    width: 12rem;
-  }
-
-  #tree-29
-  {
-    left: 84%;
-    top: 50%;
-  }
-
-  #tree-26
-  {
-    top: 69.3%;
-    width: 11rem;
-  }
-
-  #tree-35
-  {
-    width: 9rem;
-    top: 41%;
-    left: 9%;
-  }
-
-  #grass-09
-  {
-    top: 52.5%;
-    left: 82.1%;
-  }
-
-  #grass-11
-  {
-    top: 58%;
-  }
-
-  #tree-34
-  {
-    top: 64.8%;
-    width: 9rem;
-  }
-
-  #bush-02
-  {
-top: 75%;
-transform: scaleX(-1);
-}
-
-#bush-03
-{
-  display: initial;
-  top: 66.2%;
-  left: 13%;
-  width: 4.9rem;
-  transform: scaleX(-1);
-  z-index: -2;
-}
-
-  #grass-03
-  {
-    top: 34%;
-    left: 72%;
-  }
-
-  #flower-03
-  {
-    top: 69%;
-    z-index: 1;
-  }
-
-  #flower-04
-  {
-    top: 21.2%;
-    left: 17%;
-  }
-
-  #fire-02
-  {
-top: 68.7%;
-right: 22.9%;
-}
-
-  .road
-  {
-    height: 7.35%;
-  }
-
-  #first-road
-  {
-    margin-top: -23rem;
-  }
-
-  #copyright-container
-  {
-    background: white;
-    margin-bottom: 0;
-  }
-
-  #font-container-animation
-  {
-  margin-bottom: 0%;
-  }
-
-  .font-skills-new
-  {
-    padding-left: 0.5%;
-    margin-bottom: 2%;
-  }
-
-  #contact-header
-  {
-    margin-bottom: 6rem;
-  }
-
-    #skills-web-development
-    {
-      left: 0;
-      right: 0;
-      margin-bottom: 0;
-      width: 51rem;
-      padding-top: 3%;
-    }
-
-    #skills-html
-    {
-      width: 50rem;
-      left: 0;
-      right: 0;
-      margin-top: 0;
-    }
-
-    #skills-css
-    {
-      width: 50rem;
-      margin-top: 0;
-      left: 0;
-      right: 0;
-    }
-
-    #skills-jquery
-    {
-
-left: 0;
-
-right: 0;
-
-margin-top: 0;
-
-}
-
-    #skills-animation
-    {
-
-left: 0;
-
-right: 0;
-
-margin-top: 0;
-
-}
-
-    #skills-js
-    {
-left: 0;
-right: 0;
-margin-bottom: 0;
-width: 51rem;
-top: 0;
-margin-right: auto;
-margin-left: auto;
-}
-
-  .skill
-  {
-
-max-width: 95% !important;
-
-}
-
-#header-cloud-01
-{
-
-left: -5rem;
-
-right: 0;
-
-height: auto;
-}
-
-#header-cloud-02
-{
-
-left: 13%;
-}
-
-#header-cloud-03
-{
-
-}
-
-#contact-description-section
-{
-  position: relative;
-  top: 0;
-  height: 47rem;
-}
-
-.contact-section
-{
-  position: relative;
-}
-
-
-
-#email-section
-{
-
-margin-right: 0;
-
-top: 0;
-}
-
-#contact-container
-{
-  height:auto;
-}
-
-#paper-plane-container-02
-{
-
-z-index: -1;
-
-left: 25%;
-
-transform: rotate(-11deg) scaleX(-1);
-
-top: -8%;
-
-right: 0;
-}
-
-#cv-section
-{
-
-top: 0;
-
-margin-right: 0;
-}
-
-#phone-section
-{
-
-top: 0;
-
-margin-left: 0;
-
-margin-bottom: 2%;
-}
-
-
-.clouds-header
-{max-width: 80%;width: 36rem;}
-
-
-  .about-content
-  {
-
-}
-
-  #about-content-container
-  {
-  /* height: auto; */
+    width:86%;
   }
 
   #about-content-01
   {
-
-left: 0;
-
-right: 0;
-
-transform: translateY(0);
-
-margin-top: 10rem;
-}
+left: 0;
+top: 9rem;
+}
 
   #about-content-02
   {
-
-margin-top: 1rem;
-
-left: 0;
-
-transform: translateY(0);
-}
+left: 0;
+top: 8rem;
+}
 
   #about-content-03
   {
-
-margin-top: 2.5rem;
-
-left: 0;
-
-right: 0;
-
-transform: translateY(0);
-}
+left: 0;
+top: 6rem;
+}
 
   #about-content-04
   {
+left: 0;
+top: 4rem;
+margin-bottom: 5rem;
+}
 
-transform: translateY(0);
+  #skills-header-container
+  {
+    width: 90%;
+  }
 
-/* margin-bottom: 6rem; */
+  #contact-header-cloud-container
+  {
+    width: 86%;
+  }
 
-left: 0;
+  .road
+  {
+    height: 8%;
+  }
 
-right: 0;
-}
-
-#thanks
-{
-  display:none;
-}
-
-#copyright-text
-{
-  transform:rotate(0);
-  display: block;
-  text-align: center;
-}
-
-#contact-text
-{top: -73%;width: 9%;min-width: 69%;transform: translateY(0);}
-
-#hot-air-balloon-plain
-{
-  width: 25rem;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#cloud-grouping-section
-{
-  display: none;
-  position: relative;
-}
-
+  #road-01
+  {
+    margin-top: -24.4rem;
+  }
 
 }
 
 
 @media only screen and (max-width: 30em)
 {
-  body{
+  body
+  {
     max-width: 100%;
     min-width: 320px;
     background: yellow;
   }
-
-  #foliage-container
-  {
-    display: none;
-  }
-
-  .copyright-font
-  {
-    font-size: 2.2rem;
-  }
-
-  #wrapper-background
-  {
-    display: none;
-  }
-
-  .road
-  {
-    height: 3.2%;
-    vector-effect:;
-  }
-
-  #first-road
-  {
-    margin-top: -9.8rem;
-  }
-
-  .font-skills-new
-  {
-  width: 50%;
-  }
-
-  #contact-description-section
-  {
-    position: relative;
-    top: 0;
-    height: 47rem;
-  }
-
-  #hot-air-balloon-plain
-  {
-    width: 25rem;
-    /* width: 100%; */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .font-header
-  {
-
-font-size: 5rem;
-
-bottom: 8%;
-  }
-
-  .clouds-header
-  {
-    max-width: 73%;
-  }
-
-  #about-container
-  {
-    height: auto;
-  }
-
-  #contact-text
-  {
-
-min-width: 20rem;
-
-width: 12rem;
-
-transform: translateY(0);
-
-top: -28rem;
-
-font-size: 1.7rem;
-  }
-
-  #cloud-contact-01
-  {
-
-  }
-
-  #cloud-contact-02 > svg
-  {
-  }
-
-
-
-  #header-cloud-01
-  {
-    left: -8%;
-    right: 0;
-    max-width: 70%;
-  }
-
-  #header-cloud-02
-  {
-  left: 15%;
-  max-width: 70%;
-  top: 8%;
-  }
-
-  #header-cloud-03
-  {
-
-position: relative;
-
-margin-top: -36%;
-
-}
-
-  .font-div
-  {
-
-font-size: 1.61rem;
-
-/* transform: translateY(0); */
-
-position: relative;
-  }
-
-  #about-content-01-text
-  {
-
-max-width: 85%;
-
-min-width: 80%;
-
-height: 100%;
-
-left: 0;
-
-right: 0;
-
-top: -8rem;
-
-}
-
-  #about-content-02-text
-  {
-
-width: 100%;
-
-max-width: 85%;
-
-min-width: 80%;
-
-height: 100%;
-
-top: -8rem;
-
-}
-
-  #about-content-03-text
-  {
-
-width: 90%;
-
-max-width: 90%;
-
-min-width: 80%;
-
-top: -8rem;
-
-}
-
-  #about-content-04-text
-  {
-
-width: 90%;
-
-max-width: 90%;
-
-min-width: 80%;
-
-top: -8rem;
-
-margin-top: 0;
-
-}
-
-
-
-  .clouds-background
-  {
-
-max-width: 100%;
-  }
-
-  #cloud-background-01
-  {
-
-left: 0;
-
-}
-
-  #cloud-background-02
-  {
-
-right: 0;
-
-top: 0;
-
-left: -40%;
-
-margin-top: 15%;
-
-}
-
-  #cloud-background-03
-  {
-
-left: 30%;
-
-top: 0;
-
-margin-top: 20%;
-
-}
-
-  .anim-rain
-  {
-    height: 50%;
-    max-width: 50%;
-  }
-
-  #hot-air-balloon-web
-  {
-    max-width: 31%;
-    height: auto;
-    position: absolute;
-  }
-
-  #cloud-rain
-  {
-
-width: 25%;
-  }
-
-  #contact-description-section
-  {
-
-top: 0;
-
- 100%
-
-height: auto;
-
-position: relative;
-
-max-height: 36rem;
-
-width: auto;
-
-}
-
-#contact-header
-{
-
-margin-bottom: 1rem;
-}
-
-#email-section
-{
-
-margin-right: 0;
-
-top: 0;
-
-position: relative;
-}
-
-#paper-plane-container-02
-{
-  transform:scaleX(-1);
-  right: 0;
-  left: 7rem;
-  top: -3rem;
-}
-
-#paper-plane-container-03
-{top: -3rem;}
-
-#paper-plane-container-04
-{top: -2.5rem;left: 9.4rem;transform: rotate(19deg);}
-
-#cv-section
-{
-
-margin-right: 0;
-
-top: 0;
-
-position: relative;
-}
-
-#phone-section
-{
-
-top: 0;
-
-margin-bottom: 3%;
-
-margin-left: 0;
-
-position: relative;
-}
-
-#contact-container
-{
-}
-
-
-.paper-plane-line-container
-{
-  display: none;
-}
-
-.paper-plane-envelope
-{
-  position: absolute;
-  width: 100%;
-  height: auto;
-}
-
-.paper-plane-container
-{
-  left: -3rem;
-  right: 0;
-  top: -10%;
-  bottom: 0;
-  max-width: 24rem;
-  position: relative;
-}
-
-#paper-plane-envelope-01
-{
-
 }
