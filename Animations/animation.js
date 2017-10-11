@@ -1,8 +1,10 @@
-function convertPXtoRem(px) {
+function convertPXtoRem(px)
+{
     return px / parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
-function getRandomArbitrary(min, max) {
+function getRandomArbitrary(min, max)
+{
   return Math.random() * (max - min) + min;
 }
 
@@ -108,7 +110,7 @@ function AnimateBodymovin(element, data, bool, svgAspectRatio, autoPlay)
   return anim;
 }
 
-function BodymovinWayPoint(container, animations)
+function CheckIfAnimationIsOnScreen(container, animations)
 {
   var i = 0;
   var waypoint = new Waypoint.Inview({
@@ -281,7 +283,8 @@ function GenerateRandomBool()
   return Math.random() >= 0.5;
 }
 
-function WidthPercentageToPixel(_elem, _perc){
+function WidthPercentageToPixel(_elem, _perc)
+{
   return ($(_elem).outerWidth()/100)* parseFloat(_perc);
 }
 
@@ -296,6 +299,7 @@ function HeightPercentageToPixel(_elem, _perc){
     return ($("body").outerHeight() / 100) * parseFloat(_perc);
   }
 }
+
 function AnimateStroke(element, length, easing, optionals)
 {
   var _element = $(element);
@@ -345,26 +349,6 @@ function AnimateStroke(element, length, easing, optionals)
       }
     }
   return _animElements;
-}
-
-function AnimateFoliageStroke(foliageElement, length, easing, optionals)
-{
-  var _scenarioType = 'delayed';
-  if(optionals !== undefined)
-  {
-    _scenarioType = (typeof optionals.animType !== undefined) ? optionals.animType : _scenarioType;
-  }
-  foliageElement.children("svg").each(function()
-  {
-    var _svgElement = $(this); // svg element we are working with
-    new Vivus(_svgElement[0], {duration: length, animTimingFunction: easing, scenarioType: _scenarioType,
-    onReady: function()
-    {
-      SetFillToNone(_svgElement);
-      RevealElementByClass('foliage-show', _svgElement.parent()); // set to visible by switching class
-    }});
-    SetFillToWhite(_svgElement, length);
-  });
 }
 
 function RevealElementByClass(className, element)
@@ -544,6 +528,7 @@ function GenerateClouds(numberOfClouds, minDuration, maxDuration)
       GenerateCloud('#cloud-group-three-01', i, minDuration, maxDuration, _generatedCloudsContainer)
     }
   }
+
   function GenerateCloud(element, currentIndex, minDuration, maxDuration, container)
   {
     var _repeateEnabled = true;
@@ -572,14 +557,6 @@ function GenerateClouds(numberOfClouds, minDuration, maxDuration)
     _copiedCloud.find('path').css('fill', 'magenta');
     TranslateElement(_copiedCloud, minDuration, maxDuration ,
       _repeateEnabled, Linear.easeNone, _force3DTranslate, _yRandomMax, _rotation);
-  }
-}
-
-function AnimateIntroCloud()
-{
-  if($('#city-flatline > svg > path').attr('stroke-dashoffset') == Number.EPSILON)
-  {
-    TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0.01);
   }
 }
 
@@ -666,48 +643,50 @@ function OnHoverOverPhone()
 
 function Init()
 {
-
-  var skillAnims = [];
-  var introAnims = [];
+  var _skillAnims = [];
+  var _introAnims = [];
   var fireAnimA = [];
   var fireAnimB = [];
   var duration = 180;
   var easing = Vivus.LINEAR;
-
-  skillAnims.push(AnimateBodymovin('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMid meet", false));
-  skillAnims.push(AnimateBodymovin('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMid meet", false));
-  skillAnims.push(AnimateBodymovin('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMid meet", false));
-  skillAnims.push(AnimateBodymovin('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMid meet", false));
-  skillAnims.push(AnimateBodymovin('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMid meet", false));
-  skillAnims.push(AnimateBodymovin('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMid meet", false));
-  introAnims.push(AnimateBodymovin('planet', 'Animations/planet.json', true, "xMidYMin meet", false));
+  // fade in the whole page
+  FadeInAnimation('body', 0.75);
+  _skillAnims.push(AnimateBodymovin('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMid meet", false));
+  _introAnims.push(AnimateBodymovin('planet', 'Animations/planet.json', true, "xMidYMin meet", false));
   fireAnimA[0] = AnimateBodymovin('fire-01', 'Animations/fire.json', true, "xMidYMid meet", false);
   fireAnimB[0] = AnimateBodymovin('fire-02', 'Animations/fire.json', true, "xMidYMid meet", false);
   SetRoadIDs('.road-container');
-
+  SetSVGAspectRatio('blimp-web', "xMidYMid meet");
+  SetSVGAspectRatio('blimp-html', "xMidYMid meet");
+  SetSVGAspectRatio('blimp-css', "xMidYMid meet");
+  SetSVGAspectRatio('blimp-anim', "xMidYMid meet");
+  SetSVGAspectRatio('blimp-jquery', "xMidYMid meet");
+  SetSVGAspectRatio('blimp-js', "xMidYMid meet");
+  SetSVGViewBox('#skill-anim-web-dev', -500, -385, 2292, 1340);
+  SetSVGViewBox('#skill-anim-html', -840, -220, 2292, 1340);
+  SetSVGViewBox('#skill-anim-css', -450, -130, 2322, 1600);
+  SetSVGViewBox('#skill-anim-jquery', -850, -320, 2292, 1340);
+  SetSVGViewBox('#skill-anim-js', -865, -140, 2292, 1340);
+  SetSVGViewBox('#skill-anim-animation', -510, -250, 2292, 1340);
 
   $(document).ready(function()
   {
-    SetSVGAspectRatio('blimp-web', "xMidYMid meet");
-    SetSVGAspectRatio('blimp-html', "xMidYMid meet");
-    SetSVGAspectRatio('blimp-css', "xMidYMid meet");
-    SetSVGAspectRatio('blimp-anim', "xMidYMid meet");
-    SetSVGAspectRatio('blimp-jquery', "xMidYMid meet");
-    SetSVGAspectRatio('blimp-js', "xMidYMid meet");
-    SetSVGViewBox('#skill-anim-web-dev', -500, -385, 2292, 1340);
-    SetSVGViewBox('#skill-anim-html', -840, -220, 2292, 1340);
-    SetSVGViewBox('#skill-anim-css', -450, -130, 2322, 1600);
-    SetSVGViewBox('#skill-anim-jquery', -850, -320, 2292, 1340);
-    SetSVGViewBox('#skill-anim-js', -865, -140, 2292, 1340);
-    SetSVGViewBox('#skill-anim-animation', -510, -250, 2292, 1340);
-
-    BodymovinWayPoint('#skills-container', skillAnims);
-    BodymovinWayPoint('#intro-container', introAnims);
-    BodymovinWayPoint('#fire-01', fireAnimA);
-    BodymovinWayPoint('#fire-02', fireAnimB);
+    CheckIfAnimationIsOnScreen('#skills-container', _skillAnims);
+    CheckIfAnimationIsOnScreen('#intro-container', _introAnims);
+    CheckIfAnimationIsOnScreen('#fire-01', fireAnimA);
+    CheckIfAnimationIsOnScreen('#fire-02', fireAnimB);
 
     OnHoverOverEmail();
     OnHoverOverPhone();
+
+    PopInFoliage($('#foliage-container'));
+
+    AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%')
     AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%');
     // put the first road separately for an automatic start without using waypoints
     AnimateStroke('#road-01', duration - 120, easing, {startType: 'autostart'});
@@ -717,9 +696,6 @@ function Init()
     AnimateStroke('#cloud-background-stroked-02', duration - 125, easing);
     AnimateStroke('#cloud-background-stroked-03', duration - 100, easing);
     AnimateStroke('#city-buildings', duration - 50, easing);
-    PopInFoliage($('#foliage-container'));
-    FadeInAnimation('body', 0.75);
-    AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%')
 
     // dynamic font sizing for blimps
     $("#blimp-web-font").fitText();
@@ -729,15 +705,15 @@ function Init()
     $("#blimp-js-font").fitText();
     $("#blimp-jquery-font").fitText();
 
-  $(window).resize(function()
-  {
-    ResizeBlimpRect("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
-    ResizeBlimpRect("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
-    ResizeBlimpRect("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
-    ResizeBlimpRect("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
-    ResizeBlimpRect("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
-    ResizeBlimpRect("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
-  })
-
+    $(window).resize(function()
+    {
+      console.log("Help");
+      ResizeBlimpRect("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
+      ResizeBlimpRect("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
+      ResizeBlimpRect("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
+      ResizeBlimpRect("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
+      ResizeBlimpRect("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
+      ResizeBlimpRect("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
+    })
   })
 }

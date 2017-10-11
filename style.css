@@ -1697,6 +1697,7 @@ stroke-width: 1rem;
 #skills-container
 {
 height: auto;
+width: 100%;
 }
 
 #skills-header-text
@@ -2294,6 +2295,61 @@ position: relative;
 top: 77%;
 left: 55%;
 }
+
+#skills-container
+{
+  height: 130rem;
+}
+
+#skills-group-01
+{
+  margin-bottom: 16rem;
+  width: 95%;
+}
+
+  #skills-web-development
+  {
+left: 16%;
+max-width: 50rem;
+}
+
+  #skills-html
+  {
+left: -14rem;
+top: 6rem;
+}
+
+  #skills-css
+  {
+    left: 16rem;
+    top: 6rem;
+  }
+
+  .skill
+  {
+    max-width: 41rem;
+  }
+
+  #skills-js
+  {
+margin-right: 38%;
+left: 0;
+}
+
+  #skills-animation
+  {
+margin-right: 0%;
+max-width: 48rem;
+margin-top: -17%;
+left: 0;
+}
+
+  #skills-jquery
+  {
+  margin-left: 40%;
+  margin-top: -11%;
+  }
+
 }
 
 @media screen and (max-width: 48rem)
