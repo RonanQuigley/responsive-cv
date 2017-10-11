@@ -14,6 +14,19 @@
   z-index: 1;
 }
 
+.header
+{
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 40rem;
+  height: 26.7rem;
+  display: block;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
 .hidden
 {
   display: none;
@@ -72,7 +85,7 @@
 
 #email-text
 {
-  top: 3.7rem;
+  top: 55%;
   font-size: 1.7rem;
   position: absolute;
   left: 0;
@@ -81,7 +94,7 @@
 
 #phone-text
 {
-  top: 3.8rem;
+  top: 53.9%;
   font-size: 1.7rem;
   position: absolute;
   left: 0;
@@ -206,7 +219,7 @@
 .clouds-contact > svg
 {
 position: absolute;
-height: 17rem;
+height: 100%;
 }
 
 #planet-city-container
@@ -220,14 +233,8 @@
 height: auto;
 }
 
-#header-cloud-02 > svg
-{
-}
 #skills-header-container
-{
-    height: 100%;
-    width: 100%;
-}
+{width: 100%;height: auto;}
 
 
 #blimp-css > svg
@@ -280,7 +287,7 @@ right: 0;
 #contact-header-cloud-container
 {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 #anim-rain-01
@@ -342,12 +349,12 @@ right: 0;
 }
 
 #paper-plane-container-03
-{z-index: -1;right: 0;top: -4rem;left: -9rem;transform: rotate(16deg);}
+{z-index: -1;right: 0;top: -4rem;/* transform: rotate(16deg); */}
 
 #paper-plane-container-04
 {
     z-index: -1;
-    left: 41%;
+    left: 45%;
     transform: rotate(4deg);
     top: -2rem;
 }
@@ -387,31 +394,24 @@ right: 0;
 #paper-plane-line-04
 {transform-origin: right;transform: translate(18rem, 19.9rem) rotate(15.3deg);z-index: -1;}
 
-#contact-header
-{
-    max-width: 40rem;
-    display: block;
-    width: auto;
-    height: 26.7rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
 
 .contact-icons
 {
 height: auto;
-top: 30%;
+top: 37%;
+width: 31%;
 max-width: 12rem;
+display: block;
 }
 
 .paper-plane-container
 {
-    width: 24rem;
-    height: auto;
-    margin: auto;
-    /* left: 0; */
+    width: 81%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
     right: 0;
+    left: -30%;
 }
 
 div.road-container div:nth-child(2n)
@@ -1011,7 +1011,7 @@ div.road-container div:nth-child(2n)
 #skills-group-02
 {
     margin-top: 3rem;
-    right: 7.3%;
+    margin-bottom: -3rem;
 }
 
 .skill
@@ -1172,8 +1172,7 @@ font-weight: 200;
 
 .clouds-contact
 {
-    height: 23rem;
-    position: absolute;
+    height: 100%;
     width: 100%;
     left: 0;
     right: 0;
@@ -1208,7 +1207,6 @@ font-weight: 200;
   height: 120rem;
   width: 100%;
   overflow: hidden;
-  margin-top: 6rem;
   top: 0;
   bottom: 0;
   left: 0;
@@ -1260,7 +1258,7 @@ font-weight: 200;
 position: absolute;
 left: 0;
 right: 0;
-height: auto;
+height: 17rem;
 width: 29rem;
 margin: 0;
 }
@@ -1290,8 +1288,7 @@ font-weight: 200;
 
 #paper-plane-envelope-03
 {
-
-transform: scaleX(-1) rotate(-100deg);
+transform: scaleX(-1) rotate(-100deg);
 }
 
 #paper-plane-envelope-04
@@ -1359,11 +1356,6 @@ transform: rotate(-116deg);
   stroke-width: 0.06rem;
 }
 
-.paper-plane-container path:first-child
-{
-  stroke-width: 0.07rem;
-}
-
 .copyright-font
 {
   font-family: 'Daniel', sans-serif;
@@ -1373,7 +1365,6 @@ transform: rotate(-116deg);
 #copyright-container
 {
     height: auto;
-    /* border-top: dashed 0.1rem black; */
     fill: white;
     transform: translateY(-4rem);
     max-width: 167rem;
@@ -1626,14 +1617,12 @@ stroke-width: 1rem;
 
 #email
 {
-    display: block;
+    top: 43%;
+    width: 38%;
 }
 
 #phone
-{
-    top: 27%;
-    max-width: 9rem;
-}
+{top: 37%;}
 
 #city-buildings svg
 {
@@ -1648,10 +1637,7 @@ stroke-width: 1rem;
 
 #cv
 {
-    max-width: 9rem;
-    width: 9rem;
-    top: 25%;
-    display: block;
+    top: 36%;
 }
 
 .paper-plane
@@ -1700,11 +1686,8 @@ stroke-width: 1rem;
 width: 100%;
 }
 
-#skills-header-text
-{}
-
 #skills-header
-{max-width: 40rem;display: block;width: auto;height: 26.7rem;left: 0;right: 0;margin: auto;}
+{}
 
 #skills-header-cloud-container
 {left: 0;right: 0;}
@@ -2103,16 +2086,18 @@ div#cloud-group-three-01 {}
 /* BEGIN ABOUT */
 
 #about-container
-{height: auto;margin-top: 6rem;width: 100%;height: 100%;}
+{height: auto;=: 6remwidth: 100%}
 
 #about-header
-{display: block;width: 100%;height: 26.7rem;left: 0;right: 0;margin: auto;}
+{
+    margin-top: 6rem;
+}
 
 #about-header-text
 {}
 
 #about-header-cloud-container
-{width: 100%;height: 100%;}
+{width: 100%;height: auto;}
 
 #header-cloud-01
 {z-index: -1;left: -6rem;}
@@ -2124,6 +2109,7 @@ div#cloud-group-three-01 {}
 {
     left: 0;
     top: 2rem;
+    position: relative;
 }
 
 #about-content-cloud-01
@@ -2240,7 +2226,7 @@ position: relative;
 /* ------- MEDIA QUIERIES ------- */
 
 
-@media screen and (max-width: 63.750em)
+@media screen and (max-width: 63.75em)
 {
   body
   {
@@ -2304,12 +2290,12 @@ position: relative;
 #skills-group-01
 {
   margin-bottom: 16rem;
-  width: 95%;
+  /* width: 95%; */
 }
 
   #skills-web-development
   {
-left: 16%;
+left: 15%;
 max-width: 50rem;
 }
 
@@ -2330,50 +2316,56 @@ position: relative;
     max-width: 41rem;
   }
 
-  #skills-js
+  #skills-jquery
   {
-margin-right: 38%;
+z-index: -2;
+margin-top: -13.2%;
+width: 47rem;
 left: 0;
-}
+}
 
   #skills-animation
   {
-margin-right: 0%;
-max-width: 48rem;
-margin-top: -17%;
-left: 0;
-}
-
-  #skills-jquery
-  {
-  margin-left: 40%;
-  margin-top: -11%;
-  }
-
+width: 47rem;
+left: 26%;
+margin-top: -14rem;
+/* z-index: -1; */
 }
 
-@media screen and (max-width: 48rem)
+  #skills-js
+  {
+margin-right: 37%;
+top: 0rem;
+width: 48rem;
+left: 0;
+}
+
+@media screen and (max-width: 48em)
 {
+
   body
   {
     background: orange;
   }
 
-  #about-header-cloud-container
+  .header
   {
-    width:86%;
+    width: 57%;
+    min-width: 34rem;
+    height: auto;
+    margin-bottom: 4%;
   }
 
   #about-content-01
   {
-left: 0;
-top: 9rem;
-}
+    left: 0;
+    top: 9rem;
+   }
 
   #about-content-02
   {
-left: 0;
-top: 8rem;
+    left: 0;
+    top: 8rem;
 }
 
   #about-content-03
@@ -2389,14 +2381,12 @@ position: relative;
 margin-bottom: 4rem;
 }
 
-  #skills-header-container
+  #skills-header
   {
-    width: 90%;
   }
 
   #contact-header-cloud-container
   {
-    width: 86%;
   }
 
   .road
@@ -2454,6 +2444,7 @@ position: relative;
   {
     background: white;
     transform: translateY(0rem);
+    border-top: dashed 0.1rem black; */
   }
 
   #thanks
@@ -2467,12 +2458,67 @@ position: relative;
     text-align: center;
     padding-left: 0rem;
     display: block;
+    padding-top: 0.3rem;
   }
+
+  #skills-web-development
+  {
+left: 0;
+margin-bottom: 0;
+max-width: 41rem;
+}
+
+  #skills-html
+  {
+left: 0;
+top: 0;
+margin-top: 2rem;
+}
+
+  #skills-css
+  {
+left: 0;
+top: 0;
+margin-top: 2rem;
+}
+
+  #skills-animation
+  {
+left: 0;
+margin-top: 2rem;
+margin-right: auto;
+width: 41rem;
+margin-left: auto;
+}
+
+  #skills-js
+  {
+margin-right: auto;
+margin-left: auto;
+}
+
+  #skills-jquery
+  {
+margin-right: auto;
+margin-left: auto;
+margin-top: 1rem;
+}
+
+#skills-container
+{
+  height: auto;
+}
+
+#skills-group-01
+{
+  margin-bottom: 0rem;
+  margin-top: 4rem;
+}
 
 }
 
 
-@media only screen and (max-width: 30em)
+@media screen and (max-width: 30em)
 {
   body
   {
@@ -2480,17 +2526,63 @@ position: relative;
     min-width: 320px;
     background: yellow;
   }
-  #foliage-container
+
+  .header
+  {
+    width: 70%;
+    min-width: 31rem;
+  }
+
+  .contact-section
+  {
+    position: relative;
+  }
+
+  #header-cloud-03
+  {
+    top:0;
+  }
+
+  #contact-header
+  {
+  }
+
+  #header-cloud-01
+  {
+    display: none;
+  }
+
+  #header-cloud-02
+  {
+    display: none;
+  }
+
+  #about-content-container
+  {
+    width: 72%;
+    min-width: 28rem;
+  }
+
+  #skills-container
+  {
+    width: 100%;
+    min-width: 28rem;
+  }
+
+  #contact-description-section
+  {height: 38rem;width: auto;margin-top: 2.3rem;}
+
+  #foliage-container > div
   {
     display: none
   }
   .road
   {
-    height: 4.35%;
+    height: 3.35%;
   }
   #road-01
   {
-    margin-top: -13.5rem;
+    margin-top: -10.3rem;
   }
   #cloud-container
   {
@@ -2500,6 +2592,126 @@ position: relative;
   #hot-air-balloon-web-container
   {
     min-width: 0rem;
-}
+  }
+  #cloud-grouping-section
+  {
+
+  }
+  #email-section
+  {top: 0;margin-top: 4rem;}
+  #phone-section
+  {top: 0;}
+  #cv-section
+  {
+    top: 0;
+  }
+  #contact-container
+  {
+    height: 141rem;
+    margin-top: 3rem;
+  }
+
+  .paper-plane-container
+  {
+    width: 100%;
+  }
+
+  .paper-plane-envelope path
+  {
+    stroke-width: 0.05rem;
+  }
+
+  #about-header
+  {
+    margin-top: 1.7rem;
+    margin-bottom: -0.2rem;
+  }
+
+  #paper-plane-container-02
+  {
+    z-index: -1;
+    transform: rotate(14deg);
+    top: -3rem;
+    left: -6rem;
+  }
+
+  #paper-plane-container-03
+  {
+    z-index: -1;
+    transform: rotate(14deg);
+    top: -3rem;
+    left: -6rem;
+  }
+
+  #paper-plane-container-04
+  {
+    z-index: -1;
+    transform: rotate(14deg);
+    top: -2.9rem;
+    left: 6.2rem;
+  }
+
+  .contact-section
+  {
+    max-width: 29rem;
+    min-width: 28rem;
+    width: 68%;
+    margin-top: 8rem;
+  }
+
+  #about-content-02
+  {top: 9rem;}
+
+  #about-content-03
+  {top: 10rem;}
+
+  #about-content-04
+  {
+    top: 10.5rem;
+  }
+
+  #skills-header
+  {
+    margin-top: 6rem;
+  }
+
+  #skills-group-01
+  {
+    margin-top: 0.4rem;
+  }
+
+  #skills-js
+  {
+    width: 100%;
+  }
+
+  #skills-animation
+  {
+    width: 100%;
+  }
+
+  #skills-jquery
+  {
+    width: 100%;
+  }
+
+  #skills-web-development
+  {}
+
+  #skills-html
+  {margin-top: 2.4rem;}
+
+  #skills-css
+  {margin-top: 3rem;}
+
+  #skills-js
+  {}
+
+  #skills-animation
+  {margin-top: 3.5rem;max-width: 41rem;}
+
+  #skills-jquery
+  {
+  }
 
 }

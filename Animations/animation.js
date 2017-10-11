@@ -339,7 +339,7 @@ function AnimateStroke(element, length, easing, optionals)
         {
           if(_id == 'city-buildings')
           {
-          TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0.01);
+          TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, false, 60, 0.01);
           }
         }
         ));
@@ -412,10 +412,7 @@ function PopInFoliage(foliage)
     for(var i = 0; i < _foliageChildren.length; i++)
     {
       var _currentFoliage = _foliageChildren[i];
-      if($(_currentFoliage).css('display') != 'none')
-      {
-        GenerateFoliageWaypoint(_currentFoliage);
-      }
+      GenerateFoliageWaypoint(_currentFoliage);
     }
   }
 }
@@ -497,12 +494,15 @@ function GenerateFoliageWaypoint(foliageElement)
   var waypoint = new Waypoint({
     element: foliageElement,
     handler: function(direction) {
-      RevealElementByClass('foliage-show', _foliageElement); // set to visible by switching class
-      var timeline = new TimelineMax();
-      timeline.append(TweenMax.fromTo(foliageElement, 0.3,
-        {scaleY: 0.0, force3D: _force3D, rotation: 0.00001}, {scaleY: 1.05, force3D: _force3D, rotation: 0.00001})).
-        to(foliageElement, 0.3, {scaleY: 1, force3D: _force3D, rotation: 0.00001});
-      waypoint.disable();
+      if(_foliageElement.css('display') != 'none') // fail safe to prevent unnecessary transformations on mobile browsers
+      {
+        RevealElementByClass('foliage-show', _foliageElement); // set to visible by switching class
+        var timeline = new TimelineMax();
+        timeline.append(TweenMax.fromTo(foliageElement, 0.3,
+          {scaleY: 0.0, force3D: _force3D, rotation: 0.00001}, {scaleY: 1.05, force3D: _force3D, rotation: 0.00001})).
+          to(foliageElement, 0.3, {scaleY: 1, force3D: _force3D, rotation: 0.00001});
+        waypoint.disable();
+      }
     },
     offset: _offset
   });
