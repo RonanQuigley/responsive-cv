@@ -6,6 +6,34 @@
     box-sizing:border-box;
 }
 
+#email-text-container
+{
+  width: 80%;
+  height: auto;
+  top: 55%; */
+  font-size: 1.7rem;
+  left: -8%;
+  right: 0;
+  position: absolute;
+}
+
+#phone-text-container
+{width: 80%;height: auto;top: 55%;left: -8%;right: 0;position: absolute;}
+
+#portrait-notification
+{
+  display: none;
+}
+
+#home
+{height: 70%;}
+
+#home > svg > *
+{
+  stroke: black;
+  stroke-width: 0.03rem;
+}
+
 #cloud-and-balloon-container
 {
   width: 100%;
@@ -85,11 +113,11 @@
 
 #email-text
 {
-  top: 55%;
-  font-size: 1.7rem;
-  position: absolute;
+  font-size: 1.5rem;
   left: 0;
+  top: 0;
   right: 0;
+  max-width: initial;
 }
 
 #phone-text
@@ -223,7 +251,7 @@
 }
 
 #planet-city-container
-{height: auto;}
+{height: 100%;}
 
 #about-content-container
 {
@@ -1711,7 +1739,6 @@ stroke-width: 1rem;
 
 #about-content-02-text
 {
-    width: 36rem;
     top: -9.5rem;
 }
 
@@ -1726,18 +1753,13 @@ stroke-width: 1rem;
 
 #about-content-03-text
 {
-
-width: 37rem;
-
-top: -9.5rem;
+width: 93%;
+top: -9.5rem;
 }
 
 #about-content-04-text
 {
-
-width: 35rem;
-
-margin-top: -1.5rem;
+margin-top: -2.5rem;
 }
 
 html
@@ -1784,7 +1806,7 @@ svg
 
 .font-div
 {
-  width: auto;
+  width: 90%;
   font-size: 1.9rem;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
@@ -1839,15 +1861,15 @@ svg
 max-width: none !important;
 width: 100%;
 left: 0;
+height: 2px;
 right: 0;
-height: 0.7rem;
-margin-bottom: -0.5rem;
+/* margin-bottom: -0.5rem; */
 }
 
 #city-flatline > svg
 {
   stroke: black;
-  stroke-width: 5rem;
+  stroke-width: 26.05rem;
   fill: black;
 }
 
@@ -2086,7 +2108,7 @@ div#cloud-group-three-01 {}
 /* BEGIN ABOUT */
 
 #about-container
-{height: auto;=: 6remwidth: 100%}
+{height: auto;=: 6remwidth: 100%margin-bottom:;}
 
 #about-header
 {
@@ -2177,7 +2199,7 @@ transform: translateY(12%);
 {}
 
 #game-controller
-{left: 30%;top: -13%;}
+{left: 30%;top: -4rem;}
 
 #about-content-02-icons
 {
@@ -2188,7 +2210,7 @@ position: relative;
 }
 
 #trophy
-{transform: rotate(-8deg);max-width: 32%;top: -18%;right: 50%;}
+{transform: rotate(-8deg);max-width: 32%;top: -4.8rem;right: 50%;}
 
 #about-content-cloud-02
 {}
@@ -2225,6 +2247,30 @@ position: relative;
 
 /* ------- MEDIA QUIERIES ------- */
 
+/*
+@media all and (orientation:landscape) {
+    body
+    {
+      background: none;
+      height:100%;
+    }
+    #wrapper-foreground {
+      display: none;
+    }
+    #portrait-notification
+    {
+      display: block;
+      width: 45%;
+      height: 100%;
+      background: yellow;
+    }
+    #portrait-notification > svg > *
+    {
+      stroke: black;
+    }
+}
+
+*/
 
 @media screen and (max-width: 63.75em)
 {
@@ -2359,7 +2405,8 @@ position: relative;
   #about-content-01
   {
     left: 0;
-    top: 9rem;
+    top: 10rem;
+    margin-bottom: 1rem;
    }
 
   #about-content-02
@@ -2445,6 +2492,8 @@ position: relative;
     background: white;
     transform: translateY(0rem);
     border-top: dashed 0.1rem black; */
+    max-width:;
+    height: auto;
   }
 
   #thanks
@@ -2527,6 +2576,47 @@ position: relative;
     background: yellow;
   }
 
+  #city-flatline
+  {
+    height: 1px;
+  }
+
+  .font-skills-new
+  {
+    width: 45%;
+  }
+
+  #email-text
+  {
+    left;0:
+    height:
+    -WEBKIT-FILL-AVAILABLE;
+    width: 100%;
+  }
+
+  #contact-text
+  {
+    top:-80%;
+    width: 55%;
+  }
+
+  #home
+  {
+    top: -6rem;
+    height: 66%;
+  }
+
+  .font-div
+  {
+    font-size: 1.61rem;
+    max-width: 28rem;
+  }
+
+  .font-header
+  {
+    font-size: 4.5rem;
+  }
+
   .skills-group
   {
       width: 95%;
@@ -2534,8 +2624,8 @@ position: relative;
 
   .header
   {
-    width: 70%;
-    min-width: 31rem;
+    width: 100%;
+    min-width: 20rem;
   }
 
   .contact-section
@@ -2543,24 +2633,21 @@ position: relative;
     position: relative;
   }
 
-  #header-cloud-03
-  {
-    top:0;
-  }
-
   #contact-header
   {
   margin-top: 17%;
+  margin-bottom: 12%;
   }
 
-  #header-cloud-01
+  .copyright-font
   {
-    display: none;
+    font-size: 2rem;
   }
 
-  #header-cloud-02
+  .clouds-header
   {
-    display: none;
+    max-width: 72%;
+    margin: auto;
   }
 
   #about-content-container
@@ -2576,7 +2663,7 @@ position: relative;
   }
 
   #contact-description-section
-  {height: 38rem;width: auto;margin-top: 10%;}
+  {height: 38rem;width: auto;margin-top: 10%;margin-bottom: -2%;}
 
   #foliage-container > div
   {
@@ -2604,12 +2691,13 @@ position: relative;
 
   }
   #email-section
-  {top: 0;margin-top: 4rem;}
+  {top: 0;margin-top: 10%;/* min-width: 27rem; */}
   #phone-section
-  {top: 0;margin-top: 15%;}
+  {top: 0;margin-top: 8%;margin-bottom: 16%;}
   #cv-section
   {
     top: 0;
+    margin-top: 12%;
   }
   #contact-container
   {
@@ -2661,7 +2749,7 @@ position: relative;
   .contact-section
   {
     max-width: 29rem;
-    min-width: 22rem;
+    min-width: 26.5rem;
     width: 56%;
     margin-top: 16%;
   }
@@ -2675,16 +2763,23 @@ position: relative;
   #about-content-04
   {
     top: 10.5rem;
+    margin-bottom: 0rem;
   }
 
   #skills-header
   {
-    margin-top: 6rem;
+    margin-top: 25%;
+    margin-bottom: 11%;
   }
 
   #skills-group-01
   {
-    margin-top: 0.4rem;
+    margin-top: -1%;
+  }
+
+  #skills-group-02
+  {
+    margin-top: 6%;
   }
 
   #skills-js
@@ -2695,30 +2790,38 @@ position: relative;
   #skills-animation
   {
     width: 100%;
+    margin-top: 7%;
   }
 
   #skills-jquery
   {
     width: 100%;
+    margin-top: 4%;
   }
-
-  #skills-web-development
-  {}
 
   #skills-html
-  {margin-top: 2.4rem;}
+  {margin-top: 6%;}
 
   #skills-css
-  {margin-top: 3rem;}
-
-  #skills-js
-  {}
+  {margin-top: 6%;}
 
   #skills-animation
-  {margin-top: 3.5rem;max-width: 41rem;}
+  {margin-top: 7%;max-width: 41rem;}
 
-  #skills-jquery
+  #about-content-02-text
   {
+  transform: translateY(19%);
   }
+
+  #about-content-03-text
+  {
+    transform: translateY(19%);
+  }
+  #about-content-04-text
+  {
+    transform: translateY(29%);
+    width: 93%;
+  }
+
 
 }

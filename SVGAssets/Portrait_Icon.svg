@@ -1,0 +1,28 @@
+<svg id="Portrait" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349 206">
+  <defs>
+    <style>
+      .arrow {
+        fill: none;
+        stroke-dasharray: 8 0 0;
+      }
+    </style>
+  </defs>
+  <title>Portrait_Icon</title>
+  <g>
+    <rect x="0.5" y="88.5" width="205" height="117" rx="12" ry="12"/>
+    <ellipse cx="193.5" cy="147.5" rx="6.5" ry="6.8"/>
+    <rect x="24.5" y="96.5" width="158" height="101"/>
+    <rect x="11.5" y="133.5" width="5" height="27" rx="2.2" ry="2.2"/>
+    <line x1="7.5" y1="161" x2="7.5" y2="134"/>
+    <path d="M69,70"/>
+  </g>
+  <rect x="231.5" y="0.5" width="117" height="205" rx="12" ry="12"/>
+  <ellipse cx="290.5" cy="193.5" rx="6.8" ry="6.5"/>
+  <rect x="211" y="53" width="158" height="101" transform="translate(393.5 -186.5) rotate(90)"/>
+  <rect x="276.5" y="11.5" width="27" height="5" rx="2.2" ry="2.2"/>
+  <line x1="304" y1="7.5" x2="277" y2="7.5"/>
+  <g>
+    <path class="arrow" d="M121.8,80.1c12-33.1,46.5-52,77.2-42.2"/>
+    <polygon points="218.8 42.9 193 49.3 199.9 25.2 218.8 42.9"/>
+  </g>
+</svg>

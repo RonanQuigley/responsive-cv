@@ -37,49 +37,37 @@ function SetSVGAspectRatio(id, aspectRatio)
   }
 }
 
-function ResizeBlimpRect(element, scaledWidth, fullWidth, scaledHeight, fullHeight, scaledX, fullX, scaledY, fullY)
+function GetFullSizedSVGRectValues(element)
 {
-  // assign all parameters to closure var's
+  var _element = $(element);
+  var _x = _element.attr('x');
+  var _y = _element.attr('y');
+  var _width = _element.attr('width');
+  var _height = _element.attr('height');
+  var _obj =
+  {
+    fullX : _x,
+    fullY : _y,
+    fullWidth : _width,
+    fullHeight : _height
+  };
+  return _obj;
+}
+
+function ResizeSVGTextRectangle(element, scaledWidth, fullWidth,
+  scaledHeight, fullHeight, scaledX, fullX, scaledY, fullY)
+{
   var _element = $('.' + element);
-  var _scaledWidth = scaledWidth;
-  var _fullWidth = fullWidth;
-  var _scaledHeight = scaledHeight;
-  var _fullHeight = fullHeight;
-  var _scaledX = scaledX;
-  var _scaledY = scaledY;
-  var _fullX = fullX;
-  var _fullY = fullY;
-  var _sizeReset = false; // when the size has been reset to full size; prevents unnecessary repeat function calls
   var _bodyMinWidth = $('body').css('min-width');
-  if(_bodyMinWidth <= "320px" && _bodyMinWidth > "0px" && !_sizeReset)
+  if(_bodyMinWidth <= "320px" && _bodyMinWidth > "0px")
   {
-    _element.attr({width : _scaledWidth, height: _scaledHeight, x: _scaledX, y: _scaledY});
-    _sizeReset = true;
+    _element.attr({width : scaledWidth, height: scaledHeight, x: scaledX, y: scaledY});
   }
-  else if(_bodyMinWidth == "0px" && _sizeReset)
+  else if(_bodyMinWidth == "0px")
   {
-    _element.attr({width : _fullWidth, height: _fullWidth, x: _fullX, y: _fullY});
-    _sizeReset = false;
+    _element.attr({width : fullWidth, height: fullHeight, x: fullX, y: fullY});
   }
-  /*
-  if(_bodyMinWidth <= "320px" && _bodyMinWidth > "0px" && !_sizeReset)
-  {
-    _element.attr({'width'}'width', _scaledWidth);
-    _element.attr('height', _scaledHeight);
-    _element.attr('x', '' + _scaledX);
-    _element.attr('y', '' + _scaledY);
-    _sizeReset = true;
-  }
-  else if(_bodyMinWidth == "0px" && _sizeReset)
-  {
-    _element.attr('width', _fullWidth);
-    _element.attr('height', _fullHeight);
-    _element.attr('x', '' + _fullX);
-    _element.attr('y', '' + _fullY);
-    _sizeReset = false;
-  }
-  */
-};
+}
 
 function AnimateBodymovin(element, data, bool, svgAspectRatio, autoPlay)
 {
@@ -343,12 +331,19 @@ function AnimateStroke(element, length, easing, optionals)
           }
         }
         ));
-      if(!_isRoad)
+      if(!_isRoad && _id != 'city-flatline')
       {
         SetFillToWhite(_currentSVGElement, length);
       }
     }
   return _animElements;
+}
+
+function IsOrientatedLandscape()
+{
+  if(window.innerWidth > window.innerHeight){
+      return true;
+  }
 }
 
 function RevealElementByClass(className, element)
@@ -567,10 +562,10 @@ function RandomDurationGenerator(min, max)
 
 function OnHoverOverEmail()
 {
+  var _emailBox = $('#email-box');
   var _elementTimeline = new TimelineMax({repeat:-1, paused: true, yoyo: true});
   var _email = $('#email');
   var _emailContainer = $('#cloud-contact-01');
-  var _emailBox = $('#email-box');
   _elementTimeline.add(TweenMax.fromTo(_email, 0.15, {rotation: 10}, {rotation: -10, ease: Linear.easeNone}));
   TweenLite.to(_email, 0, {rotation: 0}); // timeline initially pauses at a rotation of 10; we don't want that
   $(_emailContainer.hover(function()
@@ -580,16 +575,16 @@ function OnHoverOverEmail()
     // console.log("rotate email");
     TweenLite.to(_email, 0.1, {rotation: 10, force3D: "auto", ease: Linear.easeNone, onComplete: function()
     {
-      // console.log("rotating");
-      _elementTimeline.restart();
+      //_elementTimeline.restart();
     }});
   }, function()
   {
-    TweenLite.to(_emailBox, 0.2, {y: 100, force3D: false});
-    _elementTimeline.kill();
-    // console.log("set back to normal");
-    TweenLite.to(_email, 0.1, {rotation: 0});
+      TweenLite.to(_emailBox, 0.2, {y: 100, force3D: false});
+      _elementTimeline.kill();
+      // console.log("set back to normal");
+      TweenLite.to(_email, 0.1, {rotation: 0});
   }));
+
 }
 
 function MoveChildElements(element, duration)
@@ -627,10 +622,11 @@ function MoveChildElements(element, duration)
 
 function OnHoverOverPhone()
 {
+  var _phoneBox = $('#phone-box');
   var _element = $('#phone');
   var _elementContainer = $('#cloud-contact-03');
   // console.log(_elementContainer);
-  var _phoneBox = $('#phone-box');
+
   TweenLite.to(_element, 0, {rotation: 0.000001}); // timeline initially pauses at a rotation of 10; we don't want that
   $(_elementContainer.hover(function()
   {
@@ -643,14 +639,17 @@ function OnHoverOverPhone()
 
 function Init()
 {
+  // fade in the whole page
+  FadeInAnimation('body', 0.75);
+  // IsOrientatedLandscape();
+
+
   var _skillAnims = [];
   var _introAnims = [];
   var fireAnimA = [];
   var fireAnimB = [];
   var duration = 180;
   var easing = Vivus.LINEAR;
-  // fade in the whole page
-  FadeInAnimation('body', 0.75);
   _skillAnims.push(AnimateBodymovin('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMid meet", false));
   _skillAnims.push(AnimateBodymovin('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMid meet", false));
   _skillAnims.push(AnimateBodymovin('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMid meet", false));
@@ -674,18 +673,29 @@ function Init()
   SetSVGViewBox('#skill-anim-js', -865, -140, 2292, 1340);
   SetSVGViewBox('#skill-anim-animation', -510, -250, 2292, 1340);
 
+/*
+  var _startingRectValuesWeb = GetFullSizedSVGRectValues("#blimp-web-svg");
+  var _startingRectValuesHtml = GetFullSizedSVGRectValues("#blimp-html-svg");
+  var _startingRectValuesCss = GetFullSizedSVGRectValues("#blimp-css-svg");
+  var _startingRectValuesAnim = GetFullSizedSVGRectValues("#blimp-animation-svg");
+  var _startingRectValuesJquery = GetFullSizedSVGRectValues("#blimp-jquery-svg");
+  var _startingRectValuesJS = GetFullSizedSVGRectValues("#blimp-js-svg");
+*/
+
+
+  ResizeSVGTextRectangle("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
+  ResizeSVGTextRectangle("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
+  ResizeSVGTextRectangle("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
+  ResizeSVGTextRectangle("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
+  ResizeSVGTextRectangle("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
+  ResizeSVGTextRectangle("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
   $(document).ready(function()
   {
     CheckIfAnimationIsOnScreen('#skills-container', _skillAnims);
     CheckIfAnimationIsOnScreen('#intro-container', _introAnims);
     CheckIfAnimationIsOnScreen('#fire-01', fireAnimA);
     CheckIfAnimationIsOnScreen('#fire-02', fireAnimB);
-
-    OnHoverOverEmail();
-    OnHoverOverPhone();
-
     PopInFoliage($('#foliage-container'));
-
     AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%')
     AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%');
     // put the first road separately for an automatic start without using waypoints
@@ -705,15 +715,24 @@ function Init()
     $("#blimp-js-font").fitText();
     $("#blimp-jquery-font").fitText();
 
+    // $('#email-text').fitText();
+    // $('#phone-text').fitText();
+
     $(window).resize(function()
     {
-      console.log("Help");
-      ResizeBlimpRect("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
-      ResizeBlimpRect("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
-      ResizeBlimpRect("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
-      ResizeBlimpRect("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
-      ResizeBlimpRect("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
-      ResizeBlimpRect("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
+      // IsOrientatedLandscape();
+      ResizeSVGTextRectangle("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
+      ResizeSVGTextRectangle("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
+      ResizeSVGTextRectangle("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
+      ResizeSVGTextRectangle("blimp-animation-svg", 100, 72, 60, 35, 123, 136.3, 130, 149.8);
+      ResizeSVGTextRectangle("blimp-jquery-svg", 70, 54, 60, 35, 158, 165.2, 140.3, 157.1);
+      ResizeSVGTextRectangle("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
+      // ResizeSVGTextRectangle("email-rect", 175, 150, 50, 50, -12.5, 0, 0, 0);
+      //ResizeBlimpRect("phone-rect", 97, 72, 60,35, 144, 154.6, 134, 150.3);
     })
+
+    OnHoverOverEmail();
+    OnHoverOverPhone();
+
   })
 }
