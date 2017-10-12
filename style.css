@@ -2527,6 +2527,11 @@ position: relative;
     background: yellow;
   }
 
+  .skills-group
+  {
+      width: 95%;
+  }
+
   .header
   {
     width: 70%;
@@ -2654,8 +2659,8 @@ position: relative;
   .contact-section
   {
     max-width: 29rem;
-    min-width: 28rem;
-    width: 68%;
+    min-width: 22rem;
+    width: 56%;
     margin-top: 8rem;
   }
 
