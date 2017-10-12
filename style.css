@@ -2550,6 +2550,7 @@ position: relative;
 
   #contact-header
   {
+  margin-top: 17%;
   }
 
   #header-cloud-01
@@ -2575,7 +2576,7 @@ position: relative;
   }
 
   #contact-description-section
-  {height: 38rem;width: auto;margin-top: 2.3rem;}
+  {height: 38rem;width: auto;margin-top: 10%;}
 
   #foliage-container > div
   {
@@ -2605,15 +2606,16 @@ position: relative;
   #email-section
   {top: 0;margin-top: 4rem;}
   #phone-section
-  {top: 0;}
+  {top: 0;margin-top: 15%;}
   #cv-section
   {
     top: 0;
   }
   #contact-container
   {
-    height: 141rem;
-    margin-top: 3rem;
+    height: auto;
+    margin-bottom: 11%;
+    overflow: visible;
   }
 
   .paper-plane-container
@@ -2661,7 +2663,7 @@ position: relative;
     max-width: 29rem;
     min-width: 22rem;
     width: 56%;
-    margin-top: 8rem;
+    margin-top: 16%;
   }
 
   #about-content-02
