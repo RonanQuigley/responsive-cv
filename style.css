@@ -564,7 +564,6 @@ div.road-container div:nth-child(2n)
 {
 top: 2rem;
 left: 3.5%;
-width: 11rem;
 z-index: -1;
 }
 
@@ -1739,7 +1738,7 @@ stroke-width: 1rem;
 
 #about-content-02-text
 {
-    top: -9.5rem;
+    top: -10.5rem;
 }
 
 #about-content-cloud-03
@@ -2138,27 +2137,27 @@ div#cloud-group-three-01 {}
 {}
 
 .about-content
-{max-width: 40rem;width: auto;height: auto;margin: auto;}
+{max-width: 40rem;width: auto;height: auto;margin: auto;margin-bottom: -5%;}
 
 #about-content-01
 {
-    top: 12rem;
+    top: 0;
     left: -20%;
 }
 
 #about-content-02
 {
     left: 20%;
-    top: 7rem;
+    top: 0;
 }
 
 #about-content-03
-{top: 3rem;left: -20%;}
+{top: 0;left: -20%;}
 
 div#about-content-03 {}
 
 #about-content-04
-{left: 20%;top: -2rem;}
+{left: 20%;top: 0;margin-bottom: 0;}
 
 
 .bowler-hats *
@@ -2403,6 +2402,16 @@ position: relative;
     background: orange;
   }
 
+  #about-content-02-text
+  {
+    top: -9.5rem;
+  }
+
+  #about-content-03-text
+  {
+    top: -9.5rem;
+  }
+
   #skills-group-02
   {
     left:0;
@@ -2432,7 +2441,7 @@ position: relative;
   #contact-text
   {
     font-size: 1.8rem;
-    top:-76%;
+    top:-72%;
     width: 55%;
   }
 
