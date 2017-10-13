@@ -575,7 +575,7 @@ function OnHoverOverEmail()
     // console.log("rotate email");
     TweenLite.to(_email, 0.1, {rotation: 10, force3D: "auto", ease: Linear.easeNone, onComplete: function()
     {
-      //_elementTimeline.restart();
+      _elementTimeline.restart();
     }});
   }, function()
   {

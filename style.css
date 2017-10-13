@@ -26,7 +26,7 @@
 }
 
 #home
-{height: 70%;}
+{height: 70%;margin-bottom: -27%;}
 
 #home > svg > *
 {
@@ -1541,10 +1541,10 @@ top: 90%;
 {
 height: auto;
 max-width: 70%;
-position: absolute;
+position: relative;
+margin-bottom: -38%;
 left: 0;
 right: 0;
-top: -30%;
 }
 
 .clouds-header > svg > path
@@ -1898,7 +1898,7 @@ svg
     height: auto;
     left: 0;
     right: 0;
-    margin: 0;
+    margin: auto;
     position: absolute;
 }
 
@@ -2135,8 +2135,7 @@ div#cloud-group-three-01 {}
 }
 
 #about-content-cloud-01
-{
-}
+{}
 
 .about-content
 {max-width: 40rem;width: auto;height: auto;margin: auto;}
@@ -2181,25 +2180,30 @@ transform: translateY(12%);
 
 #bowler-hat-01
 {
-    transform: translate(30%, 8%);
+    transform: translate(30%, 0%);
     width: 62%;
 }
 
 #bowler-hat-02
-{transform: translate(-30%, 8%);width: 62%;}
+{transform: translate(-30%, -13%);width: 62%;}
 
 #bowler-hat-03
 {
   z-index: 1;
-  transform: translateY(38%);
+  transform: translateY(-8%);
   width: 62%;
 }
 
 #tools
-{}
+{
+    margin-bottom: -37%;
+}
 
 #game-controller
-{left: 30%;top: -4rem;}
+{
+    left: 19%;
+    margin-bottom: -33%;
+}
 
 #about-content-02-icons
 {
@@ -2210,7 +2214,7 @@ position: relative;
 }
 
 #trophy
-{transform: rotate(-8deg);max-width: 32%;top: -4.8rem;right: 50%;}
+{transform: rotate(-8deg);max-width: 32%;left: -25%;margin-bottom: -43%;}
 
 #about-content-cloud-02
 {}
@@ -2279,6 +2283,11 @@ position: relative;
     background: red;
   }
 
+  #skills-group-02
+  {
+    left: -9%;
+  }
+
   #tree-group-01
   {
     left: 62%;
@@ -2308,7 +2317,7 @@ position: relative;
   {
 margin-top: 0;
 margin-bottom: 0;
-top: 24%;
+top: 27%;
 }
 
   #email-section
@@ -2394,38 +2403,85 @@ position: relative;
     background: orange;
   }
 
+  #skills-group-02
+  {
+    left:0;
+    margin-top: 4%;
+  }
+
+  .clouds-header
+  {
+    max-width: 35rem;
+  }
+
+  .font-header
+  {
+    font-size: 4.7rem;
+  }
+
+  #city-flatline
+  {
+    height: 1px;
+  }
+
+  #about-header
+  {
+    margin-top: 4%;
+  }
+
+  #contact-text
+  {
+    font-size: 1.8rem;
+    top:-76%;
+    width: 55%;
+  }
+
+  .about-content
+  {
+    max-width: 35rem;
+    margin-bottom: -8%;
+  }
+
+  .font-div
+  {
+font-size: 1.75rem;
+}
+
   .header
   {
     width: 57%;
-    min-width: 34rem;
+    min-width: 29rem;
     height: auto;
-    margin-bottom: 4%;
+    margin-top: 11%;
+    margin-bottom: 12%;
   }
 
   #about-content-01
   {
     left: 0;
-    top: 10rem;
-    margin-bottom: 1rem;
+    top: 0;
+    margin-top: -5%;
+    margin-bottom: -4%;
+    top: 0;
    }
 
   #about-content-02
   {
     left: 0;
-    top: 8rem;
-}
+    top: 0;
+ }
 
   #about-content-03
   {
 left: 0;
-top: 6rem;
+top: 0;
+margin-bottom: -10%;
 }
 
   #about-content-04
   {
 left: 0;
-top: 3.5rem;
-margin-bottom: 4rem;
+top: 0;
 }
 
   #skills-header
@@ -2456,35 +2512,42 @@ position: relative;
   .contact-section
   {
     margin: auto;
+    position: relative;
+    margin-top: 9%;
   }
 
   #contact-container
   {
-height: 158rem;
+height: auto;
 }
 
   #contact-description-section
   {
     top: 0;
+    margin-top: -7%;
+    margin-bottom: -5%;
+    width: 33rem;
     position: relative;
   }
 
   #email-section
   {
     left:0;
-    top: 84rem;
+    top: 0;
   }
 
   #cv-section
   {
     left:0;
-    top: 110rem;
+    top: 0;
+    margin-top: 13%;
   }
 
   #phone-section
   {
     left:0;
-    top: 134rem;
+    top: 0;
+    margin-bottom: 12%;
   }
 
   #copyright-container
@@ -2561,7 +2624,7 @@ position: relative;
 #skills-group-01
 {
   margin-bottom: 0rem;
-  margin-top: 4rem;
+  margin-top: -3%;
 }
 
 }
@@ -2576,10 +2639,24 @@ position: relative;
     background: yellow;
   }
 
-  #city-flatline
+  #tools
   {
-    height: 1px;
+    margin-bottom: -33%;
   }
+
+  #about-content-01
+  {margin-top: 13%;margin-bottom: -16%;}
+
+  #about-content-02
+  {margin-bottom: -16%;}
+
+  #about-content-03
+  {margin-bottom: -16%;}
+
+  #about-content-04
+  {margin-bottom: -11%;}
+
+
 
   .font-skills-new
   {
@@ -2596,13 +2673,13 @@ position: relative;
 
   #contact-text
   {
-    top:-80%;
-    width: 55%;
+    top:-77%;
+    font-size: 1.7rem;
+    width: 60%;
   }
 
   #home
   {
-    top: -6rem;
     height: 66%;
   }
 
@@ -2610,11 +2687,12 @@ position: relative;
   {
     font-size: 1.61rem;
     max-width: 28rem;
+    margin-top: 0rem;
   }
 
   .font-header
   {
-    font-size: 4.5rem;
+    font-size: 3.9rem;
   }
 
   .skills-group
@@ -2684,20 +2762,20 @@ position: relative;
   }
   #hot-air-balloon-web-container
   {
-    min-width: 0rem;
+  min-width: 9.8rem;
+  width: 30%;
   }
   #cloud-grouping-section
   {
 
   }
   #email-section
-  {top: 0;margin-top: 10%;/* min-width: 27rem; */}
+  {margin-top: 10%;}
   #phone-section
-  {top: 0;margin-top: 8%;margin-bottom: 16%;}
+  {margin-bottom: 17%;margin-top: 15%;}
   #cv-section
   {
-    top: 0;
-    margin-top: 12%;
+  margin-top: 18%;
   }
   #contact-container
   {
@@ -2714,6 +2792,11 @@ position: relative;
   .paper-plane-envelope path
   {
     stroke-width: 0.05rem;
+  }
+
+  .about-content
+  {
+    margin-bottom: -4%;
   }
 
   #about-header
@@ -2749,27 +2832,15 @@ position: relative;
   .contact-section
   {
     max-width: 29rem;
-    min-width: 26.5rem;
+    min-width: 26.6rem;
     width: 56%;
     margin-top: 16%;
   }
 
-  #about-content-02
-  {top: 9rem;}
-
-  #about-content-03
-  {top: 10rem;}
-
-  #about-content-04
-  {
-    top: 10.5rem;
-    margin-bottom: 0rem;
-  }
-
   #skills-header
   {
-    margin-top: 25%;
     margin-bottom: 11%;
+    margin-top: 5%;
   }
 
   #skills-group-01
