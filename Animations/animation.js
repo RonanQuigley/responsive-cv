@@ -10,15 +10,15 @@ function getRandomArbitrary(min, max)
 
 function SetSVGViewBox(svgID, xOffset, yOffset, width, height)
 {
-  var svg = $(svgID); // get the svg we are working with
-  if(svg.length != 0) // if a div with this id exists...
+  var _svg = $(svgID); // get the svg we are working with
+  if(_svg.length != 0) // if a div with this id exists...
   {
-    var viewBox = xOffset + " " + yOffset + " " + width + " " + height;
-    svg.attr("viewBox", viewBox); // apply our viewbox
+    var _viewBox = xOffset + " " + yOffset + " " + width + " " + height;
+    _svg.attr("viewBox", _viewBox); // apply our viewbox
   }
   else
   {
-    console.error("Cannot find element with id: " + svg.id);
+    console.error("Cannot find element with id: " + _svg.id);
   }
 }
 
@@ -639,6 +639,11 @@ function OnHoverOverPhone()
 
 function Init()
 {
+
+  $(window).on('beforeunload', function() {
+      $(window).scrollTop(0);
+  });
+
   // fade in the whole page
   FadeInAnimation('body', 0.75);
   // IsOrientatedLandscape();
@@ -720,6 +725,14 @@ function Init()
 
     $(window).resize(function()
     {
+      if($('body').outerWidth() <= 768)
+      {
+        SetSVGViewBox('#skill-anim-css', -450, -70, 2322, 1600);
+      }
+      else
+      {
+        SetSVGViewBox('#skill-anim-css', -450, -130, 2322, 1600);
+      }
       // IsOrientatedLandscape();
       ResizeSVGTextRectangle("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
       ResizeSVGTextRectangle("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
