@@ -1,0 +1,59 @@
+html
+{
+  font-size: 62.5%;
+  height: 100%;
+}
+body
+{
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.cls-1
+{
+  fill: #fff;
+  stroke: #231f20;
+  stroke-miterlimit: 10;
+}
+#no-javascript
+{
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+
+  margin: auto;
+}
+#tool
+{
+  width: 42%;
+  max-width: 11rem;
+  min-width: 7rem;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+}
+#text
+{
+  font-size: 2rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+}
+
+@media screen and (max-width: 48em)
+{
+  body
+  {
+  }
+  #no-javascript
+  {
+    font-size: 2.5rem;
+  }
+}

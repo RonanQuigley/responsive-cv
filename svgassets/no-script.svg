@@ -1,0 +1,15 @@
+<svg id="Tools" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 107.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>tool</title>
+  <rect id="_Path_" data-name="&lt;Path&gt;" class="cls-1" x="20.3" y="26.6" width="11.5" height="50.76" transform="translate(-12.1 8.1) rotate(-14.4)"/>
+  <polygon id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" points="31.6 71.1 44.6 72.9 52.5 83.4 50.6 96.4 39 85.2 31.8 93.2 35.5 107 24.6 103.3 19.3 91.9 21.1 79 31.6 71.1"/>
+  <polygon id="_Path_3" data-name="&lt;Path&gt;" class="cls-1" points="12.8 0.5 25.8 2.4 33.7 12.8 31.9 25.8 21.4 33.7 8.4 31.9 0.5 21.4 2.4 8.4 12.8 0.5"/>
+</svg>

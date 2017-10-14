@@ -83,11 +83,10 @@ function AnimateBodymovin(element, data, bool, svgAspectRatio, autoPlay)
 	var animData = {
 			container: elem,
 			renderer: 'svg',
-			opacity: 0,
 			loop: bool,
 			autoplay: autoPlay,
 			rendererSettings: {
-			progressiveLoad:true,
+			progressiveLoad:false,
       preserveAspectRatio:svgAspectRatio
 			},
 			path: data
@@ -655,15 +654,16 @@ function Init()
   var fireAnimB = [];
   var duration = 180;
   var easing = Vivus.LINEAR;
-  _skillAnims.push(AnimateBodymovin('skill-anim-web-dev', 'Animations/skills-web-development.json', true, "xMidYMid meet", false));
-  _skillAnims.push(AnimateBodymovin('skill-anim-html', 'Animations/skills-html.json', true, "xMidYMid meet", false));
-  _skillAnims.push(AnimateBodymovin('skill-anim-css', 'Animations/skills-css.json', true, "xMidYMid meet", false));
-  _skillAnims.push(AnimateBodymovin('skill-anim-jquery', 'Animations/skills-jquery.json', true, "xMidYMid meet", false));
-  _skillAnims.push(AnimateBodymovin('skill-anim-js', 'Animations/skills-javascript.json', true, "xMidYMid meet", false));
-  _skillAnims.push(AnimateBodymovin('skill-anim-animation', 'Animations/skills-animation.json', true, "xMidYMid meet", false));
-  _introAnims.push(AnimateBodymovin('planet', 'Animations/planet.json', true, "xMidYMin meet", false));
-  fireAnimA[0] = AnimateBodymovin('fire-01', 'Animations/fire.json', true, "xMidYMid meet", false);
-  fireAnimB[0] = AnimateBodymovin('fire-02', 'Animations/fire.json', true, "xMidYMid meet", false);
+  _introAnims.push(AnimateBodymovin('planet', 'scripts/planet.json', true, "xMidYMin meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-web-dev', 'scripts/skills-web-development.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-html', 'scripts/skills-html.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-css', 'scripts/skills-css.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-jquery', 'scripts/skills-jquery.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-js', 'scripts/skills-javascript.json', true, "xMidYMid meet", false));
+  _skillAnims.push(AnimateBodymovin('skill-anim-animation', 'scripts/skills-animation.json', true, "xMidYMid meet", false));
+
+  fireAnimA[0] = AnimateBodymovin('fire-01', 'scripts/fire.json', true, "xMidYMid meet", false);
+  fireAnimB[0] = AnimateBodymovin('fire-02', 'scripts/fire.json', true, "xMidYMid meet", false);
   SetRoadIDs('.road-container');
   SetSVGAspectRatio('blimp-web', "xMidYMid meet");
   SetSVGAspectRatio('blimp-html', "xMidYMid meet");
@@ -748,4 +748,9 @@ function Init()
     OnHoverOverPhone();
 
   })
+}
+
+$(document).ready()
+{
+  Init();
 }

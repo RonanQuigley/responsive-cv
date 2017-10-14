@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title style="display: none">Interactive CV - Ronan Quigley</title>
+
+    <title style="display: none">Ronan Quigley</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ronan Quigley">
@@ -11,20 +12,21 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="Animations/jquery.fittext.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="scripts/jquery.fittext.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
     <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {
-      $('html').removeClass('hidden');
-     });
+      $('html').addClass('hidden');
+      $(document).ready(function() {
+        $('html').removeClass('hidden');
+       });
     </script>
+
   </head>
-  <body onload="Init()">
+  <body>
+
     <div id="portrait-notification">
       <svg id="Portrait" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349 206">
         <defs>
@@ -55,7 +57,7 @@
         </g>
       </svg>
     </div>
-    <div id="wrapper-foreground">
+    <div id="main-content-container">
       <div id="intro-container">
         <div id="cloud-and-balloon-container">
           <div id="hot-air-balloon-web-container">
@@ -148,6 +150,7 @@
           </div>
         </div>
       </div>
+
       <div id="foliage-container">
         <div id="tree-group-01" class="foliage-hide">
           <div id="tree-36" class="foliage">
@@ -1259,12 +1262,6 @@
                   </g>
               </svg>
             </div>
-            <!--<div id="paper-plane-line-01" class="paper-plane-line-container">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="paper-plane-line">
-                <line class="paper-plane-line-solid" x1="0" y1="0" x2="100" y2="0"/>
-                <line data-ignore="true" x1="0" y1="0" x2="100" y2="1"/>
-              </svg>
-            </div>-->
           </div>
           <div id="cloud-group-three-03">
             <div id="cloud-contact-container-01" class="clouds-contact">
@@ -1308,12 +1305,6 @@
                   </g>
               </svg>
             </div>
-            <!--<div id="paper-plane-line-02" class="paper-plane-line-container">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="paper-plane-line">
-                <line class="paper-plane-line-solid" x1="0" y1="0" x2="100" y2="0"/>
-                <line data-ignore="true" x1="0" y1="0" x2="100" y2="0"/>
-              </svg>
-            </div>-->
           </div>
           <div id="cloud-contact-01" class="clouds-contact">
             <div id="email-box" class="cloud-contact-box">
@@ -1357,12 +1348,7 @@
                   </g>
               </svg>
             </div>
-            <!--<div id="paper-plane-line-03" class="paper-plane-line-container">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="paper-plane-line">
-                <line class="paper-plane-line-solid" x1="0" y1="0" x2="100" y2="0"/>
-                <line data-ignore="true" x1="0" y1="0" x2="100" y2="0"/>
-              </svg>
-            </div>-->
+
           </div>
           <div id="cloud-contact-02" class="clouds-contact">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1432.954 885.131">
@@ -1389,12 +1375,6 @@
                   </g>
               </svg>
             </div>
-            <!--<div id="paper-plane-line-04" class="paper-plane-line-container">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="paper-plane-line">
-                <line class="paper-plane-line-solid" x1="0" y1="0" x2="100" y2="0"/>
-                <line data-ignore="true" x1="0" y1="0" x2="100" y2="0"/>
-              </svg>
-            </div>-->
           </div>
           <div id="cloud-contact-03" class="clouds-contact">
             <div id="phone-box" class="cloud-contact-box">
@@ -1429,6 +1409,5 @@
     </div>
   </body>
 </html>
-<!-- EXTERNAL SCRIPTS -->
-<script src="Animations/bodymovin.js"></script>
-<script src="Animations/animation.js"></script>
+<script src="scripts/bodymovin.js"></script>
+<script src="scripts/main.js"></script>
