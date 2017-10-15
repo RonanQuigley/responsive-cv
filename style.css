@@ -2500,12 +2500,8 @@ position: relative;
 #planet
 {
  width: 100%;
- height: 100%;
- max-width: 50rem;
- width: auto;
  height: auto;
- width: 100%;
- height: auto;
+ overflow: visible;
  max-width: 118rem;
 }
 
