@@ -9,7 +9,7 @@
     <meta name="description" content="Interactive CV of Web Developer Ronan Quigley">
     <meta name="keywords" content="cv, resume, interactive,web, developer, ronan, quigley, nanor">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="scripts/jquery.fittext.js"></script>
@@ -17,16 +17,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+
     <script type="text/javascript">
       $('html').addClass('hidden');
       $(document).ready(function() {
         $('html').removeClass('hidden');
        });
     </script>
-
   </head>
   <body>
-
     <div id="portrait-notification">
       <svg id="Portrait" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349 206">
         <defs>
@@ -152,7 +151,7 @@
       </div>
 
       <div id="foliage-container">
-        <div id="tree-group-01" class="foliage-hide">
+        <div id="tree-group-01" class="foliage-show">
           <div id="tree-36" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.169 166.441">
                 <g stroke-miterlimit="10">
@@ -168,7 +167,7 @@
             </svg>
           </div>
         </div>
-        <div id="tree-group-02" class="foliage-hide">
+        <div id="tree-group-02" class="foliage-show">
           <div id="tree-19" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.169 166.441">
                 <g stroke-miterlimit="10">
@@ -196,7 +195,7 @@
             </svg>
           </div>
         </div>
-        <div id="tree-group-03" class="foliage-hide">
+        <div id="tree-group-03" class="foliage-show">
           <div id="tree-12" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.169 166.441">
                 <g stroke-miterlimit="10">
@@ -224,7 +223,7 @@
             </svg>
           </div>
         </div>
-        <div id="tree-group-04" class="foliage-hide">
+        <div id="tree-group-04" class="foliage-show">
           <div id="tree-34" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.9 131.643">
                 <g fill="white" stroke="#000" stroke-miterlimit="10">
@@ -259,7 +258,7 @@
             </svg>
           </div>
         </div>
-        <div id="tree-group-05" class="foliage-hide">
+        <div id="tree-group-05" class="foliage-show">
           <div id="tree-22" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.475 140.024">
                 <g fill="white" stroke="#000" stroke-miterlimit="10">
@@ -288,7 +287,7 @@
           <div id="fire-02">
           </div>
         </div>
-        <div id="tree-group-06" class="foliage-hide">
+        <div id="tree-group-06" class="foliage-show">
           <div id="tree-01" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.169 166.441">
                 <g stroke-miterlimit="10">
@@ -316,7 +315,7 @@
             </svg>
           </div>
         </div>
-        <div id="tree-group-07" class="foliage-hide">
+        <div id="tree-group-07" class="foliage-show">
           <div id="tree-10" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.337 165.443">
                 <g stroke="#000" stroke-miterlimit="10">
@@ -335,7 +334,7 @@
             </svg>
           </div>
         </div>
-        <div id="tree-group-08" class="foliage-hide">
+        <div id="tree-group-08" class="foliage-show">
           <div id="tree-26" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.169 166.441">
                 <g stroke-miterlimit="10">
@@ -346,17 +345,7 @@
             </svg>
           </div>
         </div>
-        <div id="tree-group-09" class="foliage-hide">
-          <div id="tree-30" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.9 131.643">
-                <g fill="white" stroke="#000" stroke-miterlimit="10">
-                    <path d="M70.173 77.673c-23.136 17.797-38.985-3.794-38.985-3.794S4.724 78.003.88 49.068c-3.845-28.935 22.778-31.865 22.778-31.865S33.319-7.777 60.299 3.36s16.207 35.659 16.207 35.659 16.803 20.858-6.333 38.654z"/>
-                    <path d="M23.825 130.971S44.192 81.008 39.1 72.097s-9.865-8.911-13.684-9.547c-3.819-.636 35.006 2.864 27.05-2.864 15.912-.636-1.909 9.229-1.909 12.411 0 3.182 0 54.1 5.092 59.192"/>
-                </g>
-            </svg>
-          </div>
-        </div>
-        <div id="tree-group-10" class="foliage-hide">
+        <div id="tree-group-10" class="foliage-show">
           <div id="tree-04" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.475 140.024">
                 <g fill="white" stroke="#000" stroke-miterlimit="10">
@@ -370,7 +359,7 @@
 
           </div>
         </div>
-        <div id="tree-group-11" class="foliage-hide">
+        <div id="tree-group-11" class="foliage-show">
           <div id="tree-06" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.475 140.024">
                 <g fill="white" stroke="#000" stroke-miterlimit="10">
@@ -381,7 +370,7 @@
             </svg>
           </div>
         </div>
-        <div id="tree-group-12" class="foliage-hide">
+        <div id="tree-group-12" class="foliage-show">
           <div id="tree-37" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.9 131.643">
                 <g fill="white" stroke="#000" stroke-miterlimit="10">
@@ -391,7 +380,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-01" class="foliage-hide">
+        <div id="vegetation-group-01" class="foliage-show">
           <div id="tree-05" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.9 131.643">
                 <g fill="white" stroke="#000" stroke-miterlimit="10">
@@ -421,7 +410,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-02" class="foliage-hide">
+        <div id="vegetation-group-02" class="foliage-show">
           <div id="bush-06" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.763 31.78">
                 <path d="M8.824 31.376s-9.99-7.294-8.081-11.604c1.997-4.508 7.252-10.568 14.505-2.901.622.414 1.658-16.577 13.469-16.37s18.856 11.397 19.478 15.333-3.108 13.883-3.108 13.883" fill="white" stroke="#000" stroke-miterlimit="10"/>
@@ -436,7 +425,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-03" class="foliage-hide">
+        <div id="vegetation-group-03" class="foliage-show">
           <div id="flower-04" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.749 30.18">
                 <g fill="white" stroke="#231f20" stroke-miterlimit="10">
@@ -461,7 +450,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-04" class="foliage-hide">
+        <div id="vegetation-group-04" class="foliage-show">
           <div id="tree-15" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.337 165.443">
                 <g stroke="#000" stroke-miterlimit="10">
@@ -479,7 +468,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-05" class="foliage-hide">
+        <div id="vegetation-group-05" class="foliage-show">
           <div id="grass-09" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.742 37.188">
                 <g fill="#fff" stroke="#000" stroke-miterlimit="10">
@@ -507,7 +496,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-07" class="foliage-hide">
+        <div id="vegetation-group-07" class="foliage-show">
           <div id="tree-18" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.169 166.441">
                 <g stroke-miterlimit="10">
@@ -518,7 +507,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-08" class="foliage-hide">
+        <div id="vegetation-group-08" class="foliage-show">
           <div id="tree-31" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.337 165.443">
                 <g stroke="#000" stroke-miterlimit="10">
@@ -549,7 +538,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-09" class="foliage-hide">
+        <div id="vegetation-group-09" class="foliage-show">
           <div id="tree-27" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.169 166.441">
                 <g stroke-miterlimit="10">
@@ -580,7 +569,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-10" class="foliage-hide">
+        <div id="vegetation-group-10" class="foliage-show">
 
 
           <div id="tree-11" class="foliage">
@@ -609,7 +598,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-11" class="foliage-hide">
+        <div id="vegetation-group-11" class="foliage-show">
           <div id="grass-04" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.742 37.188">
                 <g fill="#fff" stroke="#000" stroke-miterlimit="10">
@@ -628,7 +617,15 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-12" class="foliage-hide">
+        <div id="vegetation-group-12" class="foliage-show">
+          <div id="tree-30" class="foliage">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.9 131.643">
+                <g fill="white" stroke="#000" stroke-miterlimit="10">
+                    <path d="M70.173 77.673c-23.136 17.797-38.985-3.794-38.985-3.794S4.724 78.003.88 49.068c-3.845-28.935 22.778-31.865 22.778-31.865S33.319-7.777 60.299 3.36s16.207 35.659 16.207 35.659 16.803 20.858-6.333 38.654z"/>
+                    <path d="M23.825 130.971S44.192 81.008 39.1 72.097s-9.865-8.911-13.684-9.547c-3.819-.636 35.006 2.864 27.05-2.864 15.912-.636-1.909 9.229-1.909 12.411 0 3.182 0 54.1 5.092 59.192"/>
+                </g>
+            </svg>
+          </div>
           <div id="grass-11" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.742 37.188">
                 <g fill="#fff" stroke="#000" stroke-miterlimit="10">
@@ -638,7 +635,7 @@
             </svg>
           </div>
         </div>
-        <div id="vegetation-group-13" class="foliage-hide">
+        <div id="vegetation-group-13" class="foliage-show">
           <div id="grass-02" class="foliage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.742 37.188">
                 <g fill="#fff" stroke="#000" stroke-miterlimit="10">
@@ -982,7 +979,7 @@
               <svg id="Home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.4 32.6">
                 <title>Home</title>
                 <rect  x="14" y="19" width="17.3" height="13.03"/>
-                <rect  x="31.3" y="26.8" width="8.2" height="5.18"/>
+                <rect  x="31.3" y="26.85" width="8.2" height="5.18"/>
                 <rect  x="29.5" y="10.3" width="3.6" height="7.62"/>
                 <polygon  points="34.5 19.9 11 19.9 22.7 5.2 34.5 19.9"/>
                 <path id="_Path_" data-name="&lt;Path&gt;"  d="M34.8,0.5a1.6,1.6,0,0,0-1.1.4,2,2,0,0,0-.4.6,1,1,0,0,0-.8,0,1.2,1.2,0,0,0-.6.7,1.5,1.5,0,0,0-1,.4,1.7,1.7,0,0,0-.3,1,1.2,1.2,0,0,0,1,1.1h4.3a1.2,1.2,0,0,0,1.1-1.1A1.7,1.7,0,0,0,37,2.9a1,1,0,0,0-.7-0.6A2,2,0,0,0,35.6.7Z"/>

@@ -40,7 +40,7 @@
 }
 
 #home
-{height: 70%;margin-bottom: -27%;}
+{height: 75%;max-width: 77%;margin-bottom: -27%;}
 
 #home > svg > *
 {
@@ -241,7 +241,14 @@
 
 .road-container > div
 {
-  visibility: hidden;
+  visibility: visible;
+}
+
+.road > svg
+{
+  -ms-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .road-middle
@@ -622,7 +629,7 @@ left: 15%;
 {width: 12.5rem;height: auto;left: 76.4%;top: 21.7%;}
 
 #vegetation-group-12
-{width: 9.5rem;left: 9.4%;top: 54.7%;height: 4rem;}
+{width: 9.5rem;left: 15.4%;top: 52.7%;height: auto;}
 
 #vegetation-group-13
 {left: 66.4%;top: 27.7%;width: 12rem;height: auto;}
@@ -833,7 +840,7 @@ position: relative;
 }
 
 #tree-30
-{position: relative;}
+{position: relative;width: 100%;height: 100%;}
 
 #tree-31
 {
@@ -933,7 +940,7 @@ position: relative;
 {
   width: 10rem;
   height: auto;
-  top: 13.7%;
+  top: 14.7%;
   left: 79.8%;
 }
 
@@ -1102,16 +1109,6 @@ margin-top: -23%;
   width: 56%;
 }
 
-
-#mySVG * {
-}
-
-#mySVG.finished * {
-  fill-opacity: 1;
-    fill:red;
-}
-
-
 #grass-09
 {
   left: -40%;
@@ -1131,7 +1128,7 @@ margin-top: -23%;
 
 
 #grass-11
-{height: 100%;width: 100%;}
+{height: auto;width: 80%;top: 92%;left: -96%;z-index: 1;}
 
 #grass-12
 {
@@ -1490,13 +1487,6 @@ width: 29rem;
 margin: 0;
 }
 
-#paper-plane-01
-{}
-
-#paper-plane-02
-{
-}
-
 .paper-plane-envelope
 {
 
@@ -1802,6 +1792,9 @@ right: 0;
   overflow: inherit;
   height: 10.20%;
   margin-bottom: 6rem;
+  -ms-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 
@@ -1847,28 +1840,7 @@ stroke-width: 1rem;
 }
 
 .road-container
-{
-
-position: absolute;
-
-width: 100%;
-
-left: 0;
-
-right: 0;
-
-height: 620rem;
-
-overflow: hidden;
-
-z-index: -99999;
-
--webkit-transform: scaleX(-1);
-
-    -ms-transform: scaleX(-1);
-
-        transform: scaleX(-1);
-}
+{position: absolute;width: 100%;left: 0;right: 0;height: 620rem;overflow: hidden;z-index: -99999;-webkit-transform: scaleX(-1) translate3d(0,0,0);-ms-transform: scaleX(-1);transform: scaleX(-1) translate3d(0,0,0);}
 
 .foliage-hide
 {
@@ -1912,8 +1884,10 @@ z-index: -99999;
 {top: 37%;}
 
 #city-buildings svg
-{
-}
+{position: absolute;transform: translate3d(0,0,0);}
+
+#city-buildings svg > *
+{stroke-width: 0.03rem;}
 
 
 #city-buildings path
@@ -1949,6 +1923,9 @@ z-index: -99999;
     right: 0;
     height: 100%;
     width: 100%;
+    -ms-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 .blimps
@@ -1977,9 +1954,6 @@ height: auto;
 width: 100%;
 }
 
-#skills-header
-{}
-
 #skills-header-cloud-container
 {left: 0;right: 0;}
 
@@ -1994,11 +1968,6 @@ width: 100%;
     max-width: 57rem;
     left: 22rem;
 }
-
-
-#skill-anim-web-dev
-{}
-
 
 #about-content-02-text
 {
@@ -2023,10 +1992,7 @@ top: -9.5rem;
 }
 
 #about-content-04-text
-{
-
-margin-top: -2.5rem;
-}
+{margin-top: -2rem;}
 
 html
 {
@@ -2062,12 +2028,18 @@ svg
 {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 200;
+  font-style: normal;
   text-align: center;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 10%;
   font-size: 6rem;
+  speak: none;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 .font-div
@@ -2075,6 +2047,7 @@ svg
   width: 90%;
   font-size: 1.9rem;
   font-family: 'Quicksand', sans-serif;
+  font-style: normal;
   text-align: center;
   font-weight: normal;
   top: -8rem;
@@ -2114,7 +2087,8 @@ svg
 }
 
 #city-buildings
-{height: 100%;width: 47%;}
+{height: 1px;width: 47%;padding-bottom: 20%;}
+
 
 #city-flatline
 {
@@ -2141,12 +2115,43 @@ stroke-width: 26.05rem;
 fill: black;
 }
 
+#hot-air-balloon-web-container
+{
+  position: absolute;
+  overflow: inherit;
+  z-index: -1;
+  top: 33%;
+  left: 60%;
+  width: 36%;
+  min-width: 12rem;
+  max-width: 27rem;
+  height: auto;
+}
+
 #hot-air-balloon-web
 {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 61.5rem;
+  padding-bottom: 152%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#hot-air-balloon-web > svg
+{
+  position: absolute;
+}
+
+#cloud-container
+{
+  position: absolute;
+  height: auto;
+  width: 62%;
+  min-width: 9rem;
+  z-index: 1;
+  top: 80%;
 }
 
 .clouds-content, .clouds-header, .clouds-background
@@ -2175,16 +2180,6 @@ fill: black;
     position: absolute;
 }
 
-#cloud-container
-{
-  position: absolute;
-  height: auto;
-  width: 62%;
-  min-width: 9rem;
-  z-index: 1;
-  top: 80%;
-}
-
 #cloud-group-three-01-container
 {
   height: 100%;
@@ -2209,12 +2204,10 @@ fill: black;
   visibility: hidden;
 }
 
-div#cloud-group-three-01 {}
 
 #cloud-group-three-stroked-02-container
 {
   height: 100%;
-  position: absolute;
   width: 100%;
 }
 
@@ -2283,12 +2276,6 @@ div#cloud-group-three-01 {}
   stroke-width: 1.23rem;
 }
 
- Standard syntax */
-@keyframes example {
-    from {-webkit-transform: translate3d(0, 0, 0) rotate(0.001deg);transform: translate3d(0, 0, 0) rotate(0.001deg);}
-    to {-webkit-transform: translate3d(calc(100vw), 0, 0) rotate(0.001deg);transform: translate3d(calc(100vw), 0, 0) rotate(0.001deg);}
-}
-
 #generated-clouds-container
 {
   width: 100%;
@@ -2307,11 +2294,7 @@ div#cloud-group-three-01 {}
 .cloud-generated
 {height: 16.666667%;}
 
-#hot-air-balloon-web-container
-{position: absolute;overflow: inherit;z-index: -1;left: 62%;top: 35%;width: 36%;min-width: 12rem;max-width: 27rem;height: auto;}
 
-#cloud-02
-{}
 
 #cloud-03
 {z-index: 3;}
@@ -2384,8 +2367,6 @@ left: 8rem;
     margin-top: 6rem;
 }
 
-#about-header-text
-{}
 
 #about-header-cloud-container
 {width: 100%;height: auto;}
@@ -2402,9 +2383,6 @@ left: 8rem;
     top: 2rem;
     position: relative;
 }
-
-#about-content-cloud-01
-{}
 
 .about-content
 {max-width: 40rem;width: auto;height: auto;margin: auto;margin-bottom: -5%;}
@@ -2423,8 +2401,6 @@ left: 8rem;
 
 #about-content-03
 {top: 0;left: -20%;}
-
-div#about-content-03 {}
 
 #about-content-04
 {left: 20%;top: 0;margin-bottom: 0;}
@@ -2491,11 +2467,8 @@ position: relative;
 #trophy
 {-webkit-transform: rotate(-8deg);-ms-transform: rotate(-8deg);transform: rotate(-8deg);max-width: 32%;left: -25%;margin-bottom: -43%;}
 
-#about-content-cloud-02
-{}
-
 #planet-container
-{display: block;width: 100%;height: auto;max-width: 61.5rem;}
+{display: block;width: 100%;height: auto;max-width: 61.5rem;-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
 
 #planet
 {
@@ -2503,42 +2476,29 @@ position: relative;
  height: auto;
  overflow: visible;
  max-width: 118rem;
+ padding-bottom: 100%;
+ -webkit-transform: translate3d(0,0,0);
+ transform: translate3d(0,0,0);
 }
 
 #planet svg
-{
-}
+{position: absolute;-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
 
 /* ------- MEDIA QUIERIES ------- */
 
-/*
-@media all and (orientation:landscape) {
-    body
-    {
-      background: none;
-      height:100%;
-    }
-    #wrapper-foreground {
-      display: none;
-    }
-    #portrait-notification
-    {
-      display: block;
-      width: 45%;
-      height: 100%;
-      background: yellow;
-    }
-    #portrait-notification > svg > *
-    {
-      stroke: black;
-    }
-}*/
 
 @media screen and (max-width: 63.75em)
 {
   body
   {
     background: red;
+  }
+
+  #hot-air-balloon-web-container
+  {
+  width: 25%;
+  top: 39%;
+  left: 66%;
   }
 
   .header
@@ -2749,6 +2709,9 @@ left: 0;
   {
     background: orange;
   }
+
+  #about-content-01-text
+  {top: -7.5rem;width: 94%;}
 
   #contact-header
   {
@@ -3091,6 +3054,8 @@ margin-top: -22.9rem;
     width: 27%;
     max-width: 18rem;
     top: 55%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .contact-section
@@ -3529,4 +3494,27 @@ margin-top: 1rem;
             transform: translateY(29%);
     width: 93%;
   }
+}
+
+
+@media screen and (max-width: 48em) and (orientation:landscape) {
+    body
+    {
+      background: cyan;
+      height:100%;
+    }
+    #main-content-container {
+      display: none;
+    }
+    #portrait-notification
+    {
+      display: block;
+      width: 45%;
+      height: 100%;
+      background: yellow;
+    }
+    #portrait-notification > svg > *
+    {
+      stroke: black;
+    }
 }

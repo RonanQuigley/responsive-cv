@@ -1,3 +1,7 @@
+var documentBody = $('body');
+var documentWindow = $('window');
+var startingWindowWidth = documentWindow.width();
+
 function convertPXtoRem(px)
 {
     return px / parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -58,7 +62,7 @@ function ResizeSVGTextRectangle(element, scaledWidth, fullWidth,
   scaledHeight, fullHeight, scaledX, fullX, scaledY, fullY)
 {
   var _element = $('.' + element);
-  var _bodyMinWidth = $('body').css('min-width');
+  var _bodyMinWidth = documentBody.css('min-width');
   if(_bodyMinWidth <= "320px" && _bodyMinWidth > "0px")
   {
     _element.attr({width : scaledWidth, height: scaledHeight, x: scaledX, y: scaledY});
@@ -93,7 +97,14 @@ function AnimateBodymovin(element, data, bool, svgAspectRatio, autoPlay)
 	};
   var anim;
 	anim = bodymovin.loadAnimation(animData);
-  bodymovin.setQuality('low');
+  anim.addEventListener('data_ready', function(){
+      anim.frameModifier = 0.120/4;
+      anim.frameMult = 0.120/4;
+      anim.frameRate = 30;
+      anim.setSpeed(1);
+  });
+
+  bodymovin.setQuality(5);
   return anim;
 }
 
@@ -183,7 +194,7 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
   {
     _flipStart = GenerateRandomBool();
     _startX = WidthPercentageToPixel(_parentElement, '-40%');
-    _endX = _parentElement.outerWidth(); // offset is due to the width of the clouds
+    _endX = documentBody.outerWidth(); // offset is due to the width of the clouds
     _randomY = Math.random() * yRandomMax;
     _yValue = HeightPercentageToPixel(element, '' + _randomY + '%');
     _duration = RandomDurationGenerator(minDuration, maxDuration);
@@ -193,10 +204,13 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
   }
   function CheckForWindowResize()
   {
-    $(window).resize(function()
+    documentWindow.resize(function()
     {
-      _tween.kill(); // kill the animating tween
-      Translate();
+      if (documentWindow.width() != startingWindowWidth)
+      {
+        _tween.kill(); // kill the animating tween
+        Translate();
+      }
     })
   }
   InitialiseVariables();
@@ -250,7 +264,7 @@ function MoveElement(element, sectionContainer, duration, screenOffset)
         _tween = TweenMax.fromTo(element, duration, {x: _startX, y:_yValue, scale: 1,
           force3D: "auto"}, {x: _endX, y: _yValue, scale: 1, force3D:"auto"});
       }
-      $(window).resize(function()
+      documentWindow.resize(function()
       {
         _tween.kill();
         _startX = SetMoveDirection($(_sectionContainer), _endX);
@@ -283,7 +297,21 @@ function HeightPercentageToPixel(_elem, _perc){
   }
   else
   {
-    return ($("body").outerHeight() / 100) * parseFloat(_perc);
+    return (documentBody.outerHeight() / 100) * parseFloat(_perc);
+  }
+}
+
+function ReplaceBuilding(originalElement)
+{
+  $('#city-buildings > svg').replaceWith(originalElement);
+}
+
+function HideElements(elementContainer)
+{
+  var _elementContainerChildren = $(elementContainer).children();
+  for(var i = 0; i < _elementContainerChildren.length; i++)
+  {
+    $(_elementContainerChildren[i]).css('visibility', 'hidden');
   }
 }
 
@@ -301,17 +329,17 @@ function AnimateStroke(element, length, easing, optionals)
   }
   for(var i = 0; i < _svgElements.length; i++)
   {
-    var _currentSVGElement = $(_svgElements[i]); // get current svg element from array
+      var _currentSVGElement = $(_svgElements[i]); // get current svg element from array
       var _isRoad = false;
-      var _isPaper = false;
       var _id = _element.attr('id');
+      var _originalBuidling = (_id == 'city-buildings' ?  $('#city-buildings > svg').clone() : null);
       if(_id.substring(0, 4) == 'road')
       {
         _isRoad = true;
       }
       _animElements.push(new Vivus(_currentSVGElement[0], {duration: length, animTimingFunction:
         easing, type: _scenarioType, start: _startStype, onReady:
-        function()
+        function() // called when the stroke is ready to run
         {
           if(_isRoad)
           {
@@ -322,15 +350,23 @@ function AnimateStroke(element, length, easing, optionals)
           this.play(); // we can just play the element automatically
           }
         },
-        function()
+        function() // called when the stroke animation has finished
         {
           if(_id == 'city-buildings')
           {
-          TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, false, 60, 0.01);
+            TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0);
+            if(_originalBuidling != null)
+            {
+              ReplaceBuilding(_originalBuidling);
+            }
+            else
+            {
+              console.logerror("missing building element to replace");
+            }
           }
         }
         ));
-      if(!_isRoad && _id != 'city-flatline')
+      if(!_isRoad && _id != 'city-flatline' && _id != 'city-buildings')
       {
         SetFillToWhite(_currentSVGElement, length);
       }
@@ -381,7 +417,7 @@ function SetFillToWhite(svgElement, duration)
         _path.css({"stroke-dashoffset": Number.EPSILON});
       }
     });
-     if(_paths.last().css('fill') === _white)
+     if(_paths.last().css('fill') == _white)
      {
        _hasCompleted = true;
      }
@@ -417,11 +453,11 @@ function FadeInAnimation(element, duration)
   TweenLite.fromTo(element, duration, {opacity: 0},{opacity: 1, ease: Power1.easeIn})
 }
 
-function AnimateBalloon(element, duration, minHeight, maxHeight)
+function AnimateBalloon(element, duration, minHeight, maxHeight, force3D)
 {
-  var _tween = TweenMax.fromTo(element, duration, { y: minHeight, force3D: true},
-    {y: maxHeight, ease: Sine.easeInOut , repeat: -1, yoyo: true, rotation: 0.01,
-      force3D: true, paused: true});
+  var _tween = TweenMax.fromTo(element, duration, { y: minHeight},
+    {y: maxHeight, ease: Sine.easeInOut , repeat: -1, yoyo: true,
+      force3D: force3D, paused: true});
   var waypoint = new Waypoint.Inview({
     element: element,
     enter: function()
@@ -484,13 +520,14 @@ function GenerateFoliageWaypoint(foliageElement)
 {
   var _force3D = "auto";
   var _foliageElement= $(foliageElement); // create a jquery object
-  var _offset = _foliageElement.attr('id') == 'vegetation-group-02' ? '900' : '650';
+  var _offset = _foliageElement.attr('id') == 'vegetation-group-02' ? '90%' : '65%';
   var waypoint = new Waypoint({
     element: foliageElement,
     handler: function(direction) {
       if(_foliageElement.css('display') != 'none') // fail safe to prevent unnecessary transformations on mobile browsers
       {
-        RevealElementByClass('foliage-show', _foliageElement); // set to visible by switching class
+        //RevealElementByClass('foliage-show', _foliageElement); // set to visible by switching class
+        _foliageElement.css('visibility', 'visible');
         var timeline = new TimelineMax();
         timeline.append(TweenMax.fromTo(foliageElement, 0.3,
           {scaleY: 0.0, force3D: _force3D, rotation: 0.00001}, {scaleY: 1.05, force3D: _force3D, rotation: 0.00001})).
@@ -553,6 +590,7 @@ function GenerateClouds(numberOfClouds, minDuration, maxDuration)
       _repeateEnabled, Linear.easeNone, _force3DTranslate, _yRandomMax, _rotation);
   }
 }
+
 
 function RandomDurationGenerator(min, max)
 {
@@ -636,24 +674,22 @@ function OnHoverOverPhone()
   }));
 }
 
+
 function Init()
 {
-
-  $(window).on('beforeunload', function() {
-      $(window).scrollTop(0);
-  });
-
-  // fade in the whole page
-  FadeInAnimation('body', 0.75);
-  // IsOrientatedLandscape();
-
-
   var _skillAnims = [];
   var _introAnims = [];
-  var fireAnimA = [];
-  var fireAnimB = [];
-  var duration = 180;
-  var easing = Vivus.LINEAR;
+  var _fireAnimA = [];
+  var _fireAnimB = [];
+  var _duration = 180;
+  var _easing = Vivus.LINEAR;
+  documentWindow.on('beforeunload', function() {
+      // firefox doesn't work with body and we need body for iOS so just call body and window
+      documentWindow.scrollTop(0);
+      documentBody.scrollTop(0);
+  });
+  // fade in the whole page
+  FadeInAnimation('body', 0.4);
   _introAnims.push(AnimateBodymovin('planet', 'scripts/planet.json', true, "xMidYMin meet", false));
   _skillAnims.push(AnimateBodymovin('skill-anim-web-dev', 'scripts/skills-web-development.json', true, "xMidYMid meet", false));
   _skillAnims.push(AnimateBodymovin('skill-anim-html', 'scripts/skills-html.json', true, "xMidYMid meet", false));
@@ -661,9 +697,8 @@ function Init()
   _skillAnims.push(AnimateBodymovin('skill-anim-jquery', 'scripts/skills-jquery.json', true, "xMidYMid meet", false));
   _skillAnims.push(AnimateBodymovin('skill-anim-js', 'scripts/skills-javascript.json', true, "xMidYMid meet", false));
   _skillAnims.push(AnimateBodymovin('skill-anim-animation', 'scripts/skills-animation.json', true, "xMidYMid meet", false));
-
-  fireAnimA[0] = AnimateBodymovin('fire-01', 'scripts/fire.json', true, "xMidYMid meet", false);
-  fireAnimB[0] = AnimateBodymovin('fire-02', 'scripts/fire.json', true, "xMidYMid meet", false);
+  _fireAnimA[0] = AnimateBodymovin('fire-01', 'scripts/fire.json', true, "xMidYMid meet", false);
+  _fireAnimB[0] = AnimateBodymovin('fire-02', 'scripts/fire.json', true, "xMidYMid meet", false);
   SetRoadIDs('.road-container');
   SetSVGAspectRatio('blimp-web', "xMidYMid meet");
   SetSVGAspectRatio('blimp-html', "xMidYMid meet");
@@ -673,21 +708,9 @@ function Init()
   SetSVGAspectRatio('blimp-js', "xMidYMid meet");
   SetSVGViewBox('#skill-anim-web-dev', -500, -385, 2292, 1340);
   SetSVGViewBox('#skill-anim-html', -840, -220, 2292, 1340);
-  SetSVGViewBox('#skill-anim-css', -450, -130, 2322, 1600);
   SetSVGViewBox('#skill-anim-jquery', -850, -320, 2292, 1340);
   SetSVGViewBox('#skill-anim-js', -865, -140, 2292, 1340);
   SetSVGViewBox('#skill-anim-animation', -510, -250, 2292, 1340);
-
-/*
-  var _startingRectValuesWeb = GetFullSizedSVGRectValues("#blimp-web-svg");
-  var _startingRectValuesHtml = GetFullSizedSVGRectValues("#blimp-html-svg");
-  var _startingRectValuesCss = GetFullSizedSVGRectValues("#blimp-css-svg");
-  var _startingRectValuesAnim = GetFullSizedSVGRectValues("#blimp-animation-svg");
-  var _startingRectValuesJquery = GetFullSizedSVGRectValues("#blimp-jquery-svg");
-  var _startingRectValuesJS = GetFullSizedSVGRectValues("#blimp-js-svg");
-*/
-
-
   ResizeSVGTextRectangle("blimp-web-svg", 170, 126, 60, 35, 88, 108.8, 170, 188.6);
   ResizeSVGTextRectangle("blimp-html-svg", 70, 45, 40, 35, 158, 171.4, 150, 149.8);
   ResizeSVGTextRectangle("blimp-css-svg", 50, 34, 60, 35, 148, 155.4, 131.3, 150.3 );
@@ -696,21 +719,46 @@ function Init()
   ResizeSVGTextRectangle("blimp-js-svg", 97, 72, 60,35, 144, 154.6, 134, 150.3);
   $(document).ready(function()
   {
+    if(documentBody.outerWidth() <= 768)
+    {
+      SetSVGViewBox('#skill-anim-css', -450, -70, 2322, 1600);
+    }
+    else
+    {
+      SetSVGViewBox('#skill-anim-css', -450, -130, 2322, 1600);
+    }
+    var _isMobileDevice = documentBody.outerWidth() < 480;
+    // Hide the elements through JS that will appear on screen later
+    if(!_isMobileDevice)
+    {
+      HideElements('#foliage-container');
+      HideElements('.road-container');
+    }
+    else
+    {
+      FadeInAnimation('.road-container', 0.8);
+    }
     CheckIfAnimationIsOnScreen('#skills-container', _skillAnims);
     CheckIfAnimationIsOnScreen('#intro-container', _introAnims);
-    CheckIfAnimationIsOnScreen('#fire-01', fireAnimA);
-    CheckIfAnimationIsOnScreen('#fire-02', fireAnimB);
-    PopInFoliage($('#foliage-container'));
-    AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%')
-    AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%');
+    CheckIfAnimationIsOnScreen('#fire-01', _fireAnimA);
+    CheckIfAnimationIsOnScreen('#fire-02', _fireAnimB);
+    if(!_isMobileDevice)
+    {
+      PopInFoliage($('#foliage-container'));
+    }
+    AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', true)
+    AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', true);
     // put the first road separately for an automatic start without using waypoints
-    AnimateStroke('#road-01', duration - 120, easing, {startType: 'autostart'});
-    GenerateRoad($('.road-container'));
-    AnimateStroke('#city-flatline', duration - 80, easing, {scenarioType: 'scenario-sync'});
-    AnimateStroke('#cloud-background-stroked-01', duration - 75, easing);
-    AnimateStroke('#cloud-background-stroked-02', duration - 125, easing);
-    AnimateStroke('#cloud-background-stroked-03', duration - 100, easing);
-    AnimateStroke('#city-buildings', duration - 50, easing);
+    if(!_isMobileDevice)
+    {
+      AnimateStroke('#city-flatline', _duration - 120, _easing, {scenarioType: 'scenario-sync'});
+      setTimeout(function()
+      {
+        AnimateStroke('#road-01', _duration - 120, _easing, {startType: 'autostart'});
+        GenerateRoad($('.road-container'));
+      }, 200);
+    }
+    AnimateStroke('#city-buildings', _duration - 50, _easing, {scenarioType: 'delayed'});
 
     // dynamic font sizing for blimps
     $("#blimp-web-font").fitText();
@@ -723,9 +771,9 @@ function Init()
     // $('#email-text').fitText();
     // $('#phone-text').fitText();
 
-    $(window).resize(function()
+    documentWindow.resize(function()
     {
-      if($('body').outerWidth() <= 768)
+      if(documentBody.outerWidth() <= 768)
       {
         SetSVGViewBox('#skill-anim-css', -450, -70, 2322, 1600);
       }
