@@ -7,47 +7,21 @@
             box-sizing:border-box;
 }
 
-.foliage path
+.foliage-path
 {
   stroke-width: 0.1rem;
 }
 
-#skills-header
-{}
-
-#skill-cloud-web
+#road-wrapper
 {
-
+width: 100%;
+height: 100%;
+overflow: hidden;
+position: absolute;
 }
-
-#skill-cloud-js
-{
-
-}
-
-#skills-cloud-css
-{
-
-}
-
-#skill-anim-web-dev
-{
-
-}
-
-.skill-cloud
-{}
 
 .skill-cloud > path
-{fill: white;stroke-width: 0.7rem;}
-
-.skill-anims > svg *
-{
-}
-
-
-#contact-header
-{}
+{fill: #ffffff;stroke-width: 0.7rem;}
 
 #email-text-container
 {
@@ -71,8 +45,9 @@
 #home
 {height: 75%;max-width: 77%;margin-bottom: -27%;}
 
-#home > svg > *
+.home-path
 {
+  fill: white;
   stroke: black;
   stroke-width: 0.03rem;
 }
@@ -82,14 +57,12 @@
   width: 100%;
   position: absolute;
   height: 100%;
-  z-index: 1;
+  z-index: 0;
 }
 
 .header
 {
   width: 100%;
-  left: 0;
-  right: 0;
   margin: auto;
   max-width: 37.5rem;
   height: 26.7rem;
@@ -108,9 +81,6 @@
   position: absolute;
   width: 100%;
   height: auto;
-  left: 0;
-  right: 0;
-  top: 0;
 }
 
 .cloud-contact-box
@@ -146,7 +116,7 @@
 
 #email-box rect
 {
-  fill: white;
+  fill: #ffffff;
   stroke: black;
   stroke-width: 0.1rem;
 }
@@ -182,7 +152,7 @@
 
 #phone-box rect
 {
-  fill: white;
+  fill: #ffffff;
   stroke: black;
   stroke-width: 0.1rem;
 }
@@ -197,7 +167,7 @@
 
 #road-01
 {
-  margin-top: -31.3rem;
+  margin-top: -30.6rem;
 }
 
 .mask
@@ -271,28 +241,16 @@
   left: 8rem;
 }
 
-.road-container > div
-{
-  visibility: visible;
-}
-
-.road > svg
-{
-  -ms-transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
 .road-middle
 {
-  stroke-dasharray: 0.5rem;
+  stroke-dasharray: 5px;
   stroke: white;
-  stroke-width: 0.10rem;
+  stroke-width: 2px;
 }
 
 .road-middle-solid
 {
-    stroke-width: 0.02rem;
+  stroke-width: 0.2px;
   stroke: black;
 }
 
@@ -309,7 +267,6 @@ height: 100%;
 
 #about-content-container
 {
-display: block;
 max-width: 167rem;
 width: 100%;
 height: auto;
@@ -421,44 +378,30 @@ right: 0;
 
 #cloud-background-01
 {
-
-z-index: -1;
-
--webkit-transform: translate(47%, 8%);
-
-    -ms-transform: translate(47%, 8%);
-
-        transform: translate(47%, 8%);
+z-index: -1;
+/* margin-left: 6.5rem; */
+/* margin-top: 0.5rem; */
 }
 
 #cloud-background-02
-{
-    -webkit-transform: translate(0);
-        -ms-transform: translate(0);
-            transform: translate(0);
-}
+{transform: translate(42%, 9%);}
 
 #cloud-background-03
 {
-
-z-index: 1;
-
--webkit-transform: translate(25%, 21%);
-
-    -ms-transform: translate(25%, 21%);
-
-        transform: translate(25%, 21%);
+z-index: 1;
+position: relative;
+transform: translate(18%, 21%);
+/* margin-top: 2.5rem; */
+/* margin-left: 3rem; */
 }
 
 #foliage-container
 {
-z-index: -9998;
 width: 100%;
+height: 100%;
 max-width: 192rem;
-left: 0;
-right: 0;
 position: absolute;
-height: 620rem;
+z-index: 3;
 }
 
 #paper-plane-container-01
@@ -572,11 +515,8 @@ display: block;
     left: -30%;
 }
 
-div.road-container div:nth-child(2n)
+#road-container > div:nth-of-type(2n+1)
 {
-  -webkit-transform: scaleX(-1);
-      -ms-transform: scaleX(-1);
-          transform: scaleX(-1);
 }
 
 #hot-air-balloon-plain *
@@ -632,7 +572,7 @@ left: 15%;
 {width: 10rem;height: auto;left: 16.4%;top: 20.7%;position: absolute;}
 
 #vegetation-group-04
-{width: 10rem;height: auto;left: 75.4%;top: 29.7%;position: absolute;}
+{width: 10rem;height: auto;left: 73.4%;top: 29.7%;position: absolute;}
 
 #vegetation-group-05
 {width: 12rem;height: auto;left: 60.4%;top: 51.2%;}
@@ -698,14 +638,9 @@ width: 71%;
 
 #tree-04
 {
-
-top: 0;
-
-left: 3.5%;
-
-z-index: -1;
-
-position: relative;
+left: 3.5%;
+z-index: -1;
+position: relative;
 }
 
 #tree-05
@@ -960,7 +895,7 @@ position: relative;
 {width: 11rem;height: 17rem;top: 9.5%;left: 6.4%;position: absolute;}
 
 #tree-group-12
-{width: 9.5rem;height: 15.1rem;top: 37.3%;left: 90.4%;position: absolute;}
+{width: 9.5rem;height: 12.1rem;top: 37.3%;left: 90.4%;position: absolute;}
 
 
 #tree-group-02
@@ -1267,7 +1202,8 @@ top: 0;
 }
 
 #skills-group-01
-{}
+{
+}
 
 #skills-group-02
 {
@@ -1293,7 +1229,7 @@ top: 0;
 {width: 37%;top: 5%;}
 
 #skill-anim-css
-{width: 53%;top: 4.5%;}
+{width: 49%;top: 12.5%;}
 
 #skill-anim-html
 {width: 40%;top: 14%;}
@@ -1313,7 +1249,7 @@ top: 0;
 
 .road-top
 {
-  stroke-width: 0.02rem;
+  stroke-width: 0.2px;
   stroke: black;
 }
 
@@ -1326,9 +1262,9 @@ top: 0;
 
 #intro-container
 {
+    z-index: 3;
     height: auto;
-    z-index: -9999;
-    overflow: hidden;
+    background: #ffffff;
 }
 
 
@@ -1380,16 +1316,14 @@ font-weight: 200;
 
 .bodymovin-planet-font-01
 {
-    font-size: 65px;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 300;
+    font-weight: 200;
     font-style: normal;
-    text-rendering: optimizeLegibility;
+    text-rendering: geometricPrecision;
 }
 
 .bodymovin-planet-font-02
 {
-    font-size: 70px;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -1422,7 +1356,7 @@ font-weight: 200;
 .clouds-contact path
 {
   stroke-width: 1rem;
-  fill: white;
+  fill: #ffffff;
 }
 
 #paper-plane-04
@@ -1447,25 +1381,23 @@ font-weight: 200;
 {
   height: 115rem;
   width: 100%;
-  overflow: hidden;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+   */
+  -webkit-perspective: 1000;
+  margin-bottom: 5rem;
 }
 
 #email-section
 {
-    top: 49%;
+    top: 55%;
     left: 14%;
 }
 
 #phone-section
-{top: 76%;left: 60%;}
+{top: 77%;left: 60%;}
 
 #cv-section
 {
-    top: 76%;
+    top: 77%;
     left: 20%;
 }
 
@@ -1486,13 +1418,18 @@ font-weight: 200;
 #cloud-grouping-section
 {
     left: 67%;
-    top: 33%;
+    top: 41%;
     z-index: -1;
 }
 
 
 #contact-description-section
-{left: 0;right: 0;bottom: 0;height: 53rem;width: 40rem;position: relative;margin: auto;}
+{
+  height: 53rem;
+  width: 40rem;
+  position: relative;
+  margin: auto;
+}
 
 .contact-section
 {
@@ -1502,6 +1439,10 @@ font-weight: 200;
 height: 17rem;
 width: 29rem;
 margin: 0;
+ */
+-webkit-perspective: 1000;
+ */
+-webkit-perspective: 1000;
 }
 
 .paper-plane-envelope
@@ -1573,13 +1514,7 @@ width: 100%;
 {top: 82%;}
 
 #font-container-css
-{top: 82%;}
-
-#font-container-animation
-{}
-
-#font-container-js
-{}
+{top: -4rem;position: relative;}
 
 #font-container-jquery
 {top: 82%;}
@@ -1609,11 +1544,10 @@ width: 100%;
 #copyright-container
 {
     height: auto;
-    fill: white;
-    -webkit-transform: translateY(-4rem);
-        -ms-transform: translateY(-4rem);
-            transform: translateY(-4rem);
+    fill: #ffffff;
     max-width: 167rem;
+    z-index: 100;
+    margin-top: 25rem;
 }
 
 #copyright-text
@@ -1745,9 +1679,6 @@ top: 90%;
   stroke-width: 0.8rem;
 }
 
-.skill-anims path
-{}
-
 #trophy svg g *
 {
   stroke-width: 0.15rem;
@@ -1782,16 +1713,23 @@ right: 0;
 .clouds-content > svg > path
 {
   stroke-width: 0.7rem;
-  fill: white;
+  fill: #ffffff;
 }
 
 .road
 {
-  overflow: inherit;
-  height: 10.20%;
+  height: 12.4%;
   margin-bottom: 6rem;
-  -ms-transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
+  -webkit-perspective: 1000px;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+.road > svg
+{
   transform: translate3d(0,0,0);
 }
 
@@ -1837,8 +1775,8 @@ stroke-width: 1rem;
   stroke: black;
 }
 
-.road-container
-{position: absolute;width: 100%;left: 0;right: 0;height: 620rem;overflow: hidden;z-index: -99999;-webkit-transform: scaleX(-1) translate3d(0,0,0);-ms-transform: scaleX(-1);transform: scaleX(-1) translate3d(0,0,0);}
+#road-container
+{position: absolute;width: 100%;height: 100%;z-index: -9999;}
 
 .foliage-hide
 {
@@ -1868,8 +1806,8 @@ stroke-width: 1rem;
   position: absolute;
   visibility: visible;
   -webkit-transform-origin: bottom;
-      -ms-transform-origin: bottom;
-          transform-origin: bottom;
+  -ms-transform-origin: bottom;
+  transform-origin: bottom;
 }
 
 #email
@@ -1881,18 +1819,12 @@ stroke-width: 1rem;
 #phone
 {top: 37%;}
 
-#city-buildings svg
-{position: absolute;transform: translate3d(0,0,0);}
+#city-buildings > svg
+{position: absolute;}
 
-#city-buildings svg > *
-{stroke-width: 0.03rem;}
-
-
-#city-buildings path
-{
-  stroke-width: 0.03rem;
-  stroke: black;
-}
+.city-path
+{stroke-width: 0.03rem;
+  stroke: black;}
 
 #cv
 {
@@ -1923,9 +1855,12 @@ stroke-width: 1rem;
     left: 0;
     right: 0;
     width: 70%;
-
-
-    #: translate3d(0,0,0)
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-perspective: 1000;
+    perspective: 1000px;
+    backface-visibility: hidden;
 }
 
 .blimps
@@ -1948,10 +1883,8 @@ stroke-width: 1rem;
 
 #skills-container
 {
-
-height: auto;
-
-width: 100%;
+height: auto;
+width: 100%;
 }
 
 #skills-header-cloud-container
@@ -2008,10 +1941,9 @@ html, body {
 body
 {
   min-height:100%;
+  width: 100%;
+  height: auto;
   margin:0 auto;
-  position: relative;
-  overflow-x: hidden;
-  max-width: 256rem;
 }
 
 svg
@@ -2019,7 +1951,7 @@ svg
   width: 100%;
   height: 100%;
   display: block;
-  fill: white;
+  fill: #ffffff;
 }
 
 .font-header
@@ -2054,16 +1986,14 @@ svg
   right: 0;
   margin-left: auto;
   margin-right: auto;
+
 }
 
-#main-content-container
+#wrapper
 {
-  margin: 0 auto;
-  width: 100%;
-  z-index: 1;
-  height: auto;
+  max-width: 260rem;
+  background: #ffffff;
   overflow: hidden;
-  max-width: 270rem;
 }
 
 #city-container
@@ -2080,32 +2010,25 @@ svg
   z-index: 2;
 }
 
-#anim-city-flyover-container > *
-{
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 23rem;
-  height: auto;
-}
 
 #city-buildings
-{height: 1px;width: 47%;padding-bottom: 20%;}
+{height: 1px;width: 47%;padding-bottom: 20%;-webkit-transform: translateZ(0);-webkit-perspective: 1000;-webkit-backface-visibility: hidden;transform: translateZ(0);perspective: 2000px;backface-visibility: hidden;}
 
 
 #city-flatline
 {
   /* go across the entire screen */
-
-max-width: none !important;
-
-width: 100%;
-
-left: 0;
-
-height: 2px;
-
-right: 0;
+  max-width: none !important;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  right: 0;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  perspective: 1000px;
+  backface-visibility: hidden;
 }
 
 #city-flatline > svg
@@ -2120,9 +2043,7 @@ fill: black;
 
 #hot-air-balloon-web-container
 {
-  position: absolute;
   overflow: inherit;
-  z-index: -1;
   top: 33%;
   left: 60%;
   width: 36%;
@@ -2139,6 +2060,10 @@ fill: black;
   max-width: 61.5rem;
   padding-bottom: 152%;
   transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 500px;
+  backface-visibility: hidden;
+  perspective: 500px;
 }
 
 #hot-air-balloon-web > svg
@@ -2166,7 +2091,12 @@ fill: black;
 {z-index: -1;width: auto;min-width: 80%;top: -1rem;}
 
 .clouds-background
-{max-width: 19rem;width: 100%;position: absolute;height: auto;}
+{
+  max-width: 19rem;
+  width: 100%;
+  position: absolute;
+  height: auto;
+}
 
 .clouds-generated-background
 {width: 19rem;position: absolute;height: auto;}
@@ -2185,12 +2115,7 @@ fill: black;
 #cloud-group-three-01-container
 {
   height: 100%;
-  position: absolute;
-  visibility: hidden;
   width: 100%;
-  -webkit-transform: translate3d(0,0,0);
-          transform: translate3d(0,0,0);
-  z-index: 1;
 }
 
 #cloud-group-three-01
@@ -2199,11 +2124,14 @@ fill: black;
   width: 19%;
   height: auto;
   max-width: 19rem;
-  margin: 0;
-  fill: white;
-  -webkit-transform: translate3d(0,0,0);
-          transform: translate3d(0,0,0);
-  visibility: hidden;
+  display: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: visible;
+  -webkit-perspective: 1000px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: absolute;
+  z-index: 1;
 }
 
 
@@ -2215,9 +2143,7 @@ fill: black;
 
 #cloud-group-three-stroked-02
 {
-  fill: white;
-  -webkit-transform: translate3d(0,0,0);
-          transform: translate3d(0,0,0);
+  fill: #ffffff;
   width: 100%;
 }
 
@@ -2262,18 +2188,18 @@ fill: black;
   width: 19rem;
   height: auto;
   max-width: 19rem;
-  fill: white;
+  fill: #ffffff;
 }
 
 #cloud-group-three-03 path
 {
-  fill: white;
+  fill: #ffffff;
   stroke-width: 1.23rem;
 }
 
 #cloud-group-three-01 path
 {
-  fill: white;
+  fill: #ffffff;
   stroke-width: 1.23rem;
 }
 
@@ -2361,7 +2287,7 @@ left: 8rem;
 }
 
 #about-container
-{height: auto; width: 100%}
+{height: auto;width: 100%;z-index: 4;}
 
 #about-header
 {
@@ -2372,10 +2298,10 @@ left: 8rem;
 {width: 100%;height: auto;}
 
 #header-cloud-01
-{z-index: -1;-webkit-transform: translateX(-7rem);-ms-transform: translateX(-7rem);transform: translateX(-7rem);}
+{z-index: -1;left: -13rem;}
 
 #header-cloud-02
-{z-index: -2;-webkit-transform: translateX(6rem);-ms-transform: translateX(6rem);transform: translate(6rem);}
+{z-index: -2;left: 6rem;}
 
 #header-cloud-03
 {
@@ -2466,7 +2392,7 @@ position: relative;
 {-webkit-transform: rotate(-8deg);-ms-transform: rotate(-8deg);transform: rotate(-8deg);max-width: 32%;left: -28%;margin-bottom: -45%;}
 
 #planet-container
-{display: block;width: 100%;height: auto;max-width: 61.5rem;-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
+{display: block;width: 100%;height: auto;max-width: 61.5rem;}
 
 #planet
 {
@@ -2475,12 +2401,10 @@ position: relative;
  overflow: visible;
  max-width: 118rem;
  padding-bottom: 100%;
- -webkit-transform: translate3d(0,0,0);
- transform: translate3d(0,0,0);
 }
 
 #planet svg
-{position: absolute;-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
+{position: absolute;}
 
 /* ------- MEDIA QUIERIES ------- */
 
@@ -2491,6 +2415,11 @@ position: relative;
   {
     background: red;
   }
+
+  #road-01
+  {
+margin-top: -30.5rem;
+}
 
   #hot-air-balloon-web-container
   {
@@ -2536,9 +2465,7 @@ font-size: 5.4rem;
   #copyright-container
   {
     height: 9rem;
-    -webkit-transform: translateY(0rem);
-        -ms-transform: translateY(0rem);
-            transform: translateY(0rem);
+    margin-top: 87rem;
   }
 
   #thanks
@@ -2661,6 +2588,56 @@ left: 55%;
     background: orange;
   }
 
+  #city-flatline
+  {
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-perspective: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  .road > svg
+  {
+    transform: none;
+  }
+
+  .foliage-show
+  {
+  }
+
+  .skill-anims
+  {
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-perspective: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  #hot-air-balloon-web
+  {
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-perspective: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  #road-container
+  {
+    height: 620rem;
+    z-index: 2;
+  }
+
+  #road-01
+  {
+
+  }
+
   .font-skills-new
   {
     font-size: 2rem;
@@ -2717,27 +2694,19 @@ left: 55%;
 
   #header-cloud-01
   {
-    -webkit-transform: translateX(-4rem);
-        -ms-transform: translateX(-4rem);
-            transform: translateX(-4rem);
+  left: -8rem;
   }
 
   #header-cloud-02
   {
-    -webkit-transform: translateX(3.6rem);
-        -ms-transform: translateX(3.6rem);
-            transform: translateX(3.6rem);
+  left: 4rem;
   }
 
   #tree-group-01
   {
-
-width: 11rem;
-
-top: 73%;
-
-left: 81%;
-
+width: 11rem;
+top: 59%;
+left: 13%;
 }
 
   #tree-group-02
@@ -2767,11 +2736,9 @@ top: 31.3%;
 
   #tree-group-05
   {
-
-width: 11rem;
-
-top: 59%;
-
+width: 11rem;
+top: 68.4%;
+left: 70%;
 }
 
   #tree-group-06
@@ -2814,8 +2781,8 @@ width: 9rem;
 #tree-group-12
 {
 width: 7.5rem;
-top: 68%;
-left: 2%;
+top: 66%;
+left: 9%;
 }
 
 
@@ -2995,7 +2962,7 @@ font-size: 1.75rem;
   #about-content-04
   {
 /* left: 0; */
-/* margin-top: 3%; */
+margin-top: -3.6rem;
 /* top: 0; */
 left: 0;
 margin-right: 5%;
@@ -3011,19 +2978,25 @@ font-size: 1.75rem;
 
   .road
   {
-    height: 7.5%;
+    -webkit-perspective: none;
+    -webkit-backface-visibility: initial;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+    height: 6%;
   }
 
   #road-01
   {
-
-margin-top: -22.9rem;
-  }
+margin-top: -18.5rem;
+}
 
   #hot-air-balloon-web-container{
     left: 66%;
     width: 27%;
     max-width: 18rem;
+    position: absolute;
     top: 55%;
   }
 
@@ -3037,6 +3010,7 @@ margin-top: -22.9rem;
   #contact-container
   {
 height: auto;
+z-index: 6;
 }
 
   #contact-description-section
@@ -3051,6 +3025,7 @@ margin-top: -22.9rem;
   {
     left:0;
     top: 0;
+    margin-left: 8%;
   }
 
   #cv-section
@@ -3058,6 +3033,7 @@ margin-top: -22.9rem;
     left:0;
     top: 0;
     margin-top: 13%;
+    margin-right: 8%;
   }
 
   #phone-section
@@ -3065,25 +3041,18 @@ margin-top: -22.9rem;
     left:0;
     top: 0;
     margin-bottom: 12%;
+    margin-left: 8%;
   }
 
   #copyright-container
   {
 
-background: white;
-
--webkit-transform: translateY(0rem);
-
-    -ms-transform: translateY(0rem);
-
-        transform: translateY(0rem);
-
-border-top: dashed 0.1rem black; */
-
-max-width:;
-
-height: auto;
-  }
+ */
+max-width:;
+height: auto;
+z-index: -1;
+margin-top: 0;
+}
 
   #thanks
   {
@@ -3093,18 +3062,18 @@ height: auto;
   #copyright-text
   {
     -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
     text-align: center;
-    display: block;
-    padding-top: 0.3rem;
+    display: inline-block;
+    padding-top: 0;
     float: none;
+    padding-left: 39%;
     padding-right: 0;
-    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
   }
-
-  #skills-web-development
-  {}
 
   #skills-html
   {left: 0;margin-right: 5%;}
@@ -3124,6 +3093,7 @@ height: auto;
 #skills-container
 {
   height: auto;
+  z-index: 5;
 }
 
 #skills-group-01
@@ -3143,6 +3113,82 @@ height: auto;
     min-width: 320px;
     background: yellow;
   }
+
+  #cloud-group-three-01-container
+  {
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    -webkit-perspective: none;
+    transform: none;
+    backface-visibility: visible;
+    perspective: none;
+  }
+
+  #city-flatline
+  {
+    -webkit-transform: none;
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: visible;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  #hot-air-balloon-web
+  {
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    perspective: 1000px;
+    backface-visibility: hidden;
+  }
+
+  #planet
+  {
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    perspective: 1000px;
+    backface-visibility: hidden;
+  }
+
+  #road-container
+  {
+    height: 100%;
+  }
+
+  #header-cloud-01
+  {
+left: -6rem;
+}
+
+  #header-cloud-02
+  {
+left: 6rem;
+}
+
+
+  #copyright-container
+  {
+    background: white;
+    -webkit-transform: translateY(0rem);
+    -ms-transform: translateY(0rem);
+    transform: translateY(0rem);
+    border-top: dashed 0.1rem black;
+    height: auto;
+    z-index: -1;
+    margin-top: 0;
+  }
+
+  #copyright-text
+  {
+padding-left: 0;
+padding-top: 1%;
+margin-bottom: 1%;
+width: 100%;
+}
 
   #skills-web-development
   {
@@ -3181,6 +3227,7 @@ height: auto;
   #about-content-04
   {
     margin-right: 0;
+    margin-top: 0;
 }
 
 
@@ -3269,17 +3316,17 @@ height: auto;
   #contact-description-section
   {/* height: 38rem; */width: 27rem;/* margin-top: 10%; *//* margin-bottom: -2%; */}
 
-  #foliage-container > div
+  #foliage-container
   {
     display: none
   }
   .road
   {
-    height: 3.35%;
+    height: 5.35%;
   }
   #road-01
   {
-    margin-top: -10.3rem;
+    margin-top: -11.4rem;
   }
   #cloud-container
   {
@@ -3296,17 +3343,19 @@ height: auto;
 
   }
   #email-section
-  {margin-top: 10%;}
+  {margin-top: 10%;margin-left: auto;}
   #phone-section
-  {margin-bottom: 17%;margin-top: 15%;}
+  {margin-bottom: 17%;margin-top: 15%;margin-left: auto;}
   #cv-section
   {
   margin-top: 18%;
+  margin-right: auto;
   }
   #contact-container
   {
     height: auto;
     overflow: visible;
+    margin-bottom: 0;
   }
 
   .paper-plane-container
@@ -3416,14 +3465,187 @@ height: auto;
   }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
+
+@media only screen and (min-device-width : 48.000em) and (max-device-width : 64.000em) and (orientation : landscape)
 {
   body
   {
     background: cyan;
   }
+
+  .road > svg
+  {
+    transform: none;
+  }
+
+  .foliage-show
+  {
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  #hot-air-balloon-web
+  {
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-perspective: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  .skill-anims
+  {
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-perspective: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+
+  #skills-web-development
+  {
+    left: -20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #city-flatline
+  {
+    -webkit-transform: none;
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  .road
+  {
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  #cloud-group-three-01
+  {
+    max-width: 14.5rem;
+  }
+
+  #road-container
+  {
+  }
+
+  .about-content
+  {
+    max-width: 33rem;
+  }
+
+  .font-div
+  {
+    font-size: 1.75rem;
+  }
+  #about-content-01-text
+  {
+    width:100%;
+  }
+
+  .font-skills-new
+  {
+    font-size: 1.9rem;
+  }
+
+  .contact-section
+  {
+width: 26rem;
+}
+
+  #road-01
+  {
+margin-top: -28rem;
+}
+  .skill
+  {
+  max-width: 31rem;
+  }
+
+  .about-content
+  {
+  }
+  .header
+  {
+    max-width: 32rem;
+  }
+  #planet-container
+  {
+    max-width: 50rem;
+  }
+  #hot-air-balloon-web-container
+  {
+    max-width: 23rem;
+  }
+  #tree-group-03
+  {
+    display: none;
+  }
+
+  #tree-group-08
+  {
+    display:none;
+  }
+  #vegetation-group-04
+  {
+left: 75.4%;
+top: 27.7%;
+width: 8rem;
+}
+  #vegetation-group-13
+  {
+    display: none;
+  }
+
+  #tree-group-07
+  {
+    display: none;
+  }
+
+  #vegetation-group-05
+  {
+    display: none;
+}
+#vegetation-group-09
+{
+  top: 45%;
 }
 
+#vegetation-group-02
+{
+display:none;
+}
+
+#vegetation-group-07
+{
+  display:none;
+}
+#tree-group-01
+{
+display: none;
+}
+#vegetation-group-01
+{
+top: 5%;
+left: 70%;
+}
+}
 
 /*
 @media screen and (max-width: 48em) and (orientation:landscape) {
@@ -3432,7 +3654,7 @@ height: auto;
       background: cyan;
       height:100%;
     }
-    #main-content-container {
+    #wrapper {
       display: none;
     }
     #portrait-notification
@@ -3440,6 +3662,7 @@ height: auto;
       display: block;
       width: 45%;
       height: 100%;
+      overflow-x: hidden;
       background: yellow;
     }
     #portrait-notification > svg > *
