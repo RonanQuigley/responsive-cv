@@ -30,8 +30,7 @@ function AnimateBodymovin(element, data, svgAspectRatio, autoPlay)
 			autoplay: autoPlay,
 			rendererSettings: {
     		progressiveLoad:true,
-        preserveAspectRatio:svgAspectRatio,
-        frameRate: 30
+        preserveAspectRatio:svgAspectRatio
 			},
 			path: data
 	};
@@ -39,6 +38,16 @@ function AnimateBodymovin(element, data, svgAspectRatio, autoPlay)
 	anim = bodymovin.loadAnimation(animData);
   bodymovin.setQuality(2); // the lowest possible quality
   return anim;
+}
+
+function EnableHWAcceleration(element)
+{
+  $(element.removeClass("hw-on").addClass("hw-off"));
+}
+
+function DisableHWAcceleration(element)
+{
+  $(element.removeClass("hw-off").addClass("hw-on") );
 }
 
 function CheckIfAnimationIsOnScreen(element, animation)
@@ -51,7 +60,7 @@ function CheckIfAnimationIsOnScreen(element, animation)
     },
     exited: function()
     {
-      animation.stop();
+      animation.pause();
     }
   });
 }
@@ -100,7 +109,7 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
     }
     if(_currentElement.css('display') == 'none')
     {
-      _currentElement.css('display', 'block');
+      _currentElement.css('display', 'inline-block');
     }
   }
   // used to know when we can pause the animation
@@ -243,20 +252,24 @@ function AnimateStroke(element, length, easing, optionals)
       {
         if(_id == 'city-buildings')
         {
+          $(_currentSVGElement).removeClass('hw-on').addClass("hw-off");
           var _documentWidth = optionals.documentWidth;
           if(_documentWidth != undefined)
           {
             if(_documentWidth < 480)
             {
-              AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
+
             }
             else if(_documentWidth > 480 && _documentWidth <= 1024)
             {
               AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
-              AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', true);
+              //AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', false);
+            }
+            else
+            {
+              TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0);
             }
           }
-          //TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0);
         }
         else if(!_isRoad && _id != 'city-flatline')
         {
@@ -322,7 +335,7 @@ function AnimateBalloon(element, duration, minHeight, maxHeight, force3D)
 {
   var _tween = TweenMax.fromTo(element, duration, { y: minHeight},
     {y: maxHeight, ease: Sine.easeInOut , repeat: -1, yoyo: true,
-      force3D: force3D, paused: true});
+      force3D: force3D, paused: false});
   function CheckIfBalloonIsOnScreen()
   {
     var waypoint = new Waypoint.Inview({
@@ -337,7 +350,7 @@ function AnimateBalloon(element, duration, minHeight, maxHeight, force3D)
       }
     });
   }
-  CheckIfBalloonIsOnScreen();
+  //CheckIfBalloonIsOnScreen();
 }
 
 function SetRoadIDs(roadContainerElement)
@@ -463,7 +476,6 @@ function Init()
   var _animJquery = AnimateBodymovin('skill-anim-jquery', 'scripts/skills-jquery.json', "xMidYMid meet", _autoPlay);
   var _animJavascript = AnimateBodymovin('skill-anim-js', 'scripts/skills-javascript.json', "xMidYMid meet", _autoPlay);
   var _animAnimation = AnimateBodymovin('skill-anim-animation', 'scripts/skills-animation.json', "xMidYMid meet", _autoPlay);
-  // this optimisation actually causes jank on iPad so only do it for large displays
 
   CheckIfAnimationIsOnScreen('#skills-web-development', _animWebDev);
   CheckIfAnimationIsOnScreen('#skills-html', _animHTML);
@@ -508,6 +520,7 @@ function Init()
   }
   else
   {
+    AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
     AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', false);
     _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, - 100, _easing, {scenarioType: 'oneByOne', documentWidth : _documentBodyWidth});
     CheckIfStrokeAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
