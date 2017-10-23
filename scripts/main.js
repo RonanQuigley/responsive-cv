@@ -493,7 +493,7 @@ function Init()
     CheckIfStrokeAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
     if(_documentBodyWidth > 1024) // for ipad landscape displays
     {
-      AnimateStroke('#hot-air-balloon-web', _duration - 80, _easing, {scenarioType: 'oneByOne'});
+      //AnimateStroke('#hot-air-balloon-web', _duration - 80, _easing, {scenarioType: 'oneByOne'});
       // Hide the elements through JS that will appear on screen later
       HideElements('#foliage-container');
       HideElements('#road-container');

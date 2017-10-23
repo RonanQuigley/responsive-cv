@@ -7,6 +7,175 @@
             box-sizing:border-box;
 }
 
+#contact-container
+{
+  z-index: 6;
+}
+
+#foliage-group-01
+{
+left: 15%;
+top: -1.3%;
+}
+
+#foliage-group-02
+{
+left: 83%;
+top: 3%;
+}
+
+#foliage-group-03
+{
+  left: 55%;
+  top: 8%;
+}
+
+#foliage-group-04
+{
+  top: 14%;
+  left: 10%;
+}
+
+#foliage-group-05
+{
+  top: 23%;
+  left: 13%;
+}
+
+#foliage-group-06
+{
+  top: 17.6%;
+  left: 83%;
+}
+
+#foliage-group-07
+{
+  top: 21%;
+  left: 50%;
+}
+
+#foliage-group-08
+{
+  top: 27%;
+  left: 80%;
+}
+
+#foliage-group-09
+{
+  top: 35%;
+  left: 55%;
+}
+
+#foliage-group-10
+{
+  top: 40%;
+  left: 10%;
+}
+
+#foliage-group-11
+{
+top: 40%;
+left: 80%;
+}
+
+#foliage-group-12
+{
+top: 51%;
+left: 13%;
+}
+
+#foliage-group-13
+{
+top: 58%;
+left: 7%;
+}
+
+#foliage-group-14
+{
+top: 60%;
+left: 60%;
+}
+
+#foliage-group-15
+{
+  top@60%:;
+  top: 50%;
+  left: 90%;
+}
+
+#foliage-group-16
+{
+top: 65%;
+left: 80%;
+}
+
+#foliage-group-17
+{
+top: 65%;
+left: 20%;
+}
+
+#foliage-group-18
+{
+  top: 73%;
+  left: 11%;
+}
+
+#foliage-group-19
+{
+top: 78%;
+left: 85%;
+}
+
+#foliage-group-20
+{
+    top: 73%;
+    left: 63%;
+}
+
+#foliage-group-21
+{
+  top: 47%;
+  left: 54%;
+}
+
+.foliage-path
+{
+  stroke-width: 0.1rem;
+  stroke: black;
+}
+
+.foliage-grass-path
+{
+  stroke-width: 0.3rem;
+  stroke: black;
+}
+
+.foliage-flower-path
+{
+  stroke-width: 0.4rem;
+  stroke: black;
+}
+
+.foliage
+{
+  width: 100%;
+  height: auto;
+}
+
+.flower
+{
+  width: 20%;
+}
+
+.grass
+{
+  width: 80%;
+}
+
+.foliage-width
+{width: 76%;}
+
 .hw-off
 {
   -webkit-perspective: none;
@@ -39,11 +208,6 @@
 width: 100%;
 z-index: 1;
 position: absolute;
-}
-
-.foliage-path
-{
-  stroke-width: 0.1rem;
 }
 
 #road-wrapper
@@ -110,11 +274,7 @@
   display: none;
 }
 
-.foliage
-{
-  width: 100%;
-  height: auto;
-}
+
 
 .cloud-contact-box
 {
@@ -434,7 +594,7 @@ right: 0;
 height: 100%;
 max-width: 192rem;
 position: absolute;
-z-index: 0;
+z-index: 2;
 }
 
 #paper-plane-container-01
@@ -573,7 +733,6 @@ display: block;
 height: auto;
 margin-top: -27%;
 width: 50%;
-right: 41.8%;
 }
 
 #fire-02
@@ -645,42 +804,32 @@ left: 15%;
   height: 20.8rem;
 }
 
-#tree-group-01
-{
-top: 6.2%;
-left: 46%;
-/* width: 13rem; */
-}
-
 #tree-01
-{left: 94%;z-index: -2;width: 95%;}
+{z-index: 0;left: -40%;}
 
 #tree-02
-{z-index: -1;left: 17%;width: 70%;margin-top: 57%;}
+{z-index: -1;}
 
 #tree-03
 {
-
-z-index: -2;
-
-top: 3rem;
-
-left: -90%;
-
-width: 71%;
+z-index: -2;
+margin-top: -170%;
+left: -70%;
+width: 100%;
 }
 
 #tree-04
 {
-left: 3.5%;
 z-index: -1;
+left: -14%;
 }
 
 #tree-05
 {
-z-index: -2;
+z-index: 1;
 height: auto;
-width: 70%;
+margin-top: -128%;
+left: 40%;
 }
 
 #tree-06
@@ -689,98 +838,82 @@ width: 71%;
 
 #tree-07
 {
-
-left: 47.7%;
-
-z-index: -5;
-
-top: -30%;
+z-index: -5;
 }
 
 #tree-08
 {
-
+margin-top: -120%;
+left: 60%;
 }
 
 #tree-09
 {
-
-left: 10.5%;
+left: 79.5%;
 }
 
 #tree-10
 {
 
-left: -165.5%;
-
-top: -22%;
-
-z-index: -1;
-
-width: 70%;
+0% */
+margin-top: -140%;
+margin-top: -130%;
 }
 
 #tree-11
 {
-left: 0%;
 }
 
 #tree-12
-{width: 65%;margin-top: -58%;height: auto;}
+{margin-top: -88%;left: -50%;height: auto;}
 
 #tree-13
 {
 left: 37%;
-width: 50%;
+margin-top: -120%;
 height: auto;
-z-index: -1;
+z-index: 2;
 }
 
 #tree-14
-{top: 37%;left: 81%;width: 10rem;}
+{}
 
 #tree-15
-{
-left: 86%;
-}
+{margin-top: -110%;left: 50%;}
 
 #tree-16
-{left: -75%;top: 4%;z-index: 0;}
+{
+    margin-top: -100%;
+    left: -50%;
+}
 
 #tree-17
 {
-
-top: 30%;
-
-left: 0;
 }
 
 #tree-18
-{
-}
+{z-index: -1;left: -14%;}
 
 #tree-19
-{left: 85%;}
+{z-index: 1;height: auto;margin-top: -128%;left: 40%;}
 
 #tree-20
 {left: 32%;margin-top: 27%;width: 85%;}
 
 #tree-21
 {
-
-z-index: -3;
-
-left: -60%;
-
-width: 85%;
 }
 
 #tree-22
-{
-}
+{margin-top: -88%;left: -81%;height: auto;}
 
 #tree-23
-{}
+{
+    left: 37%;
+    margin-top: -120%;
+    height: auto;
+    z-index: 2;
+}
 
 #tree-24
 {
@@ -789,27 +922,26 @@ width: 85%;
 }
 
 #tree-25
-{left: 10%;width: 86%;top: -1%;}
+{
+    left: 79.5%;
+}
 
 #tree-26
-{}
+{
+    margin-top: -130%;
+}
 
 #tree-27
-{left: 34%;top: -8%;}
+{
+    z-index: 0;
+    left: -40%;
+}
 
 #tree-28
-{
-  left: 50%;
-  top: 20%;
-}
+{z-index: -1;left: -14%;}
 
 #tree-29
-{
-  left: 23%;
-  z-index: -2;
-  width: 84%;
-  top: -50%;
-}
+{margin-top: -128%;left: 40%;}
 
 #tree-30
 {width: 100%;height: 100%;}
@@ -857,62 +989,6 @@ width: 85%;
   z-index: -1;
 }
 
-#tree-group-03
-{
-  /* width: 18rem; */
-  height: auto;
-  top: 14.8%;
-  left: 7.9%;
-}
-
-#tree-group-04
-{
-  /* width: 15rem; */
-  height: auto;
-  top: 32%;
-  left: 11%;
-  position: absolute;
-}
-
-#tree-group-05
-{
-  /* width: 12rem; */
-  height: auto;
-  left: 7.5%;
-  top: 61%;
-  position: absolute;
-}
-
-#tree-group-06
-{/* width: 12rem; */height: auto;top: 46.9%;left: 12.4%;}
-
-#tree-group-07
-{/* width: 12rem; */height: 18rem;top: 34.9%;left: 40.4%;}
-
-#tree-group-08
-{/* width: 10rem; */height: auto;top: 25.5%;left: 12.4%;position: absolute;}
-
-#tree-group-09
-{width: 10rem;height: auto;top: 52%;left: 22.4%;position: absolute;}
-
-#tree-group-10
-{/* width: 10rem; */height: auto;top: -1.5%;left: 9.4%;}
-
-#tree-group-11
-{/* width: 11rem; */height: 17rem;top: 9.5%;left: 6.4%;/* position: absolute; */}
-
-#tree-group-12
-{/* width: 9.5rem; */height: auto;top: 37.3%;left: 90.4%;position: absolute;}
-
-
-#tree-group-02
-{
-  /* width: 10rem; */
-  height: auto;
-  top: 14.7%;
-  left: 79.8%;
-}
-
 #bush-01
 {
 
@@ -927,13 +1003,10 @@ margin: 0;
 left: 28%;
 }
 
-
-
 #flower-01
 {
 z-index: 1;
-width: 11%;
-left: -26%;
+left: 20%;
 margin-top: -12%;
 }
 
@@ -983,66 +1056,47 @@ width: 50%;
 #grass-01
 {
 z-index: 6;
-width: 40%;
-left: 26%;
-top: 96%;
+left: -51%;
+margin-top: -11%;
 }
 
 #grass-02
-{
-width: 60%;
-}
+{margin-top: -26%;left: -30%;}
 
 #grass-03
 {
 z-index: 0;
-top: 104%;
-left: 44.5%;
+margin-top: -42%;
+left: -20%;
 }
 
 #grass-04
-{
-
-left: 60.9%;
-
-top: 71%;
-
-width: 69%;
-
-z-index: -1;
-}
+{margin-top: -20%;left: 50%;}
 
 #grass-05
 {
-left: -46%;
-width: 55%;
-z-index: 2;
-margin-top: -23%;
+
+:
+margin-top: -23%
+margin-top: -33%;
+z-index: -1;
 }
 
 #grass-06
 {
-  left: 71%;
-  width: 56%;
-  top: 56%;
-  z-index: -4;
+  left: 44%;
+  margin-top: -12%;
 }
 
 #grass-07
 {
-  left: 49%;
+  left: -31%;
+  margin-top: -25%;
   z-index: 1;
-  width: 56%;
-  top: 65%;
 }
 
 #grass-08
-{
-  left: -54%;
-  z-index: 2;
-  top: 73%;
-  width: 56%;
-}
+{margin-top: -26%;left: -30%;}
 
 #grass-09
 {
@@ -1053,12 +1107,7 @@ z-index: -1;
 }
 
 #grass-10
-{
-  z-index: 2;
-  width: 54%;
-  margin-top: 2%;
-  left: 30%;
-}
+{left: 1%;margin-top: -43%;z-index: -4;}
 
 
 #grass-11
@@ -1072,25 +1121,36 @@ z-index: -1;
 margin-top: -20%;
 }
 
+#grass-13
+{
+margin-top: -20%;
+left: 50%;
+}
+
+#grass-14
+{
+  z-index: -1;
+}
+
+#grass-15
+{
+margin-top: -20%;
+left: -70%;
+}
+
+#grass-16
+{
+z-index: -1;
+}
 
 #flower-02
 {
-
-z-index: -2;
-
-left: 0;
-
-top: 0;
+z-index: 1;
 }
 
 
 #flower-03
-{
-  z-index: -2;
-  width: 20%;
-  margin-top: -33%;
-  left: 41%;
-}
+{z-index: 1;left: 20%;margin-top: -12%;}
 
 #flower-04
 {
@@ -1687,12 +1747,12 @@ right: 0;
 {
   height: 12.4%;
   margin-bottom: 6rem;
-  -webkit-perspective: 1000px;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  perspective: 1000px;
-  backface-visibility: hidden;
+  /* -webkit-perspective: 1000px; */
+  /* -webkit-backface-visibility: hidden; */
+  /* -webkit-transform: translateZ(0); */
+  /* transform: translateZ(0); */
+  /* perspective: 1000px; */
+  /* backface-visibility: hidden; */
 }
 
 .road-svg
@@ -1768,17 +1828,12 @@ stroke-width: 1rem;
 
 .foliage-show
 {
-  width: 1rem;
+  width: 10rem;
   height: auto;
-  top: 0;
-  left: 0;
-  right: 0;
   margin-left: 0;
   margin-right: 0;
   position: absolute;
   visibility: visible;
-  -webkit-transform-origin: bottom;
-  -ms-transform-origin: bottom;
   transform-origin: bottom;
 }
 
@@ -2046,14 +2101,13 @@ svg
 #hot-air-balloon-web-svg
 {
   /* position: absolute; */
-  /* -webkit-perspective: 1000px; */
-  /* -webkit-backface-visibility: hidden; */ */
+  -webkit-perspective: 1000px;
+  -webkit-backface-visibility: hidden; */
   -webkit-transform: translateZ(0);
-  /* transform: translateZ(0); */
-  /* perspective: 1000px; */
-  px; */
+  transform: translateZ(0);
+  perspective: 1000px;
   backface-visibility: hidden;
-  /* backface-visibility: visible; */
+  backface-visibility: visible;
   /* z-index: 1; */
 }
 
@@ -2271,7 +2325,7 @@ left: 8rem;
 }
 
 #about-container
-{height: auto;width: 100%;z-index: 1;}
+{height: auto;width: 100%;z-index: 4;}
 
 #about-header
 {
@@ -2388,7 +2442,7 @@ position: relative;
 }
 
 #planet > svg
-{position: absolute;/* -webkit-perspective: 1000px; *//* -webkit-backface-visibility: hidden; *//* -webkit-transform: translateZ(0); *//* transform: translateZ(0); *//* perspective: 1000px; *//* backface-visibility: hidden; */}
+{position: absolute;-webkit-perspective: 1000px;-webkit-backface-visibility: hidden;-webkit-transform: translateZ(0);transform: translateZ(0);perspective: 1000px;backface-visibility: hidden;}
 
 /* ------- MEDIA QUIERIES ------- */
 
@@ -2430,11 +2484,6 @@ font-size: 5.4rem;
   {
   }
 
-  #tree-group-05
-  {
-    top: 65%;
-  }
-
   #vegetation-group-02
   {
   left: 1.7%;
@@ -2473,19 +2522,6 @@ font-size: 5.4rem;
   margin-top: 0;
   }
 
-  #tree-group-01
-  {
-
-left: 62%;
-  }
-
-  #tree-group-02
-  {
-
-top: 14.9%;
-
-left: 73%;
-  }
 
   #vegetation-group-03
   {
@@ -2566,6 +2602,442 @@ left: 55%;
 }
 
 
+@media screen and (max-width: 48em)
+{
+
+  body
+  {
+    background: orange;
+  }
+
+  #foliage-container
+  {
+    z-index: 3;
+  }
+
+  #hot-air-balloon-web-svg
+  {
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  #planet > svg
+  {
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  #fire-01
+  {
+    display: none;
+  }
+
+  #fire-02
+  {
+    display: none;
+  }
+
+  #intro-container
+  {
+    z-index: 2;
+  }
+
+  #moving-cloud-container
+  {
+    display: none;
+  }
+
+  .skill-anims > svg
+  {
+    /* -webkit-perspective: none; */
+    /* -webkit-backface-visibility: visible; */
+    /* -webkit-transform: none; */
+    /* transform: none; */
+    /* perspective: none; */
+    /* backface-visibility: visible; */
+  }
+
+  #city-flatline
+  {
+  }
+
+  .road-svg
+  {
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  .foliage-show
+  {
+  width: 7.5rem;
+  }
+
+  .skill-anims
+  {
+    /* -webkit-backface-visibility: visible; */
+    /* -webkit-transform: none; */
+    /* transform: none; */
+    /* -webkit-perspective: none; */
+    /* perspective: none; */
+    /* backface-visibility: visible; */
+  }
+
+  #hot-air-balloon-web
+  {
+  }
+
+  #road-container
+  {
+    height: 620rem;
+    z-index: -2;
+  }
+
+  #road-01
+  {
+
+  }
+
+  .font-skills-new
+  {
+    font-size: 2rem;
+  }
+
+  #font-container-web
+  {
+
+  }
+
+  #font-container-html
+  {
+
+  }
+
+  #font-container-css
+  {
+
+  }
+
+  #font-container-js
+  {
+
+  }
+
+  #font-container-jquery
+  {
+
+  }
+
+  #font-container-animation
+  {
+
+  }
+
+
+
+  .skill-anims
+  {
+  }
+
+  .skill
+  {
+
+max-width: 35rem;
+
+margin-top: -1.5%;
+
+}
+
+  #about-content-01-text
+  {width: 94%;}
+
+  #contact-header
+  {
+  }
+
+  #header-cloud-01
+  {
+  left: -8rem;
+  }
+
+  #header-cloud-02
+  {
+  left: 4rem;
+  }
+
+
+  #about-content-02-text
+  {
+  }
+
+  #about-content-03-text
+  {
+  }
+
+  #skills-group-02
+  {
+  margin-bottom: 0;
+  }
+
+  .clouds-header
+  {
+
+max-width: 35rem;
+  }
+
+  .font-header
+  {
+
+font-size: 4.7rem;
+  }
+
+  #city-flatline
+  {
+    height: 1px;
+  }
+
+  #about-header
+  {
+  }
+
+  #contact-text
+  {
+    font-size: 1.8rem;
+    /* top:-72%; */
+    width: 55%;
+  }
+
+  .about-content
+  {
+
+max-width: 35rem;
+
+margin-bottom: -3rem;
+
+}
+
+  .font-div
+  {
+
+font-size: 1.75rem;
+
+}
+
+  .header
+  {
+    width: 57%;
+    min-width: 32rem;
+    height: auto;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+  }
+
+  #about-content-01
+  {
+
+/* left: 0; */
+
+/* top: 0; */
+
+/* margin-top: -5%; */
+
+/* margin-bottom: -3rem; */
+
+/* top: 0; */
+
+/* left: -13.6%; */
+
+left: 0;
+
+margin-left: 5%;
+
+}
+
+  #about-content-02
+  {
+
+/* left: 0; */
+
+/* top: 0; */
+
+left: 0;
+
+margin-right: 5%;
+
+}
+
+  #about-content-03
+  {
+
+left: 0;
+
+margin-left: 5%;
+}
+
+  #about-content-04
+  {
+
+/* left: 0; */
+
+margin-top: -3.6rem;
+
+/* top: 0; */
+
+left: 0;
+
+margin-right: 5%;
+}
+
+  #skills-header
+  {
+  }
+
+  #contact-header-cloud-container
+  {
+  }
+
+  .road
+  {
+    -webkit-perspective: none;
+    -webkit-backface-visibility: initial;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+    height: 6%;
+  }
+
+  #road-01
+  {
+
+margin-top: -18.5rem;
+
+}
+
+  #hot-air-balloon-web-container{
+    left: 66%;
+    width: 27%;
+    max-width: 18rem;
+    top: 57%;
+  }
+
+  .contact-section
+  {
+    margin: auto;
+    position: relative;
+    margin-top: 9%;
+  }
+
+  #contact-container
+  {
+
+height: auto;
+
+z-index: 3;
+}
+
+  #contact-description-section
+  {
+    top: 0;
+    width: 33rem;
+    position: relative;
+    height: auto;
+  }
+
+  #email-section
+  {
+    left:0;
+    top: 0;
+    margin-left: 8%;
+  }
+
+  #cv-section
+  {
+    left:0;
+    top: 0;
+    margin-top: 13%;
+    margin-right: 8%;
+  }
+
+  #phone-section
+  {
+    left:0;
+    top: 0;
+    margin-bottom: 12%;
+    margin-left: 8%;
+  }
+
+  #copyright-container
+  {
+
+
+ */
+
+max-width:;
+
+height: auto;
+
+margin-top: 0;
+
+z-index: 4;
+
+}
+
+  #thanks
+  {
+    display: none;
+  }
+
+  #copyright-text
+  {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    text-align: center;
+    display: inline-block;
+    padding-top: 0;
+    float: none;
+    padding-left: 39%;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #skills-html
+  {left: 0;margin-right: 5%;}
+
+  #skills-css
+  {margin-left: 5%;left: 0;}
+
+  #skills-animation
+  {margin-left: 5%;left: 0;}
+
+  #skills-js
+  {margin-right: 5%;left: 0;}
+
+  #skills-jquery
+  {left: 0;margin-right: 5%;}
+
+#skills-container
+{
+  height: auto;
+  z-index: 2;
+}
+
+}
+
 
 
 @media screen and (max-width: 30em)
@@ -2574,7 +3046,7 @@ left: 55%;
   {
     max-width: 100%;
     min-width: 320px;
-    /* background: yellow; */
+    background: yellow;
   }
 
   #font-container-css
@@ -2921,49 +3393,24 @@ left: 55%;
   }
 }
 
-@media screen and (max-width: 48em)
+@media only screen and (max-device-width: 64em) and (min-device-width: 48em) and (orientation: landscape)
 {
-
   body
   {
-    background: orange;
+    background: cyan;
   }
 
-  #fire-01
+  #contact-container
   {
-    display: none;
+    z-index: 3;
   }
 
-  #fire-02
+  #foliage-container
   {
-    display: none;
+    z-index: 3;
   }
 
-  #intro-container
-  {
-    z-index: -1;
-  }
-
-  #moving-cloud-container
-  {
-    display: none;
-  }
-
-  .skill-anims > svg
-  {
-    /* -webkit-perspective: none; */
-    /* -webkit-backface-visibility: visible; */
-    /* -webkit-transform: none; */
-    /* transform: none; */
-    /* perspective: none; */
-    /* backface-visibility: visible; */
-  }
-
-  #city-flatline
-  {
-  }
-
-  .road-svg
+  #planet > svg
   {
     -webkit-perspective: none;
     -webkit-backface-visibility: visible;
@@ -2973,547 +3420,14 @@ left: 55%;
     backface-visibility: visible;
   }
 
-  .foliage-show
-  {
-  }
-
-  .skill-anims
-  {
-    /* -webkit-backface-visibility: visible; */
-    /* -webkit-transform: none; */
-    /* transform: none; */
-    /* -webkit-perspective: none; */
-    /* perspective: none; */
-    /* backface-visibility: visible; */
-  }
-
-  #hot-air-balloon-web
-  {
-  }
-
-  #road-container
-  {
-    height: 620rem;
-    z-index: -2;
-  }
-
-  #road-01
-  {
-
-  }
-
-  .font-skills-new
-  {
-    font-size: 2rem;
-  }
-
-  #font-container-web
-  {
-
-  }
-
-  #font-container-html
-  {
-
-  }
-
-  #font-container-css
-  {
-
-  }
-
-  #font-container-js
-  {
-
-  }
-
-  #font-container-jquery
-  {
-
-  }
-
-  #font-container-animation
-  {
-
-  }
-
-
-
-  .skill-anims
-  {
-  }
-
-  .skill
-  {
-
-max-width: 35rem;
-
-margin-top: -1.5%;
-
-}
-
-  #about-content-01-text
-  {width: 94%;}
-
-  #contact-header
-  {
-  }
-
-  #header-cloud-01
-  {
-  left: -8rem;
-  }
-
-  #header-cloud-02
-  {
-  left: 4rem;
-  }
-
-  #tree-group-01
-  {
-
-width: 11rem;
-
-top: 59%;
-
-left: 13%;
-}
-
-  #tree-group-02
-  {
-
-width: 7.5rem;
-
-top: 55%;
-
-}
-
-  #tree-group-03
-  {
-
-width: 14rem;
-
-}
-
-  #tree-group-04
-  {
-
-width: 11rem;
-
-top: 31.3%;
-
-}
-
-  #tree-group-05
-  {
-
-width: 11rem;
-
-top: 68.4%;
-
-left: 70%;
-}
-
-  #tree-group-06
-  {
-
-width: 10rem;
-
-}
-  #tree-group-07
-  {top: 39.9%;left: 77.4%;}
-  #tree-group-08
-  {
-
-width: 10rem;
-
-}
-  #tree-group-09
-  {
-
-width: 8rem;
-
-top: 69%;
-
-}
-  #tree-group-10
-  {
-
-width: 8rem;
-
-top: -1.1%;
-}
-
-#tree-group-11
-{
-
-width: 9rem;
-}
-
-#tree-group-12
-{
-
-width: 7.5rem;
-
-top: 66%;
-
-left: 9%;
-}
-
-
-#vegetation-group-01
-{
-
-width: 12rem;
-}
-
-#vegetation-group-02
-{
-
-width: 8rem;
-
-top: 66.5%;
-
-left: 72%;
-}
-
-#vegetation-group-03
-{
-
-width: 7rem;
-
-top: 19.8%;
-}
-#vegetation-group-04
-{
-
-width: 7rem;
-
-top: 32.2%;
-}
-#vegetation-group-05
-{
-
-width: 10rem;
-}
-#vegetation-group-06
-{
-
-}
-#vegetation-group-07
-{
-
-width: 9rem;
-
-top: 7.7%;
-}
-#vegetation-group-08
-{
-
-width: 10rem;
-
-top: 61%;
-}
-#vegetation-group-09
-{
-
-top: 15%;
-
-left: 74%;
-
-width: 10rem;
-}
-
-#vegetation-group-10
-{
-
-width: 9rem;
-
-top: 40%;
-}
-#vegetation-group-11
-{
-
-width: 9.5rem;
-}
-
-#vegetation-group-12
-{
-
-width: 7rem;
-}
-#vegetation-group-13
-{
-
-}
-
-
-  #about-content-02-text
-  {
-  }
-
-  #about-content-03-text
-  {
-  }
-
-  #skills-group-02
-  {
-  margin-bottom: 0;
-  }
-
-  .clouds-header
-  {
-
-max-width: 35rem;
-  }
-
-  .font-header
-  {
-
-font-size: 4.7rem;
-  }
-
-  #city-flatline
-  {
-    height: 1px;
-  }
-
-  #about-header
-  {
-  }
-
-  #contact-text
-  {
-    font-size: 1.8rem;
-    /* top:-72%; */
-    width: 55%;
-  }
-
-  .about-content
-  {
-
-max-width: 35rem;
-
-margin-bottom: -3rem;
-
-}
-
-  .font-div
-  {
-
-font-size: 1.75rem;
-
-}
-
-  .header
-  {
-    width: 57%;
-    min-width: 32rem;
-    height: auto;
-    margin-top: 3rem;
-    margin-bottom: 3.5rem;
-  }
-
-  #about-content-01
-  {
-
-/* left: 0; */
-
-/* top: 0; */
-
-/* margin-top: -5%; */
-
-/* margin-bottom: -3rem; */
-
-/* top: 0; */
-
-/* left: -13.6%; */
-
-left: 0;
-
-margin-left: 5%;
-
-}
-
-  #about-content-02
-  {
-
-/* left: 0; */
-
-/* top: 0; */
-
-left: 0;
-
-margin-right: 5%;
-
-}
-
-  #about-content-03
-  {
-
-left: 0;
-
-margin-left: 5%;
-}
-
-  #about-content-04
-  {
-
-/* left: 0; */
-
-margin-top: -3.6rem;
-
-/* top: 0; */
-
-left: 0;
-
-margin-right: 5%;
-}
-
-  #skills-header
-  {
-  }
-
-  #contact-header-cloud-container
-  {
-  }
-
-  .road
+  #hot-air-balloon-web-svg
   {
     -webkit-perspective: none;
-    -webkit-backface-visibility: initial;
+    -webkit-backface-visibility: visible;
     -webkit-transform: none;
     transform: none;
     perspective: none;
     backface-visibility: visible;
-    height: 6%;
-  }
-
-  #road-01
-  {
-
-margin-top: -18.5rem;
-
-}
-
-  #hot-air-balloon-web-container{
-    left: 66%;
-    width: 27%;
-    max-width: 18rem;
-    top: 57%;
-  }
-
-  .contact-section
-  {
-    margin: auto;
-    position: relative;
-    margin-top: 9%;
-  }
-
-  #contact-container
-  {
-
-height: auto;
-
-z-index: 3;
-}
-
-  #contact-description-section
-  {
-    top: 0;
-    width: 33rem;
-    position: relative;
-    height: auto;
-  }
-
-  #email-section
-  {
-    left:0;
-    top: 0;
-    margin-left: 8%;
-  }
-
-  #cv-section
-  {
-    left:0;
-    top: 0;
-    margin-top: 13%;
-    margin-right: 8%;
-  }
-
-  #phone-section
-  {
-    left:0;
-    top: 0;
-    margin-bottom: 12%;
-    margin-left: 8%;
-  }
-
-  #copyright-container
-  {
-
-
- */
-
-max-width:;
-
-height: auto;
-
-margin-top: 0;
-
-z-index: 4;
-
-}
-
-  #thanks
-  {
-    display: none;
-  }
-
-  #copyright-text
-  {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-    text-align: center;
-    display: inline-block;
-    padding-top: 0;
-    float: none;
-    padding-left: 39%;
-    padding-right: 0;
-    margin-right: 0;
-    margin-left: 0;
-    width: 100%;
-  }
-
-  #skills-html
-  {left: 0;margin-right: 5%;}
-
-  #skills-css
-  {margin-left: 5%;left: 0;}
-
-  #skills-animation
-  {margin-left: 5%;left: 0;}
-
-  #skills-js
-  {margin-right: 5%;left: 0;}
-
-  #skills-jquery
-  {left: 0;margin-right: 5%;}
-
-#skills-container
-{
-  height: auto;
-  z-index: 2;
-}
-
-}
-
-@media only screen and (max-device-width: 64em) and (min-device-width: 48em) and (orientation: landscape)
-{
-  body
-  {
-    background: cyan;
   }
 
   #fire-01
@@ -3543,7 +3457,7 @@ z-index: 4;
 
   #intro-container
   {
-    z-index: -1;
+    z-index: 3;
   }
 
   .skill-anims > svg
@@ -3566,12 +3480,7 @@ z-index: 4;
 
   .foliage-show
   {
-    -webkit-perspective: none;
-    -webkit-backface-visibility: visible;
-    -webkit-transform: none;
-    transform: none;
-    perspective: none;
-    backface-visibility: visible;
+  width: 8rem;
   }
 
   #hot-air-balloon-web
@@ -3679,58 +3588,7 @@ z-index: 4;
   {
     max-width: 23rem;
   }
-  #tree-group-03
-  {
-    display: none;
-  }
 
-  #tree-group-08
-  {
-    display:none;
-  }
-  #vegetation-group-04
-  {
-left: 75.4%;
-top: 27.7%;
-width: 8rem;
-}
-  #vegetation-group-13
-  {
-    display: none;
-  }
-
-  #tree-group-07
-  {
-    display: none;
-  }
-
-  #vegetation-group-05
-  {
-    display: none;
-}
-#vegetation-group-09
-{
-  top: 45%;
-}
-
-#vegetation-group-02
-{
-display:none;
-}
-
-#vegetation-group-07
-{
-  display:none;
-}
-#tree-group-01
-{
-display: none;
-}
-#vegetation-group-01
-{
-top: 5%;
-left: 70%;
-}
 }
 
 
