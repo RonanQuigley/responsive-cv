@@ -1875,8 +1875,11 @@ stroke-width: 1rem;
 {position: absolute;}
 
 .city-path
-{stroke-width: 0.03rem;
-  stroke: black;}
+{
+  stroke-width: 0.03rem;
+  stroke: black;
+  /* stroke-linecap: square; */
+  }
 
 #cv
 {
@@ -2093,7 +2096,7 @@ svg
 
 #city-flatline-line
 {
-  
+
 <
   div id="grass-09" class="foliage grass">              <svg class="foliage-svg" xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">                <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>                <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>              </svg>            </div>;
   /* transform-style: preserve-3d; */
@@ -2749,8 +2752,14 @@ width: 25rem;
 @media screen and (max-width: 48em)
 {
 
-  body
+  #road-container div:nth-of-type(n+8)
   {
+    display: block;
+  }
+
+  #road-container div:nth-of-type(n+12)
+  {
+    display: none;
   }
 
   #skills-web-development
@@ -3265,6 +3274,36 @@ margin-right: 5%;
     max-width: 100%;
     min-width: 320px;
     /* background: yellow; */
+  }
+
+  .city-path
+  {
+    stroke-width: 0.04rem;
+  }
+
+  .road-top
+  {
+    stroke-width: 0.3px;
+  }
+
+  .road-bottom
+  {
+    stroke-width: 0.3px;
+  }
+
+  .road-middle-solid
+  {
+    stroke-width: 0.3px;
+  }
+
+  #phone-text-container
+  {
+    top: 51%;
+  }
+
+  #road-container div:nth-of-type(n+12)
+  {
+    display: block;
   }
 
   #font-container-js

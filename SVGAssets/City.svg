@@ -1,10 +1,12 @@
-<svg id="City" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 31">
-    <polygon fill="none" points="20.5 20.5 20.5 12.5 22.5 12.5 22.5 5.5 6.5 5.5 6.5 18.5 10.5 18.5 10.5 30.5 15.5 30.5 15.5 20.5 20.5 20.5"/>
-    <rect fill="none" x="15.5" y="20.5" width="5" height="10"/>
-    <polygon fill="none" points="7.5 18.5 0.5 18.5 0.5 30.5 7.5 30.5 10.5 30.5 10.5 18.5 7.5 18.5"/>
-    <polygon fill="none" points="48.5 22.5 48.5 14.5 50.5 14.5 50.5 5.5 39.5 5.5 39.5 12.5 42.5 12.5 42.5 30.5 44.5 30.5 44.5 22.5 48.5 22.5"/>
-    <rect fill="none" x="33.5" y="0.5" width="4" height="12"/>
-    <polygon fill="none" points="40.5 12.5 38.5 12.5 34.5 12.5 23.5 12.5 20.5 12.5 20.5 19.5 20.5 30.5 23.5 30.5 26.5 30.5 40.5 30.5 42.5 30.5 42.5 12.5 40.5 12.5"/>
-    <polygon fill="none" points="48.5 22.5 61.5 22.5 61.5 14.5 51.5 14.5 48.5 14.5 48.5 22.5"/>
-    <polygon fill="none" points="62.5 22.5 49.5 22.5 44.5 22.5 44.5 30.5 51.5 30.5 64.5 30.5 64.5 22.5 62.5 22.5"/>
+<svg id="city-buildings-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 31">
+  <title>City</title>
+  <polyline class="city-path hw-on" points="6.5 18.5 6.5 5.5 22.5 5.5 22.5 12.5"/>
+  <polyline class="city-path hw-on" points="0.5 30.5 0.5 18.5 10.5 18.5 10.5 30.5"/>
+  <polyline class="city-path hw-on" points="61.8 22.5 64.5 22.5 64.5 30.5"/>
+  <polyline class="city-path hw-on" points="50.5 22.5 61.8 22.5 61.8 14.5 50.5 14.5"/>
+  <path class="city-path hw-on" d="M1483.5,192.6" transform="translate(-1463 -162.1)"/>
+  <polyline class="city-path hw-on" points="20.5 20.5 15.5 20.5 15.5 30.5"/>
+  <polyline class="city-path hw-on" points="39.5 12.5 39.5 5.5 50.5 5.5 50.5 30.5"/>
+  <polyline class="city-path hw-on" points="33.5 12.5 33.5 0.5 37.5 0.5 37.5 12.5"/>
+  <polyline class="city-path hw-on" points="42.5 30.5 42.5 12.5 20.5 12.5 20.5 30.5"/>
 </svg>

@@ -316,6 +316,7 @@ function AnimateStroke(element, length, easing, optionals)
           {
             if(_documentWidth <= 480)
             {
+              TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0);
               AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
             }
             else if(_documentWidth > 480 && _documentWidth <= 1024)
@@ -584,7 +585,7 @@ function Init()
     CheckIfAnimationIsOnScreen('#skills-jquery', skillAnims[3]);
     CheckIfAnimationIsOnScreen('#skills-js', skillAnims[4]);
     CheckIfAnimationIsOnScreen('#skills-animation', skillAnims[5]);
-    _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'oneByOne', documentWidth : documentBodyWidth});
+    _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'delayed', documentWidth : documentBodyWidth});
     CheckIfCityBuildingsAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
     if(documentBodyWidth > 1024) // for ipad landscape displays
     {
@@ -611,8 +612,7 @@ function Init()
   else
   {
     AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', false);
-    _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, - 100, _easing, {scenarioType: 'oneByOne', documentWidth : documentBodyWidth});
-    CheckIfCityBuildingsAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
+    AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'delayed', documentWidth : documentBodyWidth});
   }
   OnHoverOverEmail();
   OnHoverOverPhone();
