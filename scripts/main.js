@@ -89,15 +89,15 @@ function CheckIfCityBuildingsAnimIsOnScreen(element, vivus)
     {
       vivus[0].play(1, function(){
         EnableSkillAnims();
-        DisableHWAcceleration(_cityBuildingsSVG);
+        //DisableHWAcceleration(_cityBuildingsSVG);
         waypoint.destroy();
       });
-      EnableHWAcceleration(_cityBuildingsSVG)
+      //EnableHWAcceleration(_cityBuildingsSVG)
       DisableSkillAnims();
     },
     exited: function()
     {
-      DisableHWAcceleration(_cityBuildingsSVG);
+      //DisableHWAcceleration(_cityBuildingsSVG);
       if(documentBody.outerWidth() <= 480)
       {
         vivus[0].stop();
@@ -261,7 +261,7 @@ function HideElements(elementContainer)
   }
   else
   {
-    _elementContainerChildren = _elementContainer.children();
+    _elementContainerChildren = _elementContainer.children().slice(1);
   }
   for(var i = 0; i < _elementContainerChildren.length; i++)
   {
@@ -295,7 +295,7 @@ function AnimateStroke(element, length, easing, optionals)
       _isRoad = true;
     }
     _animElements.push(new Vivus(_currentSVGElement[0], {duration: length, animTimingFunction:
-      easing, type: _scenarioType, start: _startStype, onReady:
+      easing, type: _scenarioType, start: _startStype, selfDestroy: true, onReady:
       function() // called when the stroke is ready to run
       {
         if(_isRoad)
@@ -332,7 +332,7 @@ function AnimateStroke(element, length, easing, optionals)
         }
         else if(_parentID == 'city-flatline')
         {
-          DisableHWAcceleration(_currentSVGElement[0]);
+          //DisableHWAcceleration(_currentSVGElement[0]);
         }
       }
       ));
@@ -446,7 +446,7 @@ function GenerateRoad(roadContainer, bodyWidth)
 function GenerateRoadWaypoint(roadElement)
 {
   var vivus = AnimateStroke(roadElement, 40, Vivus.LINEAR,
-  {startType: 'manual', scenarioType: 'delayed'});
+  {startType: 'manual', scenarioType: 'oneByOne'});
   var waypoint = new Waypoint({
     element: roadElement,
     handler: function() {
@@ -461,18 +461,23 @@ function GenerateRoadWaypoint(roadElement)
           vivus[i].play();
       }
     },
-    offset: '83%'
+    offset: '70%'
   });
 }
 
 function GenerateFoliageWaypoint(foliageElement)
 {
   var timeline = new TimelineMax();
-  var _force3D = true;
   var _foliageElement= $(foliageElement); // create a jquery object
-  // var _offset = _foliageElement.attr('id') == 'vegetation-group-02' ? '90%' : '' + getRandomArbitrary(63, 67) + '%';
   var _offset = '' + GetRandomArbitrary(50, 95) + '%';
   var _delay = GetRandomArbitrary(0, 0.1);
+  var _force3D = true;
+  /*
+  var _foliageIDNumber = parseInt(_foliageElement.attr('id').substring(14, 16));
+  if(_foliageIDNumber >= 8 && _foliageIDNumber <= 14 )
+  {
+    _force3D = false;
+  }*/
   var waypoint = new Waypoint({
     element: foliageElement,
     handler: function(direction) {
@@ -552,7 +557,7 @@ function OnHoverOverPhone()
 function Init()
 {
   // fade in the whole page
-  FadeInAnimation('body', 0.7);
+
   SetRoadIDs('#road-container');
   var _autoPlay = false;
   var _duration = 180;
@@ -569,6 +574,7 @@ function Init()
   skillAnims[5] = AnimateBodymovin('skill-anim-animation', 'scripts/skills-animation.json', "xMidYMid meet", _autoPlay);
   if(documentBodyWidth > 480)
   {
+    FadeInAnimation('body', 0.7);
     var _fireAnimB = null;
     _fireAnimB = AnimateBodymovin('fire-02', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
     CheckIfAnimationIsOnScreen('#fire-02', _fireAnimB);
@@ -578,26 +584,23 @@ function Init()
     CheckIfAnimationIsOnScreen('#skills-jquery', skillAnims[3]);
     CheckIfAnimationIsOnScreen('#skills-js', skillAnims[4]);
     CheckIfAnimationIsOnScreen('#skills-animation', skillAnims[5]);
-    _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, - 100, _easing, {scenarioType: 'oneByOne', documentWidth : documentBodyWidth});
+    _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'oneByOne', documentWidth : documentBodyWidth});
     CheckIfCityBuildingsAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
     if(documentBodyWidth > 1024) // for ipad landscape displays
     {
-      //AnimateStroke('#hot-air-balloon-web', _duration - 80, _easing, {scenarioType: 'oneByOne'});
+      AnimateStroke('#hot-air-balloon-web', _duration - 80, _easing, {scenarioType: 'oneByOne'});
       // Hide the elements through JS that will appear on screen later
       HideElements('#foliage-container');
       HideElements('#road-container');
+      //FadeInAnimation('#road-01', 1);
+      // AnimateStroke('#road-01', _duration - 120, _easing, {startType: 'autostart', scenarioType: 'delayed'});
+      GenerateRoad($('#road-container'), documentBodyWidth);
       AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
       AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', false);
-      AnimateStroke('#city-flatline', _duration - 120, _easing, {scenarioType: 'scenario-sync'});
+      // AnimateStroke('#city-flatline', _duration - 120, _easing, {scenarioType: 'scenario-sync'});
       PopInFoliage($('#foliage-container'));
       var _fireAnimA = AnimateBodymovin('fire-01', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
       CheckIfAnimationIsOnScreen('#fire-01', _fireAnimA);
-      setTimeout(function()
-      {
-        // put the first road separately for an automatic start without using waypoints
-        AnimateStroke('#road-01', _duration - 120, _easing, {startType: 'autostart'});
-        GenerateRoad($('#road-container'), documentBodyWidth);
-      }, 200);
     }
     else
     {
