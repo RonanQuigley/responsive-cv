@@ -12,6 +12,15 @@
   z-index: 6;
 }
 
+#road-container div:nth-of-type(n+8)
+{
+  display: none;
+}
+
+.foliage-svg
+{
+}
+
 #foliage-group-01
 {
 left: 15%;
@@ -38,7 +47,7 @@
 
 #foliage-group-05
 {
-  top: 23%;
+  top: 20%;
   left: 13%;
 }
 
@@ -92,15 +101,15 @@
 
 #foliage-group-14
 {
-top: 60%;
-left: 60%;
+top: 61%;
+left: 66%;
 }
 
 #foliage-group-15
 {
   top@60%:;
-  top: 50%;
-  left: 90%;
+  top: 55%;
+  left: 87%;
 }
 
 #foliage-group-16
@@ -161,6 +170,8 @@
 {
   width: 100%;
   height: auto;
+  /* -webkit-transform: translateZ(0); */
+  /* transform: translateZ(0); */
 }
 
 .flower
@@ -184,16 +195,13 @@
   transform: none;
   perspective: none;
   backface-visibility: visible;
+  transform
 }
 
 .hw-on
 {
-  -webkit-perspective: 1000px;
-  -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  perspective: 1000px;
-  backface-visibility: hidden;
 }
 
 #cloud-background-svg-path
@@ -223,11 +231,10 @@
 
 #email-text-container
 {
-  width: 80%;
+  width: 100%;
   height: auto;
   top: 55%; */
   font-size: 1.7rem;
-  left: -8%;
   right: 0;
   position: absolute;
 }
@@ -288,11 +295,12 @@
       -ms-transform: translateY(100px);
           transform: translateY(100px);
 }
-
+/*
 #cloud-contact-03:hover #phone-path
 {
   fill: black;
 }
+*/
 
 #email-box
 {
@@ -324,7 +332,7 @@
 {
   font-size: 1.5rem;
   left: 0;
-  top: 0;
+  top: 0.2rem;
   right: 0;
   max-width: initial;
 }
@@ -360,7 +368,7 @@
 
 #road-01
 {
-  margin-top: -30.6rem;
+  margin-top: -30.3rem;
 }
 
 .mask
@@ -439,12 +447,22 @@
   stroke-dasharray: 5px;
   stroke: white;
   stroke-width: 2px;
+  transform-style: preserve-3d;
+  -webkit-perspective: inherit;
+  -webkit-backface-visibility: inherit;
+  perspective: inherit;
+  backface-visibility: inherit;
 }
 
 .road-middle-solid
 {
   stroke-width: 0.2px;
   stroke: black;
+  transform-style: inherit;
+  -webkit-perspective: inherit;
+  -webkit-backface-visibility: inherit;
+  perspective: inherit;
+  backface-visibility: inherit;
 }
 
 .clouds-contact > svg
@@ -706,10 +724,6 @@ display: block;
     position: absolute;
     right: 0;
     left: -30%;
-}
-
-#road-container > div:nth-of-type(2n+1)
-{
 }
 
 #hot-air-balloon-plain-svg
@@ -1274,12 +1288,22 @@ width: 50%;
 {
   stroke-width: 0.2px;
   stroke: black;
+  transform-style: inherit;
+  -webkit-perspective: inherit;
+  -webkit-backface-visibility: inherit;
+  perspective: inherit;
+  backface-visibility: inherit;
 }
 
 .road-bottom
 {
   stroke-width: 0.02rem;
   stroke: black;
+  transform-style: inherit;
+  -webkit-perspective: inherit;
+  -webkit-backface-visibility: inherit;
+  perspective: inherit;
+  backface-visibility: inherit;
 }
 
 
@@ -1402,11 +1426,10 @@ font-weight: 200;
 
 #contact-container
 {
-  /* height: 115rem; */
+  height: 114rem;
   width: 100%;
    */
   -webkit-perspective: 1000;
-  margin-bottom: 5rem;
 }
 
 #email-section
@@ -1443,7 +1466,7 @@ font-weight: 200;
 #cloud-grouping-section
 {
     left: 67%;
-    top: 41%;
+    top: 38%;
     /* z-index: 2; */
 }
 
@@ -1540,7 +1563,7 @@ width: 100%;
 {top: 82%;}
 
 #font-container-css
-{top: -4rem;position: relative;}
+{top: -4.1rem;position: relative;}
 
 #font-container-jquery
 {top: 82%;}
@@ -1572,22 +1595,22 @@ width: 100%;
     height: auto;
     fill: #ffffff;
     max-width: 167rem;
-    z-index: 100;
-    margin-top: 25rem;
+    top: 3rem;
     /* z-index: 6; */
+    margin-bottom: 6rem;
 }
 
 #copyright-text
 {
     display: inline-block;
     -webkit-transform: rotate(-11deg);
-        -ms-transform: rotate(-11deg);
-            transform: rotate(-11deg);
-    padding-left: 1rem;
+    -ms-transform: rotate(-11deg);
+    transform: rotate(-11deg);
+    padding-left: 3rem;
 }
 
 #thanks
-{float: right;display: inline-block;position: absolute;right: 0;bottom: 0;-webkit-transform-origin: right;-ms-transform-origin: right;transform-origin: right;-webkit-transform: rotate(9deg);-ms-transform: rotate(9deg);transform: rotate(9deg);padding-right: 1rem;}
+{float: right;display: inline-block;position: absolute;right: 0;bottom: 0;-webkit-transform-origin: right;-ms-transform-origin: right;transform-origin: right;-webkit-transform: rotate(9deg);-ms-transform: rotate(9deg);transform: rotate(9deg);padding-right: 2rem;}
 
 #skills-text-box-animation
 {
@@ -1650,17 +1673,17 @@ height: 7.4rem;
 
 top: 90%;
 }
-
+/*
 #cv-box:hover + #cv-outlines
 {
   fill: black;
 }
 
 #cv-outlines:hover
-{
+
   fill:black;
 }
-
+*/
 .skills-text-box
 {border: black 0.15rem solid;text-align: center;width: 50%;background: white;height: 100%;z-index: -1;max-width: 24rem;}
 
@@ -1747,23 +1770,14 @@ right: 0;
 {
   height: 12.4%;
   margin-bottom: 6rem;
-  /* -webkit-perspective: 1000px; */
-  /* -webkit-backface-visibility: hidden; */
-  /* -webkit-transform: translateZ(0); */
-  /* transform: translateZ(0); */
-  /* perspective: 1000px; */
-  /* backface-visibility: hidden; */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .road-svg
-{
-  -webkit-perspective: 1000px;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  perspective: 1000px;
-  backface-visibility: hidden;
-}
+{transform-style: preserve-3d;-webkit-perspective: inherit;-webkit-backface-visibility: inherit;perspective: inherit;backface-visibility: inherit;}
 
 
 #solid-line-01
@@ -1841,6 +1855,7 @@ stroke-width: 1rem;
 {
     top: 43%;
     width: 38%;
+    z-index: 1;
 }
 
 #phone
@@ -1882,22 +1897,16 @@ stroke-width: 1rem;
     left: 0;
     right: 0;
     width: 70%;
-    /* -webkit-backface-visibility: hidden; */
-    /* -webkit-transform: translateZ(0); */
-    /* transform: translateZ(0); */
-    /* -webkit-perspective: 1000; */
-    /* perspective: 1000px; */
-    /* backface-visibility: hidden; */
 }
 
 .skill-anims > svg
 {
-  -webkit-perspective: 1000px;
-  -webkit-backface-visibility: hidden;
+  /* -webkit-perspective: 1000px; */
+  /* -webkit-backface-visibility: hidden; */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  perspective: 1000px;
-  backface-visibility: hidden;
+  /* perspective: 1000px; */
+  /* backface-visibility: hidden; */
 }
 
 .blimps
@@ -1922,6 +1931,7 @@ stroke-width: 1rem;
 {
 height: auto;
 width: 100%;
+z-index: 2;
 }
 
 #skills-header-cloud-container
@@ -2017,13 +2027,13 @@ svg
   font-style: normal;
   text-align: center;
   font-weight: normal;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.0001);
   position: absolute;
   top: 74%;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 #wrapper
@@ -2063,18 +2073,22 @@ svg
   z-index: 2;
 }
 
-#city-flatline > svg
+#city-flatline-svg
 {
-stroke: black;
-stroke-width: 26.05rem;
-fill: black;
--webkit-backface-visibility: hidden;
--webkit-transform: translateZ(0);
--webkit-perspective: 1000;00 */
--webkit-backface-visibility: hidden;
-transform: translateZ(0);
-perspective: 1000px;
-backface-visibility: hidden;
+  stroke: black;
+  stroke-width: 26.05rem;
+  fill: black;
+}
+
+#city-flatline-line
+{
+  -webkit-perspective: inherit;
+  -webkit-backface-visibility: inherit;
+  -webkit-transform: inherit;
+  transform: inherit;
+  perspective: inherit;
+  backface-visibility: inherit;
+  transform-style: preserve-3d;
 }
 
 #hot-air-balloon-web-container
@@ -2101,13 +2115,13 @@ svg
 #hot-air-balloon-web-svg
 {
   /* position: absolute; */
-  -webkit-perspective: 1000px;
-  -webkit-backface-visibility: hidden; */
+  /* -webkit-perspective: 1000px; */
+  /* -webkit-backface-visibility: hidden; */ */
   -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  perspective: 1000px;
-  backface-visibility: hidden;
-  backface-visibility: visible;
+  /* transform: translateZ(0); */
+  /* perspective: 1000px; */
+  /* backface-visibility: hidden; */
+  /* backface-visibility: visible; */
   /* z-index: 1; */
 }
 
@@ -2442,7 +2456,7 @@ position: relative;
 }
 
 #planet > svg
-{position: absolute;-webkit-perspective: 1000px;-webkit-backface-visibility: hidden;-webkit-transform: translateZ(0);transform: translateZ(0);perspective: 1000px;backface-visibility: hidden;}
+{position: absolute;}
 
 /* ------- MEDIA QUIERIES ------- */
 
@@ -2451,54 +2465,37 @@ position: relative;
 {
   body
   {
-    background: red;
   }
 
-  #road-01
+  #foliage-group-18
   {
-margin-top: -30.5rem;
-}
-
-  #hot-air-balloon-web-container
-  {
-  width: 25%;
-  top: 39%;
-  left: 66%;
+    top: 79%;
   }
 
-  .header
+  #city-flatline-svg
   {
-
-   max-width: 36rem;
-
-}
-
-  .font-header
-  {
-
-font-size: 5.4rem;
-
-}
-
-  #contact-header
-  {
-  }
-
-  #vegetation-group-02
-  {
-  left: 1.7%;
-  top: 59%;
-  }
-
-  #contact-description-section
-  {
-    position: absolute;
+    -webkit-transform: none;
+    transform: none;
   }
 
   #copyright-container
   {
-    height: 9rem;
-    margin-top: 87rem;
+  }
+
+  #copyright-text
+  {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    text-align: center;
+    display: block;
+    padding-top: 0;
+    float: none;
+    padding-left: 56%;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
   }
 
   #thanks
@@ -2506,108 +2503,58 @@ font-size: 5.4rem;
     display: none;
   }
 
-  #copyright-text
+  #contact-text
   {
-    float: right;
-    display: inline-block;
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-    padding-right: 7%;
-    padding-left: 0rem;
+    font-size: 1.85rem;
   }
 
-  #skills-group-02
+  .foliage
   {
-  margin-top: 0;
+    -webkit-transform: none;
+    transform: none;
   }
 
-
-  #vegetation-group-03
+  #cloud-group-three-stroked-container
   {
+    z-index: 20;
+  }
 
-left: 8%;
+  #skills-container
+  {
+    z-index: 4;
+  }
+
+  #email-text
+  {
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  #phone-text-container
+  {
+    top: 50%;
+  }
+
+  .city-path
+  {
+    stroke-width: 0.02rem;
   }
 
   #cloud-grouping-section
   {
-    display: none;
+    display: none
   }
 
-  #contact-description-section
+  #foliage-group-19
   {
-margin-top: 0%;
-margin-bottom: 0;
-top: 25%;
-}
-
-  #email-section
-  {
-
-top: 54%;
-   }
-
-  #cv-section
-  {
-
-top: 77%;
-
-left: 14%;
-   }
-
-  #phone-section
-  {
-
-top: 77%;
-
-left: 55%;
-
-}
-
-  #skills-container
-  {
+    top: 80%;
   }
 
-  #skills-group-01
+  #contact-container
   {
-}
-
-  #skills-web-development
-  {left: 0;margin-left: 5%;}
-
-  #skills-html
-{
-}
-
-  #skills-css
-  {
-}
-
-  .skill
-  {
-  }
-
-  #skills-jquery
-  {
-}
-
-  #skills-animation
-  {
-}
-
-  #skills-js
-  {
-}
-
-}
-
-
-@media screen and (max-width: 48em)
-{
-
-  body
-  {
-    background: orange;
+    z-index: 3;
+    height: 108rem;
   }
 
   #foliage-container
@@ -2615,17 +2562,11 @@ left: 55%;
     z-index: 3;
   }
 
-  #hot-air-balloon-web-svg
+  #planet > svg
   {
-    -webkit-perspective: none;
-    -webkit-backface-visibility: visible;
-    -webkit-transform: none;
-    transform: none;
-    perspective: none;
-    backface-visibility: visible;
   }
 
-  #planet > svg
+  #hot-air-balloon-web-svg
   {
     -webkit-perspective: none;
     -webkit-backface-visibility: visible;
@@ -2642,7 +2583,290 @@ left: 55%;
 
   #fire-02
   {
+  }
+
+  .paper-plane-container
+  {
+
+width: 90%;
+
+}
+
+  #font-container-css
+  {
+    top: -3.3rem;
+    margin-bottom: -3.3rem;
+  }
+
+  #moving-cloud-container
+  {
+    /* display: none; */
+  }
+
+  #intro-container
+  {
+    z-index: -1;
+  }
+
+  .skill-anims > svg
+  {
+    /* -webkit-backface-visibility: visible; */
+    /* -webkit-transform: none; */
+    /* transform: none; */
+    /* perspective: none; */
+    /* backface-visibility: visible; */
+  }
+  .road-svg
+  {
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  .foliage-show
+  {
+  width: 8rem;
+  }
+
+  #hot-air-balloon-web
+  {
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-perspective: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  .skill-anims
+  {
+  }
+
+
+  #skills-web-development
+  {
+    left: -20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #city-flatline
+  {
+    -webkit-transform: none;
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  .road
+  {
+    -webkit-perspective: none;
+    -webkit-backface-visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+    perspective: none;
+    backface-visibility: visible;
+  }
+
+  #cloud-group-three-01
+  {
+    max-width: 14.5rem;
+  }
+
+  #road-container
+  {
+  }
+
+  .about-content
+  {
+    max-width: 32rem;
+  }
+
+  .font-div
+  {
+
+font-size: 1.65rem;
+   }
+  #about-content-01-text
+  {
+    width:100%;
+  }
+
+  .font-skills-new
+  {
+    font-size: 1.9rem;
+  }
+
+  .contact-section
+  {
+
+width: 25rem;
+
+}
+
+  #road-01
+  {
+margin-top: -27.2rem;
+}
+  .skill
+  {
+  max-width: 30.5rem;
+  }
+
+  .about-content
+  {
+  }
+  .header
+  {
+    max-width: 32rem;
+  }
+  #planet-container
+  {
+    max-width: 50rem;
+  }
+  #hot-air-balloon-web-container
+  {
+    max-width: 23rem;
+  }
+
+
+}
+
+
+@media screen and (max-width: 48em)
+{
+
+  body
+  {
+  }
+
+  #skills-web-development
+  {
+margin-left: 5%;
+left: 0;
+}
+
+  .foliage
+  {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  #email-text-container
+  {
+    width: 100%;
+    left: 0;
+  }
+
+  #email-text
+  {
+  width: 100%;
+  }
+
+  #foliage-group-04
+  {
+    top: 11%;
+  }
+
+  #foliage-group-07
+  {
+    top: 15%;
+  }
+
+  #foliage-group-08
+  {
+    top: 27%;
+  }
+
+  #foliage-group-09
+  {
+    top: 37%;
+  }
+
+  #foliage-group-10
+  {
+    top: 37%;
+  }
+
+  #foliage-group-11
+  {
+    top: 41%;
+  }
+
+  #foliage-group-12
+  {
+    top: 50%;
+  }
+
+  #foliage-group-13
+  {
+
+  }
+
+  #foliage-group-15
+  {
+    top: 56%;
+  }
+
+  #foliage-group-17
+  {
+    top: 63%;
+  }
+
+  #foliage-group-18
+  {
+    top: 66%;
+  }
+
+  #foliage-group-19
+  {
+    top: 73%;
+    left: 21%;
+  }
+
+  #foliage-group-20
+  {
+    top: 69%;
+  }
+
+  #foliage-group-21
+  {
+    top: 45%;
+    left: 30%;
+  }
+
+  #foliage-container
+  {
+    z-index: 3;
+    height: 620rem;
+  }
+
+  #hot-air-balloon-web-svg
+  {
+    /* -webkit-perspective: none; */
+    /* -webkit-backface-visibility: visible; */
+    /* -webkit-transform: none; */
+    /* transform: none; */
+    /* perspective: none; */
+    /* backface-visibility: visible; */
+  }
+
+  #planet > svg
+  {
+  }
+
+  #fire-01
+  {
     display: none;
+  }
+
+  #fire-02
+  {
   }
 
   #intro-container
@@ -2652,7 +2876,7 @@ left: 55%;
 
   #moving-cloud-container
   {
-    display: none;
+    /* display: none; */
   }
 
   .skill-anims > svg
@@ -2676,22 +2900,16 @@ left: 55%;
     -webkit-transform: none;
     transform: none;
     perspective: none;
-    backface-visibility: visible;
+    backface-visibility: inherit;
   }
 
   .foliage-show
   {
-  width: 7.5rem;
+  width: 8rem;
   }
 
   .skill-anims
   {
-    /* -webkit-backface-visibility: visible; */
-    /* -webkit-transform: none; */
-    /* transform: none; */
-    /* -webkit-perspective: none; */
-    /* perspective: none; */
-    /* backface-visibility: visible; */
   }
 
   #hot-air-balloon-web
@@ -2700,7 +2918,7 @@ left: 55%;
 
   #road-container
   {
-    height: 620rem;
+    height: 628rem;
     z-index: -2;
   }
 
@@ -2726,18 +2944,19 @@ left: 55%;
 
   #font-container-css
   {
-
-  }
+top: 83%;
+position: absolute;
+margin-bottom: 0;
+}
 
   #font-container-js
   {
-
-  }
+top: 83%;
+}
 
   #font-container-jquery
   {
-
-  }
+}
 
   #font-container-animation
   {
@@ -2914,21 +3133,19 @@ margin-right: 5%;
     -webkit-transform: none;
     transform: none;
     perspective: none;
-    backface-visibility: visible;
+    backface-visibility: initial;
     height: 6%;
   }
 
   #road-01
   {
-
-margin-top: -18.5rem;
-
+margin-top: -18.7rem;
 }
 
   #hot-air-balloon-web-container{
     left: 66%;
     width: 27%;
-    max-width: 18rem;
+    max-width: 16rem;
     top: 57%;
   }
 
@@ -2941,10 +3158,9 @@ margin-top: -18.5rem;
 
   #contact-container
   {
-
-height: auto;
-
-z-index: 3;
+height: auto;
+z-index: 3;
+margin-bottom: 2rem;
 }
 
   #contact-description-section
@@ -2983,15 +3199,10 @@ z-index: 3;
 
 
  */
-
-max-width:;
-
-height: auto;
-
-margin-top: 0;
-
-z-index: 4;
-
+max-width:;
+height: auto;
+z-index: 4;
+margin-top: 0;
 }
 
   #thanks
@@ -3013,6 +3224,7 @@ z-index: 4;
     margin-right: 0;
     margin-left: 0;
     width: 100%;
+    top: 0;
   }
 
   #skills-html
@@ -3033,12 +3245,10 @@ z-index: 4;
 #skills-container
 {
   height: auto;
-  z-index: 2;
+  z-index: 4;
 }
 
 }
-
-
 
 @media screen and (max-width: 30em)
 {
@@ -3046,13 +3256,40 @@ z-index: 4;
   {
     max-width: 100%;
     min-width: 320px;
-    background: yellow;
+    /* background: yellow; */
+  }
+
+  #font-container-js
+  {
+    top: 82.5%;
+  }
+
+  .skill-cloud > path
+  {
+    stroke-width: 0.6rem;
+  }
+
+  .clouds-content > svg > path
+  {
+    stroke-width: 0.6rem;
+  }
+
+  #hot-air-balloon-web-svg
+  {
+    /* transform: translateZ(0); */
+  }
+
+  #hot-air-balloon-plain-svg
+  {
+    transform: translateZ(0);
   }
 
   #font-container-css
   {
-
-  }
+top: 82%;
+position: absolute;
+margin-bottom: 0;
+}
 
   #cloud-group-three-01-container
   {
@@ -3101,13 +3338,12 @@ z-index: 4;
   #copyright-container
   {
     background: white;
-    -webkit-transform: translateY(0rem);
-    -ms-transform: translateY(0rem);
-    transform: translateY(0rem);
     border-top: dashed 0.1rem black;
     height: auto;
     z-index: -1;
     margin-top: 0;
+    margin-bottom: 0;
+    top: 0;
   }
 
   #copyright-text
@@ -3121,6 +3357,7 @@ z-index: 4;
   #skills-web-development
   {
     margin-left: auto;
+    left: 0;
   }
 
   .skill
@@ -3215,6 +3452,7 @@ z-index: 4;
 
   #contact-header
   {
+  z-index: 0;
   }
 
   .copyright-font
@@ -3242,7 +3480,7 @@ z-index: 4;
   }
 
   #contact-description-section
-  {/* height: 38rem; */width: 27rem;/* margin-top: 10%; *//* margin-bottom: -2%; */}
+  {/* height: 38rem; */width: 27rem;/* margin-top: 10%; */z-index: 2;/* margin-bottom: -2%; */}
 
   #foliage-container
   {
@@ -3254,7 +3492,7 @@ z-index: 4;
   }
   #road-01
   {
-    margin-top: -11.4rem;
+    margin-top: -11.95rem;
   }
   #cloud-container
   {
@@ -3271,17 +3509,17 @@ z-index: 4;
 
   }
   #email-section
-  {margin-top: 10%;margin-left: auto;}
+  {margin-top: 10%;margin-left: auto;z-index: 1;}
   #phone-section
-  {margin-bottom: 17%;margin-top: 15%;margin-left: auto;}
+  {margin-bottom: 17%;margin-top: 15%;margin-left: auto;z-index: 1;}
   #cv-section
   {
   margin-top: 18%;
   margin-right: auto;
+  z-index: 1;
   }
   #contact-container
   {
-    height: auto;
     overflow: visible;
     margin-bottom: 0;
   }
@@ -3378,7 +3616,7 @@ z-index: 4;
 
   #skills-css
   {
-    margin-left: auto;
+    margin-left: 0;
 }
 
   #about-content-02-text
@@ -3397,27 +3635,76 @@ z-index: 4;
 {
   body
   {
-    background: cyan;
+  }
+
+  #foliage-group-18
+  {
+    top: 79%;
+  }
+
+  .font-header
+  {
+    font-size: 5rem;
+  }
+
+  #city-flatline-svg
+  {
+-webkit-transform: none;
+transform: none;
+}
+
+
+    .foliage
+    {
+      -webkit-transform: none;
+      transform: none;
+    }
+
+  #contact-text
+  {
+    font-size: 1.85rem;
+  }
+
+  #cloud-grouping-section
+  {
+    display: none;
+  }
+
+  #copyright-container
+  {
+  }
+
+  #copyright-text
+  {
+  }
+
+  #thanks
+  {
+  }
+
+  #skills-container
+  {
+  z-index: 6;
+  }
+
+  #foliage-group-19
+  {
+    top: 80%;
   }
 
   #contact-container
   {
     z-index: 3;
+    /* margin-bottom: 10rem; */
   }
 
   #foliage-container
   {
-    z-index: 3;
+    z-index: 1;
   }
 
   #planet > svg
   {
-    -webkit-perspective: none;
-    -webkit-backface-visibility: visible;
-    -webkit-transform: none;
-    transform: none;
-    perspective: none;
-    backface-visibility: visible;
   }
 
   #hot-air-balloon-web-svg
@@ -3437,7 +3724,6 @@ z-index: 4;
 
   #fire-02
   {
-    display: none;
   }
 
   .paper-plane-container
@@ -3452,12 +3738,11 @@ z-index: 4;
 
   #moving-cloud-container
   {
-    display: none;
   }
 
   #intro-container
   {
-    z-index: 3;
+    z-index: 0;
   }
 
   .skill-anims > svg
@@ -3475,7 +3760,8 @@ z-index: 4;
     -webkit-transform: none;
     transform: none;
     perspective: none;
-    backface-visibility: visible;
+    backface-visibility: inherit;
+    transform-style: initial;
   }
 
   .foliage-show
@@ -3495,12 +3781,6 @@ z-index: 4;
 
   .skill-anims
   {
-    -webkit-backface-visibility: visible;
-    -webkit-transform: none;
-    transform: none;
-    -webkit-perspective: none;
-    perspective: none;
-    backface-visibility: visible;
   }
 
 
@@ -3518,7 +3798,7 @@ z-index: 4;
     -webkit-backface-visibility: visible;
     transform: none;
     perspective: none;
-    backface-visibility: visible;
+    backface-visibility: initial;
   }
 
   .road
@@ -3528,7 +3808,7 @@ z-index: 4;
     -webkit-transform: none;
     transform: none;
     perspective: none;
-    backface-visibility: visible;
+    backface-visibility: initial;
   }
 
   #cloud-group-three-01
@@ -3538,6 +3818,7 @@ z-index: 4;
 
   #road-container
   {
+  overflow: hidden;
   }
 
   .about-content
@@ -3566,7 +3847,7 @@ z-index: 4;
 
   #road-01
   {
-margin-top: -28rem;
+margin-top: -27.05rem;
 }
   .skill
   {

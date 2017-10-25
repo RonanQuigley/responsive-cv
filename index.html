@@ -2,11 +2,13 @@
 <html>
   <head>
     <title style="display: none">Ronan Quigley</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
     <meta name="author" content="Ronan Quigley">
     <meta name="description" content="Interactive CV of Web Developer Ronan Quigley">
     <meta name="keywords" content="cv, resume, interactive, web, developer, ronan, quigley">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
@@ -96,8 +98,8 @@
               </div>
             </div>
             <div id="city-flatline">
-                <svg preserveAspectRatio="none" viewBox="0 0 100 100">
-                  <line data-fill="none" stroke="black" x1="0" y1="0" x2="100" y2="0"></line>
+                <svg id="city-flatline-svg" preserveAspectRatio="none" class="hw-on" viewBox="0 0 100 100">
+                  <line id="city-flatline-line" data-fill="none" stroke="black" x1="0" y1="0" x2="100" y2="0"></line>
                 </svg>
             </div>
           </div>
@@ -148,30 +150,30 @@
       <div id="foliage-container">
         <div id="foliage-group-01" class="foliage-show">
           <div id="tree-01" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
               <path class="foliage-path" d="M68.6,93.5c-5.1,4.8-7.9,3.3-7.9,3.3s-0.7,3.6-6.9,5.7-8.3-.6-8.3-0.6-1.8,3-8.2,2-7.5-4.5-7.5-4.5-2.6,1.9-8.2-2-5.5-7.7-5.5-7.7-3,.6-6.9-5.7-2.7-9.7-2.7-9.7-3-.9-4.6-8.5,0.5-10.2.5-10.2-2.5-2.2-1.6-10,3.7-9.2,3.7-9.2S2.8,33.2,6,26.3s6.3-6.8,6.3-6.8-0.5-3.7,4.6-8.5,7.9-3.3,7.9-3.3,0.7-3.6,6.9-5.7,8.3,0.6,8.3.6,1.8-3,8.2-2,7.5,4.5,7.5,4.5,2.6-1.9,8.2,2,5.5,7.7,5.5,7.7,3-.6,6.9,5.7,2.7,9.7,2.7,9.7,3,0.9,4.6,8.5S83.2,49,83.2,49s2.5,2.2,1.6,10-3.7,9.2-3.7,9.2,1.6,3.2-1.6,10S73.3,85,73.3,85,73.7,88.7,68.6,93.5Z" fill="#ffffff"/>
               <path class="foliage-path" d="M34.7,133s3.8-37,1.7-46-9.3-9-11.9-9.6,15.4,1.5,24.1,3.5,8.7-3.2,12.2-5.8S46.3,88.8,45.4,87,46,132.1,51,133.3" fill="#ffffff"/>
             </svg>
           </div>
-          <div id="fire-01">
+          <div id="fire-01" class="fire">
           </div>
         </div>
         <div id="foliage-group-02" class="foliage-show">
           <div id="tree-02" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.6 134.3">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.6 134.3">
                 <path class="foliage-path" fill="#ffffff" d="M71.6,79.2C48,97.4,31.8,75.4,31.8,75.4S4.8,79.6.9,50.1,24.1,17.5,24.1,17.5,34-7.9,61.5,3.4,78.1,39.8,78.1,39.8,95.2,61.1,71.6,79.2Z"/>
                 <path class="foliage-path" fill="#ffffff" d="M24.3,133.6s20.8-51,15.6-60.1-10.1-9.1-14-9.7,35.7,2.9,27.6-2.9c16.2-.6-1.9,9.4-1.9,12.7s0,55.2,5.2,60.4"/>
             </svg>
           </div>
           <div id="tree-03" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
               <path class="foliage-path" fill="#ffffff" d="M25.3,133.5s19.4-9.9,12.9-52.9"/>
               <path class="foliage-path" fill="#ffffff" d="M45.2,0.5c9.6,0,11.6,10.6,8.6,9.9S57.6,1.2,66,5.6s5.3,14.8,3.1,12.8,7.6-6.4,13,1.5S80,35.5,78.9,32.6s9.7-2.1,10.8,7.4S80.6,52.8,81,49.8s9.6,2.6,6.2,11.6-14,7.1-12.3,4.6,7.2,6.8.1,13.1-15.7-.3-13-1.7,3.3,9.4-6,11.7-13.8-7.5-10.7-7.5S43.7,91.3,34.4,89s-8.7-13.1-6-11.7-5.9,8-13,1.7-1.6-15.6.1-13.1S6.6,70.3,3.2,61.3,9,46.7,9.4,49.8-0.6,49.5.6,40s11.9-10.2,10.8-7.4S2.8,27.8,8.2,19.9s15.3-3.5,13-1.5-5.4-8.3,3.1-12.8,15.2,4,12.2,4.7S35.6,0.5,45.2.5Z"/>
               <path class="foliage-path" fill="none" d="M66,133.5s-19.4-9.9-12.9-52.9" />
             </svg>
           </div>
           <div id="grass-01" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -179,13 +181,13 @@
         </div>
         <div id="foliage-group-03" class="foliage-show">
           <div id="tree-04" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
               <path class="foliage-path" fill="#ffffff" d="M62.1,132.7c-18.8-8.2-16-56.6-16-56.6s-11-16.4-7.9-2.7-11.5,58.7-11.5,58.7"/>
               <path class="foliage-path" fill="#ffffff" d="M53.3,1.2C65.5,4.3,66,15,62.9,12.9s7.1-5.4,14.4,4.8,0.8,18.8-.2,15.2,9,0.4,8,13S73.7,60.9,75.3,57.6s6.6,6.1-2.3,15.1-18.3,4.1-15,2.5S59.1,84,46.6,85.2s-16.7-8.7-13.1-7.8-4.8,7.5-15.2.4S11,60.5,13.2,63.5,4.6,66.2,1.3,54,6.9,36.1,6.6,39.7s-8.3-3.5-3-14.9,15.8-10.1,13.3-7.5S12.7,9.4,24.1,4s18.6,2.5,15,2.8S41.1-2,53.3,1.2Z"/>
             </svg>
           </div>
           <div id="tree-05" class="foliage foliage-width">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
               <path class="foliage-path" fill="#ffffff" d="M27.1,134.6s4.7-46.4,4.1-51.1,13,0,13,0-2.4,35.7,1.7,50.7"/>
               <path class="foliage-path" fill="#ffffff"  d="M31.1,89.2c2.3,0.3.7,10.1-9.1,4.8s-6.5-14.2-4.6-12.3S14.5,91,7.9,79.4s-0.7-17,.3-13.9S2.4,71.3.8,56.5,6.1,41.3,5.8,44.6s-7,1-3.3-13.1,9.9-9.4,8.5-6.6-6.4-4.2,1.6-13.7,11.8-1,9.7.4S18.2,3.3,28.5.9s10.6,7.7,8.2,7.3S36.1-1.9,45.9,3.4s6.5,14.2,4.6,12.3S53.4,6.4,60,18s0.7,17-.3,13.9,5.8-5.9,7.4,8.9-5.3,15.2-5.1,11.9,7-1,3.3,13.1-9.9,9.4-8.5,6.6,6.4,4.2-1.6,13.7-11.8,1-9.7-.4,4.1,8.3-6.2,10.7S28.8,88.9,31.1,89.2Z"/>
             </svg>
@@ -193,19 +195,19 @@
         </div>
         <div id="foliage-group-04" class="foliage-show">
           <div id="tree-06" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
               <path class="foliage-path" d="M68.6,93.5c-5.1,4.8-7.9,3.3-7.9,3.3s-0.7,3.6-6.9,5.7-8.3-.6-8.3-0.6-1.8,3-8.2,2-7.5-4.5-7.5-4.5-2.6,1.9-8.2-2-5.5-7.7-5.5-7.7-3,.6-6.9-5.7-2.7-9.7-2.7-9.7-3-.9-4.6-8.5,0.5-10.2.5-10.2-2.5-2.2-1.6-10,3.7-9.2,3.7-9.2S2.8,33.2,6,26.3s6.3-6.8,6.3-6.8-0.5-3.7,4.6-8.5,7.9-3.3,7.9-3.3,0.7-3.6,6.9-5.7,8.3,0.6,8.3.6,1.8-3,8.2-2,7.5,4.5,7.5,4.5,2.6-1.9,8.2,2,5.5,7.7,5.5,7.7,3-.6,6.9,5.7,2.7,9.7,2.7,9.7,3,0.9,4.6,8.5S83.2,49,83.2,49s2.5,2.2,1.6,10-3.7,9.2-3.7,9.2,1.6,3.2-1.6,10S73.3,85,73.3,85,73.7,88.7,68.6,93.5Z" fill="#ffffff"/>
               <path class="foliage-path" d="M34.7,133s3.8-37,1.7-46-9.3-9-11.9-9.6,15.4,1.5,24.1,3.5,8.7-3.2,12.2-5.8S46.3,88.8,45.4,87,46,132.1,51,133.3" fill="#ffffff"/>
             </svg>
           </div>
           <div id="flower-01" class="foliage flower">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.9 133.8">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.9 133.8">
               <path class="foliage-flower-path" fill="#ffffff" d="M82.5,80.5C61.6,102.9,43.9,63.4,43.9,63.4S10.7,91.2,1.7,61.9s33.9-26,33.9-26S28.4-5.6,58.2,1.3s4.4,42,4.4,42S103.4,58.1,82.5,80.5Z"/>
               <path class="foliage-flower-path" fill="#ffffff" d="M42.8,62.8s-22.2,38.4-20.5,71"/>
             </svg>
           </div>
           <div id="grass-02" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -213,20 +215,20 @@
         </div>
         <div id="foliage-group-05" class="foliage-show">
           <div id="tree-07" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
               <path class="foliage-path" fill="#ffffff" d="M25.3,133.5s19.4-9.9,12.9-52.9"/>
               <path class="foliage-path" fill="#ffffff" d="M45.2,0.5c9.6,0,11.6,10.6,8.6,9.9S57.6,1.2,66,5.6s5.3,14.8,3.1,12.8,7.6-6.4,13,1.5S80,35.5,78.9,32.6s9.7-2.1,10.8,7.4S80.6,52.8,81,49.8s9.6,2.6,6.2,11.6-14,7.1-12.3,4.6,7.2,6.8.1,13.1-15.7-.3-13-1.7,3.3,9.4-6,11.7-13.8-7.5-10.7-7.5S43.7,91.3,34.4,89s-8.7-13.1-6-11.7-5.9,8-13,1.7-1.6-15.6.1-13.1S6.6,70.3,3.2,61.3,9,46.7,9.4,49.8-0.6,49.5.6,40s11.9-10.2,10.8-7.4S2.8,27.8,8.2,19.9s15.3-3.5,13-1.5-5.4-8.3,3.1-12.8,15.2,4,12.2,4.7S35.6,0.5,45.2.5Z"/>
               <path class="foliage-path" fill="none" d="M66,133.5s-19.4-9.9-12.9-52.9" />
             </svg>
           </div>
           <div id="tree-08" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
               <path class="foliage-path" fill="#ffffff" d="M62.1,132.7c-18.8-8.2-16-56.6-16-56.6s-11-16.4-7.9-2.7-11.5,58.7-11.5,58.7"/>
               <path class="foliage-path" fill="#ffffff" d="M53.3,1.2C65.5,4.3,66,15,62.9,12.9s7.1-5.4,14.4,4.8,0.8,18.8-.2,15.2,9,0.4,8,13S73.7,60.9,75.3,57.6s6.6,6.1-2.3,15.1-18.3,4.1-15,2.5S59.1,84,46.6,85.2s-16.7-8.7-13.1-7.8-4.8,7.5-15.2.4S11,60.5,13.2,63.5,4.6,66.2,1.3,54,6.9,36.1,6.6,39.7s-8.3-3.5-3-14.9,15.8-10.1,13.3-7.5S12.7,9.4,24.1,4s18.6,2.5,15,2.8S41.1-2,53.3,1.2Z"/>
             </svg>
           </div>
           <div id="grass-03" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -235,13 +237,13 @@
 
         <div id="foliage-group-06" class="foliage-show">
           <div id="tree-09" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
               <path class="foliage-path" fill="#ffffff" d="M62.1,132.7c-18.8-8.2-16-56.6-16-56.6s-11-16.4-7.9-2.7-11.5,58.7-11.5,58.7"/>
               <path class="foliage-path" fill="#ffffff" d="M53.3,1.2C65.5,4.3,66,15,62.9,12.9s7.1-5.4,14.4,4.8,0.8,18.8-.2,15.2,9,0.4,8,13S73.7,60.9,75.3,57.6s6.6,6.1-2.3,15.1-18.3,4.1-15,2.5S59.1,84,46.6,85.2s-16.7-8.7-13.1-7.8-4.8,7.5-15.2.4S11,60.5,13.2,63.5,4.6,66.2,1.3,54,6.9,36.1,6.6,39.7s-8.3-3.5-3-14.9,15.8-10.1,13.3-7.5S12.7,9.4,24.1,4s18.6,2.5,15,2.8S41.1-2,53.3,1.2Z"/>
             </svg>
           </div>
           <div id="tree-10" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.6 134.3">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.6 134.3">
                 <path class="foliage-path" fill="#ffffff" d="M71.6,79.2C48,97.4,31.8,75.4,31.8,75.4S4.8,79.6.9,50.1,24.1,17.5,24.1,17.5,34-7.9,61.5,3.4,78.1,39.8,78.1,39.8,95.2,61.1,71.6,79.2Z"/>
                 <path class="foliage-path" fill="#ffffff" d="M24.3,133.6s20.8-51,15.6-60.1-10.1-9.1-14-9.7,35.7,2.9,27.6-2.9c16.2-.6-1.9,9.4-1.9,12.7s0,55.2,5.2,60.4"/>
             </svg>
@@ -249,13 +251,13 @@
         </div>
         <div id="foliage-group-07" class="foliage-show">
           <div id="grass-04" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
           </div>
           <div id="grass-05" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -263,19 +265,19 @@
         </div>
         <div id="foliage-group-08" class="foliage-show">
           <div id="tree-11" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
               <path class="foliage-path" d="M68.6,93.5c-5.1,4.8-7.9,3.3-7.9,3.3s-0.7,3.6-6.9,5.7-8.3-.6-8.3-0.6-1.8,3-8.2,2-7.5-4.5-7.5-4.5-2.6,1.9-8.2-2-5.5-7.7-5.5-7.7-3,.6-6.9-5.7-2.7-9.7-2.7-9.7-3-.9-4.6-8.5,0.5-10.2.5-10.2-2.5-2.2-1.6-10,3.7-9.2,3.7-9.2S2.8,33.2,6,26.3s6.3-6.8,6.3-6.8-0.5-3.7,4.6-8.5,7.9-3.3,7.9-3.3,0.7-3.6,6.9-5.7,8.3,0.6,8.3.6,1.8-3,8.2-2,7.5,4.5,7.5,4.5,2.6-1.9,8.2,2,5.5,7.7,5.5,7.7,3-.6,6.9,5.7,2.7,9.7,2.7,9.7,3,0.9,4.6,8.5S83.2,49,83.2,49s2.5,2.2,1.6,10-3.7,9.2-3.7,9.2,1.6,3.2-1.6,10S73.3,85,73.3,85,73.7,88.7,68.6,93.5Z" fill="#ffffff"/>
               <path class="foliage-path" d="M34.7,133s3.8-37,1.7-46-9.3-9-11.9-9.6,15.4,1.5,24.1,3.5,8.7-3.2,12.2-5.8S46.3,88.8,45.4,87,46,132.1,51,133.3" fill="#ffffff"/>
             </svg>
           </div>
           <div id="tree-12" class="foliage foliage-width">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
               <path class="foliage-path" fill="#ffffff" d="M27.1,134.6s4.7-46.4,4.1-51.1,13,0,13,0-2.4,35.7,1.7,50.7"/>
               <path class="foliage-path" fill="#ffffff"  d="M31.1,89.2c2.3,0.3.7,10.1-9.1,4.8s-6.5-14.2-4.6-12.3S14.5,91,7.9,79.4s-0.7-17,.3-13.9S2.4,71.3.8,56.5,6.1,41.3,5.8,44.6s-7,1-3.3-13.1,9.9-9.4,8.5-6.6-6.4-4.2,1.6-13.7,11.8-1,9.7.4S18.2,3.3,28.5.9s10.6,7.7,8.2,7.3S36.1-1.9,45.9,3.4s6.5,14.2,4.6,12.3S53.4,6.4,60,18s0.7,17-.3,13.9,5.8-5.9,7.4,8.9-5.3,15.2-5.1,11.9,7-1,3.3,13.1-9.9,9.4-8.5,6.6,6.4,4.2-1.6,13.7-11.8,1-9.7-.4,4.1,8.3-6.2,10.7S28.8,88.9,31.1,89.2Z"/>
             </svg>
           </div>
           <div id="tree-13" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
               <path class="foliage-path" fill="#ffffff" d="M25.3,133.5s19.4-9.9,12.9-52.9"/>
               <path class="foliage-path" fill="#ffffff" d="M45.2,0.5c9.6,0,11.6,10.6,8.6,9.9S57.6,1.2,66,5.6s5.3,14.8,3.1,12.8,7.6-6.4,13,1.5S80,35.5,78.9,32.6s9.7-2.1,10.8,7.4S80.6,52.8,81,49.8s9.6,2.6,6.2,11.6-14,7.1-12.3,4.6,7.2,6.8.1,13.1-15.7-.3-13-1.7,3.3,9.4-6,11.7-13.8-7.5-10.7-7.5S43.7,91.3,34.4,89s-8.7-13.1-6-11.7-5.9,8-13,1.7-1.6-15.6.1-13.1S6.6,70.3,3.2,61.3,9,46.7,9.4,49.8-0.6,49.5.6,40s11.9-10.2,10.8-7.4S2.8,27.8,8.2,19.9s15.3-3.5,13-1.5-5.4-8.3,3.1-12.8,15.2,4,12.2,4.7S35.6,0.5,45.2.5Z"/>
               <path class="foliage-path" fill="none" d="M66,133.5s-19.4-9.9-12.9-52.9" />
@@ -285,19 +287,19 @@
 
         <div id="foliage-group-09" class="foliage-show">
           <div id="flower-02" class="foliage flower">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.9 133.8">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.9 133.8">
               <path class="foliage-flower-path" fill="#ffffff" d="M82.5,80.5C61.6,102.9,43.9,63.4,43.9,63.4S10.7,91.2,1.7,61.9s33.9-26,33.9-26S28.4-5.6,58.2,1.3s4.4,42,4.4,42S103.4,58.1,82.5,80.5Z"/>
               <path class="foliage-flower-path" fill="#ffffff" d="M42.8,62.8s-22.2,38.4-20.5,71"/>
             </svg>
           </div>
           <div id="grass-06" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
           </div>
           <div id="grass-07" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -306,19 +308,19 @@
 
         <div id="foliage-group-10" class="foliage-show">
           <div id="tree-14" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
               <path class="foliage-path" d="M68.6,93.5c-5.1,4.8-7.9,3.3-7.9,3.3s-0.7,3.6-6.9,5.7-8.3-.6-8.3-0.6-1.8,3-8.2,2-7.5-4.5-7.5-4.5-2.6,1.9-8.2-2-5.5-7.7-5.5-7.7-3,.6-6.9-5.7-2.7-9.7-2.7-9.7-3-.9-4.6-8.5,0.5-10.2.5-10.2-2.5-2.2-1.6-10,3.7-9.2,3.7-9.2S2.8,33.2,6,26.3s6.3-6.8,6.3-6.8-0.5-3.7,4.6-8.5,7.9-3.3,7.9-3.3,0.7-3.6,6.9-5.7,8.3,0.6,8.3.6,1.8-3,8.2-2,7.5,4.5,7.5,4.5,2.6-1.9,8.2,2,5.5,7.7,5.5,7.7,3-.6,6.9,5.7,2.7,9.7,2.7,9.7,3,0.9,4.6,8.5S83.2,49,83.2,49s2.5,2.2,1.6,10-3.7,9.2-3.7,9.2,1.6,3.2-1.6,10S73.3,85,73.3,85,73.7,88.7,68.6,93.5Z" fill="#ffffff"/>
               <path class="foliage-path" d="M34.7,133s3.8-37,1.7-46-9.3-9-11.9-9.6,15.4,1.5,24.1,3.5,8.7-3.2,12.2-5.8S46.3,88.8,45.4,87,46,132.1,51,133.3" fill="#ffffff"/>
             </svg>
           </div>
           <div id="tree-15" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.6 134.3">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.6 134.3">
                 <path class="foliage-path" fill="#ffffff" d="M71.6,79.2C48,97.4,31.8,75.4,31.8,75.4S4.8,79.6.9,50.1,24.1,17.5,24.1,17.5,34-7.9,61.5,3.4,78.1,39.8,78.1,39.8,95.2,61.1,71.6,79.2Z"/>
                 <path class="foliage-path" fill="#ffffff" d="M24.3,133.6s20.8-51,15.6-60.1-10.1-9.1-14-9.7,35.7,2.9,27.6-2.9c16.2-.6-1.9,9.4-1.9,12.7s0,55.2,5.2,60.4"/>
             </svg>
           </div>
           <div id="tree-16" class="foliage foliage-width">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
               <path class="foliage-path" fill="#ffffff" d="M27.1,134.6s4.7-46.4,4.1-51.1,13,0,13,0-2.4,35.7,1.7,50.7"/>
               <path class="foliage-path" fill="#ffffff"  d="M31.1,89.2c2.3,0.3.7,10.1-9.1,4.8s-6.5-14.2-4.6-12.3S14.5,91,7.9,79.4s-0.7-17,.3-13.9S2.4,71.3.8,56.5,6.1,41.3,5.8,44.6s-7,1-3.3-13.1,9.9-9.4,8.5-6.6-6.4-4.2,1.6-13.7,11.8-1,9.7.4S18.2,3.3,28.5.9s10.6,7.7,8.2,7.3S36.1-1.9,45.9,3.4s6.5,14.2,4.6,12.3S53.4,6.4,60,18s0.7,17-.3,13.9,5.8-5.9,7.4,8.9-5.3,15.2-5.1,11.9,7-1,3.3,13.1-9.9,9.4-8.5,6.6,6.4,4.2-1.6,13.7-11.8,1-9.7-.4,4.1,8.3-6.2,10.7S28.8,88.9,31.1,89.2Z"/>
             </svg>
@@ -327,7 +329,7 @@
 
         <div id="foliage-group-11" class="foliage-show">
           <div id="tree-17" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
               <path class="foliage-path" fill="#ffffff" d="M25.3,133.5s19.4-9.9,12.9-52.9"/>
               <path class="foliage-path" fill="#ffffff" d="M45.2,0.5c9.6,0,11.6,10.6,8.6,9.9S57.6,1.2,66,5.6s5.3,14.8,3.1,12.8,7.6-6.4,13,1.5S80,35.5,78.9,32.6s9.7-2.1,10.8,7.4S80.6,52.8,81,49.8s9.6,2.6,6.2,11.6-14,7.1-12.3,4.6,7.2,6.8.1,13.1-15.7-.3-13-1.7,3.3,9.4-6,11.7-13.8-7.5-10.7-7.5S43.7,91.3,34.4,89s-8.7-13.1-6-11.7-5.9,8-13,1.7-1.6-15.6.1-13.1S6.6,70.3,3.2,61.3,9,46.7,9.4,49.8-0.6,49.5.6,40s11.9-10.2,10.8-7.4S2.8,27.8,8.2,19.9s15.3-3.5,13-1.5-5.4-8.3,3.1-12.8,15.2,4,12.2,4.7S35.6,0.5,45.2.5Z"/>
               <path class="foliage-path" fill="none" d="M66,133.5s-19.4-9.9-12.9-52.9" />
@@ -336,13 +338,13 @@
         </div>
         <div id="foliage-group-12" class="foliage-show">
           <div id="tree-18" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
               <path class="foliage-path" fill="#ffffff" d="M62.1,132.7c-18.8-8.2-16-56.6-16-56.6s-11-16.4-7.9-2.7-11.5,58.7-11.5,58.7"/>
               <path class="foliage-path" fill="#ffffff" d="M53.3,1.2C65.5,4.3,66,15,62.9,12.9s7.1-5.4,14.4,4.8,0.8,18.8-.2,15.2,9,0.4,8,13S73.7,60.9,75.3,57.6s6.6,6.1-2.3,15.1-18.3,4.1-15,2.5S59.1,84,46.6,85.2s-16.7-8.7-13.1-7.8-4.8,7.5-15.2.4S11,60.5,13.2,63.5,4.6,66.2,1.3,54,6.9,36.1,6.6,39.7s-8.3-3.5-3-14.9,15.8-10.1,13.3-7.5S12.7,9.4,24.1,4s18.6,2.5,15,2.8S41.1-2,53.3,1.2Z"/>
             </svg>
           </div>
           <div id="tree-19" class="foliage foliage-width">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
               <path class="foliage-path" fill="#ffffff" d="M27.1,134.6s4.7-46.4,4.1-51.1,13,0,13,0-2.4,35.7,1.7,50.7"/>
               <path class="foliage-path" fill="#ffffff"  d="M31.1,89.2c2.3,0.3.7,10.1-9.1,4.8s-6.5-14.2-4.6-12.3S14.5,91,7.9,79.4s-0.7-17,.3-13.9S2.4,71.3.8,56.5,6.1,41.3,5.8,44.6s-7,1-3.3-13.1,9.9-9.4,8.5-6.6-6.4-4.2,1.6-13.7,11.8-1,9.7.4S18.2,3.3,28.5.9s10.6,7.7,8.2,7.3S36.1-1.9,45.9,3.4s6.5,14.2,4.6,12.3S53.4,6.4,60,18s0.7,17-.3,13.9,5.8-5.9,7.4,8.9-5.3,15.2-5.1,11.9,7-1,3.3,13.1-9.9,9.4-8.5,6.6,6.4,4.2-1.6,13.7-11.8,1-9.7-.4,4.1,8.3-6.2,10.7S28.8,88.9,31.1,89.2Z"/>
             </svg>
@@ -350,19 +352,19 @@
         </div>
         <div id="foliage-group-13" class="foliage-show">
           <div id="tree-20" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
               <path class="foliage-path" d="M68.6,93.5c-5.1,4.8-7.9,3.3-7.9,3.3s-0.7,3.6-6.9,5.7-8.3-.6-8.3-0.6-1.8,3-8.2,2-7.5-4.5-7.5-4.5-2.6,1.9-8.2-2-5.5-7.7-5.5-7.7-3,.6-6.9-5.7-2.7-9.7-2.7-9.7-3-.9-4.6-8.5,0.5-10.2.5-10.2-2.5-2.2-1.6-10,3.7-9.2,3.7-9.2S2.8,33.2,6,26.3s6.3-6.8,6.3-6.8-0.5-3.7,4.6-8.5,7.9-3.3,7.9-3.3,0.7-3.6,6.9-5.7,8.3,0.6,8.3.6,1.8-3,8.2-2,7.5,4.5,7.5,4.5,2.6-1.9,8.2,2,5.5,7.7,5.5,7.7,3-.6,6.9,5.7,2.7,9.7,2.7,9.7,3,0.9,4.6,8.5S83.2,49,83.2,49s2.5,2.2,1.6,10-3.7,9.2-3.7,9.2,1.6,3.2-1.6,10S73.3,85,73.3,85,73.7,88.7,68.6,93.5Z" fill="#ffffff"/>
               <path class="foliage-path" d="M34.7,133s3.8-37,1.7-46-9.3-9-11.9-9.6,15.4,1.5,24.1,3.5,8.7-3.2,12.2-5.8S46.3,88.8,45.4,87,46,132.1,51,133.3" fill="#ffffff"/>
             </svg>
           </div>
           <div id="flower-03" class="foliage flower">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.9 133.8">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.9 133.8">
               <path class="foliage-flower-path" fill="#ffffff" d="M82.5,80.5C61.6,102.9,43.9,63.4,43.9,63.4S10.7,91.2,1.7,61.9s33.9-26,33.9-26S28.4-5.6,58.2,1.3s4.4,42,4.4,42S103.4,58.1,82.5,80.5Z"/>
               <path class="foliage-flower-path" fill="#ffffff" d="M42.8,62.8s-22.2,38.4-20.5,71"/>
             </svg>
           </div>
           <div id="grass-08" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -370,13 +372,13 @@
         </div>
         <div id="foliage-group-14" class="foliage-show">
           <div id="grass-09" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
           </div>
           <div id="grass-10" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -384,19 +386,19 @@
         </div>
         <div id="foliage-group-15" class="foliage-show">
           <div id="tree-21" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
               <path class="foliage-path" d="M68.6,93.5c-5.1,4.8-7.9,3.3-7.9,3.3s-0.7,3.6-6.9,5.7-8.3-.6-8.3-0.6-1.8,3-8.2,2-7.5-4.5-7.5-4.5-2.6,1.9-8.2-2-5.5-7.7-5.5-7.7-3,.6-6.9-5.7-2.7-9.7-2.7-9.7-3-.9-4.6-8.5,0.5-10.2.5-10.2-2.5-2.2-1.6-10,3.7-9.2,3.7-9.2S2.8,33.2,6,26.3s6.3-6.8,6.3-6.8-0.5-3.7,4.6-8.5,7.9-3.3,7.9-3.3,0.7-3.6,6.9-5.7,8.3,0.6,8.3.6,1.8-3,8.2-2,7.5,4.5,7.5,4.5,2.6-1.9,8.2,2,5.5,7.7,5.5,7.7,3-.6,6.9,5.7,2.7,9.7,2.7,9.7,3,0.9,4.6,8.5S83.2,49,83.2,49s2.5,2.2,1.6,10-3.7,9.2-3.7,9.2,1.6,3.2-1.6,10S73.3,85,73.3,85,73.7,88.7,68.6,93.5Z" fill="#ffffff"/>
               <path class="foliage-path" d="M34.7,133s3.8-37,1.7-46-9.3-9-11.9-9.6,15.4,1.5,24.1,3.5,8.7-3.2,12.2-5.8S46.3,88.8,45.4,87,46,132.1,51,133.3" fill="#ffffff"/>
             </svg>
           </div>
           <div id="tree-22" class="foliage foliage-width">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
               <path class="foliage-path" fill="#ffffff" d="M27.1,134.6s4.7-46.4,4.1-51.1,13,0,13,0-2.4,35.7,1.7,50.7"/>
               <path class="foliage-path" fill="#ffffff"  d="M31.1,89.2c2.3,0.3.7,10.1-9.1,4.8s-6.5-14.2-4.6-12.3S14.5,91,7.9,79.4s-0.7-17,.3-13.9S2.4,71.3.8,56.5,6.1,41.3,5.8,44.6s-7,1-3.3-13.1,9.9-9.4,8.5-6.6-6.4-4.2,1.6-13.7,11.8-1,9.7.4S18.2,3.3,28.5.9s10.6,7.7,8.2,7.3S36.1-1.9,45.9,3.4s6.5,14.2,4.6,12.3S53.4,6.4,60,18s0.7,17-.3,13.9,5.8-5.9,7.4,8.9-5.3,15.2-5.1,11.9,7-1,3.3,13.1-9.9,9.4-8.5,6.6,6.4,4.2-1.6,13.7-11.8,1-9.7-.4,4.1,8.3-6.2,10.7S28.8,88.9,31.1,89.2Z"/>
             </svg>
           </div>
           <div id="tree-23" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
               <path class="foliage-path" fill="#ffffff" d="M25.3,133.5s19.4-9.9,12.9-52.9"/>
               <path class="foliage-path" fill="#ffffff" d="M45.2,0.5c9.6,0,11.6,10.6,8.6,9.9S57.6,1.2,66,5.6s5.3,14.8,3.1,12.8,7.6-6.4,13,1.5S80,35.5,78.9,32.6s9.7-2.1,10.8,7.4S80.6,52.8,81,49.8s9.6,2.6,6.2,11.6-14,7.1-12.3,4.6,7.2,6.8.1,13.1-15.7-.3-13-1.7,3.3,9.4-6,11.7-13.8-7.5-10.7-7.5S43.7,91.3,34.4,89s-8.7-13.1-6-11.7-5.9,8-13,1.7-1.6-15.6.1-13.1S6.6,70.3,3.2,61.3,9,46.7,9.4,49.8-0.6,49.5.6,40s11.9-10.2,10.8-7.4S2.8,27.8,8.2,19.9s15.3-3.5,13-1.5-5.4-8.3,3.1-12.8,15.2,4,12.2,4.7S35.6,0.5,45.2.5Z"/>
               <path class="foliage-path" fill="none" d="M66,133.5s-19.4-9.9-12.9-52.9" />
@@ -405,7 +407,7 @@
         </div>
         <div id="foliage-group-16" class="foliage-show">
           <div id="tree-24" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.3 134">
               <path class="foliage-path" fill="#ffffff" d="M25.3,133.5s19.4-9.9,12.9-52.9"/>
               <path class="foliage-path" fill="#ffffff" d="M45.2,0.5c9.6,0,11.6,10.6,8.6,9.9S57.6,1.2,66,5.6s5.3,14.8,3.1,12.8,7.6-6.4,13,1.5S80,35.5,78.9,32.6s9.7-2.1,10.8,7.4S80.6,52.8,81,49.8s9.6,2.6,6.2,11.6-14,7.1-12.3,4.6,7.2,6.8.1,13.1-15.7-.3-13-1.7,3.3,9.4-6,11.7-13.8-7.5-10.7-7.5S43.7,91.3,34.4,89s-8.7-13.1-6-11.7-5.9,8-13,1.7-1.6-15.6.1-13.1S6.6,70.3,3.2,61.3,9,46.7,9.4,49.8-0.6,49.5.6,40s11.9-10.2,10.8-7.4S2.8,27.8,8.2,19.9s15.3-3.5,13-1.5-5.4-8.3,3.1-12.8,15.2,4,12.2,4.7S35.6,0.5,45.2.5Z"/>
               <path class="foliage-path" fill="none" d="M66,133.5s-19.4-9.9-12.9-52.9" />
@@ -414,13 +416,13 @@
         </div>
         <div id="foliage-group-17" class="foliage-show">
           <div id="tree-25" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
               <path class="foliage-path" fill="#ffffff" d="M62.1,132.7c-18.8-8.2-16-56.6-16-56.6s-11-16.4-7.9-2.7-11.5,58.7-11.5,58.7"/>
               <path class="foliage-path" fill="#ffffff" d="M53.3,1.2C65.5,4.3,66,15,62.9,12.9s7.1-5.4,14.4,4.8,0.8,18.8-.2,15.2,9,0.4,8,13S73.7,60.9,75.3,57.6s6.6,6.1-2.3,15.1-18.3,4.1-15,2.5S59.1,84,46.6,85.2s-16.7-8.7-13.1-7.8-4.8,7.5-15.2.4S11,60.5,13.2,63.5,4.6,66.2,1.3,54,6.9,36.1,6.6,39.7s-8.3-3.5-3-14.9,15.8-10.1,13.3-7.5S12.7,9.4,24.1,4s18.6,2.5,15,2.8S41.1-2,53.3,1.2Z"/>
             </svg>
           </div>
           <div id="tree-26" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.6 134.3">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.6 134.3">
                 <path class="foliage-path" fill="#ffffff" d="M71.6,79.2C48,97.4,31.8,75.4,31.8,75.4S4.8,79.6.9,50.1,24.1,17.5,24.1,17.5,34-7.9,61.5,3.4,78.1,39.8,78.1,39.8,95.2,61.1,71.6,79.2Z"/>
                 <path class="foliage-path" fill="#ffffff" d="M24.3,133.6s20.8-51,15.6-60.1-10.1-9.1-14-9.7,35.7,2.9,27.6-2.9c16.2-.6-1.9,9.4-1.9,12.7s0,55.2,5.2,60.4"/>
             </svg>
@@ -428,35 +430,35 @@
         </div>
         <div id="foliage-group-18" class="foliage-show">
           <div id="tree-27" class="foliage">
-            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
+            <svg class="foliage-svg" " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 133.8">
               <path class="foliage-path" d="M68.6,93.5c-5.1,4.8-7.9,3.3-7.9,3.3s-0.7,3.6-6.9,5.7-8.3-.6-8.3-0.6-1.8,3-8.2,2-7.5-4.5-7.5-4.5-2.6,1.9-8.2-2-5.5-7.7-5.5-7.7-3,.6-6.9-5.7-2.7-9.7-2.7-9.7-3-.9-4.6-8.5,0.5-10.2.5-10.2-2.5-2.2-1.6-10,3.7-9.2,3.7-9.2S2.8,33.2,6,26.3s6.3-6.8,6.3-6.8-0.5-3.7,4.6-8.5,7.9-3.3,7.9-3.3,0.7-3.6,6.9-5.7,8.3,0.6,8.3.6,1.8-3,8.2-2,7.5,4.5,7.5,4.5,2.6-1.9,8.2,2,5.5,7.7,5.5,7.7,3-.6,6.9,5.7,2.7,9.7,2.7,9.7,3,0.9,4.6,8.5S83.2,49,83.2,49s2.5,2.2,1.6,10-3.7,9.2-3.7,9.2,1.6,3.2-1.6,10S73.3,85,73.3,85,73.7,88.7,68.6,93.5Z" fill="#ffffff"/>
               <path class="foliage-path" d="M34.7,133s3.8-37,1.7-46-9.3-9-11.9-9.6,15.4,1.5,24.1,3.5,8.7-3.2,12.2-5.8S46.3,88.8,45.4,87,46,132.1,51,133.3" fill="#ffffff"/>
             </svg>
           </div>
-          <div id="fire-02">
+          <div id="fire-02" class="fire">
           </div>
           <div id="grass-11" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
           </div>
           <div id="grass-12" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
           </div>
         </div>
         <div id="foliage-group-19" class="foliage-show">
-          <div id="grass-13" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+          <div id="grass-14" class="foliage grass">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
           </div>
-          <div id="grass-14" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+          <div id="grass-13" class="foliage grass">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -464,13 +466,13 @@
         </div>
         <div id="foliage-group-20" class="foliage-show">
           <div id="tree-28" class="foliage">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.7 133.1">
               <path class="foliage-path" fill="#ffffff" d="M62.1,132.7c-18.8-8.2-16-56.6-16-56.6s-11-16.4-7.9-2.7-11.5,58.7-11.5,58.7"/>
               <path class="foliage-path" fill="#ffffff" d="M53.3,1.2C65.5,4.3,66,15,62.9,12.9s7.1-5.4,14.4,4.8,0.8,18.8-.2,15.2,9,0.4,8,13S73.7,60.9,75.3,57.6s6.6,6.1-2.3,15.1-18.3,4.1-15,2.5S59.1,84,46.6,85.2s-16.7-8.7-13.1-7.8-4.8,7.5-15.2.4S11,60.5,13.2,63.5,4.6,66.2,1.3,54,6.9,36.1,6.6,39.7s-8.3-3.5-3-14.9,15.8-10.1,13.3-7.5S12.7,9.4,24.1,4s18.6,2.5,15,2.8S41.1-2,53.3,1.2Z"/>
             </svg>
           </div>
           <div id="tree-29" class="foliage foliage-width">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.9 134.6">
               <path class="foliage-path" fill="#ffffff" d="M27.1,134.6s4.7-46.4,4.1-51.1,13,0,13,0-2.4,35.7,1.7,50.7"/>
               <path class="foliage-path" fill="#ffffff"  d="M31.1,89.2c2.3,0.3.7,10.1-9.1,4.8s-6.5-14.2-4.6-12.3S14.5,91,7.9,79.4s-0.7-17,.3-13.9S2.4,71.3.8,56.5,6.1,41.3,5.8,44.6s-7,1-3.3-13.1,9.9-9.4,8.5-6.6-6.4-4.2,1.6-13.7,11.8-1,9.7.4S18.2,3.3,28.5.9s10.6,7.7,8.2,7.3S36.1-1.9,45.9,3.4s6.5,14.2,4.6,12.3S53.4,6.4,60,18s0.7,17-.3,13.9,5.8-5.9,7.4,8.9-5.3,15.2-5.1,11.9,7-1,3.3,13.1-9.9,9.4-8.5,6.6,6.4,4.2-1.6,13.7-11.8,1-9.7-.4,4.1,8.3-6.2,10.7S28.8,88.9,31.1,89.2Z"/>
             </svg>
@@ -478,13 +480,13 @@
         </div>
         <div id="foliage-group-21" class="foliage-show">
           <div id="grass-16" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
           </div>
           <div id="grass-15" class="foliage grass">
-            <svg xmlns="http://www.w3.org/2000/s16" viewBox="0 0 332.3 139.4">
+            <svg class="foliage-svg" xmlns="http://www.w3.org/2000/s16" viewBox="0 0 332.3 139.4">
               <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>
               <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>
             </svg>
@@ -632,6 +634,7 @@
             <line data-ignore="true" class="road-middle" x1="0" y1="5" x2="100" y2="95"></line>
           </svg>
         </div>
+        <!--
         <div class="road">
           <svg class="road-svg" style="position: absolute" viewBox="0 0 100 100" preserveAspectRatio="none" >
             <line class="road-top" x1="100" y1="0" x2="0" y2="90"></line>
@@ -661,7 +664,7 @@
             <line class="road-middle-solid" x1="100" y1="5" x2="0" y2="95"></line>
             <line data-ignore="true" class="road-middle" x1="100" y1="5" x2="0" y2="95"></line>
           </svg>
-        </div>
+        </div> -->
       </div>
       <div id="about-container">
         <header id="about-header" class="header">
@@ -1083,7 +1086,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.631 45.631">
                   <g stroke-miterlimit="10">
                       <path id="cv-box" fill="#fff" stroke="#231f20" d="M.5.5h44.631v44.631H.5z"/>
-                      <path id="cv-outlines"  stroke="#000" d="M19.991 31.444c-.934.487-3.004 1.137-5.644 1.137-5.928 0-9.785-4.02-9.785-10.029 0-6.05 4.142-10.435 10.557-10.435 2.111 0 3.979.528 4.954 1.015l-.813 2.761c-.853-.487-2.192-.934-4.142-.934-4.507 0-6.943 3.33-6.943 7.43 0 4.548 2.924 7.35 6.821 7.35 2.03 0 3.37-.528 4.386-.975l.609 2.68zM26.288 12.522l3.857 11.044c.649 1.787 1.178 3.411 1.584 5.035h.121c.447-1.624 1.016-3.248 1.665-5.035l3.816-11.044h3.736l-7.715 19.652h-3.411L22.47 12.522h3.818z"/>
+                      <path id="cv-outlines" class="" stroke="#000" d="M19.991 31.444c-.934.487-3.004 1.137-5.644 1.137-5.928 0-9.785-4.02-9.785-10.029 0-6.05 4.142-10.435 10.557-10.435 2.111 0 3.979.528 4.954 1.015l-.813 2.761c-.853-.487-2.192-.934-4.142-.934-4.507 0-6.943 3.33-6.943 7.43 0 4.548 2.924 7.35 6.821 7.35 2.03 0 3.37-.528 4.386-.975l.609 2.68zM26.288 12.522l3.857 11.044c.649 1.787 1.178 3.411 1.584 5.035h.121c.447-1.624 1.016-3.248 1.665-5.035l3.816-11.044h3.736l-7.715 19.652h-3.411L22.47 12.522h3.818z"/>
                   </g>
               </svg>
             </a>
@@ -1122,15 +1125,15 @@
             </div>
           </div>
         </div>
-        <footer id="copyright-container">
-          <div id="copyright-text" class="copyright-font">
-            © Ronan Quigley 2017 <br> Some Rights Reserved
-          </div>
-          <div id="thanks" class="copyright-font">
-            Thanks for reading!
-          </div>
-        <footer>
       </div>
+      <footer id="copyright-container">
+        <div id="copyright-text" class="copyright-font">
+          © Ronan Quigley 2017 <br> Some Rights Reserved
+        </div>
+        <div id="thanks" class="copyright-font">
+          Thanks for reading!
+        </div>
+      <footer>
     </div>
   </body>
 </html>
