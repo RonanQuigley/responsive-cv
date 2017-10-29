@@ -3,6 +3,7 @@ var documentBodyWidth = null;
 var documentWindow = $(window);
 var previousWindowWidth = null;
 var deviceScreenWidth = screen.width;
+var isTouchDevice = false;
 var skillAnims = [];
 
 function convertPXtoRem(px)
@@ -10,9 +11,31 @@ function convertPXtoRem(px)
     return px / parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
-function GetRandomArbitrary(min, max)
+function RandomRange(min, max)
 {
   return Math.random() * (max - min) + min;
+}
+
+function GenerateRandomBool()
+{
+  return Math.random() >= 0.5;
+}
+
+function WidthPercentageToPixel(elem, perc)
+{
+  return ($(elem).outerWidth()/100) * parseFloat(perc);
+}
+
+function HeightPercentageToPixel(elem, perc){
+  var _parentElementHeight = $(elem).parent().outerHeight();
+  if(_parentElementHeight != 0)
+  {
+    return (_parentElementHeight / 100) * parseFloat(perc);
+  }
+  else
+  {
+    return (documentBody.outerHeight() / 100) * parseFloat(perc);
+  }
 }
 
 function AnimateBodymovin(element, data, svgAspectRatio, autoPlay)
@@ -21,13 +44,13 @@ function AnimateBodymovin(element, data, svgAspectRatio, autoPlay)
   {
     svgAspectRatio = "xMidYMid meet";
   }
-  var elem = document.getElementById(element);
-  if(elem == null)
+  var _element = document.getElementById(element);
+  if(_element == null)
   {
     throw Error("Cannot find element to animate: " + element.toString());
   }
 	var animData = {
-			container: elem,
+			container: _element,
 			renderer: 'svg',
 			loop: true,
 			autoplay: autoPlay,
@@ -37,10 +60,10 @@ function AnimateBodymovin(element, data, svgAspectRatio, autoPlay)
 			},
 			path: data
 	};
-  var anim;
-	anim = bodymovin.loadAnimation(animData);
+  var _anim;
+	_anim = bodymovin.loadAnimation(animData);
   bodymovin.setQuality(2); // the lowest possible quality
-  return anim;
+  return _anim;
 }
 
 function EnableHWAcceleration(element)
@@ -56,10 +79,9 @@ function EnableHWAcceleration(element)
 
 function DisableHWAcceleration(element)
 {
-  var _element = $(element);
-  if(_element.attr('class') == 'hw-on')
+  if(element.attr('class') == 'hw-on')
   {
-    _element.removeClass("hw-on").addClass("hw-off");
+    element.removeClass("hw-on").addClass("hw-off");
   }
   else
     return;
@@ -67,7 +89,7 @@ function DisableHWAcceleration(element)
 
 function CheckIfAnimationIsOnScreen(element, animation)
 {
-  var waypoint = new Waypoint.Inview({
+  new Waypoint.Inview({
     element: element,
     enter: function()
     {
@@ -83,21 +105,21 @@ function CheckIfAnimationIsOnScreen(element, animation)
 function CheckIfCityBuildingsAnimIsOnScreen(element, vivus)
 {
   var _cityBuildingsSVG = $('#city-buildings-svg');
-  var waypoint = new Waypoint.Inview({
+  var _waypoint = new Waypoint.Inview({
     element: element,
     enter: function()
     {
+      DisableSkillAnims();
       vivus[0].play(1, function(){
         EnableSkillAnims();
-        //DisableHWAcceleration(_cityBuildingsSVG);
-        waypoint.destroy();
+        DisableHWAcceleration(_cityBuildingsSVG);
+        _waypoint.destroy();
       });
-      //EnableHWAcceleration(_cityBuildingsSVG)
-      DisableSkillAnims();
+      EnableHWAcceleration(_cityBuildingsSVG)
     },
     exited: function()
     {
-      //DisableHWAcceleration(_cityBuildingsSVG);
+      DisableHWAcceleration(_cityBuildingsSVG);
       if(documentBody.outerWidth() <= 480)
       {
         vivus[0].stop();
@@ -106,7 +128,7 @@ function CheckIfCityBuildingsAnimIsOnScreen(element, vivus)
       else
       {
         vivus[0].finish();
-        waypoint.destroy();
+        _waypoint.destroy();
       }
     }
   });
@@ -162,7 +184,7 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
   // used to know when we can pause the animation
   function CheckIfElementIsOnScreen()
   {
-    var waypoint = new Waypoint.Inview({
+    new Waypoint.Inview({
       element: _parentElement,
       enter: function() // element is on screen
       {
@@ -195,7 +217,7 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
     _endX = documentBody.outerWidth();
     _randomY = Math.random() * yRandomMax;
     _yValue = HeightPercentageToPixel(element, '' + _randomY + '%');
-    _duration = RandomDurationGenerator(minDuration, maxDuration);
+    _duration = RandomDuration(minDuration, maxDuration);
     _tween = TweenLite.fromTo(element, _duration, {x: (_flipStart == false ? _startX : _endX),
           y: _yValue, rotation: rotation}, {x: (_flipStart == false ? _endX : _startX), y: _yValue,
             ease:easing, force3D:force3dTranslate, onComplete:Translate});
@@ -205,7 +227,7 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
       _tween.kill(); // kill the animating tween
       Translate();
   }
-  // attempt to discern if this is a mobile; we prevent calls stacking due to zoom
+  // for desktop browser zooming; note that this wont work if the browser is not full screen
   if(!IsZoomed())
   {
     documentWindow.resize(Reset)
@@ -218,7 +240,6 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
 
 function IsZoomed()
 {
-
   if (documentWindow.outerWidth() != deviceScreenWidth)
   {
     return true;
@@ -226,28 +247,6 @@ function IsZoomed()
   else
   {
     return false;
-  }
-}
-
-function GenerateRandomBool()
-{
-  return Math.random() >= 0.5;
-}
-
-function WidthPercentageToPixel(_elem, _perc)
-{
-  return ($(_elem).outerWidth()/100)* parseFloat(_perc);
-}
-
-function HeightPercentageToPixel(_elem, _perc){
-  var _parentElementHeight = $(_elem).parent().outerHeight();
-  if(_parentElementHeight != 0)
-  {
-    return (_parentElementHeight / 100) * parseFloat(_perc);
-  }
-  else
-  {
-    return (documentBody.outerHeight() / 100) * parseFloat(_perc);
   }
 }
 
@@ -265,7 +264,7 @@ function HideElements(elementContainer)
   }
   for(var i = 0; i < _elementContainerChildren.length; i++)
   {
-    var _currentChild = $(_elementContainerChildren[i]);
+    var _currentChild = _elementContainerChildren.eq(i);
     if(_currentChild.css('display') != 'none')
     {
       _currentChild.css('visibility', 'hidden');
@@ -275,8 +274,8 @@ function HideElements(elementContainer)
 
 function AnimateStroke(element, length, easing, optionals)
 {
-  var parentElement = $(element);
-  var _svgElements = parentElement.children(); // get all child elements from the div container
+  var _parentElement = $(element);
+  var _svgElements = _parentElement.children(); // get all child elements from the div container
   var _scenarioType = 'delayed';
   var _startStype = 'inViewport';
   var _animElements = []; // each of our svgs will be stored in an array for f() returning
@@ -287,10 +286,10 @@ function AnimateStroke(element, length, easing, optionals)
   }
   for(var i = 0; i < _svgElements.length; i++)
   {
-    var _currentSVGElement = $(_svgElements[i]); // get current svg element from array
+    var _currentSVGElement = _svgElements.eq(i); // get current svg element from array
     var _isRoad = false;
-    var _parentID = parentElement.attr('id');
-    if(_parentID.substring(0, 4) == 'road' && _isRoad == false)
+    var _parentID = _parentElement.attr('id');
+    if(_isRoad == false && _parentID.substring(0, 4) == 'road')
     {
       _isRoad = true;
     }
@@ -300,7 +299,7 @@ function AnimateStroke(element, length, easing, optionals)
       {
         if(_isRoad)
         {
-          parentElement.css('visibility', 'visible');
+          _parentElement.css('visibility', 'visible');
           return;
         }
         // SetFillToNone(_currentSVGElement);
@@ -316,24 +315,20 @@ function AnimateStroke(element, length, easing, optionals)
           {
             if(_documentWidth <= 480)
             {
-              TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0);
+              TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
               AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
             }
             else if(_documentWidth > 480 && _documentWidth <= 1024)
             {
-              AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
-              AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', false);
-              TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0);
+              AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', true);
+              AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', true);
+              TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
             }
             else
             {
-              TranslateElement('#cloud-group-three-01', 15, 20, true, Linear.easeNone, true, 60, 0);
+              TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
             }
           }
-        }
-        else if(_parentID == 'city-flatline')
-        {
-          //DisableHWAcceleration(_currentSVGElement[0]);
         }
       }
       ));
@@ -359,27 +354,27 @@ function SetFillToWhite(svgElement, duration)
   if(_currentSVGElementParentID == 'hot-air-balloon-web')
   {
     var _path = _currentSVGElement.find('#_Ellipse_'); // we just need to animate one path's fill
-    TweenLite.fromTo($(_path), 1, {fill: _white, attr:{"fill-opacity":0}}, {attr:{"fill-opacity":1}});
+    TweenLite.fromTo(_path, 1, {fill: _white, attr:{"fill-opacity":0}}, {attr:{"fill-opacity":1}});
   }
   else
   {
     for(var i = 0; i < _paths.length; i++)
     {
       var _paths = _currentSVGElement.find('path'); // find all the paths in our svg element
-      TweenLite.fromTo($(_paths[i])[0], 1, {fill: _white, attr:{"fill-opacity":0}}, {attr:{"fill-opacity":1}});
+      TweenLite.fromTo(_paths.eq(i)[0], 1, {fill: _white, attr:{"fill-opacity":0}}, {attr:{"fill-opacity":1}});
     }
   }
 }
 
-function PopInFoliage(foliage)
+function PopInFoliage(foliageContainer)
 {
-  var _foliage = $(foliage);
-  if(_foliage.css('display') != "none")
+  var _foliageContainer = $(foliageContainer);
+  if(_foliageContainer.css('display') != "none")
   {
-    var _foliageChildren = $(_foliage).children().slice(2);
+    var _foliageChildren = _foliageContainer.children().slice(2);
     for(var i = 0; i < _foliageChildren.length; i++)
     {
-      var _currentFoliage = _foliageChildren[i];
+      var _currentFoliage = _foliageChildren.eq(i);
       GenerateFoliageWaypoint(_currentFoliage);
     }
   }
@@ -387,8 +382,20 @@ function PopInFoliage(foliage)
 
 function FadeInAnimation(element, duration)
 {
-  $(element).css('visibility', 'visible');
-  TweenLite.fromTo(element, duration, {opacity: 0},{opacity: 1, ease: Power1.easeIn})
+  var _element = $(element);
+  if(!_element.is('body'))
+  {
+    _element.css('visibility', 'visible');
+    TweenLite.fromTo(element, duration, {opacity: 0}, {opacity: 1, ease: Power1.easeIn, onComplete: function(){
+      _element.css('opacity', '');
+    }})
+  }
+  else
+  {
+    TweenLite.fromTo(element, duration, {opacity: 0},{opacity: 1, ease: Power1.easeIn, onComplete: function(){
+      _element.css({"opacity": '', "visibility": ''});
+    }})
+  }
 }
 
 function AnimateBalloon(element, duration, minHeight, maxHeight, force3D)
@@ -397,14 +404,14 @@ function AnimateBalloon(element, duration, minHeight, maxHeight, force3D)
   var _paused = false;
   if(_documentWindowWidth <=  480)
   {
-    _paused = true;
+    _paused = true; // we do this for a perfomance gain; the tween doesn't animate until the stroke animations in the DOM are complete
   }
   var _tween = TweenMax.fromTo(element, duration, { y: minHeight},
     {y: maxHeight, ease: Sine.easeInOut , repeat: -1, yoyo: true,
       force3D: force3D, paused: _paused});
   function CheckIfBalloonIsOnScreen()
   {
-    var waypoint = new Waypoint.Inview({
+    new Waypoint.Inview({
       element: element,
       enter: function()
       {
@@ -428,7 +435,7 @@ function SetRoadIDs(roadContainerElement)
   var _roadContainerChildren = $(roadContainerElement).children().slice(1);
   for(var i = 0; i < _roadContainerChildren.length; i++)
   {
-    $(_roadContainerChildren[i]).attr('id', '' + _roadString + '' + (i + 2))
+    _roadContainerChildren.eq(i).attr('id', '' + _roadString + '' + (i + 2))
   }
 }
 
@@ -437,7 +444,7 @@ function GenerateRoad(roadContainer, bodyWidth)
   var _children = roadContainer.children().slice(1);
   for(var i = 0; i < _children.length; i++)
   {
-    if($(_children[i]).css('display') != 'none')
+    if(_children.eq(i).css('display') != 'none')
     {
       GenerateRoadWaypoint(_children[i]);
     }
@@ -446,121 +453,150 @@ function GenerateRoad(roadContainer, bodyWidth)
 
 function GenerateRoadWaypoint(roadElement)
 {
-  var vivus = AnimateStroke(roadElement, 40, Vivus.LINEAR,
+  var _vivus = AnimateStroke(roadElement, 40, Vivus.LINEAR,
   {startType: 'manual', scenarioType: 'oneByOne'});
-  var waypoint = new Waypoint({
+  var _waypoint = new Waypoint({
     element: roadElement,
     handler: function() {
       // iterate over each path i
-      for(var i = 0; i < vivus.length; i++)
+      for(var i = 0; i < _vivus.length; i++)
       {
-        if(i == vivus.length - 1)
+        if(i == _vivus.length - 1)
         {
-          vivus[i].play(1, function(){waypoint.destroy});
+          _vivus[i].play(1, function(){_waypoint.destroy});
         }
         else
-          vivus[i].play();
+          _vivus[i].play();
       }
     },
-    offset: '70%'
+    offset: '80%'
   });
 }
 
 function GenerateFoliageWaypoint(foliageElement)
 {
-  var timeline = new TimelineMax();
-  var _foliageElement= $(foliageElement); // create a jquery object
-  var _offset = '' + GetRandomArbitrary(50, 95) + '%';
-  var _delay = GetRandomArbitrary(0, 0.1);
+  var _timeline = new TimelineMax();
+  var _offset = '' + RandomRange(50, 95) + '%';
+  var _delay = RandomRange(0, 0.1);
   var _force3D = true;
-  /*
-  var _foliageIDNumber = parseInt(_foliageElement.attr('id').substring(14, 16));
-  if(_foliageIDNumber >= 8 && _foliageIDNumber <= 14 )
-  {
-    _force3D = false;
-  }*/
-  var waypoint = new Waypoint({
+  var _waypoint = new Waypoint({
     element: foliageElement,
     handler: function(direction) {
-      if(_foliageElement.css('display') != 'none') // fail safe to prevent unnecessary transformations on mobile browsers
+      if(foliageElement.css('display') != 'none') // fail safe to prevent unnecessary transformations on mobile browsers
       {
-        _foliageElement.css('visibility', 'visible');
-        timeline.append(TweenMax.fromTo(foliageElement, 0.3,
+        foliageElement.css('visibility', 'visible');
+        _timeline.append(TweenMax.fromTo(foliageElement, 0.3,
           {scaleY: 0.0, force3D: _force3D, rotation: 0}, {scaleY: 1.05, force3D: _force3D, rotation: 0})).
           to(foliageElement, 0.3, {scaleY: 1, force3D: _force3D, rotation: 0});
-        timeline.delay(_delay);
-        waypoint.disable();
+        _timeline.delay(_delay);
+        _waypoint.disable();
       }
     },
     offset: _offset
   });
 }
 
-function RandomDurationGenerator(min, max)
+function RandomDuration(min, max)
 {
   return Math.max(min, Math.random() * max);
 }
-var _hasTouch = false;
 
-$('#email').on('touchstart touchend', function (e) {
-  _hasTouch = true;
-});
+function OnHoverOverCV()
+{
+  var _cv = $('#cv');
+  var _cvOutlines = $('#cv-outlines');
+  _cv.on('touchstart', function()
+  {
+    _cvOutlines.css('fill', 'black');
+  });
+  _cv.on('touchend', function()
+  {
+    _cvOutlines.css('fill', 'white');
+  });
+}
+
 function OnHoverOverEmail()
 {
-  if(!_hasTouch)
+  var _emailBox = $('#email-box');
+  var _elementTimeline = new TimelineMax({repeat:-1, paused: true, yoyo: true});
+  var _email = $('#email');
+  var _emailContainer = $('#cloud-contact-01');
+  _elementTimeline.add(TweenMax.fromTo(_email, 0.15, {rotation: 10}, {rotation: -10, ease: Linear.easeNone}));
+  TweenLite.to(_email, 0, {rotation: 0}); // timeline initially pauses at a rotation of 10; we don't want that
+  $(_emailContainer.hover(function()
   {
-    var _emailBox = $('#email-box');
-    var _elementTimeline = new TimelineMax({repeat:-1, paused: true, yoyo: true});
-    var _email = $('#email');
-    var _emailContainer = $('#cloud-contact-01');
-    _elementTimeline.add(TweenMax.fromTo(_email, 0.15, {rotation: 10}, {rotation: -10, ease: Linear.easeNone}));
-    TweenLite.to(_email, 0, {rotation: 0}); // timeline initially pauses at a rotation of 10; we don't want that
-    $(_emailContainer.hover(function()
+    if(isTouchDevice)
     {
-      // animate the box which contains the email text
-      TweenLite.to(_emailBox, 0.1, {y: 140, force3D: "auto"});
-      // console.log("rotate email");
-      TweenLite.to(_email, 0.1, {rotation: 10, force3D: "auto", ease: Linear.easeNone, onComplete: function()
-      {
-        _elementTimeline.restart();
-      }});
-    }, function()
+      return;
+    }
+    // animate the box which contains the email text
+    TweenLite.to(_emailBox, 0.1, {y: 140, force3D: "auto"});
+    // console.log("rotate email");
+    TweenLite.to(_email, 0.1, {rotation: 10, force3D: "auto", ease: Linear.easeNone, onComplete: function()
     {
-        TweenLite.to(_emailBox, 0.2, {y: 100, force3D: false});
-        _elementTimeline.kill();
-        // console.log("set back to normal");
-        TweenLite.to(_email, 0.1, {rotation: 0});
-    }));
-  }
-  else
+      _elementTimeline.restart();
+    }});
+  }, function()
   {
-      console.log(_hasTouch);
-  }
+    if(isTouchDevice)
+    {
+      return;
+    }
+    TweenLite.to(_emailBox, 0.2, {y: 100, force3D: false});
+    _elementTimeline.kill();
+    // console.log("set back to normal");
+    TweenLite.to(_email, 0.1, {rotation: 0});
+  }));
 }
 
 function OnHoverOverPhone()
 {
   var _phoneBox = $('#phone-box');
   var _element = $('#phone');
+  var _phonePath = $('#phone-path');
   var _elementContainer = $('#cloud-contact-03');
-  // console.log(_elementContainer);
-
+  var _toggle = false;
   TweenLite.to(_element, 0, {rotation: 0.000001}); // timeline initially pauses at a rotation of 10; we don't want that
   $(_elementContainer.hover(function()
   {
-    TweenLite.to(_phoneBox, 0.1, {y: 140, force3D: "auto"});
+    if(!isTouchDevice)
+    {
+      _phonePath.css('fill', 'black');
+      TweenLite.to(_phoneBox, 0.1, {y: 140, force3D: "auto"});
+    }
   }, function()
   {
-    TweenLite.to(_phoneBox, 0.2, {y: 100, force3D: "auto"});
+    if(!isTouchDevice)
+    {
+     _phonePath.css('fill', 'white');
+      TweenLite.to(_phoneBox, 0.2, {y: 100, force3D: "auto"});
+    }
   }));
+
+  _element.on('touchstart', function()
+  {
+    if(isTouchDevice)
+    {
+      _toggle = !_toggle;
+      if(_toggle == false)
+      {
+        _phonePath.css('fill', 'white');
+        TweenLite.to(_phoneBox, 0.1, {y: 100, force3D: "auto"});
+      }
+      else
+      {
+        _phonePath.css('fill', 'black');
+        TweenLite.to(_phoneBox, 0.1, {y: 140, force3D: "auto"});
+      }
+    }
+  });
 }
 
-function Init()
+function Initialise()
 {
   // fade in the whole page
-
   SetRoadIDs('#road-container');
-  var _autoPlay = false;
+  var _autoPlay = documentBodyWidth > 480 ? true : false;
   var _duration = 180;
   var _easing = Vivus.LINEAR;
   var _isMobileDevice;
@@ -576,9 +612,6 @@ function Init()
   if(documentBodyWidth > 480)
   {
     FadeInAnimation('body', 0.7);
-    var _fireAnimB = null;
-    _fireAnimB = AnimateBodymovin('fire-02', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
-    CheckIfAnimationIsOnScreen('#fire-02', _fireAnimB);
     CheckIfAnimationIsOnScreen('#skills-web-development', skillAnims[0]);
     CheckIfAnimationIsOnScreen('#skills-html', skillAnims[1]);
     CheckIfAnimationIsOnScreen('#skills-css', skillAnims[2]);
@@ -596,12 +629,15 @@ function Init()
       //FadeInAnimation('#road-01', 1);
       // AnimateStroke('#road-01', _duration - 120, _easing, {startType: 'autostart', scenarioType: 'delayed'});
       GenerateRoad($('#road-container'), documentBodyWidth);
-      AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
-      AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', false);
+      AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', true);
+      AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', true);
       // AnimateStroke('#city-flatline', _duration - 120, _easing, {scenarioType: 'scenario-sync'});
       PopInFoliage($('#foliage-container'));
       var _fireAnimA = AnimateBodymovin('fire-01', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
       CheckIfAnimationIsOnScreen('#fire-01', _fireAnimA);
+      var _fireAnimB = null;
+      _fireAnimB = AnimateBodymovin('fire-02', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
+      CheckIfAnimationIsOnScreen('#fire-02', _fireAnimB);
     }
     else
     {
@@ -612,36 +648,43 @@ function Init()
   else
   {
     AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', false);
-    AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'delayed', documentWidth : documentBodyWidth});
+    _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'delayed', documentWidth : documentBodyWidth});
+    CheckIfCityBuildingsAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
   }
   OnHoverOverEmail();
+  OnHoverOverCV();
   OnHoverOverPhone();
 }
 
+$(window).on('touchstart', function () {
+  // register any touch event on the window
+  if(isTouchDevice == false)
+  {
+    isTouchDevice = true;
+  }
+});
 
-
-
-documentWindow.resize(IsZoomed);
 $(document).ready(function()
 {
-  $('html,body').animate({scrollTop:0},0);
-  Init();
+  $('html,body').animate({scrollTop:0},0); // on page load, set the scroll to the top of the page
+  Initialise();
 })
 
-// safari bug with font loading - fix is to load it as the very last thing with the laod event
+// safari bug with font loading - fix is to load it as the very last thing with the laod event and add a setTimeout delay
 $(window).on('load', function()
 {
-    setTimeout(function()
+  var _delay = 100;
+  setTimeout(function()
+  {
+    if(documentBody.outerWidth() > 480)
     {
-      if(documentBody.outerWidth() > 480)
-      {
-        var _animPlanet = AnimateBodymovin('planet', 'scripts/planet-fonts.json', "xMidYMin meet", false);
-        CheckIfAnimationIsOnScreen('#planet', _animPlanet);
-      }
-      else
-      {
-        // don't bother pausing for small devices - waypoint zooming bug
-        AnimateBodymovin('planet', 'scripts/planet-fonts.json', "xMidYMin meet", true);
-      }
-    }, 100);
+      var _animPlanet = AnimateBodymovin('planet', 'scripts/planet-fonts.json', "xMidYMin meet", false);
+      CheckIfAnimationIsOnScreen('#planet', _animPlanet);
+    }
+    else
+    {
+      // don't bother pausing for small devices - waypoint zooming bug
+      AnimateBodymovin('planet', 'scripts/planet-fonts.json', "xMidYMin meet", true);
+    }
+  }, _delay);
 })

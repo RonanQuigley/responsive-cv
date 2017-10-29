@@ -1,10 +1,26 @@
 * {
     margin: 0 auto;
     padding:0;
-    z-index:0;
     position: relative;
     -webkit-box-sizing:border-box;
-            box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.about-hw
+{
+   */
+  backface-visibility: hidden;
+}
+
+#cloud-email-svg
+{
+  height: 73%;
+}
+
+#cloud-contact-01
+{
+position: relative;
+height: 130%;
 }
 
 #contact-container
@@ -124,7 +140,7 @@
 
 #foliage-group-16
 {
-top: 65%;
+top: 64%;
 left: 80%;
 }
 
@@ -182,6 +198,7 @@
   height: auto;
   /* -webkit-transform: translateZ(0); */
   /* transform: translateZ(0); */
+  /* display: none; */
 }
 
 .flower
@@ -224,7 +241,7 @@
 {
 height: 100%;
 width: 100%;
-z-index: 1;
+z-index: 2;
 position: absolute;
 }
 
@@ -243,7 +260,7 @@
 {
   width: 100%;
   height: auto;
-  top: 55%; */
+  top: 50%; */
   font-size: 1.7rem;
   right: 0;
   position: absolute;
@@ -281,7 +298,6 @@
   margin: auto;
   max-width: 37.5rem;
   height: 26.7rem;
-  display: block;
   margin-bottom: 3%;
   margin-top: 3%;
 }
@@ -302,8 +318,8 @@
   position: absolute;
   overflow: visible;
   -webkit-transform: translateY(100px);
-      -ms-transform: translateY(100px);
-          transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
 }
 /*
 #cloud-contact-03:hover #phone-path
@@ -315,14 +331,13 @@
 #email-box
 {
   height: auto;
-  width: 69%;
+  width: 62%;
   left: 0;
   right: 0;
-  position: absolute;
   overflow: visible;
   -webkit-transform: translateY(100px);
-      -ms-transform: translateY(100px);
-          transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
 }
 
 #email-box rect
@@ -354,6 +369,11 @@
   position: absolute;
   left: 0;
   right: 0;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 #phone-box
@@ -477,10 +497,8 @@
 
 .clouds-contact > svg
 {
-
-position: absolute;
-
-height: 100%;
+position: absolute;
+height: 100%;
 }
 
 #planet-city-container
@@ -620,7 +638,6 @@ right: 0;
 {
 width: 100%;
 height: 100%;
-max-width: 192rem;
 position: absolute;
 z-index: 2;
 }
@@ -738,12 +755,6 @@ display: block;
 
 #hot-air-balloon-plain-svg
 {
-  /* -webkit-perspective: 1000px; */
-  /* -webkit-backface-visibility: hidden; */
-  /* -webkit-transform: translateZ(0); */
-  /* transform: translateZ(0); */
-  /* perspective: 1000px; */
-  /* backface-visibility: hidden; */
 }
 
 #hot-air-balloon-plain-svg > *
@@ -1298,22 +1309,12 @@ width: 50%;
 {
   stroke-width: 0.2px;
   stroke: black;
-  /* transform-style: inherit; */
-  /* -webkit-perspective: inherit; */
-  /* -webkit-backface-visibility: inherit; */
-  /* perspective: inherit; */
-  /* backface-visibility: inherit; */
 }
 
 .road-bottom
 {
   stroke-width: 0.02rem;
   stroke: black;
-  /* transform-style: inherit; */
-  /* -webkit-perspective: inherit; */
-  /* -webkit-backface-visibility: inherit; */
-  /* perspective: inherit; */
-  /* backface-visibility: inherit; */
 }
 
 
@@ -1322,6 +1323,7 @@ width: 50%;
     z-index: 0;
     height: auto;
     background: #ffffff;
+    /* display: none; */
 }
 
 
@@ -1440,23 +1442,24 @@ font-weight: 200;
   width: 100%;
    */
   -webkit-perspective: 1000;
+  /* display: none; */
 }
 
 #email-section
 {
     top: 55%;
     left: 14%;
-    /* z-index: 3; */
+    z-index: 1;
 }
 
 #phone-section
-{top: 77%;left: 60%;/* z-index: 5; */}
+{top: 77%;left: 60%;z-index: 1;}
 
 #cv-section
 {
     top: 77%;
     left: 20%;
-    /* z-index: 4; */
+    z-index: 1;
 }
 
 .paper-plane-line
@@ -1487,7 +1490,7 @@ font-weight: 200;
   width: 40rem;
   position: relative;
   margin: auto;
-  z-index: -1;
+  z-index: 0;
 }
 
 .contact-section
@@ -1586,12 +1589,13 @@ width: 100%;
 #email path
 {
   stroke-width: 0.07rem;
-  fill: none;
+  stroke: black;
 }
 
-#phone path
+#phone-path
 {
   stroke-width: 0.06rem;
+  fill: #ffffff;
 }
 
 .copyright-font
@@ -1607,6 +1611,7 @@ width: 100%;
     max-width: 167rem;
     top: 3rem;
     /* z-index: 6; */
+    /* display: none; */
     margin-bottom: 6rem;
 }
 
@@ -1683,17 +1688,17 @@ height: 7.4rem;
 
 top: 90%;
 }
-/*
+
 #cv-box:hover + #cv-outlines
 {
   fill: black;
 }
 
 #cv-outlines:hover
-
-  fill:black;
+{
+  fill: black
 }
-*/
+
 .skills-text-box
 {border: black 0.15rem solid;text-align: center;width: 50%;background: white;height: 100%;z-index: -1;max-width: 24rem;}
 
@@ -1751,26 +1756,16 @@ top: 90%;
 
 .about-icons
 {
-
-height: auto;
-
-max-width: 70%;
-
-position: relative;
-
-margin-bottom: -38%;
-
-left: 0;
-
-right: 0;
+height: auto;
+max-width: 70%;
+position: relative;
+margin-bottom: -38%;
+left: 0;
+right: 0;
+z-index: 1;
 }
 
-.clouds-header > svg > path
-{
-  stroke-width: 0.7rem;
-}
-
-.clouds-content > svg > path
+.cloud-path
 {
   stroke-width: 0.7rem;
   fill: #ffffff;
@@ -1780,8 +1775,8 @@ right: 0;
 {
   height: 12.4%;
   margin-bottom: 6rem;
-  /* -webkit-backface-visibility: hidden; */
-  /* backface-visibility: hidden; */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
@@ -1832,7 +1827,7 @@ stroke-width: 1rem;
 }
 
 #road-container
-{position: absolute;width: 100%;height: 100%;z-index: -99999;}
+{position: absolute;width: 100%;height: 100%;z-index: -99999;/* display: none; */}
 
 .foliage-hide
 {
@@ -1863,7 +1858,7 @@ stroke-width: 1rem;
 
 #email
 {
-    top: 43%;
+    top: 31%;
     width: 38%;
     z-index: 1;
 }
@@ -1914,12 +1909,8 @@ stroke-width: 1rem;
 
 .skill-anims > svg
 {
-  /* -webkit-perspective: 1000px; */
-  /* -webkit-backface-visibility: hidden; */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  /* perspective: 1000px; */
-  /* backface-visibility: hidden; */
 }
 
 .blimps
@@ -1945,6 +1936,7 @@ stroke-width: 1rem;
 height: auto;
 width: 100%;
 z-index: 18;
+/* display: none; */
 }
 
 #skills-header-cloud-container
@@ -1963,7 +1955,7 @@ stroke-width: 1rem;
 }
 
 #about-content-02-text
-{top: 66%;}
+{top: 65%;/* margin-top: -26%; *//* margin-bottom: 26%; */}
 
 #about-content-cloud-03
 {
@@ -1977,12 +1969,16 @@ stroke-width: 1rem;
 #about-content-03-text
 {
 width: 93%;
-top: 67%;
+top: 63%;
+/* margin-top: -24%; */
+/* margin-bottom: 24%; */
 }
 
 #about-content-04-text
 {
     top: 69%;
+    /* margin-top: -28%; */
+    /* margin-bottom: 28%; */
 }
 
 html
@@ -2025,23 +2021,22 @@ svg
   right: 0;
   bottom: 10%;
   font-size: 6rem;
-  speak: none;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  -webkit-font-smoothing: antialiased;
 }
 
 .font-div
 {
   width: 90%;
   font-size: 1.9rem;
-  font-family: 'Quicksand', sans-serif;
+  font-family: Quicksand;
   font-style: normal;
   text-align: center;
   font-weight: normal;
-  -webkit-text-stroke: 1px rgba(0,0,0,0.0001);
   position: absolute;
+  /* margin-top: -20%; */
+  /* margin-bottom: 20%; */
   top: 74%;
   left: 0;
   right: 0;
@@ -2051,13 +2046,12 @@ svg
 
 #wrapper
 {
-  max-width: 260rem;
-  /* background: #ffffff; */
   overflow: hidden;
+  max-width: 260rem;
 }
 
 #city-container
-{display: block;width: 100%;height: auto;max-width: 75rem;z-index: 1;}
+{display: block;width: 100%;height: auto;max-width: 75rem;}
 
 #anim-city-flyover-container
 {
@@ -2098,13 +2092,7 @@ svg
 {
 
 <
-  div id="grass-09" class="foliage grass">              <svg class="foliage-svg" xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">                <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>                <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>              </svg>            </div>;
-  /* transform-style: preserve-3d; */
-  /* -webkit-perspective: 1000px; */
-  /* -webkit-backface-visibility: hidden; */
-  /* perspective: 1000px; */
-  /* backface-visibility: hidden; */
-  /* transform: translateZ(0); */
+div id="grass-09" class="foliage grass">              <svg class="foliage-svg" xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">                <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>                <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>              </svg>            </div>;
 }
 
 #hot-air-balloon-web-container
@@ -2125,7 +2113,7 @@ svg
   width: 100%;
   height: auto;
   max-width: 61.5rem;
-  z-index: -2;
+  /* z-index: -2; */
 }
 
 #hot-air-balloon-web-svg
@@ -2158,7 +2146,7 @@ svg
 }
 
 .clouds-content
-{z-index: -1;width: auto;min-width: 80%;top: -1rem;}
+{z-index: 0;width: auto;min-width: 80%;top: -1rem;}
 
 .clouds-background
 {
@@ -2173,7 +2161,7 @@ svg
 
 .clouds-header
 {
-    max-width: 40rem;
+    width: 40rem;
     width: 100%;
     height: auto;
     left: 0;
@@ -2196,7 +2184,8 @@ svg
   max-width: 19rem;
   display: none;
   /* position: absolute; */
-  z-index: 16;
+  /* -webkit-backface-visibility: hidden; */
+  /* backface-visibility: hidden; */
 }
 
 
@@ -2393,9 +2382,11 @@ left: 8rem;
 {left: 20%;margin-bottom: 0;}
 
 
-.bowler-hats *
+.bowler-hats
 {
   stroke-width: 0.15rem;
+  fill: #ffffff;
+  stroke: #000000;
 }
 
 #bowler-hats-container
@@ -2414,22 +2405,21 @@ height: 100%;
 
 #bowler-hat-01
 {
-    -webkit-transform: translate(30%, 0%);
-        -ms-transform: translate(30%, 0%);
-            transform: translate(30%, 0%);
-    width: 62%;
+    max-width: 100%;
+    margin-bottom: -33%;
 }
 
 #bowler-hat-02
-{-webkit-transform: translate(-30%, -13%);-ms-transform: translate(-30%, -13%);transform: translate(-30%, -13%);width: 62%;}
+{-webkit-transform: translate(-30%, -13%);-ms-transform: translate(-30%, -13%);transform: translate(-30%, -13%);width: 62%;/* display: none; */}
 
 #bowler-hat-03
 {
   z-index: 1;
   -webkit-transform: translateY(-8%);
-      -ms-transform: translateY(-8%);
-          transform: translateY(-8%);
+  -ms-transform: translateY(-8%);
+  transform: translateY(-8%);
   width: 62%;
+  /* display: none; */
 }
 
 #tools
@@ -2439,8 +2429,8 @@ height: 100%;
 
 #game-controller
 {
-    left: 15%;
     margin-bottom: -33%;
+    max-width: 80%;
 }
 
 #about-content-02-icons
@@ -2452,10 +2442,10 @@ position: relative;
 }
 
 #trophy
-{-webkit-transform: rotate(-8deg);-ms-transform: rotate(-8deg);transform: rotate(-8deg);max-width: 32%;left: -28%;margin-bottom: -45%;}
+{-webkit-transform: rotate(-8deg);-ms-transform: rotate(-8deg);transform: rotate(-8deg);max-width: 32%;left: -28%;margin-bottom: -45%;/* display: none; */}
 
 #planet-container
-{display: block;width: 100%;height: auto;max-width: 61.5rem;z-index: 0;}
+{display: block;width: 100%;height: auto;max-width: 61.5rem;}
 
 #planet
 {
@@ -2467,15 +2457,21 @@ position: relative;
 }
 
 #planet > svg
-{position: absolute;}
+{position: absolute;-webkit-transform: translateZ(0);transform: translateZ(0);}
 
 /* ------- MEDIA QUIERIES ------- */
 
 
 @media screen and (max-width: 63.75em)
 {
-  body
+  .road-hw-acceleration
   {
+  transform-style: initial;
+  -webkit-perspective: none;
+  -webkit-backface-visibility: initial;
+  perspective: none;
+  backface-visibility: initial;
+  transform: none;
   }
 
   #foliage-group-18
@@ -2485,8 +2481,8 @@ position: relative;
 
   #city-flatline-svg
   {
-    -webkit-transform: none;
-    transform: none;
+    /* -webkit-transform: none; */
+    /* transform: none; */
   }
 
   #copyright-container
@@ -2575,6 +2571,8 @@ position: relative;
 
   #planet > svg
   {
+  -webkit-transform: none;
+  transform: none;
   }
 
   #hot-air-balloon-web-svg
@@ -2611,7 +2609,6 @@ width: 90%;
 
   #moving-cloud-container
   {
-    /* display: none; */
   }
 
   #intro-container
@@ -2621,20 +2618,9 @@ width: 90%;
 
   .skill-anims > svg
   {
-    /* -webkit-backface-visibility: visible; */
-    /* -webkit-transform: none; */
-    /* transform: none; */
-    /* perspective: none; */
-    /* backface-visibility: visible; */
   }
   .road-svg
   {
-    -webkit-perspective: none;
-    -webkit-backface-visibility: visible;
-    -webkit-transform: none;
-    transform: none;
-    perspective: none;
-    backface-visibility: visible;
   }
 
   .foliage-show
@@ -2666,22 +2652,16 @@ width: 90%;
 
   #city-flatline
   {
-    -webkit-transform: none;
-    -webkit-perspective: none;
-    -webkit-backface-visibility: visible;
-    transform: none;
-    perspective: none;
-    backface-visibility: visible;
   }
 
   .road
   {
     -webkit-perspective: none;
-    -webkit-backface-visibility: visible;
+    -webkit-backface-visibility: initial;
     -webkit-transform: none;
     transform: none;
     perspective: none;
-    backface-visibility: visible;
+    backface-visibility: initial;
   }
 
   #cloud-group-three-01
@@ -2848,7 +2828,8 @@ width: 25rem;
 
   #foliage-group-20
   {
-    top: 69%;
+    top: 68%;
+    left: 80%;
   }
 
   #foliage-group-21
@@ -2888,22 +2869,15 @@ width: 25rem;
 
   #intro-container
   {
-    z-index: 2;
+    z-index: -1;
   }
 
   #moving-cloud-container
   {
-    /* display: none; */
   }
 
   .skill-anims > svg
   {
-    /* -webkit-perspective: none; */
-    /* -webkit-backface-visibility: visible; */
-    /* -webkit-transform: none; */
-    /* transform: none; */
-    /* perspective: none; */
-    /* backface-visibility: visible; */
   }
 
   #city-flatline
@@ -2912,12 +2886,6 @@ width: 25rem;
 
   .road-svg
   {
-    -webkit-perspective: none;
-    -webkit-backface-visibility: visible;
-    -webkit-transform: none;
-    transform: none;
-    perspective: none;
-    backface-visibility: inherit;
   }
 
   .foliage-show
@@ -3156,7 +3124,7 @@ margin-right: 5%;
 
   #road-01
   {
-margin-top: -18.7rem;
+margin-top: -18.9rem;
 }
 
   #hot-air-balloon-web-container{
@@ -3186,6 +3154,7 @@ margin-right: 5%;
     width: 33rem;
     position: relative;
     height: auto;
+    z-index: 0;
   }
 
   #email-section
@@ -3236,7 +3205,7 @@ margin-right: 5%;
     display: inline-block;
     padding-top: 0;
     float: none;
-    padding-left: 39%;
+    padding-left: 44%;
     padding-right: 0;
     margin-right: 0;
     margin-left: 0;
@@ -3276,9 +3245,25 @@ margin-right: 5%;
     /* background: yellow; */
   }
 
+  .home-path
+  {
+    stroke-width:0.025rem
+  }
+
+  #city-buildings-svg
+  {
+  }
+
+  #about-container
+  {
+    z-index: 2;
+  }
+
   .city-path
   {
     stroke-width: 0.04rem;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .road-top
@@ -3328,7 +3313,6 @@ margin-right: 5%;
 
   #hot-air-balloon-plain-svg
   {
-    transform: translateZ(0);
   }
 
   #font-container-css
@@ -3524,6 +3508,7 @@ margin-right: 5%;
   {
     width: 100%;
     min-width: 28rem;
+    z-index: 3;
   }
 
   #contact-description-section
@@ -3680,8 +3665,42 @@ margin-right: 5%;
 
 @media only screen and (max-device-width: 64em) and (min-device-width: 48em) and (orientation: landscape)
 {
-  body
+
+  #about-container
   {
+    z-index: 0;
+   }
+
+   #copyright-text
+   {
+     -webkit-transform: rotate(0deg);
+     -ms-transform: rotate(0deg);
+     transform: rotate(0deg);
+     text-align: center;
+     display: inline-block;
+     padding-top: 0;
+     float: none;
+     padding-left: 59%;
+     padding-right: 0;
+     margin-right: 0;
+     margin-left: 0;
+     width: 100%;
+     top: 0;
+   }
+
+   #thanks
+   {
+     display: none;
+   }
+
+  .road-hw-acceleration
+  {
+    transform-style: initial;
+    -webkit-perspective: none;
+    -webkit-backface-visibility: initial;
+    perspective: none;
+    backface-visibility: initial;
+    transform: none;
   }
 
   #foliage-group-18
@@ -3696,16 +3715,19 @@ margin-right: 5%;
 
   #city-flatline-svg
   {
--webkit-transform: none;
-transform: none;
-}
+    -webkit-transform: none;
+   transform: none;
+ }
 
-
-    .foliage
-    {
-      -webkit-transform: none;
-      transform: none;
-    }
+  .foliage
+  {
+    -webkit-transform: none;
+    transform: none;
+    /* -webkit-backface-visibility: hidden; */
+    /* backface-visibility: hidden; */
+    /* -webkit-perspective: 1000px; */
+    /* perspective: 1000px; */
+  }
 
   #contact-text
   {
@@ -3721,17 +3743,9 @@ margin-right: 5%;
   {
   }
 
-  #copyright-text
-  {
-  }
-
-  #thanks
-  {
-  }
-
   #skills-container
   {
-  z-index: 6;
+  z-index: 0;
   }
 
   #foliage-group-19
@@ -3741,17 +3755,13 @@ margin-right: 5%;
 
   #contact-container
   {
-    z-index: 3;
+    z-index: 0;
     /* margin-bottom: 10rem; */
   }
 
   #foliage-container
   {
-    z-index: 1;
-  }
-
-  #planet > svg
-  {
+    z-index: 0;
   }
 
   #hot-air-balloon-web-svg
@@ -3769,14 +3779,10 @@ margin-right: 5%;
     display: none;
   }
 
-  #fire-02
-  {
-  }
-
   .paper-plane-container
   {
-width: 90%;
-}
+   width: 90%;
+  }
 
   #font-container-css
   {
@@ -3789,26 +3795,16 @@ margin-right: 5%;
 
   #intro-container
   {
-    z-index: 0;
+    z-index: -1;
   }
 
   .skill-anims > svg
   {
-    /* -webkit-backface-visibility: visible; */
-    /* -webkit-transform: none; */
-    /* transform: none; */
-    /* perspective: none; */
-    /* backface-visibility: visible; */
+  /* -webkit-backface-visibility: hidden; */
+  /* backface-visibility: hidden; */
   }
   .road-svg
   {
-    -webkit-perspective: none;
-    -webkit-backface-visibility: visible;
-    -webkit-transform: none;
-    transform: none;
-    perspective: none;
-    backface-visibility: inherit;
-    transform-style: initial;
   }
 
   .foliage-show
@@ -3855,7 +3851,7 @@ margin-right: 5%;
     -webkit-transform: none;
     transform: none;
     perspective: none;
-    backface-visibility: initial;
+    backface-visibility: visible;
   }
 
   #cloud-group-three-01
@@ -3865,7 +3861,8 @@ margin-right: 5%;
 
   #road-container
   {
-  overflow: hidden;
+  /* overflow: hidden; */
+  z-index: -2;
   }
 
   .about-content
@@ -3894,7 +3891,7 @@ margin-right: 5%;
 
   #road-01
   {
-margin-top: -27.05rem;
+margin-top: -26.95rem;
 }
   .skill
   {
