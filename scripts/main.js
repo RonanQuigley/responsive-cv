@@ -656,14 +656,14 @@ function Initialise()
   OnHoverOverPhone();
 }
 
-$(window).on('touchstart', function () {
+$(window).on('touchstart', function (e) {
+  console.log("touching you");
   // register any touch event on the window
   if(isTouchDevice == false)
   {
     isTouchDevice = true;
   }
 });
-
 $(document).ready(function()
 {
   $('html,body').animate({scrollTop:0},0); // on page load, set the scroll to the top of the page
@@ -678,7 +678,7 @@ $(window).on('load', function()
   {
     if(documentBody.outerWidth() > 480)
     {
-      var _animPlanet = AnimateBodymovin('planet', 'scripts/planet-fonts.json', "xMidYMin meet", false);
+      var _animPlanet = AnimateBodymovin('planet', 'scripts/planet-fonts.json', "xMidYMin meet", true);
       CheckIfAnimationIsOnScreen('#planet', _animPlanet);
     }
     else

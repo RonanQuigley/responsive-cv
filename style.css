@@ -6,21 +6,30 @@
     box-sizing:border-box;
 }
 
+.cloud-svg
+{
+}
+
 .about-hw
 {
-   */
-  backface-visibility: hidden;
+
+-webkit-backface-visibility: hidden;
+
+        backface-visibility: hidden;
 }
 
 #cloud-email-svg
 {
-  height: 73%;
+
+height: 73%;
 }
 
 #cloud-contact-01
 {
-position: relative;
-height: 130%;
+
+position: relative;
+
+height: 130%;
 }
 
 #contact-container
@@ -35,12 +44,22 @@
 
 .road-hw-acceleration
 {
-  transform-style: preserve-3d;
-  -webkit-perspective: 1000px;
-  -webkit-backface-visibility: hidden;
-  perspective: 1000px;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+
+-webkit-transform-style: preserve-3d;
+
+        transform-style: preserve-3d;
+
+-webkit-perspective: 1000px;
+
+-webkit-backface-visibility: hidden;
+
+perspective: 1000px;
+
+backface-visibility: hidden;
+
+-webkit-transform: translateZ(0);
+
+        transform: translateZ(0);
 }
 
 .foliage-svg
@@ -49,117 +68,154 @@
 
 #foliage-group-01
 {
-left: 15%;
-top: -1.3%;
+
+left: 15%;
+
+top: -1.3%;
 }
 
 #foliage-group-02
 {
-left: 83%;
-top: 3%;
+
+left: 83%;
+
+top: 3%;
 }
 
 #foliage-group-03
 {
-  left: 55%;
-  top: 8%;
+
+left: 55%;
+
+top: 8%;
 }
 
 #foliage-group-04
 {
-  top: 10%;
-  left: 10%;
+
+top: 10%;
+
+left: 10%;
 }
 
 #foliage-group-05
 {
-  top: 22%;
-  left: 13%;
+
+top: 22%;
+
+left: 13%;
 }
 
 #foliage-group-06
 {
-  top: 17.6%;
-  left: 83%;
+
+top: 17.6%;
+
+left: 83%;
 }
 
 #foliage-group-07
 {
-  top: 21%;
-  left: 50%;
+
+top: 21%;
+
+left: 50%;
 }
 
 #foliage-group-08
 {
-  top: 27%;
-  left: 80%;
+
+top: 27%;
+
+left: 80%;
 }
 
 #foliage-group-09
 {
-  top: 35%;
-  left: 55%;
+
+top: 35%;
+
+left: 55%;
 }
 
 #foliage-group-10
 {
-  top: 40%;
-  left: 10%;
+
+top: 40%;
+
+left: 10%;
 }
 
 #foliage-group-11
 {
-top: 40%;
-left: 80%;
+
+top: 40%;
+
+left: 80%;
 }
 
 #foliage-group-12
 {
-top: 51%;
-left: 13%;
+
+top: 51%;
+
+left: 13%;
 }
 
 #foliage-group-13
 {
-top: 58%;
-left: 7%;
+
+top: 58%;
+
+left: 7%;
 }
 
 #foliage-group-14
 {
-top: 61%;
-left: 66%;
+
+top: 61%;
+
+left: 66%;
 }
 
 #foliage-group-15
 {
-  top@60%:;
-  top: 55%;
-  left: 87%;
+
+top: 55%;
+
+left: 87%;
 }
 
 #foliage-group-16
 {
-top: 64%;
-left: 80%;
+
+top: 64%;
+
+left: 80%;
 }
 
 #foliage-group-17
 {
-top: 65%;
-left: 20%;
+
+top: 65%;
+
+left: 20%;
 }
 
 #foliage-group-18
 {
-  top: 73%;
-  left: 11%;
+
+top: 73%;
+
+left: 11%;
 }
 
 #foliage-group-19
 {
-top: 78%;
-left: 85%;
+
+top: 78%;
+
+left: 85%;
 }
 
 #foliage-group-20
@@ -170,8 +226,10 @@
 
 #foliage-group-21
 {
-  top: 47%;
-  left: 54%;
+
+top: 47%;
+
+left: 54%;
 }
 
 .foliage-path
@@ -203,7 +261,8 @@
 
 .flower
 {
-  width: 20%;
+
+width: 20%;
 }
 
 .grass
@@ -219,10 +278,10 @@
   -webkit-perspective: none;
   -webkit-backface-visibility: visible;
   -webkit-transform: none;
-  transform: none;
+  -ms-transform: none;
+      transform: none;
   perspective: none;
   backface-visibility: visible;
-  transform;
 }
 
 .hw-on
@@ -239,18 +298,26 @@
 
 #moving-cloud-container
 {
-height: 100%;
-width: 100%;
-z-index: 2;
-position: absolute;
+
+height: 100%;
+
+width: 100%;
+
+z-index: 2;
+
+position: absolute;
 }
 
 #road-wrapper
 {
-width: 100%;
-height: 100%;
-overflow: hidden;
-position: absolute;
+
+width: 100%;
+
+height: 100%;
+
+overflow: hidden;
+
+position: absolute;
 }
 
 .skill-cloud > path
@@ -370,7 +437,6 @@
   left: 0;
   right: 0;
   -moz-user-select: text;
-  -khtml-user-select: text;
   -webkit-user-select: text;
   -ms-user-select: text;
   user-select: text;
@@ -477,7 +543,8 @@
   stroke-dasharray: 5px;
   stroke: white;
   stroke-width: 2px;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   -webkit-perspective: inherit;
   -webkit-backface-visibility: inherit;
   perspective: inherit;
@@ -488,7 +555,8 @@
 {
   stroke-width: 0.2px;
   stroke: black;
-  transform-style: inherit;
+  -webkit-transform-style: inherit;
+          transform-style: inherit;
   -webkit-perspective: inherit;
   -webkit-backface-visibility: inherit;
   perspective: inherit;
@@ -497,8 +565,10 @@
 
 .clouds-contact > svg
 {
-position: absolute;
-height: 100%;
+
+position: absolute;
+
+height: 100%;
 }
 
 #planet-city-container
@@ -506,9 +576,12 @@
 
 #about-content-container
 {
-max-width: 167rem;
-width: 100%;
-height: auto;
+
+max-width: 167rem;
+
+width: 100%;
+
+height: auto;
 }
 
 #skills-header-container
@@ -617,30 +690,37 @@ right: 0;
 
 #cloud-background-01
 {
-z-index: -1;
-/* margin-left: 6.5rem; */
-/* margin-top: 0.5rem; */
+
+z-index: -1;
+
+/* margin-left: 6.5rem; */
+
+/* margin-top: 0.5rem; */
 }
 
 #cloud-background-02
-{transform: translate(42%, 9%);}
+{-webkit-transform: translate(42%, 9%);-ms-transform: translate(42%, 9%);transform: translate(42%, 9%);}
 
 #cloud-background-03
 {
-z-index: 1;
-position: relative;
-transform: translate(18%, 21%);
-/* margin-top: 2.5rem; */
-/* margin-left: 3rem; */
+
+z-index: 1;
+
+position: relative;
+
+-webkit-transform: translate(18%, 21%);
+
+    -ms-transform: translate(18%, 21%);
+
+        transform: translate(18%, 21%);
+
+/* margin-top: 2.5rem; */
+
+/* margin-left: 3rem; */
 }
 
 #foliage-container
-{
-width: 100%;
-height: 100%;
-position: absolute;
-z-index: 2;
-}
+{width: 100%;height: 100%;position: absolute;z-index: 2;display: none;}
 
 #paper-plane-container-01
 {
@@ -730,18 +810,7 @@ width: 348%;
 
 
 .contact-icons
-{
-
-height: auto;
-
-top: 37%;
-
-width: 31%;
-
-max-width: 12rem;
-
-display: block;
-}
+{height: auto;/* top: 37%; */width: 31%;max-width: 12rem;display: block;}
 
 .paper-plane-container
 {
@@ -765,9 +834,12 @@ display: block;
 
 #fire-01
 {
-height: auto;
-margin-top: -27%;
-width: 50%;
+
+height: auto;
+
+margin-top: -27%;
+
+width: 50%;
 }
 
 #fire-02
@@ -847,24 +919,34 @@ left: 15%;
 
 #tree-03
 {
-z-index: -2;
-margin-top: -170%;
-left: -70%;
-width: 100%;
+
+z-index: -2;
+
+margin-top: -170%;
+
+left: -70%;
+
+width: 100%;
 }
 
 #tree-04
 {
-z-index: -1;
-left: -14%;
+
+z-index: -1;
+
+left: -14%;
 }
 
 #tree-05
 {
-z-index: 1;
-height: auto;
-margin-top: -128%;
-left: 40%;
+
+z-index: 1;
+
+height: auto;
+
+margin-top: -128%;
+
+left: 40%;
 }
 
 #tree-06
@@ -873,26 +955,33 @@ left: 15%;
 
 #tree-07
 {
-z-index: -5;
+
+z-index: -5;
 }
 
 #tree-08
 {
-margin-top: -120%;
-left: 86%;
+
+margin-top: -120%;
+
+left: 86%;
 }
 
 #tree-09
 {
-left: 79.5%;
+
+left: 79.5%;
 }
 
 #tree-10
 {
 
-0% */
-margin-top: -140%;
-margin-top: -130%;
+
+0% */
+
+margin-top: -140%;
+
+margin-top: -130%;
 }
 
 #tree-11
@@ -904,10 +993,14 @@ left: 15%;
 
 #tree-13
 {
-left: 37%;
-margin-top: -120%;
-height: auto;
-z-index: 2;
+
+left: 37%;
+
+margin-top: -120%;
+
+height: auto;
+
+z-index: 2;
 }
 
 #tree-14
@@ -952,8 +1045,10 @@ left: 15%;
 
 #tree-24
 {
-left: -18.5%;
-z-index: -5;
+
+left: -18.5%;
+
+z-index: -5;
 }
 
 #tree-25
@@ -1040,17 +1135,24 @@ left: 28%;
 
 #flower-01
 {
-z-index: 1;
-left: 20%;
-margin-top: -12%;
+
+z-index: 1;
+
+left: 20%;
+
+margin-top: -12%;
 }
 
 #bush-02
 {
-margin-top: -24%;
-left: -44%;
-z-index: -1;
-width: 39%;
+
+margin-top: -24%;
+
+left: -44%;
+
+z-index: -1;
+
+width: 39%;
 }
 
 #bush-03
@@ -1090,9 +1192,12 @@ width: 50%;
 
 #grass-01
 {
-z-index: 6;
-left: -51%;
-margin-top: -11%;
+
+z-index: 6;
+
+left: -51%;
+
+margin-top: -11%;
 }
 
 #grass-02
@@ -1100,9 +1205,12 @@ width: 50%;
 
 #grass-03
 {
-z-index: 0;
-margin-top: 39%;
-left: -20%;
+
+z-index: 0;
+
+margin-top: 39%;
+
+left: -20%;
 }
 
 #grass-04
@@ -1111,10 +1219,11 @@ width: 50%;
 #grass-05
 {
 
-:
-margin-top: -23%
-margin-top: -33%;
-z-index: -1;
+margin-top: -23%;
+
+margin-top: -33%;
+
+z-index: -1;
 }
 
 #grass-06
@@ -1150,37 +1259,48 @@ width: 50%;
 
 #grass-12
 {
-z-index: -1;
-width: 90%;
-left: 50%;
-margin-top: -20%;
+
+z-index: -1;
+
+width: 90%;
+
+left: 50%;
+
+margin-top: -20%;
 }
 
 #grass-13
 {
-margin-top: -20%;
-left: 50%;
+
+margin-top: -20%;
+
+left: 50%;
 }
 
 #grass-14
 {
-  z-index: -1;
+
+z-index: -1;
 }
 
 #grass-15
 {
-margin-top: -20%;
-left: -70%;
+
+margin-top: -20%;
+
+left: -70%;
 }
 
 #grass-16
 {
-z-index: -1;
+
+z-index: -1;
 }
 
 #flower-02
 {
-z-index: 1;
+
+z-index: 1;
 }
 
 
@@ -1323,7 +1443,7 @@ width: 50%;
     z-index: 0;
     height: auto;
     background: #ffffff;
-    /* display: none; */
+    display: none;
 }
 
 
@@ -1442,7 +1562,7 @@ font-weight: 200;
   width: 100%;
    */
   -webkit-perspective: 1000;
-  /* display: none; */
+  display: none;
 }
 
 #email-section
@@ -1495,16 +1615,26 @@ font-weight: 200;
 
 .contact-section
 {
-position: absolute;
-left: 0;
-right: 0;
-height: 17rem;
-width: 29rem;
-margin: 0;
- */
--webkit-perspective: 1000;
- */
--webkit-perspective: 1000;
+
+position: absolute;
+
+left: 0;
+
+right: 0;
+
+height: 17rem;
+
+width: 29rem;
+
+margin: 0;
+
+ */
+
+-webkit-perspective: 1000;
+
+ */
+
+-webkit-perspective: 1000;
 }
 
 .paper-plane-envelope
@@ -1576,7 +1706,7 @@ width: 100%;
 {top: 82%;}
 
 #font-container-css
-{top: -4.1rem;position: relative;}
+{top: -4.2rem;position: relative;}
 
 #font-container-jquery
 {top: 82%;}
@@ -1611,7 +1741,7 @@ width: 100%;
     max-width: 167rem;
     top: 3rem;
     /* z-index: 6; */
-    /* display: none; */
+    display: none;
     margin-bottom: 6rem;
 }
 
@@ -1756,13 +1886,20 @@ top: 90%;
 
 .about-icons
 {
-height: auto;
-max-width: 70%;
-position: relative;
-margin-bottom: -38%;
-left: 0;
-right: 0;
-z-index: 1;
+
+height: auto;
+
+max-width: 70%;
+
+position: relative;
+
+margin-bottom: -38%;
+
+left: 0;
+
+right: 0;
+
+z-index: 1;
 }
 
 .cloud-path
@@ -1827,7 +1964,7 @@ stroke-width: 1rem;
 }
 
 #road-container
-{position: absolute;width: 100%;height: 100%;z-index: -99999;/* display: none; */}
+{position: absolute;width: 100%;height: 100%;z-index: -99999;display: none;}
 
 .foliage-hide
 {
@@ -1853,7 +1990,9 @@ stroke-width: 1rem;
   margin-right: 0;
   position: absolute;
   visibility: visible;
-  transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
+          transform-origin: bottom;
 }
 
 #email
@@ -1864,7 +2003,7 @@ stroke-width: 1rem;
 }
 
 #phone
-{top: 37%;}
+{/* top: 37%; */}
 
 #city-buildings-svg
 {position: absolute;}
@@ -1932,12 +2071,7 @@ stroke-width: 1rem;
 }
 
 #skills-container
-{
-height: auto;
-width: 100%;
-z-index: 18;
-/* display: none; */
-}
+{height: auto;width: 100%;z-index: 18;display: none;}
 
 #skills-header-cloud-container
 {left: 0;right: 0;}
@@ -1968,10 +2102,14 @@ stroke-width: 1rem;
 
 #about-content-03-text
 {
-width: 93%;
-top: 63%;
-/* margin-top: -24%; */
-/* margin-bottom: 24%; */
+
+width: 93%;
+
+top: 63%;
+
+/* margin-top: -24%; */
+
+/* margin-bottom: 24%; */
 }
 
 #about-content-04-text
@@ -2078,21 +2216,17 @@ svg
   height: 2px;
   right: 0;
   z-index: 2;
-  /* display: none; */
+  overflow: hidden;
 }
 
 #city-flatline-svg
 {
-  stroke: black;
-  stroke-width: 26.05rem;
-  fill: black;
-}
 
-#city-flatline-line
-{
+stroke: black;
 
-<
-div id="grass-09" class="foliage grass">              <svg class="foliage-svg" xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 332.3 139.4">                <path class="foliage-grass-path" fill="white"  d="M249.2,126.4C232.9,54.1,330.5,16.7,330.5,16.7S255.7,2.5,226.3,78.2c-27.6-59.7-96-77-96-77S188,40.1,196,79.1C216.4,178,87.3,4.2,86.4,4.2s45.4,85.5,12.5,127.4"/>                <path class="foliage-grass-path" fill="white" d="M72.6,134.6S83.1,64.8.5,24.2c0-2.7,74.8-14.3,104.2,61.5,27.6-59.7,62.3-73,62.3-73S144.8,34,135,86.5c8,100.6,108.7-74.8,109.6-74.8s-45.4,85.5-12.5,127.4"/>              </svg>            </div>;
+stroke-width: 26.05rem;
+
+fill: black;
 }
 
 #hot-air-balloon-web-container
@@ -2112,13 +2246,14 @@ svg
   display: block;
   width: 100%;
   height: auto;
+  padding-bottom: 140%;
   max-width: 61.5rem;
   /* z-index: -2; */
 }
 
 #hot-air-balloon-web-svg
 {
-  /* position: absolute; */
+  position: absolute;
   /* -webkit-perspective: 1000px; */
   /* -webkit-backface-visibility: hidden; */ */
   -webkit-transform: translateZ(0);
@@ -2161,9 +2296,8 @@ svg
 
 .clouds-header
 {
-    width: 40rem;
     width: 100%;
-    height: auto;
+    height: 100%;
     left: 0;
     right: 0;
     margin: auto;
@@ -2347,18 +2481,19 @@ left: 8rem;
 
 
 #about-header-cloud-container
-{width: 100%;height: auto;}
+{width: 100%;height: 100%;}
 
 #header-cloud-01
 {z-index: -1;left: -13rem;}
 
 #header-cloud-02
-{z-index: -2;left: 6rem;}
+{z-index: -2;left: 6rem;top: 1rem;}
 
 #header-cloud-03
 {
     left: 0;
     padding-top: 3rem;
+    top: 1rem;
     position: relative;
 }
 
@@ -2466,12 +2601,15 @@ position: relative;
 {
   .road-hw-acceleration
   {
-  transform-style: initial;
+  -webkit-transform-style: initial;
+          transform-style: initial;
   -webkit-perspective: none;
   -webkit-backface-visibility: initial;
   perspective: none;
   backface-visibility: initial;
-  transform: none;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
   }
 
   #foliage-group-18
@@ -2518,7 +2656,8 @@ position: relative;
   .foliage
   {
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
   }
 
   #cloud-group-three-stroked-container
@@ -2572,7 +2711,8 @@ position: relative;
   #planet > svg
   {
   -webkit-transform: none;
-  transform: none;
+  -ms-transform: none;
+      transform: none;
   }
 
   #hot-air-balloon-web-svg
@@ -2580,7 +2720,8 @@ position: relative;
     -webkit-perspective: none;
     -webkit-backface-visibility: visible;
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     perspective: none;
     backface-visibility: visible;
   }
@@ -2632,7 +2773,8 @@ width: 90%;
   {
     -webkit-backface-visibility: visible;
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     -webkit-perspective: none;
     perspective: none;
     backface-visibility: visible;
@@ -2659,7 +2801,8 @@ width: 90%;
     -webkit-perspective: none;
     -webkit-backface-visibility: initial;
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     perspective: none;
     backface-visibility: initial;
   }
@@ -2702,7 +2845,8 @@ width: 25rem;
 
   #road-01
   {
-margin-top: -27.2rem;
+
+margin-top: -27.2rem;
 }
   .skill
   {
@@ -2744,14 +2888,18 @@ width: 25rem;
 
   #skills-web-development
   {
-margin-left: 5%;
-left: 0;
-}
+
+margin-left: 5%;
+
+left: 0;
+
+}
 
   .foliage
   {
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
   }
 
   #email-text-container
@@ -2772,7 +2920,8 @@ width: 25rem;
 
   #foliage-group-07
   {
-    top: 15%;
+
+top: 15%;
   }
 
   #foliage-group-08
@@ -2787,7 +2936,8 @@ width: 25rem;
 
   #foliage-group-10
   {
-    top: 37%;
+
+top: 37%;
   }
 
   #foliage-group-11
@@ -2807,17 +2957,20 @@ width: 25rem;
 
   #foliage-group-15
   {
-    top: 56%;
+
+top: 56%;
   }
 
   #foliage-group-17
   {
-    top: 63%;
+
+top: 63%;
   }
 
   #foliage-group-18
   {
-    top: 66%;
+
+top: 66%;
   }
 
   #foliage-group-19
@@ -2828,8 +2981,10 @@ width: 25rem;
 
   #foliage-group-20
   {
-    top: 68%;
-    left: 80%;
+
+top: 68%;
+
+left: 80%;
   }
 
   #foliage-group-21
@@ -2929,19 +3084,26 @@ width: 25rem;
 
   #font-container-css
   {
-top: 83%;
-position: absolute;
-margin-bottom: 0;
-}
+
+top: 83%;
+
+position: absolute;
+
+margin-bottom: 0;
+
+}
 
   #font-container-js
   {
-top: 83%;
-}
+
+top: 83%;
+
+}
 
   #font-container-jquery
   {
-}
+
+}
 
   #font-container-animation
   {
@@ -3116,7 +3278,8 @@ margin-right: 5%;
     -webkit-perspective: none;
     -webkit-backface-visibility: initial;
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     perspective: none;
     backface-visibility: initial;
     height: 6%;
@@ -3124,7 +3287,8 @@ margin-right: 5%;
 
   #road-01
   {
-margin-top: -18.9rem;
+
+margin-top: -18.9rem;
 }
 
   #hot-air-balloon-web-container{
@@ -3143,9 +3307,12 @@ margin-right: 5%;
 
   #contact-container
   {
-height: auto;
-z-index: 3;
-margin-bottom: 2rem;
+
+height: auto;
+
+z-index: 3;
+
+margin-bottom: 2rem;
 }
 
   #contact-description-section
@@ -3185,10 +3352,14 @@ margin-right: 5%;
 
 
  */
-max-width:;
-height: auto;
-z-index: 4;
-margin-top: 0;
+
+max-width:;
+
+height: auto;
+
+z-index: 4;
+
+margin-top: 0;
 }
 
   #thanks
@@ -3293,7 +3464,8 @@ margin-right: 5%;
 
   #font-container-js
   {
-    top: 82.5%;
+
+top: 82.5%;
   }
 
   .skill-cloud > path
@@ -3317,17 +3489,22 @@ margin-right: 5%;
 
   #font-container-css
   {
-top: 82%;
-position: absolute;
-margin-bottom: 0;
-}
+
+top: 82%;
+
+position: absolute;
+
+margin-bottom: 0;
+
+}
 
   #cloud-group-three-01-container
   {
     -webkit-backface-visibility: visible;
     -webkit-transform: none;
     -webkit-perspective: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     backface-visibility: visible;
     perspective: none;
   }
@@ -3357,13 +3534,17 @@ margin-right: 5%;
 
   #header-cloud-01
   {
-left: -6rem;
-}
+
+left: -6rem;
+
+}
 
   #header-cloud-02
   {
-left: 6rem;
-}
+
+left: 6rem;
+
+}
 
 
   #copyright-container
@@ -3379,11 +3560,16 @@ margin-right: 5%;
 
   #copyright-text
   {
-padding-left: 0;
-padding-top: 1%;
-margin-bottom: 1%;
-width: 100%;
-}
+
+padding-left: 0;
+
+padding-top: 1%;
+
+margin-bottom: 1%;
+
+width: 100%;
+
+}
 
   #skills-web-development
   {
@@ -3393,10 +3579,14 @@ margin-right: 5%;
 
   .skill
   {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4%;
+
+width: 100%;
+
+margin-left: auto;
+
+margin-right: auto;
+
+margin-top: 4%;
   }
 
   #tools
@@ -3668,7 +3858,8 @@ margin-right: 5%;
 
   #about-container
   {
-    z-index: 0;
+
+z-index: 0;
    }
 
    #copyright-text
@@ -3695,12 +3886,15 @@ margin-right: 5%;
 
   .road-hw-acceleration
   {
-    transform-style: initial;
+    -webkit-transform-style: initial;
+            transform-style: initial;
     -webkit-perspective: none;
     -webkit-backface-visibility: initial;
     perspective: none;
     backface-visibility: initial;
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 
   #foliage-group-18
@@ -3715,14 +3909,20 @@ margin-right: 5%;
 
   #city-flatline-svg
   {
-    -webkit-transform: none;
-   transform: none;
- }
+
+    -webkit-transform: none;
+
+   -ms-transform: none;
+
+       transform: none;
+
+ }
 
   .foliage
   {
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     /* -webkit-backface-visibility: hidden; */
     /* backface-visibility: hidden; */
     /* -webkit-perspective: 1000px; */
@@ -3769,7 +3969,8 @@ margin-right: 5%;
     -webkit-perspective: none;
     -webkit-backface-visibility: visible;
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     perspective: none;
     backface-visibility: visible;
   }
@@ -3781,8 +3982,10 @@ margin-right: 5%;
 
   .paper-plane-container
   {
-   width: 90%;
-  }
+
+   width: 90%;
+
+  }
 
   #font-container-css
   {
@@ -3816,7 +4019,8 @@ margin-right: 5%;
   {
     -webkit-backface-visibility: visible;
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     -webkit-perspective: none;
     perspective: none;
     backface-visibility: visible;
@@ -3839,9 +4043,11 @@ margin-right: 5%;
     -webkit-transform: none;
     -webkit-perspective: none;
     -webkit-backface-visibility: visible;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     perspective: none;
-    backface-visibility: initial;
+    -webkit-backface-visibility: initial;
+            backface-visibility: initial;
   }
 
   .road
@@ -3849,7 +4055,8 @@ margin-right: 5%;
     -webkit-perspective: none;
     -webkit-backface-visibility: visible;
     -webkit-transform: none;
-    transform: none;
+    -ms-transform: none;
+        transform: none;
     perspective: none;
     backface-visibility: visible;
   }
@@ -3872,7 +4079,8 @@ margin-right: 5%;
 
   .font-div
   {
-    font-size: 1.65rem;
+
+font-size: 1.65rem;
    }
   #about-content-01-text
   {
@@ -3886,13 +4094,17 @@ margin-right: 5%;
 
   .contact-section
   {
-width: 25rem;
-}
+
+width: 25rem;
+
+}
 
   #road-01
   {
-margin-top: -26.95rem;
-}
+
+margin-top: -26.95rem;
+
+}
   .skill
   {
   max-width: 30.5rem;
@@ -3916,28 +4128,25 @@ margin-right: 5%;
 
 }
 
-
-
-/*
 @media screen and (max-width: 48em) and (orientation:landscape) {
     body
     {
-      background: cyan;
       height:100%;
     }
+
     #wrapper {
       display: none;
     }
     #portrait-notification
     {
       display: block;
-      width: 45%;
+      width: 60%;
+      width: calc(100vw - 15rem);
       height: 100%;
-      overflow-x: hidden;
-      background: yellow;
+      overflow: hidden;
     }
     #portrait-notification > svg > *
     {
       stroke: black;
     }
-}*/
+}
