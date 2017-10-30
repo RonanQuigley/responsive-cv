@@ -620,6 +620,9 @@ function Initialise()
     CheckIfAnimationIsOnScreen('#skills-animation', skillAnims[5]);
     _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'delayed', documentWidth : documentBodyWidth});
     CheckIfCityBuildingsAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
+
+    var _fireAnimB = AnimateBodymovin('fire-02', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
+    CheckIfAnimationIsOnScreen('#fire-02', _fireAnimB);
     if(documentBodyWidth > 1024) // for ipad landscape displays
     {
       AnimateStroke('#hot-air-balloon-web', _duration - 80, _easing, {scenarioType: 'oneByOne'});
@@ -635,9 +638,6 @@ function Initialise()
       PopInFoliage($('#foliage-container'));
       var _fireAnimA = AnimateBodymovin('fire-01', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
       CheckIfAnimationIsOnScreen('#fire-01', _fireAnimA);
-      var _fireAnimB = null;
-      _fireAnimB = AnimateBodymovin('fire-02', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
-      CheckIfAnimationIsOnScreen('#fire-02', _fireAnimB);
     }
     else
     {

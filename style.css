@@ -6,6 +6,42 @@
     box-sizing:border-box;
 }
 
+.skill-cloud-container
+{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 61.8%;
+}
+
+#contact-header
+{
+  margin-top: 1.6%;
+  margin-bottom: 8.2rem;
+}
+
+.contact-cloud-container
+{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 77%;
+  position: absolute;
+}
+
+.fire > svg
+{
+  position: absolute;
+}
+
+.about-cloud-svg
+{
+    position: absolute;
+}
+
+.ie-svg-fix
+{
+  position: absolute;
+}
+
 .cloud-svg
 {
 }
@@ -16,6 +52,13 @@
 -webkit-backface-visibility: hidden;
 
         backface-visibility: hidden;
+}
+
+#hot-air-balloon-plain-container
+{
+  padding-bottom: 132%;
+  height: 100%;
+  width: 100%;
 }
 
 #cloud-email-svg
@@ -195,12 +238,7 @@ left: 80%;
 }
 
 #foliage-group-17
-{
-
-top: 65%;
-
-left: 20%;
-}
+{top: 66%;left: 13%;}
 
 #foliage-group-18
 {
@@ -211,12 +249,7 @@ left: 11%;
 }
 
 #foliage-group-19
-{
-
-top: 78%;
-
-left: 85%;
-}
+{top: 78.3%;left: 85%;}
 
 #foliage-group-20
 {
@@ -254,20 +287,15 @@ left: 54%;
 {
   width: 100%;
   height: auto;
-  /* -webkit-transform: translateZ(0); */
-  /* transform: translateZ(0); */
-  /* display: none; */
 }
 
 .flower
-{
-
-width: 20%;
-}
+{width: 20%;padding-bottom: 32%;}
 
 .grass
 {
   width: 80%;
+  padding-bottom: 40%;
 }
 
 .foliage-width
@@ -321,7 +349,7 @@ position: absolute;
 }
 
 .skill-cloud > path
-{fill: #ffffff;stroke-width: 0.7rem;}
+{}
 
 #email-text-container
 {
@@ -342,13 +370,13 @@ position: absolute;
 }
 
 #home
-{height: 75%;max-width: 77%;margin-bottom: -27%;}
+{height: 75%;max-width: 77%;margin-bottom: -31%;padding-bottom: 55%;}
 
 .home-path
 {
   fill: white;
   stroke: black;
-  stroke-width: 0.03rem;
+  stroke-width: 0.025rem;
 }
 
 #cloud-and-balloon-container
@@ -365,8 +393,8 @@ position: absolute;
   margin: auto;
   max-width: 37.5rem;
   height: 26.7rem;
-  margin-bottom: 3%;
-  margin-top: 3%;
+  margin-bottom: 7rem;
+  margin-top: 0.6%;
 }
 
 .hidden
@@ -398,6 +426,7 @@ position: absolute;
 #email-box
 {
   height: auto;
+  padding-bottom: 20%;
   width: 62%;
   left: 0;
   right: 0;
@@ -443,9 +472,7 @@ position: absolute;
 }
 
 #phone-box
-{
-
-}
+{padding-bottom: 23%;}
 
 #phone-box rect
 {
@@ -464,7 +491,7 @@ position: absolute;
 
 #road-01
 {
-  margin-top: -30.3rem;
+  margin-top: -31.6rem;
 }
 
 .mask
@@ -585,7 +612,7 @@ height: auto;
 }
 
 #skills-header-container
-{width: 100%;height: auto;}
+{width: 100%;height: 100%;}
 
 
 #blimp-css > svg
@@ -667,7 +694,7 @@ right: 0;
 #contact-header-cloud-container
 {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 #anim-rain-01
@@ -720,17 +747,10 @@ position: relative;
 }
 
 #foliage-container
-{width: 100%;height: 100%;position: absolute;z-index: 2;display: none;}
+{width: 100%;height: 100%;position: absolute;z-index: 2;/* display: none; */}
 
 #paper-plane-container-01
-{
-
-z-index: 2;
-
-left: 38%;
-
-top: 0rem;
-}
+{z-index: 2;left: 38%;top: 0rem;}
 
 #paper-plane-container-02
 {
@@ -833,26 +853,10 @@ width: 348%;
 }
 
 #fire-01
-{
-
-height: auto;
-
-margin-top: -27%;
-
-width: 50%;
-}
+{height: auto;margin-top: -27%;width: 50%;padding-bottom: 59%;}
 
 #fire-02
-{
-
-width: 48%;
-
-height: auto;
-
-top: 76%;
-
-right: -13.1%;
-}
+{width: 48%;height: auto;top: 76%;right: -13.1%;padding-bottom: 59%;}
 
 #road-sign-01
 {
@@ -918,16 +922,7 @@ left: 15%;
 {z-index: -1;}
 
 #tree-03
-{
-
-z-index: -2;
-
-margin-top: -170%;
-
-left: -70%;
-
-width: 100%;
-}
+{z-index: -2;margin-top: -170%;padding-bottom: 10%;left: -70%;width: 100%;}
 
 #tree-04
 {
@@ -1375,7 +1370,7 @@ z-index: 1;
 #skills-jquery
 {
     /* left: 12%; */
-    /* margin-top: -5.5%; */
+    margin-top: -0.5%;
     left: 20%;
 }
 
@@ -1443,7 +1438,7 @@ z-index: 1;
     z-index: 0;
     height: auto;
     background: #ffffff;
-    display: none;
+    /* display: none; */
 }
 
 
@@ -1532,12 +1527,6 @@ font-weight: 200;
     right: 0;
 }
 
-.clouds-contact path
-{
-  stroke-width: 1rem;
-  fill: #ffffff;
-}
-
 #paper-plane-04
 {
 }
@@ -1562,7 +1551,7 @@ font-weight: 200;
   width: 100%;
    */
   -webkit-perspective: 1000;
-  display: none;
+  /* display: none; */
 }
 
 #email-section
@@ -1638,16 +1627,7 @@ margin: 0;
 }
 
 .paper-plane-envelope
-{
-
--webkit-transform: scaleX(-1) rotate(72deg);
-
-    -ms-transform: scaleX(-1) rotate(72deg);
-
-        transform: scaleX(-1) rotate(72deg);
-
-position: absolute;
-}
+{-webkit-transform: scaleX(-1) rotate(72deg);-ms-transform: scaleX(-1) rotate(72deg);transform: scaleX(-1) rotate(72deg);/* position: absolute; */padding-bottom: 80%;}
 
 .paper-plane-envelope path
 {
@@ -1736,23 +1716,17 @@ width: 100%;
 
 #copyright-container
 {
-    height: auto;
+    height: 12rem;
     fill: #ffffff;
     max-width: 167rem;
     top: 3rem;
     /* z-index: 6; */
-    display: none;
-    margin-bottom: 6rem;
+    /* display: none; */
+    /* margin-bottom: 0rem; */
 }
 
 #copyright-text
-{
-    display: inline-block;
-    -webkit-transform: rotate(-11deg);
-    -ms-transform: rotate(-11deg);
-    transform: rotate(-11deg);
-    padding-left: 3rem;
-}
+{float: right;display: inline-block;/* position: absolute; */text-align: center;height: auto;right: 0;bottom: 0;padding-right: 7rem;transform: rotate(7deg);}
 
 #thanks
 {float: right;display: inline-block;position: absolute;right: 0;bottom: 0;-webkit-transform-origin: right;-ms-transform-origin: right;transform-origin: right;-webkit-transform: rotate(9deg);-ms-transform: rotate(9deg);transform: rotate(9deg);padding-right: 2rem;}
@@ -1881,7 +1855,7 @@ top: 90%;
 
 #game-controller svg g *
 {
-  stroke-width: 0.07rem;
+  stroke-width: 0.09rem;
 }
 
 .about-icons
@@ -1964,7 +1938,7 @@ stroke-width: 1rem;
 }
 
 #road-container
-{position: absolute;width: 100%;height: 100%;z-index: -99999;display: none;}
+{position: absolute;width: 100%;height: 100%;z-index: -99999;/* display: none; */}
 
 .foliage-hide
 {
@@ -1985,14 +1959,14 @@ stroke-width: 1rem;
 .foliage-show
 {
   width: 10rem;
-  height: auto;
+  height: auto !important;
   margin-left: 0;
   margin-right: 0;
   position: absolute;
   visibility: visible;
   -webkit-transform-origin: bottom;
-      -ms-transform-origin: bottom;
-          transform-origin: bottom;
+  -ms-transform-origin: bottom;
+  transform-origin: bottom;
 }
 
 #email
@@ -2000,10 +1974,11 @@ stroke-width: 1rem;
     top: 31%;
     width: 38%;
     z-index: 1;
+    padding-bottom: 24.7%;
 }
 
 #phone
-{/* top: 37%; */}
+{top: 37%;padding-bottom: 30%;}
 
 #city-buildings-svg
 {position: absolute;}
@@ -2018,6 +1993,7 @@ stroke-width: 1rem;
 #cv
 {
     top: 36%;
+    padding-bottom: 31%;
 }
 
 .paper-plane
@@ -2071,7 +2047,7 @@ stroke-width: 1rem;
 }
 
 #skills-container
-{height: auto;width: 100%;z-index: 18;display: none;}
+{height: auto;width: 100%;z-index: 18;/* display: none; */}
 
 #skills-header-cloud-container
 {left: 0;right: 0;}
@@ -2089,7 +2065,7 @@ stroke-width: 1rem;
 }
 
 #about-content-02-text
-{top: 65%;/* margin-top: -26%; *//* margin-bottom: 26%; */}
+{top: 64%;/* margin-top: -26%; *//* margin-bottom: 26%; */}
 
 #about-content-cloud-03
 {
@@ -2101,22 +2077,14 @@ stroke-width: 1rem;
 }
 
 #about-content-03-text
-{
-
-width: 93%;
-
-top: 63%;
-
-/* margin-top: -24%; */
-
-/* margin-bottom: 24%; */
-}
+{width: 92%;top: 66%;/* margin-top: -24%; *//* margin-bottom: 24%; */}
 
 #about-content-04-text
 {
-    top: 69%;
+    top: 68.5%;
     /* margin-top: -28%; */
     /* margin-bottom: 28%; */
+    width: 90%;
 }
 
 html
@@ -2157,7 +2125,7 @@ svg
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 10%;
+  bottom: 5%;
   font-size: 6rem;
   font-variant: normal;
   text-transform: none;
@@ -2166,12 +2134,12 @@ svg
 
 .font-div
 {
-  width: 90%;
+  width: 93%;
   font-size: 1.9rem;
   font-family: Quicksand;
   font-style: normal;
+  font-weight: 400;
   text-align: center;
-  font-weight: normal;
   position: absolute;
   /* margin-top: -20%; */
   /* margin-bottom: 20%; */
@@ -2216,7 +2184,7 @@ svg
   height: 2px;
   right: 0;
   z-index: 2;
-  overflow: hidden;
+  padding-bottom: 0.1%;
 }
 
 #city-flatline-svg
@@ -2281,7 +2249,7 @@ fill: black;
 }
 
 .clouds-content
-{z-index: 0;width: auto;min-width: 80%;top: -1rem;}
+{z-index: 0;width: auto;min-width: 80%;padding-bottom: 64%;top: -1rem;}
 
 .clouds-background
 {
@@ -2289,6 +2257,7 @@ fill: black;
   width: 100%;
   position: absolute;
   height: auto;
+  padding-bottom: 81%;
 }
 
 .clouds-generated-background
@@ -2301,6 +2270,7 @@ fill: black;
     left: 0;
     right: 0;
     margin: auto;
+    padding-bottom: 64%;
     position: absolute;
 }
 
@@ -2453,9 +2423,10 @@ left: 8rem;
   position: absolute;
 }
 
-.clouds-contact > svg > path
+.cloud-contact-path
 {
   stroke-width: 0.9rem;
+  fill: #ffffff;
 }
 
 #cloud-rain svg
@@ -2473,11 +2444,10 @@ left: 8rem;
 }
 
 #about-container
-{height: auto;width: 100%;z-index: 4;}
+{height: auto;width: 100%;z-index: 4;/* display: none; */}
 
 #about-header
-{
-}
+{margin-top: 3%;margin-bottom: 7rem;}
 
 
 #about-header-cloud-container
@@ -2497,8 +2467,16 @@ left: 8rem;
     position: relative;
 }
 
+#header-cloud-03-about
+{
+    left: 0;
+    padding-top: 3rem;
+    top: 1rem;
+    position: relative;
+}
+
 .about-content
-{max-width: 38rem;height: auto;margin: auto;margin-bottom: -8%;}
+{max-width: 38rem;height: auto;margin: auto;margin-bottom: -4%;}
 
 #about-content-01
 {
@@ -2542,6 +2520,7 @@ height: 100%;
 {
     max-width: 100%;
     margin-bottom: -33%;
+    padding-bottom: 49%;
 }
 
 #bowler-hat-02
@@ -2560,12 +2539,14 @@ height: 100%;
 #tools
 {
     margin-bottom: -37%;
+    padding-bottom: 59%;
 }
 
 #game-controller
 {
     margin-bottom: -33%;
     max-width: 80%;
+    padding-bottom: 50%;
 }
 
 #about-content-02-icons
@@ -2599,6 +2580,40 @@ position: relative;
 
 @media screen and (max-width: 63.75em)
 {
+
+  #about-content-03-text
+  {top: 64%;}
+
+  #about-content-04-text
+  {
+    top: 67%;
+  }
+
+  #about-header
+  {
+    margin-bottom: 3rem;
+  }
+
+  #skills-header
+  {
+    margin-top: -1rem;
+    margin-bottom: 5.6rem;
+  }
+
+  #contact-header
+  {
+    margin-bottom: 5.8rem;
+  }
+
+  #about-header-text
+  {
+  }
+
+  .font-header
+  {
+    font-size: 5rem;
+    bottom: 2rem;
+  }
   .road-hw-acceleration
   {
   -webkit-transform-style: initial;
@@ -2828,7 +2843,8 @@ font-size: 1.65rem;
    }
   #about-content-01-text
   {
-    width:100%;
+    width: 96%;
+    top: 73%;
   }
 
   .font-skills-new
@@ -2844,10 +2860,7 @@ width: 25rem;
 }
 
   #road-01
-  {
-
-margin-top: -27.2rem;
-}
+  {margin-top: -28.2rem;}
   .skill
   {
   max-width: 30.5rem;
@@ -2869,19 +2882,33 @@ margin-top: -27.2rem;
     max-width: 23rem;
   }
 
-
 }
 
 
 @media screen and (max-width: 48em)
 {
 
+  #hot-air-balloon-plain-container
+  {
+    padding-bottom: 145%;
+  }
+
+  #phone-box
+  {
+    padding-bottom: 22%;
+  }
+
+  .cloud-path
+  {
+    stroke-width: 0.6rem;
+  }
+
   #road-container div:nth-of-type(n+8)
   {
     display: block;
   }
 
-  #road-container div:nth-of-type(n+12)
+  #road-container div:nth-of-type(n+13)
   {
     display: none;
   }
@@ -2947,7 +2974,8 @@ top: 37%;
 
   #foliage-group-12
   {
-    top: 50%;
+    top: 47%;
+    left: 5%;
   }
 
   #foliage-group-13
@@ -2961,11 +2989,14 @@ top: 37%;
 top: 56%;
   }
 
-  #foliage-group-17
+  #foliage-group-16
   {
-
-top: 63%;
+    left: 44%;
+    top: 63%;
   }
+
+  #foliage-group-17
+  {top: 54%;}
 
   #foliage-group-18
   {
@@ -2980,12 +3011,7 @@ top: 66%;
   }
 
   #foliage-group-20
-  {
-
-top: 68%;
-
-left: 80%;
-  }
+  {top: 69%;left: 72%;}
 
   #foliage-group-21
   {
@@ -3083,15 +3109,7 @@ left: 80%;
   }
 
   #font-container-css
-  {
-
-top: 83%;
-
-position: absolute;
-
-margin-bottom: 0;
-
-}
+  {top: 82.5%;position: absolute;margin-bottom: 0;}
 
   #font-container-js
   {
@@ -3126,10 +3144,12 @@ margin-top: -1.5%;
 }
 
   #about-content-01-text
-  {width: 94%;}
+  {width: 94%;/* top: 70%; */}
 
   #contact-header
   {
+  margin-top: 3%;
+  margin-bottom: 5.9rem;
   }
 
   #header-cloud-01
@@ -3163,24 +3183,23 @@ max-width: 35rem;
   }
 
   .font-header
-  {
-
-font-size: 4.7rem;
-  }
+  {font-size: 4.7rem;bottom: 0.5rem;}
 
   #city-flatline
   {
     height: 1px;
+    padding-bottom: 0.1%;
   }
 
   #about-header
   {
+  margin-bottom: 6rem;
   }
 
   #contact-text
   {
     font-size: 1.8rem;
-    /* top:-72%; */
+    top: 23%;
     width: 55%;
   }
 
@@ -3267,6 +3286,8 @@ margin-right: 5%;
 
   #skills-header
   {
+  margin-top: 1%;
+  margin-bottom: 5.9rem;
   }
 
   #contact-header-cloud-container
@@ -3320,7 +3341,7 @@ margin-bottom: 2rem;
     top: 0;
     width: 33rem;
     position: relative;
-    height: auto;
+    height: 100%;
     z-index: 0;
   }
 
@@ -3343,7 +3364,7 @@ margin-bottom: 2rem;
   {
     left:0;
     top: 0;
-    margin-bottom: 12%;
+    margin-bottom: 6%;
     margin-left: 8%;
   }
 
@@ -3351,16 +3372,7 @@ margin-bottom: 2rem;
   {
 
 
- */
-
-max-width:;
-
-height: auto;
-
-z-index: 4;
-
-margin-top: 0;
-}
+ */max-width:;z-index: 4;margin-top: 0;height: auto;}
 
   #thanks
   {
@@ -3376,12 +3388,13 @@ margin-top: 0;
     display: inline-block;
     padding-top: 0;
     float: none;
-    padding-left: 44%;
+    padding-left: 43.5%;
     padding-right: 0;
     margin-right: 0;
     margin-left: 0;
     width: 100%;
     top: 0;
+    margin-bottom: 6%;
   }
 
   #skills-html
@@ -3397,7 +3410,7 @@ margin-top: 0;
   {margin-right: 5%;left: 0;}
 
   #skills-jquery
-  {left: 0;margin-right: 5%;}
+  {left: 0;margin-right: 5%;margin-top: -2%;}
 
 #skills-container
 {
@@ -3413,16 +3426,16 @@ margin-top: 0;
   {
     max-width: 100%;
     min-width: 320px;
-    /* background: yellow; */
+  }
+
+  .cloud-contact-path
+  {
+    stroke-width: 0.6rem;
   }
 
   .home-path
   {
     stroke-width:0.025rem
-  }
-
-  #city-buildings-svg
-  {
   }
 
   #about-container
@@ -3529,15 +3542,11 @@ margin-bottom: 0;
 
   #road-container
   {
-    height: 100%;
+    height: 460rem;
   }
 
   #header-cloud-01
-  {
-
-left: -6rem;
-
-}
+  {left: -6rem;}
 
   #header-cloud-02
   {
@@ -3597,7 +3606,7 @@ margin-top: 4%;
   #about-content-01
   {
     margin-left: 0;
-    margin-bottom: 2%;
+    margin-bottom: 0;
 }
 
   #about-content-02
@@ -3631,9 +3640,14 @@ margin-top: 4%;
 
   #contact-text
   {
-    top:24%;
+    top: 23%;
     font-size: 1.7rem;
-    width: 65%;
+    width: 73%;
+  }
+
+  #phone-box
+  {
+    padding-bottom: 23.5%;
   }
 
   #home
@@ -3651,6 +3665,7 @@ margin-top: 4%;
   .font-header
   {
     font-size: 3.9rem;
+    bottom: 5%;
   }
 
   .skills-group
@@ -3662,8 +3677,10 @@ margin-top: 4%;
   .header
   {
     width: 100%;
+    height: auto;
     min-width: 20rem;
     margin-bottom: 3rem;
+    margin-top: 0rem;
   }
 
   .contact-section
@@ -3674,6 +3691,8 @@ margin-top: 4%;
   #contact-header
   {
   z-index: 0;
+  margin-top: -3rem;
+  margin-bottom: 3.5rem;
   }
 
   .copyright-font
@@ -3685,6 +3704,8 @@ margin-top: 4%;
   {
     max-width: 72%;
     margin: auto;
+    margin-top: 1rem;
+    padding-bottom: 53%;
   }
 
   #about-content-container
@@ -3702,7 +3723,7 @@ margin-top: 4%;
   }
 
   #contact-description-section
-  {/* height: 38rem; */width: 27rem;/* margin-top: 10%; */z-index: 2;/* margin-bottom: -2%; */}
+  {height: 38rem;width: 27rem;/* margin-top: 10%; */z-index: 2;/* margin-bottom: -2%; */}
 
   #foliage-container
   {
@@ -3714,7 +3735,7 @@ margin-top: 4%;
   }
   #road-01
   {
-    margin-top: -11.95rem;
+    margin-top: -12.4rem;
   }
   #cloud-container
   {
@@ -3763,6 +3784,8 @@ margin-top: 4%;
 
   #about-header
   {
+  margin-top: -2.5rem;
+  margin-bottom: 3rem;
   }
 
   #paper-plane-container-02
@@ -3805,6 +3828,7 @@ margin-top: 4%;
 
   #skills-header
   {
+  margin-top: -4.2rem;
   margin-bottom: 3.5rem;
   }
 
@@ -3829,6 +3853,8 @@ margin-top: 4%;
   #skills-jquery
   {
   margin-right: auto;
+  margin-top: 4%;
+  margin-bottom: 5%;
   }
 
   #skills-html
@@ -3843,23 +3869,46 @@ margin-top: 4%;
 
   #about-content-02-text
   {
+  top: 64%;
   }
 
   #about-content-03-text
   {
+  top: 64%;
   }
   #about-content-04-text
   {
+  top: 67.5%;
+  width: 90%;
   }
 }
 
 @media only screen and (max-device-width: 64em) and (min-device-width: 48em) and (orientation: landscape)
 {
 
+  #phone-box
+  {
+    padding-bottom: 21%;
+  }
+
+  #about-header
+  {
+    margin-bottom: 5rem;
+  }
+
   #about-container
   {
 
 z-index: 0;
+   }
+
+   #contact-header
+   {margin-top: 1%;margin-bottom: 6.2rem;}
+
+   #skills-header
+   {
+     margin-top: -0.3%;
+     margin-bottom: 5.3rem;
    }
 
    #copyright-text
@@ -3905,6 +3954,7 @@ z-index: 0;
   .font-header
   {
     font-size: 5rem;
+    bottom: 7%;
   }
 
   #city-flatline-svg
@@ -4084,7 +4134,8 @@ font-size: 1.65rem;
    }
   #about-content-01-text
   {
-    width:100%;
+    width: 95%;
+    top: 72.5%;
   }
 
   .font-skills-new
@@ -4100,11 +4151,7 @@ width: 25rem;
 }
 
   #road-01
-  {
-
-margin-top: -26.95rem;
-
-}
+  {margin-top: -28.3rem;}
   .skill
   {
   max-width: 30.5rem;
