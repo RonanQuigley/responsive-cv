@@ -1,8 +1,8 @@
 var documentBody = $('body');
 var documentBodyWidth = null;
 var documentWindow = $(window);
+var windowWidth = null;
 var previousWindowWidth = null;
-var deviceScreenWidth = screen.width;
 var isTouchDevice = false;
 var skillAnims = [];
 
@@ -109,9 +109,7 @@ function CheckIfCityBuildingsAnimIsOnScreen(element, vivus)
     element: element,
     enter: function()
     {
-      DisableSkillAnims();
       vivus[0].play(1, function(){
-        EnableSkillAnims();
         DisableHWAcceleration(_cityBuildingsSVG);
         _waypoint.destroy();
       });
@@ -123,7 +121,6 @@ function CheckIfCityBuildingsAnimIsOnScreen(element, vivus)
       if(documentBody.outerWidth() <= 480)
       {
         vivus[0].stop();
-        EnableSkillAnims();
       }
       else
       {
@@ -227,11 +224,18 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
       _tween.kill(); // kill the animating tween
       Translate();
   }
-  // for desktop browser zooming; note that this wont work if the browser is not full screen
-  if(!IsZoomed())
-  {
-    documentWindow.resize(Reset)
-  }
+
+  documentWindow.resize(function(){
+    if(!IsZoomed())  // for desktop browser zooming; note that this wont work if the browser is not full screen
+    {
+      if($(window).width() != windowWidth)
+      {
+        Reset();
+        windowWidth = $(window).width();
+      }
+    }
+  });
+
   InitialiseVariables();
   CheckIfElementIsOnScreen();
   Translate();
@@ -240,7 +244,7 @@ function TranslateElement(element, minDuration, maxDuration, repeatEnabled, easi
 
 function IsZoomed()
 {
-  if (documentWindow.outerWidth() != deviceScreenWidth)
+  if (documentWindow.outerWidth() != screen.width)
   {
     return true;
   }
@@ -306,33 +310,35 @@ function AnimateStroke(element, length, easing, optionals)
         this.play(); // we can just play the element automatically
         }
       },
-      function() // called when the stroke animation has finished
-      {
-        if(_parentID == 'city-buildings')
-        {
-          var _documentWidth = optionals.documentWidth;
-          if(_documentWidth != undefined)
-          {
-            if(_documentWidth <= 480)
-            {
-              TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
-              AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
-            }
-            else if(_documentWidth > 480 && _documentWidth <= 1024)
-            {
-              AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', true);
-              AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', true);
-              TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
-            }
-            else
-            {
-              TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
-            }
-          }
-        }
-      }
+      OnComplete
       ));
     }
+  function OnComplete()
+  {
+    if(_parentID == 'city-buildings')
+    {
+      var _documentWidth = optionals.documentWidth;
+      if(_documentWidth != undefined)
+      {
+        if(_documentWidth <= 480)
+        {
+          TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
+          AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', false);
+          EnableSkillAnims();
+        }
+        else if(_documentWidth > 480 && _documentWidth <= 1024)
+        {
+          AnimateBalloon('#hot-air-balloon-web', 2, '0%', '2%', true);
+          AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', true);
+          TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
+        }
+        else
+        {
+          TranslateElement('#cloud-group-three-01', 15, 20, true, easing, true, 60, 0);
+        }
+      }
+    }
+  }
   return _animElements;
 }
 
@@ -520,7 +526,7 @@ function OnHoverOverEmail()
   var _emailBox = $('#email-box');
   var _elementTimeline = new TimelineMax({repeat:-1, paused: true, yoyo: true});
   var _email = $('#email');
-  var _emailContainer = $('#cloud-contact-01');
+  var _emailContainer = $('#email-section');
   _elementTimeline.add(TweenMax.fromTo(_email, 0.15, {rotation: 10}, {rotation: -10, ease: Linear.easeNone}));
   TweenLite.to(_email, 0, {rotation: 0}); // timeline initially pauses at a rotation of 10; we don't want that
   $(_emailContainer.hover(function()
@@ -530,8 +536,7 @@ function OnHoverOverEmail()
       return;
     }
     // animate the box which contains the email text
-    TweenLite.to(_emailBox, 0.1, {y: 140, force3D: "auto"});
-    // console.log("rotate email");
+    TweenLite.to(_emailBox, 0.1, {y: '210%', force3D: "auto"});
     TweenLite.to(_email, 0.1, {rotation: 10, force3D: "auto", ease: Linear.easeNone, onComplete: function()
     {
       _elementTimeline.restart();
@@ -542,9 +547,8 @@ function OnHoverOverEmail()
     {
       return;
     }
-    TweenLite.to(_emailBox, 0.2, {y: 100, force3D: false});
+    TweenLite.to(_emailBox, 0.2, {y: '150%', force3D: false});
     _elementTimeline.kill();
-    // console.log("set back to normal");
     TweenLite.to(_email, 0.1, {rotation: 0});
   }));
 }
@@ -556,20 +560,20 @@ function OnHoverOverPhone()
   var _phonePath = $('#phone-path');
   var _elementContainer = $('#cloud-contact-03');
   var _toggle = false;
-  TweenLite.to(_element, 0, {rotation: 0.000001}); // timeline initially pauses at a rotation of 10; we don't want that
+  TweenLite.to(_element, 0, {rotation: 0}); // timeline initially pauses at a rotation of 10; we don't want that
   $(_elementContainer.hover(function()
   {
     if(!isTouchDevice)
     {
       _phonePath.css('fill', 'black');
-      TweenLite.to(_phoneBox, 0.1, {y: 140, force3D: "auto"});
+      TweenLite.to(_phoneBox, 0.1, {y: '210%', force3D: "auto"});
     }
   }, function()
   {
     if(!isTouchDevice)
     {
-     _phonePath.css('fill', 'white');
-      TweenLite.to(_phoneBox, 0.2, {y: 100, force3D: "auto"});
+      _phonePath.css('fill', 'white');
+      TweenLite.to(_phoneBox, 0.2, {y: '150%', force3D: "auto"});
     }
   }));
 
@@ -581,12 +585,12 @@ function OnHoverOverPhone()
       if(_toggle == false)
       {
         _phonePath.css('fill', 'white');
-        TweenLite.to(_phoneBox, 0.1, {y: 100, force3D: "auto"});
+        TweenLite.to(_phoneBox, 0.1, {y: '150%', force3D: "auto"});
       }
       else
       {
         _phonePath.css('fill', 'black');
-        TweenLite.to(_phoneBox, 0.1, {y: 140, force3D: "auto"});
+        TweenLite.to(_phoneBox, 0.1, {y: '210%', force3D: "auto"});
       }
     }
   });
@@ -596,13 +600,13 @@ function Initialise()
 {
   // fade in the whole page
   SetRoadIDs('#road-container');
-  var _autoPlay = documentBodyWidth > 480 ? true : false;
+  documentBodyWidth = documentBody.outerWidth();
+  var _autoPlay = false;
   var _duration = 180;
   var _easing = Vivus.LINEAR;
   var _isMobileDevice;
   var _cityBuildingsStrokeAnim = null;
   var _cityBuildings = $('#city-buildings');
-  documentBodyWidth = documentBody.outerWidth();
   skillAnims[0] = AnimateBodymovin('skill-anim-web-dev', 'scripts/skills-web-development.json', "xMidYMid meet", _autoPlay);
   skillAnims[1] = AnimateBodymovin('skill-anim-html', 'scripts/skills-html.json', "xMidYMid meet", _autoPlay);
   skillAnims[2] = AnimateBodymovin('skill-anim-css', 'scripts/skills-css.json', "xMidYMid meet", _autoPlay);
@@ -620,7 +624,6 @@ function Initialise()
     CheckIfAnimationIsOnScreen('#skills-animation', skillAnims[5]);
     _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'delayed', documentWidth : documentBodyWidth});
     CheckIfCityBuildingsAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
-
     var _fireAnimB = AnimateBodymovin('fire-02', 'scripts/fire.json', "xMidYMid meet", _autoPlay);
     CheckIfAnimationIsOnScreen('#fire-02', _fireAnimB);
     if(documentBodyWidth > 1024) // for ipad landscape displays
@@ -648,8 +651,8 @@ function Initialise()
   else
   {
     AnimateBalloon('#hot-air-balloon-plain', 1, '0%', '0.75%', false);
-    _cityBuildingsStrokeAnim = AnimateStroke(_cityBuildings, _duration - 100, _easing, {scenarioType: 'delayed', documentWidth : documentBodyWidth});
-    CheckIfCityBuildingsAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
+    AnimateStroke(_cityBuildings, _duration - 130, _easing, {scenarioType: 'delayed', documentWidth : documentBodyWidth});
+    // CheckIfCityBuildingsAnimIsOnScreen(_cityBuildings, _cityBuildingsStrokeAnim);
   }
   OnHoverOverEmail();
   OnHoverOverCV();
@@ -657,7 +660,6 @@ function Initialise()
 }
 
 $(window).on('touchstart', function (e) {
-  console.log("touching you");
   // register any touch event on the window
   if(isTouchDevice == false)
   {
@@ -666,6 +668,7 @@ $(window).on('touchstart', function (e) {
 });
 $(document).ready(function()
 {
+  windowWidth = documentWindow.width();
   $('html,body').animate({scrollTop:0},0); // on page load, set the scroll to the top of the page
   Initialise();
 })
@@ -676,6 +679,7 @@ $(window).on('load', function()
   var _delay = 100;
   setTimeout(function()
   {
+    FadeInAnimation('#planet', 0.7);
     if(documentBody.outerWidth() > 480)
     {
       var _animPlanet = AnimateBodymovin('planet', 'scripts/planet-fonts.json', "xMidYMin meet", true);

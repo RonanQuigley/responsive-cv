@@ -8,20 +8,16 @@
 	<meta content="Ronan Quigley" name="author">
 	<meta content="Interactive CV of Web Developer Ronan Quigley" name="description">
 	<meta content="cv, resume, interactive, web, developer, ronan, quigley" name="keywords">
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.min.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js">
-	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.12.3/bodymovin.min.js"></script>
 	<script type="text/javascript">
 	     $('html').addClass('hidden');
 	     $(document).ready(function() {
@@ -533,37 +529,7 @@
 				<line class="road-bottom road-hw-acceleration" x1="0" x2="100" y1="10" y2="100"></line></svg> <svg class="road-svg" preserveaspectratio="none" viewbox="0 0 100 100">
 				<line class="road-middle-solid road-hw-acceleration" x1="0" x2="100" y1="5" y2="95"></line>
 				<line class="road-middle road-hw-acceleration" data-ignore="true" x1="0" x2="100" y1="5" y2="95"></line></svg>
-			</div><!--
-        <div class="road">
-          <svg class="road-svg" style="position: absolute" viewBox="0 0 100 100" preserveAspectRatio="none" >
-            <line class="road-top road-hw-acceleration" x1="100" y1="0" x2="0" y2="90"></line>
-            <line class="road-bottom road-hw-acceleration" x1="100" y1="10" x2="0" y2="100"></line>
-          </svg>
-          <svg class="road-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <line class="road-middle-solid road-hw-acceleration" x1="100" y1="5" x2="0" y2="95"></line>
-            <line data-ignore="true" class="road-middle road-hw-acceleration" x1="100" y1="5" x2="0" y2="95"></line>
-          </svg>
-        </div>
-        <div class="road">
-          <svg class="road-svg" style="position: absolute;" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <line class="road-top road-hw-acceleration" x1="0" y1="0" x2="100" y2="90"></line>
-            <line class="road-bottom road-hw-acceleration" x1="0" y1="10" x2="100" y2="100"></line>
-          </svg>
-          <svg class="road-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <line class="road-middle-solid road-hw-acceleration" x1="0" y1="5" x2="100" y2="95"></line>
-            <line data-ignore="true" class="road-middle road-hw-acceleration" x1="0" y1="5" x2="100" y2="95"></line>
-          </svg>
-        </div>
-        <div class="road">
-          <svg class="road-svg" style="position: absolute" viewBox="0 0 100 100" preserveAspectRatio="none" >
-            <line class="road-top road-hw-acceleration" x1="100" y1="0" x2="0" y2="90"></line>
-            <line class="road-bottom road-hw-acceleration" x1="100" y1="10" x2="0" y2="100"></line>
-          </svg>
-          <svg class="road-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <line class="road-middle-solid road-hw-acceleration" x1="100" y1="5" x2="0" y2="95"></line>
-            <line data-ignore="true" class="road-middle road-hw-acceleration" x1="100" y1="5" x2="0" y2="95"></line>
-          </svg>
-        </div> -->
+			</div>
 		</div>
 		<div id="about-container">
 			<header class="header" id="about-header">
@@ -611,7 +577,7 @@
 						<path class="cloud-path" d="M915.535 5.393S783.111-4.128 677.774 90.675c-48.523 43.67-84.914 123.365-84.914 123.365s-76.826-37.067-174.682 4.852c-40.604 17.394-131.183 84.299-141.929 163.764-92.184 4.937-184.822 58.461-212.286 93.405C25.716 530.795 2.908 584.912 5.736 669.477 15.26 866.94 233.792 879.874 233.792 879.874h958.322s233.918 4.539 235.334-224.954c.253-40.907-8.166-90.732-29.782-134.778-27.209-55.445-75.331-103.557-153.391-117.639-7.921-122.726-39.461-290.348-151.633-353.221-33.67-29.959-126.307-44.588-177.107-43.889z" fill="none" stroke="#231f20" stroke-miterlimit="10" stroke-width="11"></path></svg>
 					</div>
 					<div class="font-div" id="about-content-01-text">
-						I’m a self-taught programmer who &lt;3’s to craft front-end web experiences
+						I’m a self-taught programmer who &lt;3’s to craft web experiences
 					</div>
 				</div>
 				<div class="about-content" id="about-content-02">
@@ -889,17 +855,18 @@
 				<div class="clouds-contact" id="cloud-contact-01">
 					<div class="cloud-contact-box" id="email-box">
 						<svg class="ie-svg-fix cloud-contact-path" preserveaspectratio="xMidYMid meet" viewbox="0 0 150 50">
-						<rect class="email-rect" height="50" width="150"></rect></svg>
+							<rect class="email-rect" height="50" width="150"></rect>
+						</svg>
 						<div id="email-text-container">
 							<div class="font-div" id="email-text">
 								info@ronanquigley.com
 							</div>
 						</div>
 					</div>
-					<div class="contact-cloud-container">
-						<svg class="ie-svg-fix" id="cloud-email-svg" viewbox="0 0 1432.954 885.131" xmlns="http://www.w3.org/2000/svg">
-						<path class="cloud-contact-path" d="M915.535 5.393S783.111-4.128 677.774 90.675c-48.523 43.67-84.914 123.365-84.914 123.365s-76.826-37.067-174.682 4.852c-40.604 17.394-131.183 84.299-141.929 163.764-92.184 4.937-184.822 58.461-212.286 93.405C25.716 530.795 2.908 584.912 5.736 669.477 15.26 866.94 233.792 879.874 233.792 879.874h958.322s233.918 4.539 235.334-224.954c.253-40.907-8.166-90.732-29.782-134.778-27.209-55.445-75.331-103.557-153.391-117.639-7.921-122.726-39.461-290.348-151.633-353.221-33.67-29.959-126.307-44.588-177.107-43.889z" fill="none" stroke="#231f20" stroke-miterlimit="10" stroke-width="11"></path></svg>
-					</div><a class="contact-icons" href="mailto:info@ronanquigley.com" id="email"><svg class="ie-svg-fix" id="Email" viewbox="0 0 51.03099 32.06564" xmlns="http://www.w3.org/2000/svg">
+					<svg class="ie-svg-fix" id="cloud-email-svg" viewbox="0 0 1432.954 885.131" xmlns="http://www.w3.org/2000/svg">
+						<path class="cloud-contact-path" d="M915.535 5.393S783.111-4.128 677.774 90.675c-48.523 43.67-84.914 123.365-84.914 123.365s-76.826-37.067-174.682 4.852c-40.604 17.394-131.183 84.299-141.929 163.764-92.184 4.937-184.822 58.461-212.286 93.405C25.716 530.795 2.908 584.912 5.736 669.477 15.26 866.94 233.792 879.874 233.792 879.874h958.322s233.918 4.539 235.334-224.954c.253-40.907-8.166-90.732-29.782-134.778-27.209-55.445-75.331-103.557-153.391-117.639-7.921-122.726-39.461-290.348-151.633-353.221-33.67-29.959-126.307-44.588-177.107-43.889z" fill="none" stroke="#231f20" stroke-miterlimit="10" stroke-width="11"></path>
+					</svg>
+					<a class="contact-icons" href="mailto:info@ronanquigley.com" id="email"><svg class="ie-svg-fix" id="Email" viewbox="0 0 51.03099 32.06564" xmlns="http://www.w3.org/2000/svg">
 					<path d="M50.5,30.5H0.5V0.5h50v30Zm-50-30L25.3,15.6,50.5,0.5m0,30L29.4,13.2M0.5,30.5L21.3,13.1"></path></svg></a>
 				</div>
 			</div>
@@ -959,8 +926,6 @@
 			</div>
 		</footer>
 	</div>
-	<script src="scripts/bodymovin.min.js">
-	</script>
 	<script src="scripts/main.js">
 	</script>
 </body>
