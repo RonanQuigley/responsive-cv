@@ -987,7 +987,7 @@
 }
 
 @font-face {
-	font-family: 'Daniel', sans-serif;
+	font-family: 'Daniel';
 	src: url('webfonts/Daniel.eot'), url('webfonts/Daniel.eot?#iefix') format('embedded-opentype'), url('webfonts/Daniel.woff') format('woff'), url('webfonts/Daniel.ttf') format('truetype'), url('webfonts/Daniel.svg#Daniel') format('svg');
 	font-weight: normal;
 	font-style: normal;
